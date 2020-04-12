@@ -103,6 +103,12 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
     font-size: 50px;
 }
 
+@media screen and (max-width: 767px) {
+  #page-site-header .page-title {
+    font-size: 7vw;
+  }
+}
+
 #page-site-header .page-subtitle, #page-site-header .archive-description {
     color: white;
 }
