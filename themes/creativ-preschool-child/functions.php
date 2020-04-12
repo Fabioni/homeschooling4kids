@@ -707,6 +707,14 @@ function print_footer_so_22382151_footer() {
 }
 
 
+function add_meta_tags() {
+	if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') {
+		echo '<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">';
+	}
+}
+add_action('wp_head', 'add_meta_tags');
+
+
 add_filter( 'get_post_status', function ( $post_status, $post ) {
 	if ( isset( $_GET['korrektur'] ) && $_GET['korrektur'] == "true" && $post_status == 'future' ) {
 		return "publish";
