@@ -713,6 +713,7 @@ function add_meta_tags() {
 	}
 }
 add_action('wp_head', 'add_meta_tags');
+add_action('admin_head', 'add_meta_tags');
 
 
 add_filter( 'get_post_status', function ( $post_status, $post ) {
