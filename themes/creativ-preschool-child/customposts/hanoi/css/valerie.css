@@ -1,0 +1,50 @@
+body[data-fensterOpen="start"] [data-role="window"]:not([data-fenster="start"]) {
+  visibility: hidden;
+  display: none;
+}
+
+body[data-fensterOpen="regeln"] [data-role="window"]:not([data-fenster="regeln"]) {
+  visibility: hidden;
+  display: none;
+}
+
+body[data-fensterOpen="spielen"] [data-role="window"]:not([data-fenster="spielen"]) {
+  visibility: hidden;
+  display: none;
+}
+
+body[data-fensterOpen="spielen"] [data-role="header"]:not([data-fenster="spielen"]) {
+  visibility: hidden;
+  display: none;
+}
+
+body[data-fensterOpen="ende"] [data-role="window"]:not([data-fenster="ende"]) {
+  visibility: hidden;
+  display: none;
+}
+
+body[data-fensterOpen="levelende"] [data-role="window"]:not([data-fenster="levelende"]) {
+  visibility: hidden;
+  display: none;
+}
+
+[data-role="header"]{
+  width: fit-content;
+  margin: auto;
+  display: table;
+}
+
+[data-role="window"]:not([data-fenster="spielen"]){
+  margin-left: 100px;
+  margin-top: 100px;
+  margin-right: 100px;
+}
+
+html{
+  font-family: Comic Sans MS, Comic Sans, cursive;
+}
+
+input[type="button"]{
+  margin: 3px;
+  padding: 6px 4px;
+}

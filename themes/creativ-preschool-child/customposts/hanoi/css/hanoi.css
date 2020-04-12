@@ -1,0 +1,72 @@
+form[name="hanoi"] table {
+  font: bold 13px Verdana
+}
+
+form[name="hanoi"] p {
+  font: normal 11px Tahoma, Verdana
+}
+
+/*form[name="hanoi"] input,select {font:normal 12px Tahoma,Verdana}*/
+select {
+  width: 40px
+}
+
+a {
+  font-weight: bold
+}
+
+.tower {
+  position: absolute;
+  visibility: visible;
+  left: 77px;
+  top: 184px;
+  font: bold 10px Tahoma
+}
+
+.container {
+  position: absolute;
+  visibility: visible;
+}
+
+.towervert {
+  position: absolute;
+  visibility: visible;
+  border: 1px solid black;
+  background-color: black
+}
+
+.towerhoriz {
+  position: absolute;
+  visibility: visible;
+  border: 1px solid black;
+  font-size: 1px;
+  background-color: black
+}
+
+.disk {
+  position: absolute;
+  visibility: visible;
+  border: 1px solid black;
+  box-shadow: inset black 0px 0px 0px 1px
+}
+
+body {
+  height: 100%
+}
+
+html {
+  height: 100%
+}
+
+form[name="hanoi"] {
+  position: relative;
+  width: 700px;
+  height: 400px;
+  margin: auto;
+}
+
+#leveltimerzüge > table {
+  padding: 10px;
+  border-color: green;
+  border-style: solid;
+}
