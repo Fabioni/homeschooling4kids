@@ -356,7 +356,7 @@ iframe {
     color: white;
 }
 
-.post-item:hover .fabian-Pfeil:after{
+.post-item:hover .fabian-Pfeil:after, .fabian-Pfeil:hover:after{
     content: "\f0a6";
     transform: rotate(140deg);
     position: absolute;
@@ -393,6 +393,18 @@ blockquote cite {
     content: "\f783";
 }
 
+.su-tooltip:after {
+  content: " \f059";
+  top: -0.6em;
+  right: 3px;
+  position: relative;
+  font-family: "Font Awesome 5 Free";
+  font-size: 90%;
+  color: cornflowerblue;
+}
+
+
+
 #heuteButtonMobilDesktopContainer.heuteBeitragNein{
   /*display: none;*/
 }
@@ -407,4 +419,17 @@ blockquote cite {
 
 #heuteButtonMobilDesktopContainer *{
   font-size: 110%;
+}
+
+.fabian-großerPfeil:after {
+  display: block;
+  content: "";
+  width: 3px;
+  height: 5px;
+  background: transparent url('/wp-content/uploads/2020/03/arrow-35173_1280-e1585600397946-714x1024.png') no-repeat;
+}
+
+.fabian-iFrame_unser_Hintergrund{
+  border: none !important;
+  box-shadow: none !important;
 }
