@@ -392,3 +392,19 @@ blockquote cite {
 .cat-links.fach:before{
     content: "\f783";
 }
+
+#heuteButtonMobilDesktopContainer.heuteBeitragNein{
+  /*display: none;*/
+}
+
+#heuteButtonMobilDesktopContainer.heuteBeitragJa{
+
+}
+
+#heuteButtonMobilDesktopContainer{
+  margin-bottom: 50px;
+}
+
+#heuteButtonMobilDesktopContainer *{
+  font-size: 110%;
+}

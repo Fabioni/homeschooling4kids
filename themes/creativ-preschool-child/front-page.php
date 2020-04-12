@@ -50,7 +50,7 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
             $cover.html($outer)
             $inner.insertAfter($outer)
 
-            $button.html($("<a>").text(text).attr("href", url))
+            $button.html($("<a>").html(text).attr("href", url))
 
             $section.html($button)
             $cover.insertAfter($button)
@@ -58,11 +58,15 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
 
         <?php
         $heute = get_heute_seite();
+        $heuteString = "Heute";
         if ($heute){
 	        $heuteTitel = $heute[1] != false ? $heute[1] : "Schau dir die heutigen Beiträge an"; $heuteURL = $heute[0];
         } else {
-            $heuteTitel = "Kein Fachbeitrag für heute vorhanden";
-            $heuteURL = "";
+            /*$heuteTitel = "Kein Fachbeitrag für heute vorhanden";
+            $heuteURL = "";*/
+	        $heuteTitel = "Alle Fachbeiträge ansehen!";
+	        $heuteString = "Freu dich auf die nächsten Beiträge";
+	        $heuteURL = get_post_type_archive_link("fachbeitrag");
         }
         ?>
 
@@ -167,7 +171,7 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
         }
 
         .heute_button_flip-inner:after, .heute_button_flip-outer:after {
-            content: "Heute";
+            content: "<?= $heuteString ?>";
             line-height: ;
             top: 50%;
             transform: translateY(-50%);
@@ -337,9 +341,9 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
             background: #ff7096;
         }
     </style>
-    <div <?= $heute ? "" : "style='display: none'" ?>>
+    <div id="heuteButtonMobilDesktopContainer" class="<?= $heute ? "heuteBeitragJa" : "heuteBeitragNein" ?>">
         <div class="fabianHandy">
-            <a id="heute_button" href="<?= $heuteURL ?>" class="btn btn-primary">Heute: <?= $heuteTitel ?></a>
+            <a id="heute_button" href="<?= $heuteURL ?>" class="btn btn-primary"><?= $heuteString ?>: <?= $heuteTitel ?></a>
         </div>
         <div class="fabianPC">
             <div class="flip-cover-heute_button_flip"></div>
@@ -364,7 +368,7 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
 			<?php } elseif ( $section['id'] == 'our-services' ) { ?>
 				<?php $enable_our_services_section = creativ_preschool_get_option( 'enable_our_services_section' );
 				if ( true == $enable_our_services_section ): ?>
-                    <section id="<?php echo esc_attr( $section['id'] ); ?>" class="page-section">
+                    <section id="<?php echo esc_attr( $section['id'] ); ?>" >
                         <div class="wrapper">
                             <div class="wrapper">
 
@@ -441,7 +445,7 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
 			<?php } elseif ( $section['id'] == 'our-courses' ) { ?>
 				<?php $enable_our_courses_section = creativ_preschool_get_option( 'enable_our_courses_section' );
 				if ( true == $enable_our_courses_section ): ?>
-                    <section id="<?php echo esc_attr( $section['id'] ); ?>">
+                    <section id="<?php echo esc_attr( $section['id'] ); ?>" >
                         <!--<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/top-cloud-bg.png' ) ?>">-->
 						<?php get_template_part( 'sections/section', esc_attr( $section['id'] ) ); ?>
                     </section>
@@ -450,7 +454,7 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
 			<?php } elseif ( $section['id'] == 'about-us' ) { ?>
 				<?php $enable_about_us_section = creativ_preschool_get_option( 'enable_about_us_section' );
 				if ( true == $enable_about_us_section ): ?>
-                    <section id="<?php echo esc_attr( $section['id'] ); ?>" class="page-section">
+                    <section id="<?php echo esc_attr( $section['id'] ); ?>" >
                         <div class="wrapper">
 							<?php get_template_part( 'sections/section', esc_attr( $section['id'] ) ); ?>
                         </div>
