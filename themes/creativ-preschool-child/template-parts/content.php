@@ -9,7 +9,7 @@
 ?>
 <!-- Where am I: content.php -->
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <div class="post-item <?= get_the_time( 'Yd' ) === current_time( 'Yd' ) ? "heutigerBeitrag" : "" ?>">
+    <div class="post-item <?= get_the_time( 'Ymd' ) === current_time( 'Ymd' ) ? "heutigerBeitrag" : "" ?>">
 		<?php if ( is_sticky() ) { ?>
             <div class="favourite"><i class="fa fa-star"></i></div>
 		<?php } ?>

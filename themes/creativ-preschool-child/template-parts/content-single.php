@@ -1,4 +1,4 @@
-<?php 
+<?php
  /*
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -10,8 +10,8 @@
 	<div class="entry-meta">
 		<?php creativ_preschool_posted_on();
 		creativ_preschool_entry_meta(); ?>
-	</div><!-- .entry-meta -->	
-	<div class="entry-content <?= get_the_time( 'Yd' ) === current_time( 'Yd' ) ? "heutigerBeitrag" : "" ?>">
+	</div><!-- .entry-meta -->
+	<div class="entry-content <?= get_the_time( 'Ymd' ) === current_time( 'Ymd' ) ? "heutigerBeitrag" : "" ?>">
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
