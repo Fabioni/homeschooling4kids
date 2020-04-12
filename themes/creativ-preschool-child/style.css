@@ -268,11 +268,11 @@ iframe {
 
 }
 
-.archivunterteil{
+.archivUnterteiltitel{
     position: relative;
 }
 
-.archivunterteil:before{
+.archivUnterteiltitel:before{
     content: "";
     display: block;
     width: 120px;
@@ -287,13 +287,13 @@ iframe {
 
 
 @media screen and (max-width: 1300px) {
-    .archivunterteil:before {
+    .archivUnterteiltitel:before {
         display: none !important;
     }
 }
 
 @media screen and (max-width: 1450px) {
-    .archivunterteil:before {
+    .archivUnterteiltitel:before {
         left: -120px;
     }
 }
@@ -375,12 +375,6 @@ iframe {
 
 blockquote cite {
     font-style: italic;
-}
-
-
-body .archivunterteil:not(:first-of-type) {
-    /*border-top: 3px solid rgba(255, 255, 255, 0.40);*/
-    margin-top: 20px
 }
 
 .wp-block-embed.alignright, .wp-block-embed.alignleft, .alignleft, .alignright{
