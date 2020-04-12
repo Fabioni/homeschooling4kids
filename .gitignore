@@ -1,0 +1,11 @@
+/*
+
+!.gitignore
+!README.md
+
+!themes/
+themes/*
+!thmes/creativ-preschool-custom
+
+!plugins
+plugins/*
