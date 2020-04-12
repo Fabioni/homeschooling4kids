@@ -725,18 +725,5 @@ add_filter( 'get_post_status', function ( $post_status, $post ) {
 }, 10, 2 );
 
 
-function load_script_to_change_backgroundcolor_of_iFrames(){
-	?>
-	<script>
-		jQuery(document).ready(function() {
-			let frameElement = document.getElementById("fabian-iFrame_unser_Hintergrund");
-			let doc = frameElement.contentDocument;
-			doc.body.innerHTML = doc.body.innerHTML + '<style>body {background-color: #efe9be;}</style>';
-		});
-	</script>
-	<?php
-}
-add_action( 'wp_footer', 'load_script_to_change_backgroundcolor_of_iFrames' );
-
 
 require get_template_directory() . '/functionsParent.php';

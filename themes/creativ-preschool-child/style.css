@@ -403,6 +403,10 @@ blockquote cite {
   color: cornflowerblue;
 }
 
+.su-tooltip:hover{
+  text-decoration: underline;
+  cursor: help;
+}
 
 
 #heuteButtonMobilDesktopContainer.heuteBeitragNein{
@@ -421,15 +425,15 @@ blockquote cite {
   font-size: 110%;
 }
 
-.fabian-großerPfeil:after {
-  display: block;
+.fabian-großerPfeil:before {
   content: "";
-  width: 3px;
-  height: 5px;
-  background: transparent url('/wp-content/uploads/2020/03/arrow-35173_1280-e1585600397946-714x1024.png') no-repeat;
-}
-
-.fabian-iFrame_unser_Hintergrund{
-  border: none !important;
-  box-shadow: none !important;
+  display: block;
+  width: 80px;
+  height: 120px;
+  position: relative;
+  left: 45%;
+  left: calc(50% - 40px);
+  z-index: 1;
+  background: url(/wp-content/uploads/2020/03/arrow-35173_1280-e1585600397946-714x1024.png) no-repeat;
+  background-size: 80px;
 }
