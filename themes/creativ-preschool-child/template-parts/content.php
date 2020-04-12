@@ -13,10 +13,15 @@
 		<?php if ( is_sticky() ) { ?>
             <div class="favourite"><i class="fa fa-star"></i></div>
 		<?php } ?>
-
+		<?php
+		$korrek = "";
+		if (isset($_GET['korrektur']) && $_GET['korrektur'] == "true") {
+			$korrek = "?korrektur=true";
+		}
+		?>
 		<?php if ( has_post_thumbnail() ) { ?>
             <figure>
-                <a href="<?php the_permalink(); ?>?korrektur=true"><?php the_post_thumbnail(); ?></a>
+                <a href="<?php the_permalink(); ?><?= $korrek ?>"><?php the_post_thumbnail(); ?></a>
             </figure>
 		<?php } ?>
 
@@ -26,7 +31,7 @@
 				if ( is_single() ) :
 					the_title( '<h1 class="entry-title">', '</h1>' );
 				else :
-					the_title( '<h2 class="entry-title"><a class="fabian-Pfeil" href="' . esc_url( get_permalink() ) . '?korrektur=true" rel="bookmark">', '</a></h2>' );
+					the_title( '<h2 class="entry-title"><a class="fabian-Pfeil" href="' . esc_url( get_permalink() ) . $korrek . '" rel="bookmark">', '</a></h2>' );
 				endif; ?>
             </header><!-- .entry-header -->
 

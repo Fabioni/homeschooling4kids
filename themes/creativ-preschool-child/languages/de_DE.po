@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: Creative Preschool Customized\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-07 11:45+0545\n"
-"PO-Revision-Date: 2020-04-03 15:55+0000\n"
+"PO-Revision-Date: 2020-04-08 05:23+0000\n"
 "Last-Translator: \n"
 "Language-Team: Deutsch\n"
 "Language: de_DE\n"
@@ -27,12 +27,14 @@ msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
 msgstr ""
+"Es scheint wir haben hier nichts gefunden. Schau dir die Beiträge von den "
+"Übersichtsseiten an oder nutze die Suche."
 
 #: comments.php:33
 #, php-format
 msgctxt "comments title"
 msgid "One Reply to &ldquo;%s&rdquo;"
-msgstr ""
+msgstr "Eine Antwort auf &bdquo;%s&ldquo;"
 
 #: comments.php:38
 #, php-format
@@ -923,7 +925,7 @@ msgstr ""
 
 #: template-parts/content-none.php:14
 msgid "Nothing Found"
-msgstr ""
+msgstr "Nichts gefunden"
 
 #: template-parts/content-none.php:21
 #, php-format
@@ -944,6 +946,8 @@ msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
+"Wir können den Inhalt nicht finden, den du aufrufen wolltest. Vielleicht "
+"hilft dir die Suche weiter."
 
 #: template-parts/content-page.php:18 template-parts/content-single.php:17
 msgid "Pages:"

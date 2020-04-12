@@ -13,7 +13,7 @@ if ( ! function_exists( 'creativ_preschool_posted_on' ) ) :
  */
 function creativ_preschool_posted_on() {
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-	
+
 
 	$time_string = sprintf( $time_string,
 		esc_attr( get_the_date( 'c' ) ),
@@ -32,9 +32,9 @@ function creativ_preschool_posted_on() {
 	        '<span class="author vcard"><a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" class="url" itemprop="url">' . esc_html( get_the_author_meta( 'display_name' ) ) . '</a></span>'
 	    );*/
 	    // echo '<span class="byline">' . $byline . '</span>';
-	    echo '<span class="byline">' . '<span class="author vcard">' . esc_html( get_the_author_meta( 'display_name' ) ) . '</span>' . '</span>';
+	    echo '<span class="byline">' . '<span class="author vcard">' . esc_html( get_the_author_meta( 'display_name' ) ) . '</span>' . '</span> ';
 	}
-	echo '<span class="date">' . $posted_on . '</span>'; // WPCS: XSS OK.
+	echo '<span class="date">' . $posted_on . '</span> '; // WPCS: XSS OK.
 
 }
 endif;
@@ -50,21 +50,21 @@ function creativ_preschool_entry_meta($cats = array("spasskategorie", "fach", "l
 		$categories_list = get_the_category_list( esc_html__( ', ', 'creativ-preschool' ) );
 
 		if ( $categories_list && creativ_preschool_categorized_blog() ) {
-			printf( '<span class="cat-links">%1$s</span>', $categories_list ); // WPCS: XSS OK.
+			printf( '<span class="cat-links">%1$s</span> ', $categories_list ); // WPCS: XSS OK.
 		}
 	}
 
 	// FABIAN
 	foreach ($cats as $cat){
-		echo get_the_term_list( get_the_ID(), $cat, '<span class="cat-links '. $cat . '">', esc_html__( ', ', 'creativ-preschool' ), '</span>' );
+		echo get_the_term_list( get_the_ID(), $cat, '<span class="cat-links '. $cat . '">', esc_html__( ', ', 'creativ-preschool' ), '</span>  ' );
 	}
 
 
 	if ( is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo '<span class="comments-link">';
 		/* translators: %s: post title */
-		comments_popup_link( sprintf( wp_kses( __( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'creativ-preschool' ), array( 'span' => array( 'class' => array() ) ) ), get_the_title() ) );
-		echo '</span>';
+		comments_popup_link( sprintf( wp_kses( __( 'Leave a Comment<span class="screen-reader-text"> on %s</span> ', 'creativ-preschool' ), array( 'span' => array( 'class' => array() ) ) ), get_the_title() ) );
+		echo '</span> ';
 	}
 }
 endif;
