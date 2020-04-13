@@ -4,14 +4,14 @@ jQuery(document).ready(function($) {
             DECLARATIONS
 ------------------------------------------------*/
 
-    var scroll              = $(window).scrollTop();  
+    var scroll              = $(window).scrollTop();
     var scrollup            = $('.backtotop');
     var menu_toggle         = $('.menu-toggle');
     var nav_menu            = $('.main-navigation ul.nav-menu');
     var featured_slider     = $('.featured-slider-wrapper');
     var team_slider         = $('.team-slider');
     var courses_slider      = $('.courses-slider');
-    var posts_height        = $('.blog-posts-wrapper article .post-item');
+    var posts_height        = $('.blog-posts-wrapper:not(.noMatchHeight) article .post-item');
 
 /*------------------------------------------------
             BACK TO TOP
@@ -20,7 +20,7 @@ jQuery(document).ready(function($) {
     $(window).scroll(function() {
         if ($(this).scrollTop() > 1) {
             scrollup.css({bottom:"25px"});
-        } 
+        }
         else {
             scrollup.css({bottom:"-100px"});
         }
@@ -35,8 +35,8 @@ jQuery(document).ready(function($) {
             MAIN NAVIGATION
 ------------------------------------------------*/
 
-    $(window).scroll(function() {    
-        var scroll = $(window).scrollTop();  
+    $(window).scroll(function() {
+        var scroll = $(window).scrollTop();
         if (scroll > 49) {
             $(".menu-sticky #masthead").addClass("nav-shrink");
         }
@@ -81,7 +81,7 @@ jQuery(document).ready(function($) {
             nav_menu.find("li").unbind('keydown');
         }
     });
-    
+
 /*------------------------------------------------
             SLICK SLIDER
 ------------------------------------------------*/
@@ -123,7 +123,7 @@ jQuery(document).ready(function($) {
     }
     ]
     });
-    
+
 /*------------------------------------------------
             MATCH HEIGHT
 ------------------------------------------------*/
