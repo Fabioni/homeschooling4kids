@@ -531,7 +531,7 @@ html {
   padding: 0 !important;
 }
 
-#page-site-header-image:not(.volle_Breite):not(.volle_Hoehe){
+#page-site-header-image:not(.volle_Breite):not(.volle_Hoehe):not(.volle_BreiteTop):not(.volle_BreiteBottom):not(.contain){
   width: 100%;
   max-height: 500px;
   object-fit: cover;
@@ -560,6 +560,14 @@ html {
 
 #page-site-header-image.volle_Hoehe{
   max-height: 500px;
-  object-fit: contain;
+  object-fit: cover;
   min-height: 250px;
+  width: auto;
+}
+
+#page-site-header-image.contain{
+  object-fit: contain;
+  max-height: 500px;
+  min-height: 250px;
+  max-width: 100%;
 }

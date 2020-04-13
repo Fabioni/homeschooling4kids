@@ -162,7 +162,7 @@ if ( ! function_exists( 'creativ_preschool_banner_header' ) ) :
 		?>
 
 		<div id="page-site-header">
-			<img class="<?= get_field( "titelbild_volle_breite_oder_volle_hoehe" ) ?>" id="page-site-header-image"
+			<img class="<?= get_field( "titelbild_volle_breite_oder_volle_hoehe_oder_contain" ) ?>" id="page-site-header-image"
 			     src="<?php echo esc_url( $header_image ); ?>">
 			<div class="overlay"></div>
 			<header class='page-header'>
@@ -736,8 +736,8 @@ if( function_exists('acf_add_local_field_group') ):
 		'fields' => array(
 			array(
 				'key' => 'field_5e9489780c494',
-				'label' => 'Zeige Titelbild bei der Anzeige mit voller Breite oder mit voller Höhe',
-				'name' => 'titelbild_volle_breite_oder_volle_hoehe',
+				'label' => 'Zeige Titelbild bei der Anzeige mit voller Breite oder mit voller Höhe oder vollständig',
+				'name' => 'titelbild_volle_breite_oder_volle_hoehe_oder_contain',
 				'type' => 'radio',
 				'instructions' => '',
 				'required' => 1,
@@ -752,10 +752,11 @@ if( function_exists('acf_add_local_field_group') ):
 					'volle_BreiteTop' => 'volle Breite bündig oben',
 					'volle_BreiteBottom' => 'volle Breite bündig unten',
 					'volle_Hoehe' => 'volle Höhe',
+					'contain' => 'vollständig'
 				),
-				'allow_null' => 1,
+				'allow_null' => 0,
 				'other_choice' => 0,
-				'default_value' => '',
+				'default_value' => 'volle_Breite',
 				'layout' => 'vertical',
 				'return_format' => 'value',
 				'save_other_choice' => 0,
