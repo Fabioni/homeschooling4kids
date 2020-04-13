@@ -534,7 +534,7 @@ html {
 #page-site-header-image:not(.volle_Breite):not(.volle_Hoehe){
   width: 100%;
   max-height: 500px;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 #page-site-header-image.volle_Breite{
