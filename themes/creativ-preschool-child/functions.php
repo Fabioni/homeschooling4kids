@@ -70,9 +70,9 @@ if ( ! function_exists( 'creativ_preschool_banner_title' ) ) :
 		if ( ( is_front_page() && is_home() ) || is_home() ) {
 			$your_latest_posts_title = creativ_preschool_get_option( 'your_latest_posts_title' );
 			$titleUntertitel         = explode( "§", esc_html( $your_latest_posts_title ) ); ?>
-            <h2 class="page-title"><?php echo $titleUntertitel[0] ?></h2>
+			<h2 class="page-title"><?php echo $titleUntertitel[0] ?></h2>
 			<?php if ( array_key_exists( 1, $titleUntertitel ) ): ?>
-                <h3 class="page-subtitle"><?php echo $titleUntertitel[1] ?></h3><?php endif ?>
+				<h3 class="page-subtitle"><?php echo $titleUntertitel[1] ?></h3><?php endif ?>
 			<?php
 		}
 
@@ -80,9 +80,9 @@ if ( ! function_exists( 'creativ_preschool_banner_title' ) ) :
 			//$your_latest_posts_title = creativ_preschool_get_option( 'child_your_frontpage_title' ); TODO eigene Variable erstellen
 			$your_latest_posts_title = creativ_preschool_get_option( 'your_latest_posts_title' );
 			$titleUntertitel         = explode( "§", esc_html( $your_latest_posts_title ) ); ?>
-            <h2 class="page-title"><?php echo $titleUntertitel[0] ?></h2>
+			<h2 class="page-title"><?php echo $titleUntertitel[0] ?></h2>
 			<?php if ( array_key_exists( 1, $titleUntertitel ) ): ?>
-                <h3 class="page-subtitle"><?php echo $titleUntertitel[1] ?></h3><?php endif ?>
+				<h3 class="page-subtitle"><?php echo $titleUntertitel[1] ?></h3><?php endif ?>
 			<?php
 		} else {
 
@@ -96,7 +96,7 @@ if ( ! function_exists( 'creativ_preschool_banner_title' ) ) :
 			}
 
 			if ( is_search() ) { ?>
-                <h2 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'creativ-preschool' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
+				<h2 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'creativ-preschool' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
 			<?php }
 
 			if ( is_404() ) {
@@ -161,14 +161,16 @@ if ( ! function_exists( 'creativ_preschool_banner_header' ) ) :
 		endif;
 		?>
 
-        <div id="page-site-header" style="background-image: url('<?php echo esc_url( $header_image ); ?>');">
-            <div class="overlay"></div>
-            <header class='page-header'>
-                <div class="wrapper">
+		<div id="page-site-header">
+			<img class="<?= get_field( "titelbild_volle_breite_oder_volle_hoehe" ) ?>" id="page-site-header-image"
+			     src="<?php echo esc_url( $header_image ); ?>">
+			<div class="overlay"></div>
+			<header class='page-header'>
+				<div class="wrapper">
 					<?php creativ_preschool_banner_title(); ?>
-                </div><!-- .wrapper -->
-            </header>
-        </div><!-- #page-site-header -->
+				</div><!-- .wrapper -->
+			</header>
+		</div><!-- #page-site-header -->
 		<?php echo '<div class= "wrapper page-section">';
 	}
 endif;
@@ -182,8 +184,8 @@ if ( ! function_exists( 'creativ_preschool_footer_section' ) ) :
 	 * @since 1.0.0
 	 */
 	function creativ_preschool_footer_section() { ?>
-        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/top-cloud-bg.png' ) ?>">
-        <div class="site-info">
+		<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/top-cloud-bg.png' ) ?>">
+		<div class="site-info">
 			<?php
 			$copyright_footer = creativ_preschool_get_option( 'copyright_text' );
 
@@ -191,10 +193,10 @@ if ( ! function_exists( 'creativ_preschool_footer_section' ) ) :
 				$copyright_footer = wp_kses_data( $copyright_footer );
 			}
 			?>
-            <div class="wrapper">
+			<div class="wrapper">
                 <span class="copy-right"><?php echo esc_html( $copyright_footer ); ?> Child Theme of <a target="_blank"
                                                                                                         href="http://creativthemes.com/">Creativ Preschool Free</a> customized by <a
-                            target="_blank" rel="designer" href="http://fabianscherer.de/">Fabian Scherer</a></span>
+		                target="_blank" rel="designer" href="http://fabianscherer.de/">Fabian Scherer</a></span>
 				<?php
 				wp_nav_menu( array(
 					'theme_location' => 'fußzeile',
@@ -202,8 +204,8 @@ if ( ! function_exists( 'creativ_preschool_footer_section' ) ) :
 					'menu_class'     => "fußzeilenmenu elternbereich"
 				) );
 				?>
-            </div><!-- .wrapper -->
-        </div> <!-- .site-info -->
+			</div><!-- .wrapper -->
+		</div> <!-- .site-info -->
 
 	<?php }
 
@@ -616,16 +618,16 @@ function enqueue_scripts_so_22382151() {
  */
 function print_header_so_22382151() {
 	?>
-    <style>
-        /* A class used by the jQuery UI CSS framework for their dialogs. */
-        .ui-front {
-            z-index: 1000000 !important; /* The default is 100. !important overrides the default. */
-        }
+	<style>
+		/* A class used by the jQuery UI CSS framework for their dialogs. */
+		.ui-front {
+			z-index: 1000000 !important; /* The default is 100. !important overrides the default. */
+		}
 
-        .ui-widget-overlay {
-            opacity: .8;
-        }
-    </style>
+		.ui-widget-overlay {
+			opacity: .8;
+		}
+	</style>
 	<?php
 }
 
@@ -635,36 +637,36 @@ function print_header_so_22382151() {
 function print_footer_so_22382151_externeLinks() {
 	$current_domain = $_SERVER['SERVER_NAME'];
 	?>
-    <script type="text/javascript">
-        jQuery(document).ready(function ($) {
-            $('a[href^="http://"],a[href^="https://"]')
-                .not('[href*="<?php echo $current_domain; ?>"]')
-                .click(function (e) {
-                    e.preventDefault();
-                    var url = this.href;
-                    $('<div></div>').appendTo('body')
-                        .html('<div><p>Hier verlässt du homeschooling4kids.at</p><p>Möchtest du fortfahren?</p></div>')
-                        .dialog({
-                            show: {effect: "blind", duration: 500},
-                            hide: 'fold',
-                            modal: true, title: 'Unsere Seite verlassen', zIndex: 10000, autoOpen: true,
-                            width: 'auto', resizable: false,
-                            buttons: {
-                                Ja: function () {
-                                    window.open(url);
-                                    $(this).dialog("close");
-                                },
-                                Nein: function () {
-                                    $(this).dialog("close");
-                                }
-                            },
-                            close: function (event, ui) {
-                                $(this).remove();
-                            }
-                        });
-                })
-        });
-    </script>
+	<script type="text/javascript">
+		jQuery(document).ready(function ($) {
+			$('a[href^="http://"],a[href^="https://"]')
+				.not('[href*="<?php echo $current_domain; ?>"]')
+				.click(function (e) {
+					e.preventDefault();
+					var url = this.href;
+					$('<div></div>').appendTo('body')
+						.html('<div><p>Hier verlässt du homeschooling4kids.at</p><p>Möchtest du fortfahren?</p></div>')
+						.dialog({
+							show: {effect: "blind", duration: 500},
+							hide: 'fold',
+							modal: true, title: 'Unsere Seite verlassen', zIndex: 10000, autoOpen: true,
+							width: 'auto', resizable: false,
+							buttons: {
+								Ja: function () {
+									window.open(url);
+									$(this).dialog("close");
+								},
+								Nein: function () {
+									$(this).dialog("close");
+								}
+							},
+							close: function (event, ui) {
+								$(this).remove();
+							}
+						});
+				})
+		});
+	</script>
 	<?php
 }
 
@@ -674,46 +676,47 @@ function print_footer_so_22382151_externeLinks() {
  */
 function print_footer_so_22382151_footer() {
 	?>
-    <script type="text/javascript">
-        jQuery(document).ready(function ($) {
-            $('#menu-rechtliches a')
-                .click(function (e) {
-                    e.preventDefault();
-                    var url = this.href;
-                    $('<div></div>').appendTo('body')
-                        .html('<div><p>Möchtest du wirklich den Kinderbereich verlassen?</p></div>')
-                        .dialog({
-                            show: {effect: 'fade', speed: 1000},
-                            hide: 'fold',
-                            modal: true, title: 'Elternbereich', zIndex: 10000, autoOpen: true,
-                            width: 'auto', resizable: false,
-                            buttons: {
-                                Ja: function () {
-                                    window.open(url);
-                                    $(this).dialog("close");
-                                },
-                                Nein: function () {
-                                    $(this).dialog("close");
-                                }
-                            },
-                            close: function (event, ui) {
-                                $(this).remove();
-                            }
-                        });
-                })
-        });
-    </script>
+	<script type="text/javascript">
+		jQuery(document).ready(function ($) {
+			$('#menu-rechtliches a')
+				.click(function (e) {
+					e.preventDefault();
+					var url = this.href;
+					$('<div></div>').appendTo('body')
+						.html('<div><p>Möchtest du wirklich den Kinderbereich verlassen?</p></div>')
+						.dialog({
+							show: {effect: 'fade', speed: 1000},
+							hide: 'fold',
+							modal: true, title: 'Elternbereich', zIndex: 10000, autoOpen: true,
+							width: 'auto', resizable: false,
+							buttons: {
+								Ja: function () {
+									window.open(url);
+									$(this).dialog("close");
+								},
+								Nein: function () {
+									$(this).dialog("close");
+								}
+							},
+							close: function (event, ui) {
+								$(this).remove();
+							}
+						});
+				})
+		});
+	</script>
 	<?php
 }
 
 
 function add_meta_tags() {
-	if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') {
+	if ( isset( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] != 'off' ) {
 		echo '<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">';
 	}
 }
-add_action('wp_head', 'add_meta_tags');
-add_action('admin_head', 'add_meta_tags');
+
+add_action( 'wp_head', 'add_meta_tags' );
+add_action( 'admin_head', 'add_meta_tags' );
 
 
 add_filter( 'get_post_status', function ( $post_status, $post ) {
@@ -724,6 +727,88 @@ add_filter( 'get_post_status', function ( $post_status, $post ) {
 	return $post_status;
 }, 10, 2 );
 
+
+if( function_exists('acf_add_local_field_group') ):
+
+	acf_add_local_field_group(array(
+		'key' => 'group_5e9488fb01214',
+		'title' => 'Titelbild Format',
+		'fields' => array(
+			array(
+				'key' => 'field_5e9489780c494',
+				'label' => 'Zeige Titelbild bei der Anzeige mit voller Breite oder mit voller Höhe',
+				'name' => 'titelbild_volle_breite_oder_volle_hoehe',
+				'type' => 'radio',
+				'instructions' => '',
+				'required' => 1,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'choices' => array(
+					'volle_Breite' => 'volle Breite zentriert',
+					'volle_BreiteTop' => 'volle Breite bündig oben',
+					'volle_BreiteBottom' => 'volle Breite bündig unten',
+					'volle_Hoehe' => 'volle Höhe',
+				),
+				'allow_null' => 0,
+				'other_choice' => 0,
+				'default_value' => 'volle_Breite',
+				'layout' => 'vertical',
+				'return_format' => 'value',
+				'save_other_choice' => 0,
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'post',
+				),
+			),
+			array(
+				array(
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'page',
+				),
+			),
+			array(
+				array(
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'fachbeitrag',
+				),
+			),
+			array(
+				array(
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'gutzuwissenbeitrag',
+				),
+			),
+			array(
+				array(
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'spassbeitrag',
+				),
+			),
+		),
+		'menu_order' => 0,
+		'position' => 'side',
+		'style' => 'default',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => '',
+		'active' => true,
+		'description' => '',
+	));
+
+endif;
 
 
 require get_template_directory() . '/functionsParent.php';
