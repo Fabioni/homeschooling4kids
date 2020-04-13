@@ -23,84 +23,84 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 @import url("styleParent.css");
 
 .otfm-sp__XXXXXX.js-otfm-sp__opened {
-    background-color: beige;
+  background-color: beige;
 }
 
 .otfm-sp__XXXXXX.js-otfm-sp__closed {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 .otfm-sp__XXXXXX .otfm-sp__title {
-    background-color: transparent !important;
+  background-color: transparent !important;
 }
 
 .otfm-sp__XXXXXX.wp-block-otfm-box-spoiler-start {
-    border: none;
+  border: none;
 }
 
 #team .section-header, #our-courses .section-header {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 #team .section-content, #our-courses .section-content {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 #team .section-title, #our-courses .section-title {
-    color: #033b62;
+  color: #033b62;
 }
 
 #about-us .featured-image {
-    background-color: #888;
+  background-color: #888;
 }
 
 #today {
-    border: #b43123 2px solid;
+  border: #b43123 2px solid;
 }
 
 #wp-calendar a {
-    color: #0056b3;
+  color: #0056b3;
 }
 
 .entry-content {
-    /*fabian*/
-    background: #efe9be;
-    padding: 20px;
-    border-radius: 25px;
-    box-shadow: 2px 2px 4px 2px grey;
+  /*fabian*/
+  background: #efe9be;
+  padding: 20px;
+  border-radius: 25px;
+  box-shadow: 2px 2px 4px 2px grey;
 }
 
 #colophon {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 .fußzeilenmenu li {
-    display: inline-block;
-    margin: 0px 10px;
+  display: inline-block;
+  margin: 0px 10px;
 }
 
 #page-site-header {
-    /*background-size: contain;*/
-    background-color: #ddd0;
-    background-repeat: no-repeat;
+  /*background-size: contain;*/
+  background-color: #ddd0;
+  background-repeat: no-repeat;
 }
 
 #page-site-header .page-header {
-    box-shadow: 0px 0px 8px 2px #0008;
-    background: #0008;
+  box-shadow: 0px 0px 8px 2px #0008;
+  background: #0008;
 }
 
 #page-site-header .overlay {
-    /* opacity: 0.4; */
+  /* opacity: 0.4; */
 }
 
 .entry-container .entry-content {
-    background: none;
-    box-shadow: none;
+  background: none;
+  box-shadow: none;
 }
 
 #page-site-header .page-title {
-    font-size: 50px;
+  font-size: 50px;
 }
 
 @media screen and (max-width: 767px) {
@@ -110,113 +110,112 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 }
 
 #page-site-header .page-subtitle, #page-site-header .archive-description {
-    color: white;
+  color: white;
 }
 
 #masthead .wrapper {
-    min-width: 60%;
-    max-width: 90%;
+  min-width: 60%;
+  max-width: 90%;
 }
 
 
 body:not(.logged-in) #menu-item-608 {
-    display: none;
+  display: none;
 }
 
 #primary #main article .aligncenter.wp-block-embed .wp-block-embed__wrapper {
-    /*width: fit-content;
-    box-shadow: 3px -3px 10px 3px #0008;
-    */
-    margin: auto;
-    margin-top: 1.5em;
+  /*width: fit-content;
+  box-shadow: 3px -3px 10px 3px #0008;
+  */
+  margin: auto;
+  margin-top: 1.5em;
 }
 
-.aligncenter *{
-    text-align: center; /* test */
+.aligncenter * {
+  text-align: center; /* test */
 }
 
-.alignwide.wp-embed-aspect-16-9 .wp-block-embed__wrapper{
-    width: 100%;
-    padding-bottom: 56.25%;
-    position: relative;
-    height: 0;
+.alignwide.wp-embed-aspect-16-9 .wp-block-embed__wrapper {
+  width: 100%;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
 }
 
-.alignwide .wp-block-embed__wrapper *{
-    position: absolute;
-    width: 100%;
-    height: 100%;
+.alignwide .wp-block-embed__wrapper * {
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 
-.otfm-sp__wrapper{
-    clear: both;
+.otfm-sp__wrapper {
+  clear: both;
 }
 
 iframe {
-    box-shadow: 3px -3px 10px 3px #0008;
-    display: block;
-    margin: auto;
+  box-shadow: 3px -3px 10px 3px #0008;
+  display: block;
+  margin: auto;
 }
 
-.wp-block-embed__wrapper{
-    margin-top: 1.5em;
+.wp-block-embed__wrapper {
+  margin-top: 1.5em;
 }
 
 
-
-.entry-content ul li, .entry-content ol li{
-    margin-bottom: 0.5em;
+.entry-content ul li, .entry-content ol li {
+  margin-bottom: 0.5em;
 }
 
 #main > .spasskategorie-wir-halten-uns-fit > .entry-content::before {
-    background: url("/wp-content/themes/creativ-preschool-child/sport-5.svg") no-repeat;
-    content: "";
-    display: block;
-    width: 120px;
-    height: 120px;
-    float: right;
-    margin: 5px;
-    background-size: 120px;
+  background: url("/wp-content/themes/creativ-preschool-child/sport-5.svg") no-repeat;
+  content: "";
+  display: block;
+  width: 120px;
+  height: 120px;
+  float: right;
+  margin: 5px;
+  background-size: 120px;
 }
 
 #main > .spasskategorie-wir-halten-uns-fit > .entry-content *, #main > .spasskategorie-spielideen-fuer-zuhause > .entry-content *, #main > .spasskategorie-lass-uns-singen-und-tanzen > .entry-content *, #main > .spasskategorie-witz-der-woche > .entry-content *, #main > .spasskategorie-rezept-fuer-gross-und-klein > .entry-content *, #main > .spasskategorie-veranstaltungsideen > .entry-content * {
-    clear: none;
+  clear: none;
 }
 
 #main > .spasskategorie-spielideen-fuer-zuhause > .entry-content::before {
-    background: url("/wp-content/themes/creativ-preschool-child/dices.svg") no-repeat;
+  background: url("/wp-content/themes/creativ-preschool-child/dices.svg") no-repeat;
 }
 
 #main > .spasskategorie-lass-uns-singen-und-tanzen > .entry-content::before {
-    background: url("/wp-content/themes/creativ-preschool-child/chicken-icon-32092.png") no-repeat;
+  background: url("/wp-content/themes/creativ-preschool-child/chicken-icon-32092.png") no-repeat;
 }
 
 #main > .spasskategorie-witz-der-woche > .entry-content::before {
-    background: url("/wp-content/themes/creativ-preschool-child/turkey-with-black-hat.svg") no-repeat;
+  background: url("/wp-content/themes/creativ-preschool-child/turkey-with-black-hat.svg") no-repeat;
 }
 
 #main > .spasskategorie-rezept-fuer-gross-und-klein > .entry-content::before {
-    background: url("/wp-content/themes/creativ-preschool-child/rolling-pin-157071_640.png") no-repeat;
+  background: url("/wp-content/themes/creativ-preschool-child/rolling-pin-157071_640.png") no-repeat;
 }
 
 #main > .spasskategorie-veranstaltungsideen > .entry-content::before {
-    /*background: url("/wp-content/themes/creativ-preschool-child/turkey-with-black-hat.svg") no-repeat;*/
+  /*background: url("/wp-content/themes/creativ-preschool-child/turkey-with-black-hat.svg") no-repeat;*/
 }
 
 #main > .spasskategorie-witz-der-woche > .entry-content::before, #main > .spasskategorie-lass-uns-singen-und-tanzen > .entry-content::before, #main > .spasskategorie-spielideen-fuer-zuhause > .entry-content::before, #main > .spasskategorie-rezept-fuer-gross-und-klein > .entry-content::before, #main > .spasskategorie-veranstaltungsideen > .entry-content::before {
-    content: "";
-    display: block;
-    width: 120px;
-    height: 120px;
-    float: right;
-    margin: 5px;
-    background-size: 120px;
-    position: relative;
-    z-index: 1;
+  content: "";
+  display: block;
+  width: 120px;
+  height: 120px;
+  float: right;
+  margin: 5px;
+  background-size: 120px;
+  position: relative;
+  z-index: 1;
 }
 
 .post-item .entry-meta span.cat-links {
-    margin-right: 5px;
+  margin-right: 5px;
 }
 
 .spasskategorie-spielideen-fuer-zuhause {
@@ -245,152 +244,163 @@ iframe {
 
 
 .archivUnterteiltitel-spielideen-fuer-zuhause:before {
-    background: url("/wp-content/themes/creativ-preschool-child/dices.svg") no-repeat;
+  background: url("/wp-content/themes/creativ-preschool-child/dices.svg") no-repeat;
 }
 
 .archivUnterteiltitel-rezept-fuer-gross-und-klein:before {
-    background: url("/wp-content/themes/creativ-preschool-child/rolling-pin-157071_640.png") no-repeat;
+  background: url("/wp-content/themes/creativ-preschool-child/rolling-pin-157071_640.png") no-repeat;
 }
 
 .archivUnterteiltitel-lass-uns-singen-und-tanzen:before {
-    background: url("/wp-content/themes/creativ-preschool-child/chicken-icon-32092.png") no-repeat;
+  background: url("/wp-content/themes/creativ-preschool-child/chicken-icon-32092.png") no-repeat;
 }
 
 .archivUnterteiltitel-wir-halten-uns-fit:before {
-    background: url("/wp-content/themes/creativ-preschool-child/sport-5.svg") no-repeat;
+  background: url("/wp-content/themes/creativ-preschool-child/sport-5.svg") no-repeat;
 }
 
 .archivUnterteiltitel-witz-der-woche:before {
-    background: url("/wp-content/themes/creativ-preschool-child/turkey-with-black-hat.svg") no-repeat;
+  background: url("/wp-content/themes/creativ-preschool-child/turkey-with-black-hat.svg") no-repeat;
 }
 
 .archivUnterteiltitel-veranstaltungsideen:before {
 
 }
 
-.archivUnterteiltitel{
-    position: relative;
+.archivUnterteiltitel {
+  position: relative;
 }
 
-.archivUnterteiltitel:before{
-    content: "";
-    display: block;
-    width: 120px;
-    height: 120px;
-    margin: 5px;
-    background-size: 120px;
-    position: absolute;
-    left: -160px;
-    top: 20px;
-    z-index: 1;
+.archivUnterteiltitel:before {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 120px;
+  margin: 5px;
+  background-size: 120px;
+  position: absolute;
+  left: -160px;
+  top: 20px;
+  z-index: 1;
 }
 
-
-@media screen and (max-width: 1300px) {
-    .archivUnterteiltitel:before {
-        display: none !important;
-    }
+.post-type-archive-spassbeitrag .wrapper {
+  padding-left: 120px;
 }
 
 @media screen and (max-width: 1450px) {
-    .archivUnterteiltitel:before {
-        left: -120px;
-    }
+  .archivUnterteiltitel:before {
+    left: -120px;
+  }
+
+  .post-type-archive-spassbeitrag .wrapper {
+    padding-left: 100px;
+  }
 }
 
-.heutigerBeitrag{
-    border: solid 5px darkred;
+@media screen and (max-width: 1300px) {
+  .archivUnterteiltitel:before {
+    display: none !important;
+  }
+
+  .post-type-archive-spassbeitrag .wrapper {
+    padding-left: 0;
+  }
 }
 
-.archive #main.selected_leistungsstufe-3-klasse-4-klasse .leistungsstufe-1-klasse-2-klasse:not(.leistungsstufe-3-klasse-4-klasse){
-    opacity: 0.3;
+.heutigerBeitrag {
+  /* border: solid 5px darkred; */
+  box-shadow: 0px 0px 0px 5px darkred;
 }
 
-.archive #main.selected_leistungsstufe-1-klasse-2-klasse .leistungsstufe-3-klasse-4-klasse:not(.leistungsstufe-1-klasse-2-klasse){
-    opacity: 0.3;
+.archive #main.selected_leistungsstufe-3-klasse-4-klasse .leistungsstufe-1-klasse-2-klasse:not(.leistungsstufe-3-klasse-4-klasse) {
+  opacity: 0.3;
 }
 
+.archive #main.selected_leistungsstufe-1-klasse-2-klasse .leistungsstufe-3-klasse-4-klasse:not(.leistungsstufe-1-klasse-2-klasse) {
+  opacity: 0.3;
+}
 
 
 .spasskategorie-witz-der-woche blockquote:after, .schönerquote:after {
-    content: "";
-    position: absolute;
-    border: 2px solid #e74848;
-    border-radius: 0 50px 0 0;
-    width: 60px;
-    height: 60px;
-    bottom: -60px;
-    left: 50px;
-    border-bottom: none;
-    border-left: none;
-    z-index: 3;
+  content: "";
+  position: absolute;
+  border: 2px solid #e74848;
+  border-radius: 0 50px 0 0;
+  width: 60px;
+  height: 60px;
+  bottom: -60px;
+  left: 50px;
+  border-bottom: none;
+  border-left: none;
+  z-index: 3;
 }
 
 .spasskategorie-witz-der-woche blockquote:before, .schönerquote:before {
-    content: "";
-    position: absolute;
-    width: 80px;
-    border: 6px solid #eee;
-    bottom: -2px;
-    left: 50px;
-    z-index: 2;
+  content: "";
+  position: absolute;
+  width: 80px;
+  border: 6px solid #eee;
+  bottom: -2px;
+  left: 50px;
+  z-index: 2;
 }
 
 .spasskategorie-witz-der-woche blockquote, .schönerquote {
-    font-family: 'Abril Fatface', cursive;
-    font-size: 1.1rem;
-    border: solid 2px red !important;
-    border-radius: 20px !important;
+  font-family: 'Abril Fatface', cursive;
+  font-size: 1.1rem;
+  border: solid 2px red !important;
+  border-radius: 20px !important;
 }
 
-.status-future .entry-meta .date{
-    background-color: #0009;
-    border: 2px red dashed;
-    border-radius: 5px;
-    padding: 2px 10px;
-    pointer-events: none;
-    cursor: default;
+.status-future .entry-meta .date {
+  background-color: #0009;
+  border: 2px red dashed;
+  border-radius: 5px;
+  padding: 2px 10px;
+  pointer-events: none;
+  cursor: default;
 }
 
-.status-future .entry-meta .date a, .status-future .entry-meta .date a:before{
-    color: white;
+.status-future .entry-meta .date a, .status-future .entry-meta .date a:before {
+  color: white;
 }
 
-.post-item:hover .fabian-Pfeil:after, .fabian-Pfeil:hover:after{
-    content: "\f0a6";
-    transform: rotate(140deg);
-    position: absolute;
-    top: -1em;
-    left: -1em;
-    z-index: 2;
-    font-family: 'Font Awesome 5 Free';
-    color: gray;
-    font-size: 1.2em;
+.post-item:hover .fabian-Pfeil:after, .fabian-Pfeil:hover:after {
+  content: "\f0a6";
+  transform: rotate(140deg);
+  position: absolute;
+  top: -1em;
+  left: -1em;
+  z-index: 2;
+  font-family: 'Font Awesome 5 Free';
+  color: gray;
+  font-size: 1.2em;
 }
 
-.fabian-Pfeil{
-    position: relative;
+.fabian-Pfeil {
+  position: relative;
 }
 
 
 blockquote cite {
-    font-style: italic;
+  font-style: italic;
 }
 
-.wp-block-embed.alignright, .wp-block-embed.alignleft, .alignleft, .alignright{
-    max-width: 60%;
+.wp-block-embed.alignright, .wp-block-embed.alignleft, .alignleft, .alignright {
+  max-width: 60%;
 }
 
 .wpcf7-form-control-wrap * {
-    max-width: 100%;
+  max-width: 100%;
 }
 
-.cat-links.leistungsstufe:before{
-    content: "\f19d";
+.cat-links.leistungsstufe:before {
+  content: "\f19d";
 }
 
-.cat-links.fach:before{
-    content: "\f783";
+.cat-links.fach:before {
+  content: "\f783";
 }
 
 .su-tooltip:after {
@@ -403,25 +413,25 @@ blockquote cite {
   color: cornflowerblue;
 }
 
-.su-tooltip:hover{
+.su-tooltip:hover {
   text-decoration: underline;
   cursor: help;
 }
 
 
-#heuteButtonMobilDesktopContainer.heuteBeitragNein{
+#heuteButtonMobilDesktopContainer.heuteBeitragNein {
   /*display: none;*/
 }
 
-#heuteButtonMobilDesktopContainer.heuteBeitragJa{
+#heuteButtonMobilDesktopContainer.heuteBeitragJa {
 
 }
 
-#heuteButtonMobilDesktopContainer{
+#heuteButtonMobilDesktopContainer {
   margin-bottom: 50px;
 }
 
-#heuteButtonMobilDesktopContainer *{
+#heuteButtonMobilDesktopContainer * {
   font-size: 110%;
 }
 
@@ -436,4 +446,118 @@ blockquote cite {
   z-index: 1;
   background: url(/wp-content/uploads/2020/03/arrow-35173_1280-e1585600397946-714x1024.png) no-repeat;
   background-size: 80px;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+@media screen and (min-width: 783px) {
+  .horizontal-scroll-item {
+    width: 25em;
+    width: min(25em, 50%);
+    flex-grow: 1;
+  }
+
+  .smallarticles .horizontal-scroll-item {
+    width: 20em;
+    width: min(20em, 50%);
+    flex-grow: 1;
+  }
+
+  .bigarticles .horizontal-scroll-item {
+    width: 25em;
+    width: min(25em, 50%);
+    flex-grow: 1;
+  }
+
+  .horizontal-scroll.bigarticles {
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .horizontal-scroll-item {
+    margin-bottom: 30px;
+  }
+
+  .horizontal-scroll {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .horizontal-scroll-item article, .horizontal-scroll-item .post-item {
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 782px) {
+  .horizontal-scroll-wrapper {
+    scroll-snap-type: x mandatory;
+    overflow-x: auto;
+    background: #0001;
+    border-radius: 15px;
+    padding-top: 5px;
+  }
+
+  .horizontal-scroll {
+    display: inline-flex;
+    align-items: flex-start;
+  }
+
+  .horizontal-scroll-item {
+    width: 25em;
+    scroll-snap-align: center;max-width: 90vw;
+  }
+
+  .horizontal-scroll-item:empty {
+    display: none;
+  }
+}
+
+.horizontal-scroll-item:empty {
+  margin: 0;
+  height: 0;
+  border: 0;
+  background: transparent;
+}
+
+.archive .wrapper {
+  /* max-width: none; TODO noch testen */
+}
+
+#page-site-header{
+  padding: 0 !important;
+}
+
+#page-site-header-image:not(.volle_Breite):not(.volle_Hoehe){
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+}
+
+#page-site-header-image.volle_Breite{
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  object-position: center;
+}
+
+#page-site-header-image.volle_BreiteTop{
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  object-position: top;
+}
+
+#page-site-header-image.volle_BreiteBottom{
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  object-position: bottom;
+}
+
+#page-site-header-image.volle_Hoehe{
+  height: 500px;
 }

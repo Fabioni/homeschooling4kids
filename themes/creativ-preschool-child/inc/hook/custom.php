@@ -27,7 +27,7 @@ function creativ_preschool_site_branding() { ?>
                     <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">  <?php bloginfo( 'name' ); ?></a>
                 </h1>
 
-                <?php 
+                <?php
                     $description = get_bloginfo( 'description', 'display' );
                     if ( $description || is_customize_preview() ) : ?>
                     <p class="site-description"><?php echo esc_html($description);?></p>
@@ -59,7 +59,7 @@ add_action( 'creativ_preschool_action_header', 'creativ_preschool_site_branding'
 if ( ! function_exists( 'creativ_preschool_footer_top_section' ) ) :
 
   /**
-   * Top  Footer 
+   * Top  Footer
    *
    * @since 1.0.0
    */
@@ -84,7 +84,7 @@ if ( ! function_exists( 'creativ_preschool_footer_top_section' ) ) :
               }
             ?>
             </div>
-          
+
       </div> <!-- widget area starting from here -->
     <?php
  }
@@ -100,10 +100,10 @@ if ( ! function_exists( 'creativ_preschool_footer_section' ) ) :
    * @since 1.0.0
    */
   function creativ_preschool_footer_section() { ?>
-    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/top-cloud-bg.png' ) ?>">       
+    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/top-cloud-bg.png' ) ?>">
     <div class="site-info">
-        <?php 
-            $copyright_footer = creativ_preschool_get_option('copyright_text'); 
+        <?php
+            $copyright_footer = creativ_preschool_get_option('copyright_text');
             if ( ! empty( $copyright_footer ) ) {
                 $copyright_footer = wp_kses_data( $copyright_footer );
             }
@@ -112,9 +112,9 @@ if ( ! function_exists( 'creativ_preschool_footer_section' ) ) :
         ?>
         <div class="wrapper">
             <span class="copy-right"><?php echo esc_html($copyright_footer);?><?php echo $powered_by_text;?></span>
-        </div><!-- .wrapper --> 
+        </div><!-- .wrapper -->
     </div> <!-- .site-info -->
-    
+
   <?php }
 
 endif;
@@ -208,7 +208,7 @@ if( ! function_exists( 'creativ_preschool_banner_header' ) ) :
     /**
      * Page Header
     */
-    function creativ_preschool_banner_header() { 
+    function creativ_preschool_banner_header() {
         if ( is_front_page() && ! is_home() )
             return;
         $header_image = get_header_image();
@@ -234,15 +234,15 @@ if( ! function_exists( 'creativ_preschool_banner_title' ) ) :
 /**
  * Page Header
 */
-function creativ_preschool_banner_title(){ 
-    if ( ( is_front_page() && is_home() ) || is_home() ){ 
+function creativ_preschool_banner_title(){
+    if ( ( is_front_page() && is_home() ) || is_home() ){
         $your_latest_posts_title = creativ_preschool_get_option( 'your_latest_posts_title' );?>
         <h2 class="page-title"><?php echo esc_html($your_latest_posts_title); ?></h2><?php
     }
 
     if( is_singular() ) {
         the_title( '<h2 class="page-title">', '</h2>' );
-    }       
+    }
 
     if( is_archive() ){
         the_archive_description( '<div class="archive-description">', '</div>' );
@@ -252,7 +252,7 @@ function creativ_preschool_banner_title(){
     if( is_search() ){ ?>
         <h2 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'creativ-preschool' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
     <?php }
-    
+
     if( is_404() ) {
         echo '<h2 class="page-title">' . esc_html__( 'Error 404', 'creativ-preschool' ) . '</h2>';
     }
@@ -277,6 +277,6 @@ if ( ! function_exists( 'creativ_preschool_posts_tags' ) ) :
                         }
                     } ?>
                 </div><!-- .tags-links -->
-        <?php } 
+        <?php }
     }
 endif;

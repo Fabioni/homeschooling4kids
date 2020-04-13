@@ -87,11 +87,34 @@ get_header(); ?>
 
 
 					$terms = get_terms( array(
-						'taxonomy' => 'fach',
+						'taxonomy'   => 'fach',
 						'hide_empty' => true,
-						'orderby' => 'id'
+						'orderby'    => 'id'
 					) );
 
+					?>
+					<style>
+						.fächerlinks li{
+							display: inline-block;
+							margin: 0px 10px;
+						}
+						.fächerlinks li:before{
+							content: "\f0da";
+							font-family: 'Font Awesome 5 Free';
+							font-weight: 900;
+							margin-right: 10px;
+						}
+					</style>
+					<ul class="fächerlinks">
+						<?php
+						foreach ( $terms as $fa ) {
+							?>
+							<li><a href="#fach-<?= $fa->slug ?>"><?= $fa->name ?></a></li><?php
+
+						}
+						?>
+					</ul>
+					<?php
 					$irgendwasangeziegt = false;
 					foreach ( $terms as $fa ) {
 						global $wp_query;
@@ -101,7 +124,7 @@ get_header(); ?>
 						if ( have_posts() ) {
 							?>
 							<div class="blog-posts-wrapper">
-							<h1 class="archivUnterteiltitel"><a
+							<h1 class="archivUnterteiltitel" id="fach-<?= $fa->slug ?>"><a
 									href="<?= get_term_link( $fa->slug, "fach" ) ?>"><?= $fa->name ?></a></h1>
 							<div class="section-content clear col-3 archivunterteil"><?php
 
