@@ -24,6 +24,18 @@ get_header(); ?>
 						'hide_empty' => false,
 					) );
 
+					$termssortiert = array();
+
+					usort($terms, function ($a, $b){
+						$sortierung = array("spielideen-fuer-zuhause", "lass-uns-singen-und-tanzen", "wir-halten-uns-fit", "rezept-fuer-gross-und-klein", "denksport", "witz-der-woche");
+						$i1 = array_search($a->slug, $sortierung);
+						$i2 = array_search($b->slug, $sortierung);
+
+						if ($i1 === false) return true;
+						if ($i2 === false) return false;
+						return ($i1 > $i2);
+					});
+
 					$irgendwasangeziegt = false;
 					foreach ( $terms as $sk ) {
 						global $wp_query;
