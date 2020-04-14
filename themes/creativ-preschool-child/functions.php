@@ -819,7 +819,7 @@ function should_show_donate(){
 
 	if (! isset($_COOKIE["cookie_notice_accepted"])) return false;
 
-	return rand(0, 2) > 0;
+	return rand(0, 3) < 0;
 }
 
 function addDonateButton() {
