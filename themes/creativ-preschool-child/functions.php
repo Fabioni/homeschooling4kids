@@ -162,7 +162,8 @@ if ( ! function_exists( 'creativ_preschool_banner_header' ) ) :
 		?>
 
 		<div id="page-site-header">
-			<img class="<?= get_field( "titelbild_volle_breite_oder_volle_hoehe_oder_contain" ) ?>" id="page-site-header-image"
+			<img class="<?= get_field( "titelbild_volle_breite_oder_volle_hoehe_oder_contain" ) ?>"
+			     id="page-site-header-image"
 			     src="<?php echo esc_url( $header_image ); ?>">
 			<div class="overlay"></div>
 			<header class='page-header'>
@@ -641,6 +642,7 @@ function print_footer_so_22382151_externeLinks() {
 		jQuery(document).ready(function ($) {
 			$('a[href^="http://"],a[href^="https://"]')
 				.not('[href*="<?php echo $current_domain; ?>"]')
+				.not('.noLeavingWarning')
 				.click(function (e) {
 					e.preventDefault();
 					var url = this.href;
@@ -728,88 +730,174 @@ add_filter( 'get_post_status', function ( $post_status, $post ) {
 }, 10, 2 );
 
 
-if( function_exists('acf_add_local_field_group') ):
+if ( function_exists( 'acf_add_local_field_group' ) ):
 
-	acf_add_local_field_group(array(
-		'key' => 'group_5e9488fb01214',
-		'title' => 'Titelbild Format',
-		'fields' => array(
+	acf_add_local_field_group( array(
+		'key'                   => 'group_5e9488fb01214',
+		'title'                 => 'Titelbild Format',
+		'fields'                => array(
 			array(
-				'key' => 'field_5e9489780c494',
-				'label' => 'Zeige Titelbild bei der Anzeige mit voller Breite oder mit voller Höhe oder vollständig',
-				'name' => 'titelbild_volle_breite_oder_volle_hoehe_oder_contain',
-				'type' => 'radio',
-				'instructions' => '',
-				'required' => 1,
+				'key'               => 'field_5e9489780c494',
+				'label'             => 'Zeige Titelbild bei der Anzeige mit voller Breite oder mit voller Höhe oder vollständig',
+				'name'              => 'titelbild_volle_breite_oder_volle_hoehe_oder_contain',
+				'type'              => 'radio',
+				'instructions'      => '',
+				'required'          => 1,
 				'conditional_logic' => 0,
-				'wrapper' => array(
+				'wrapper'           => array(
 					'width' => '',
 					'class' => '',
-					'id' => '',
+					'id'    => '',
 				),
-				'choices' => array(
-					'volle_Breite' => 'volle Breite zentriert',
-					'volle_BreiteTop' => 'volle Breite bündig oben',
+				'choices'           => array(
+					'volle_Breite'       => 'volle Breite zentriert',
+					'volle_BreiteTop'    => 'volle Breite bündig oben',
 					'volle_BreiteBottom' => 'volle Breite bündig unten',
-					'volle_Hoehe' => 'volle Höhe',
-					'contain' => 'vollständig'
+					'volle_Hoehe'        => 'volle Höhe',
+					'contain'            => 'vollständig'
 				),
-				'allow_null' => 0,
-				'other_choice' => 0,
-				'default_value' => 'volle_Breite',
-				'layout' => 'vertical',
-				'return_format' => 'value',
+				'allow_null'        => 0,
+				'other_choice'      => 0,
+				'default_value'     => 'volle_Breite',
+				'layout'            => 'vertical',
+				'return_format'     => 'value',
 				'save_other_choice' => 0,
 			),
 		),
-		'location' => array(
+		'location'              => array(
 			array(
 				array(
-					'param' => 'post_type',
+					'param'    => 'post_type',
 					'operator' => '==',
-					'value' => 'post',
+					'value'    => 'post',
 				),
 			),
 			array(
 				array(
-					'param' => 'post_type',
+					'param'    => 'post_type',
 					'operator' => '==',
-					'value' => 'page',
+					'value'    => 'page',
 				),
 			),
 			array(
 				array(
-					'param' => 'post_type',
+					'param'    => 'post_type',
 					'operator' => '==',
-					'value' => 'fachbeitrag',
+					'value'    => 'fachbeitrag',
 				),
 			),
 			array(
 				array(
-					'param' => 'post_type',
+					'param'    => 'post_type',
 					'operator' => '==',
-					'value' => 'gutzuwissenbeitrag',
+					'value'    => 'gutzuwissenbeitrag',
 				),
 			),
 			array(
 				array(
-					'param' => 'post_type',
+					'param'    => 'post_type',
 					'operator' => '==',
-					'value' => 'spassbeitrag',
+					'value'    => 'spassbeitrag',
 				),
 			),
 		),
-		'menu_order' => 0,
-		'position' => 'side',
-		'style' => 'default',
-		'label_placement' => 'top',
+		'menu_order'            => 0,
+		'position'              => 'side',
+		'style'                 => 'default',
+		'label_placement'       => 'top',
 		'instruction_placement' => 'label',
-		'hide_on_screen' => '',
-		'active' => true,
-		'description' => '',
-	));
+		'hide_on_screen'        => '',
+		'active'                => true,
+		'description'           => '',
+	) );
 
 endif;
+
+
+function addDonateButton() {
+	?>
+	<script type="text/javascript" defer="" src="https://donorbox.org/install-popup-button.js"></script>
+	<a class="dbox-donation-button noLeavingWarning" href="https://donorbox.org/homeschooling4kids-unterstutzung?default_interval=o">
+	<div id="donatecup" onclick="jQuery(this).addClass('loader')"
+	     style="display: flex; align-items: center; justify-content: center; width: 64px; height: 64px; background: rgb(255, 129, 63); color: white; border-radius: 32px; position: fixed; left: 18px; bottom: 18px; box-shadow: rgba(0, 0, 0, 0.4) 0px 4px 8px; z-index: 999; cursor: pointer; font-weight: 600; transition: all 0.2s ease 0s;">
+		<img id="donateMitDampf" src="wp-content/themes/creativ-preschool-child/Coffee_cup_icon.svg" alt="Buy Me A Coffee"
+		     style="height: 40px; width: 40px; margin: 0; padding: 0;"><img id="donateOhneDampf" src="wp-content/themes/creativ-preschool-child/Coffee_cup_icon_OhneDampf.svg" alt="Buy Me A Coffee"
+		                                                                    style="height: 40px; width: 40px; margin: 0; padding: 0;"></div>
+	<div id="donateinfo"
+		style="position: fixed; display: block; opacity: 1; left: 90px; bottom: 16px; background: rgb(255, 255, 255); z-index: 999; transition: all 0.4s ease 0s; box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 8px; padding: 16px; border-radius: 4px; font-size: 14px; color: rgb(0, 0, 0); width: auto; max-width: 260px; line-height: 1.5; font-family: sans-serif;">
+		Schön, dass du da bist!<br>Möchtest du uns was Gutes tun?
+	</div>
+	</a>
+	<style>
+
+		.loader {
+			animation-name: spin;
+			animation-timing-function: linear;
+			animation-duration: 3s;
+			animation-iteration-count: infinite;
+		}
+
+		@keyframes spin {
+			0% { transform: rotate(0deg); }
+			100% { transform: rotate(360deg); }
+		}
+
+		#donatecup:hover{
+			border: 2px solid;
+			border-color: gray;
+		}
+
+		#donatecup{
+			border: 2px solid;
+			border-color: transparent;
+			-webkit-transition: border-color 1s ease;
+			-moz-transition: border-color 1s ease;
+			-o-transition: border-color 1s ease;
+			-ms-transition: border-color 1s ease;
+			transition: border-color 1s ease;
+		}
+
+		#donatecup:hover #donateMitDampf{
+			display: initial;
+		}
+		#donatecup:hover #donateOhneDampf{
+			display: none;
+		}
+
+		#donateOhneDampf{
+			display: initial;
+		}
+
+		#donateMitDampf{
+			display: none;
+		}
+	</style>
+	<script>
+		jQuery(function(){
+			jQuery("#donateinfo").delay(5000).fadeOut(1000);
+			jQuery("#donatecup").click(function(){
+				jQuery(this).addClass('loader')
+				setTimeout(function(){
+					jQuery("iframe").on("load", function() {
+						jQuery("#donatecup").removeClass('loader')
+					})
+				}, 1)
+			})
+			jQuery(".dbox-donation-button").click(function () {
+				jQuery("#donatecup").addClass('loader')
+				setTimeout(function(){
+					jQuery("iframe").on("load", function() {
+						jQuery("#donatecup").removeClass('loader')
+					})
+				}, 1)
+			})
+		})
+	</script>
+	<?php
+}
+
+
+add_action( 'creativ_preschool_action_before_footer', 'addDonateButton' );
 
 
 require get_template_directory() . '/functionsParent.php';
