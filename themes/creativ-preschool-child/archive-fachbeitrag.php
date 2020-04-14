@@ -92,6 +92,26 @@ get_header(); ?>
 						'orderby'    => 'id'
 					) );
 
+					function searchwitharraywithpatterns($ar, $subj){
+						$i = 0;
+						foreach ($ar as $tag){
+							if (preg_match("/" . $tag . "/", $subj)) return $i;
+							$i ++;
+						}
+						return null;
+					}
+
+					usort($terms, function ($a, $b){
+						$sortierung = array("montag", "dienstag", "donnerstag", "freitag", "mittwoch");
+
+						$i1 = searchwitharraywithpatterns($sortierung, $a->slug);
+						$i2 = searchwitharraywithpatterns($sortierung, $b->slug);
+
+						if ($i1 === null) return true;
+						if ($i2 === null) return false;
+						return ($i1 > $i2);
+					});
+
 					?>
 					<style>
 						.fächerlinks li{

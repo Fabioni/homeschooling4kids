@@ -24,8 +24,6 @@ get_header(); ?>
 						'hide_empty' => false,
 					) );
 
-					$termssortiert = array();
-
 					usort($terms, function ($a, $b){
 						$sortierung = array("spielideen-fuer-zuhause", "lass-uns-singen-und-tanzen", "wir-halten-uns-fit", "rezept-fuer-gross-und-klein", "denksport", "witz-der-woche");
 						$i1 = array_search($a->slug, $sortierung);
