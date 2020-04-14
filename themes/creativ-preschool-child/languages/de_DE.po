@@ -213,8 +213,7 @@ msgstr ""
 #: inc/template-tags.php:57
 #, php-format
 msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
-msgstr ""
-"Hinterlasse einen Kommentar<span class=\"screen-reader-text\"> zu %s</span>"
+msgstr "Hinterlasse einen Kommentar<span class=\"screen-reader-text\"> zu %s</span>"
 
 #: inc/customizer/default.php:31
 #: inc/customizer/home-sections/our-services.php:13
