@@ -814,8 +814,23 @@ if ( function_exists( 'acf_add_local_field_group' ) ):
 endif;
 
 
+function should_show_donate(){
+	if (! (is_front_page() or is_page("ueber-uns") or is_page("impressum") or is_page("datenschutzerklaerung") or is_page("haftungsausschluss") or is_page("fuer-eltern"))) return false;
+
+	if (! isset($_COOKIE["cookie_notice_accepted"])) return false;
+
+	return rand(0, 2) > 0;
+}
+
 function addDonateButton() {
-	if (! is_front_page()) return;
+	if (! should_show_donate()) return;
+
+	$texte = [
+		"Schön, dass du da bist!<br>Möchtest du uns was Gutes tun?",
+		"Hallo, vielen Dank für deinen Besuch,<br>möchtest du uns unterstützen?",
+		"Gefällt dir unsere Website,<br>wir wären um eine Spende dankbar."
+	]
+
 	?>
 	<script type="text/javascript" defer="" src="https://donorbox.org/install-popup-button.js"></script>
 	<a class="dbox-donation-button noLeavingWarning" href="https://donorbox.org/homeschooling4kids-unterstutzung?default_interval=o">
@@ -825,8 +840,8 @@ function addDonateButton() {
 		     style="height: 40px; width: 40px; margin: 0; padding: 0;"><img id="donateOhneDampf" src="wp-content/themes/creativ-preschool-child/Coffee_cup_icon_OhneDampf.svg" alt="Buy Me A Coffee"
 		                                                                    style="height: 40px; width: 40px; margin: 0; padding: 0;"></div>
 	<div id="donateinfo"
-		style="position: fixed; display: block; opacity: 1; left: 90px; bottom: 16px; background: rgb(255, 255, 255); z-index: 999; transition: all 0.4s ease 0s; box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 8px; padding: 16px; border-radius: 4px; font-size: 14px; color: rgb(0, 0, 0); width: auto; max-width: 260px; line-height: 1.5; font-family: sans-serif;">
-		Schön, dass du da bist!<br>Möchtest du uns was Gutes tun?
+		style="position: fixed; display: block; opacity: 1; left: 90px; bottom: 16px; background: rgb(255, 255, 255); z-index: 999; transition: all 0.4s ease 0s; box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 8px; padding: 16px; border-radius: 4px; font-size: 14px; color: rgb(0, 0, 0); width: auto; max-width: 280px; line-height: 1.5; font-family: sans-serif;">
+		<?= $texte[rand(0, count($texte) - 1)] ?>
 	</div>
 	</a>
 	<style>
@@ -875,15 +890,7 @@ function addDonateButton() {
 	</style>
 	<script>
 		jQuery(function(){
-			jQuery("#donateinfo").delay(5000).fadeOut(1000);
-			jQuery("#donatecup").click(function(){
-				jQuery(this).addClass('loader')
-				setTimeout(function(){
-					jQuery("iframe").on("load", function() {
-						jQuery("#donatecup").removeClass('loader')
-					})
-				}, 1)
-			})
+			jQuery("#donateinfo").delay(4000).fadeOut(1000);
 			jQuery(".dbox-donation-button").click(function () {
 				jQuery("#donatecup").addClass('loader')
 				setTimeout(function(){
@@ -891,6 +898,11 @@ function addDonateButton() {
 						jQuery("#donatecup").removeClass('loader')
 					})
 				}, 1)
+				try {
+					ga('send', 'event', 'donation_clicked');
+				} catch (ignore) {
+					console.log("kein gtag möglich");
+				}
 			})
 		})
 	</script>
