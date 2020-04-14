@@ -571,3 +571,14 @@ html {
   min-height: 250px;
   max-width: 100%;
 }
+
+
+.blog-posts-wrapper .horizontal-scroll-item:nth-child(1n) .post-item {
+  background-color: #e86126;
+}
+.blog-posts-wrapper .horizontal-scroll-item:nth-child(2n) .post-item {
+  background-color: #43cd66;
+}
+.blog-posts-wrapper .horizontal-scroll-item:nth-child(3n) .post-item {
+  background-color: #f9b001;
+}
