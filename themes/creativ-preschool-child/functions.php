@@ -815,7 +815,7 @@ endif;
 
 
 function should_show_donate(){
-	if (! (is_front_page() or is_page("ueber-uns") or is_page("impressum") or is_page("datenschutzerklaerung") or is_page("haftungsausschluss") or is_page("fuer-eltern"))) return false;
+	if (! (is_front_page() or is_page("ueber-uns") or is_page("datenschutzerklaerung") or is_page("haftungsausschluss") or is_page("fuer-eltern"))) return false;
 
 	if (! isset($_COOKIE["cookie_notice_accepted"])) return false;
 
