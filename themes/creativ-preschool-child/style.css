@@ -382,7 +382,6 @@ iframe {
   position: relative;
 }
 
-
 blockquote cite {
   font-style: italic;
 }
@@ -429,6 +428,7 @@ blockquote cite {
 
 #heuteButtonMobilDesktopContainer {
   margin-bottom: 50px;
+  margin-top: 50px;
 }
 
 #heuteButtonMobilDesktopContainer * {
@@ -581,4 +581,12 @@ html {
 }
 .blog-posts-wrapper .horizontal-scroll-item:nth-child(3n) .post-item {
   background-color: #f9b001;
+}
+
+.page-section{
+  padding-top: 50px !important;
+}
+
+.home section{
+  margin-bottom: 50px;
 }

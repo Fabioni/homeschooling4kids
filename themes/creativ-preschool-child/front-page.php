@@ -445,7 +445,7 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
 			<?php } elseif ( $section['id'] == 'our-courses' ) { ?>
 				<?php $enable_our_courses_section = creativ_preschool_get_option( 'enable_our_courses_section' );
 				if ( true == $enable_our_courses_section ): ?>
-                    <section id="<?php echo esc_attr( $section['id'] ); ?>" >
+                    <section id="XXX<?php echo esc_attr( $section['id'] ); //TODO schöner machen ?>" >
                         <!--<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/top-cloud-bg.png' ) ?>">-->
 						<?php get_template_part( 'sections/section', esc_attr( $section['id'] ) ); ?>
                     </section>
