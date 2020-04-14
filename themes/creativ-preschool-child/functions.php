@@ -815,6 +815,7 @@ endif;
 
 
 function addDonateButton() {
+	if (! is_front_page()) return;
 	?>
 	<script type="text/javascript" defer="" src="https://donorbox.org/install-popup-button.js"></script>
 	<a class="dbox-donation-button noLeavingWarning" href="https://donorbox.org/homeschooling4kids-unterstutzung?default_interval=o">
