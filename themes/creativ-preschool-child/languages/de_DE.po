@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: Creative Preschool Customized\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-07 11:45+0545\n"
-"PO-Revision-Date: 2020-04-08 05:23+0000\n"
+"PO-Revision-Date: 2020-04-14 15:49+0000\n"
 "Last-Translator: \n"
 "Language-Team: Deutsch\n"
 "Language: de_DE\n"
@@ -214,6 +214,7 @@ msgstr ""
 #, php-format
 msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr ""
+"Hinterlasse einen Kommentar<span class=\"screen-reader-text\"> zu %s</span>"
 
 #: inc/customizer/default.php:31
 #: inc/customizer/home-sections/our-services.php:13
