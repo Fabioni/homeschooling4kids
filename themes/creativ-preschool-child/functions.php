@@ -820,7 +820,7 @@ function should_show_donate(){
 	if (! isset($_COOKIE["cookie_notice_accepted"])) return false;
 
 	if (is_front_page()){
-		return rand(0, 2) == 0;
+		return (rand(0, 2) == 0);
 	} else {
 		return true;
 	}
