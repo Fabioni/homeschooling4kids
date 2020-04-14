@@ -102,7 +102,7 @@ get_header(); ?>
 					}
 
 					usort($terms, function ($a, $b){
-						$sortierung = array("montag", "dienstag", "donnerstag", "freitag", "mittwoch");
+						$sortierung = array("montag", "dienstag", "mittwoch", "donnerstag", "freitag");
 
 						$i1 = searchwitharraywithpatterns($sortierung, $a->slug);
 						$i2 = searchwitharraywithpatterns($sortierung, $b->slug);
