@@ -590,3 +590,73 @@ html {
 .home section{
   margin-bottom: 50px;
 }
+
+@media screen and (min-width: 1025px) {
+
+  #primary-menu > .menu-item:hover > a {
+    animation-name: wackeln;
+    animation-timing-function: linear;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes wackeln {
+    0% {
+      transform: rotateZ(0deg);
+    }
+    25% {
+      transform: rotateZ(10deg);
+    }
+    75% {
+      transform: rotateZ(-10deg);
+    }
+  }
+
+  #page-site-header .page-title {
+    filter: blur(5px);
+    transform: translate(-80px, -50px);
+    animation-name: verschwimmen;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes verschwimmen {
+    0% {
+      filter: blur(5px);
+      transform: translate(-80px, -50px);
+    }
+    100% {
+      filter: blur(0px);
+      transform: translate(0px, 0px);
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+
+  #page-site-header .page-title {
+    filter: blur(5px);
+    transform: translate(-20px, -12px);
+    animation-name: verschwimmen;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes verschwimmen {
+    0% {
+      filter: blur(5px);
+      transform: translate(-20px, -12px);
+    }
+    100% {
+      filter: blur(0px);
+      transform: translate(0px, 0px);
+    }
+  }
+
+}

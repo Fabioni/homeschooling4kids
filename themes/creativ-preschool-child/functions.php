@@ -838,7 +838,7 @@ function addDonateButton() {
 	?>
 	<script type="text/javascript" defer="" src="https://donorbox.org/install-popup-button.js"></script>
 	<a class="dbox-donation-button noLeavingWarning" href="https://donorbox.org/homeschooling4kids-unterstutzung?default_interval=o">
-	<div id="donatecup" onclick="jQuery(this).addClass('loader')"
+	<div id="donatecup"
 	     style="display: flex; align-items: center; justify-content: center; width: 64px; height: 64px; background: rgb(255, 129, 63); color: white; border-radius: 32px; position: fixed; left: 18px; bottom: 18px; box-shadow: rgba(0, 0, 0, 0.4) 0px 4px 8px; z-index: 999; cursor: pointer; font-weight: 600; transition: all 0.2s ease 0s;">
 		<img id="donateMitDampf" src="/wp-content/themes/creativ-preschool-child/Coffee_cup_icon.svg" alt="Buy Me A Coffee"
 		     style="height: 40px; width: 40px; margin: 0; padding: 0;"><img id="donateOhneDampf" src="/wp-content/themes/creativ-preschool-child/Coffee_cup_icon_OhneDampf.svg" alt="Buy Me A Coffee"
@@ -896,11 +896,18 @@ function addDonateButton() {
 		jQuery(function(){
 			jQuery("#donateinfo").delay(4000).fadeOut(1000);
 			jQuery(".dbox-donation-button").click(function () {
-				jQuery("#donatecup").addClass('loader')
+				jQuery("#donatecup").children().addClass('loader')
 				setTimeout(function(){
-					jQuery("iframe").on("load", function() {
-						jQuery("#donatecup").removeClass('loader')
-					})
+					var f = jQuery("#donorbox_widget_frame")
+					if (f.length === 0){
+						setTimeout(function(){
+							jQuery("#donatecup").children().removeClass('loader')
+						}, 2)
+					} else {
+						f.on("load", function () {
+							jQuery("#donatecup").children().removeClass('loader')
+						})
+					}
 				}, 1)
 				try {
 					ga('send', 'event', 'donation_clicked');
