@@ -75,7 +75,7 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
                 css: "heute_button_flip",
                 url: "<?= $heuteURL ?>",
                 text: "<?= $heuteTitel ?>",
-                width: "80px"
+                width: "fit-content"
             })
         })
 

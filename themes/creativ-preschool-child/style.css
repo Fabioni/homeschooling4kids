@@ -697,6 +697,7 @@ html {
 
 .österdruck article[id^='post-']{
   font-size: 130%;
+  letter-spacing: 1px;
 }
 
 .österschreib article[id^='post-'] *{
@@ -705,6 +706,7 @@ html {
 
 .österschreib article[id^='post-']{
   font-size: 130%;
+  letter-spacing: 1px;
 }
 
 article[id^='post-']{
