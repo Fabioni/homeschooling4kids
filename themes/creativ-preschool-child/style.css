@@ -719,3 +719,8 @@ article[id^='post-']{
 .österdruck #heuteButtonMobilDesktopContainer *{
   font-family: oesterdruckschrift, Sniglet, cursive !important;
 }
+
+
+.site-logo img {
+  transform: scale(1.3);
+}
