@@ -178,12 +178,16 @@ iframe {
   background-size: 120px;
 }
 
-#main > .spasskategorie-wir-halten-uns-fit > .entry-content *, #main > .spasskategorie-spielideen-fuer-zuhause > .entry-content *, #main > .spasskategorie-lass-uns-singen-und-tanzen > .entry-content *, #main > .spasskategorie-witz-der-woche > .entry-content *, #main > .spasskategorie-rezept-fuer-gross-und-klein > .entry-content *, #main > .spasskategorie-veranstaltungsideen > .entry-content * {
+#main > .spasskategorie-knobelaufgaben > .entry-content *, #main > .spasskategorie-wir-halten-uns-fit > .entry-content *, #main > .spasskategorie-spielideen-fuer-zuhause > .entry-content *, #main > .spasskategorie-lass-uns-singen-und-tanzen > .entry-content *, #main > .spasskategorie-witz-der-woche > .entry-content *, #main > .spasskategorie-rezept-fuer-gross-und-klein > .entry-content *, #main > .spasskategorie-veranstaltungsideen > .entry-content * {
   clear: none;
 }
 
 #main > .spasskategorie-spielideen-fuer-zuhause > .entry-content::before {
   background: url("/wp-content/themes/creativ-preschool-child/dices.svg") no-repeat;
+}
+
+#main > .spasskategorie-knobelaufgaben > .entry-content::before {
+  background: url("/wp-content/themes/creativ-preschool-child/brain-1773892_640.png") no-repeat;
 }
 
 #main > .spasskategorie-lass-uns-singen-und-tanzen > .entry-content::before {
@@ -202,7 +206,7 @@ iframe {
   /*background: url("/wp-content/themes/creativ-preschool-child/turkey-with-black-hat.svg") no-repeat;*/
 }
 
-#main > .spasskategorie-witz-der-woche > .entry-content::before, #main > .spasskategorie-lass-uns-singen-und-tanzen > .entry-content::before, #main > .spasskategorie-spielideen-fuer-zuhause > .entry-content::before, #main > .spasskategorie-rezept-fuer-gross-und-klein > .entry-content::before, #main > .spasskategorie-veranstaltungsideen > .entry-content::before {
+#main > .spasskategorie-witz-der-woche > .entry-content::before, #main > .spasskategorie-knobelaufgaben > .entry-content::before, #main > .spasskategorie-lass-uns-singen-und-tanzen > .entry-content::before, #main > .spasskategorie-spielideen-fuer-zuhause > .entry-content::before, #main > .spasskategorie-rezept-fuer-gross-und-klein > .entry-content::before, #main > .spasskategorie-veranstaltungsideen > .entry-content::before {
   content: "";
   display: block;
   width: 120px;
@@ -219,6 +223,10 @@ iframe {
 }
 
 .spasskategorie-spielideen-fuer-zuhause {
+
+}
+
+.spasskategorie-knobelaufgaben {
 
 }
 
@@ -245,6 +253,10 @@ iframe {
 
 .archivUnterteiltitel-spielideen-fuer-zuhause:before {
   background: url("/wp-content/themes/creativ-preschool-child/dices.svg") no-repeat;
+}
+
+.archivUnterteiltitel-knobelaufgaben:before {
+  background: url("/wp-content/themes/creativ-preschool-child/brain-1773892_640.png") no-repeat;
 }
 
 .archivUnterteiltitel-rezept-fuer-gross-und-klein:before {
@@ -697,4 +709,13 @@ html {
 
 article[id^='post-']{
   transition: all 0.3s ease-in-out;
+}
+
+
+.österschreib #heuteButtonMobilDesktopContainer *{
+  font-family: oesterschreibschrift, Sniglet, cursive !important;
+}
+
+.österdruck #heuteButtonMobilDesktopContainer *{
+  font-family: oesterdruckschrift, Sniglet, cursive !important;
 }

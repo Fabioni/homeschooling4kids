@@ -176,8 +176,8 @@ function einstellungen(){
 					}
 				}
 			?>
-			<input style="display: none" type="radio" id="radioSchriftartSchreib" <?= $schreib ? "checked": "" ?> name="schriftart"><label for="radioSchriftartSchreib" style="cursor: pointer" class="btn">Schreibschrift</label>
-			<input style="display: none" type="radio" id="radioSchriftartDruck" <?= $druck ? "checked": "" ?> name="schriftart"><label for="radioSchriftartDruck" style="cursor: pointer" class="btn">Druckschrift</label>
+			<input style="display: none" type="radio" id="radioSchriftartSchreib" <?= $schreib ? "checked": "" ?> name="schriftart"><label for="radioSchriftartSchreib" style="cursor: pointer; font-family: oesterschreibschrift" class="btn">Schreibschrift</label>
+			<input style="display: none" type="radio" id="radioSchriftartDruck" <?= $druck ? "checked": "" ?> name="schriftart"><label for="radioSchriftartDruck" style="cursor: pointer; font-family: oesterdruckschrift" class="btn">Druckschrift</label>
 			<input style="display: none" type="radio" id="radioSchriftartComputer" <?= $computer ? "checked": "" ?> name="schriftart"><label for="radioSchriftartComputer" style="cursor: pointer" class="btn">Computerschrift</label>
 
 			<?php /*
@@ -186,6 +186,13 @@ function einstellungen(){
  			*/ ?>
 
 			<style>
+				.einstellungen{
+					display: flex;
+					width: fit-content;
+					min-width: 20%;
+					margin: 10px 0px 0px 10px;
+				}
+
 				.einstellungen button:before{
 					font-family: 'Font Awesome 5 Free';
 					font-weight: 900;
@@ -196,11 +203,20 @@ function einstellungen(){
 				}
 
 				.einstellungen input[type="radio"]:checked + label{
-					background-color: gray;
+					border: 2px solid gray;
 				}
 
 				.einstellungen input[type="radio"] + label{
-					padding: 10px 20px;
+					font-size: 85%;
+					padding: 5px 10px;
+					border-radius: 5px;
+					background-color: lightgrey;
+					flex-grow: 1;
+					flex-basis: 100%;
+					text-align: center;
+					margin: 0px 5px;
+					border: 2px solid transparent;
+			 		box-shadow: rgba(0, 0, 0, 0.4) 0px 4px 8px
 				}
 			</style>
 			<script>
