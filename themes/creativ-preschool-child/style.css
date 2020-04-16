@@ -726,3 +726,31 @@ article[id^='post-']{
 .site-logo img {
   transform: scale(1.2);
 }
+
+#donatecup{
+  animation-name: reinrollen;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+  animation-timing-function: ease-out;
+  animation-duration: 2s;
+  animation-delay: 4s;
+}
+
+#donateinfo{
+  animation-name: reinschieben;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+  animation-timing-function: ease-out;
+  animation-duration: 2s;
+  animation-delay: 4s;
+}
+
+@keyframes reinrollen {
+  from {left: -70px; transform: rotate(-360deg)}
+  to {left: 18px; transform: rotate(0deg)}
+}
+
+@keyframes reinschieben {
+  from {transform: translate(-20px, 0); opacity: 0}
+  to {transform: translate(0px, 0); opacity: 1}
+}

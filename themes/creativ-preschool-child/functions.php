@@ -966,8 +966,10 @@ function addDonateButton() {
 
 	$texte = [
 		"Schön, dass du da bist!<br>Möchtest du uns was Gutes tun?",
-		"Hallo, vielen Dank für deinen Besuch,<br>möchtest du uns unterstützen?",
-		"Gefällt dir unsere Website,<br>wir wären um eine Spende dankbar."
+		"Hallo, vielen Dank für deinen Besuch!<br>Möchtest du uns unterstützen?",
+		"Gefällt dir unsere Website?<br>Wir wären um eine Spende dankbar.",
+		"Ein Kaffee für das Team?",
+		"Harte Arbeit muss belohnt werden :)"
 	]
 
 	?>
@@ -978,10 +980,11 @@ function addDonateButton() {
 		<img id="donateMitDampf" src="/wp-content/themes/creativ-preschool-child/Coffee_cup_icon.svg" alt="Buy Me A Coffee"
 		     style="height: 40px; width: 40px; margin: 0; padding: 0;"><img id="donateOhneDampf" src="/wp-content/themes/creativ-preschool-child/Coffee_cup_icon_OhneDampf.svg" alt="Buy Me A Coffee"
 		                                                                    style="height: 40px; width: 40px; margin: 0; padding: 0;"></div>
+		<div id="donateinfo_wrapper">
 	<div id="donateinfo"
 		style="position: fixed; display: block; opacity: 1; left: 90px; bottom: 16px; background: rgb(255, 255, 255); z-index: 999; transition: all 0.4s ease 0s; box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 8px; padding: 16px; border-radius: 4px; font-size: 14px; color: rgb(0, 0, 0); width: auto; max-width: 280px; line-height: 1.5; font-family: sans-serif;">
 		<?= $texte[rand(0, count($texte) - 1)] ?>
-	</div>
+	</div></div>
 	</a>
 	<style>
 
@@ -1029,7 +1032,7 @@ function addDonateButton() {
 	</style>
 	<script>
 		jQuery(function(){
-			jQuery("#donateinfo").delay(4000).fadeOut(1000);
+			jQuery("#donateinfo_wrapper").delay(11000).fadeOut(1000); //es erscheint erst nach 4s
 			jQuery(".dbox-donation-button").click(function () {
 				jQuery("#donatecup").children().addClass('loader')
 				setTimeout(function(){
