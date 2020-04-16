@@ -76,8 +76,8 @@
             </div><!-- .wrapper -->
         </div><!-- .section-content -->
     <?php else: ?>
-        <div class="section-content page-section clear">
-            <div class="wrapper courses-slider blog-posts-wrapper" data-slick='{"slidesToShow": 3, "slidesToScroll": 1, "infinite": false, "speed": 500, "dots": true, "arrows":true, "autoplay": true, "fade": false }'>
+        <div class="section-content clear horizontal-scroll-wrapper smallarticles">
+            <div class="horizontal-scroll XXXcourses-slider blog-posts-wrapper" data-slick='{"slidesToShow": 3, "slidesToScroll": 1, "infinite": false, "speed": 500, "dots": true, "arrows":true, "autoplay": false, "fade": false }'>
                 <?php $args = array (
                     'post_type'     => $cs_content_type == "cs_post" ? 'post' : 'gutzuwissenbeitrag',
                     'post_per_page' => count( $our_courses_posts ),
@@ -89,10 +89,12 @@
                 if ( $loop->have_posts() ) :
                 $i=-1;
                     while ($loop->have_posts()) : $loop->the_post(); $i++;
+                    ?> <div class="horizontal-scroll-item"> <?php
 						get_template_part( 'template-parts/content', $loop->get_post_format() );
-
+							?> </div> <?php
 
                   endwhile;?>
+					<div class="horizontal-scroll-item"></div><div class="horizontal-scroll-item"></div><div class="horizontal-scroll-item"></div>
                   <?php wp_reset_postdata(); ?>
                 <?php endif;?>
             </div><!-- .wrapper -->

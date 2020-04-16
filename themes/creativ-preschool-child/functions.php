@@ -149,6 +149,102 @@ add_filter( 'get_the_archive_title', function ( $title ) {
 	return $title;
 } );
 
+function einstellungen(){
+	?>
+	<div class="einstellungen">
+			<?php
+			$druck = true;
+			$schreib = false;
+			$computer = false;
+				if (isset($_COOKIE["schriftart"])){
+					switch ($_COOKIE["schriftart"]){
+						case "druckschrift":
+							$druck = true;
+							$schreib = false;
+							$computer = false;
+							break;
+						case "schreibschrift":
+							$druck = false;
+							$schreib = true;
+							$computer = false;
+							break;
+						case "computerschrift":
+							$druck = false;
+							$schreib = false;
+							$computer = true;
+							break;
+					}
+				}
+			?>
+			<input style="display: none" type="radio" id="radioSchriftartSchreib" <?= $schreib ? "checked": "" ?> name="schriftart"><label for="radioSchriftartSchreib" style="cursor: pointer" class="btn">Schreibschrift</label>
+			<input style="display: none" type="radio" id="radioSchriftartDruck" <?= $druck ? "checked": "" ?> name="schriftart"><label for="radioSchriftartDruck" style="cursor: pointer" class="btn">Druckschrift</label>
+			<input style="display: none" type="radio" id="radioSchriftartComputer" <?= $computer ? "checked": "" ?> name="schriftart"><label for="radioSchriftartComputer" style="cursor: pointer" class="btn">Computerschrift</label>
+
+			<?php /*
+			<button type="button" class="fa-plus" id="schriftgrößePlus"/>
+			<button type="button" class="fa-minus" id="schriftgrößeMinus"/>
+ 			*/ ?>
+
+			<style>
+				.einstellungen button:before{
+					font-family: 'Font Awesome 5 Free';
+					font-weight: 900;
+				}
+
+				.einstellungen button{
+					padding: 0.5em;
+				}
+
+				.einstellungen input[type="radio"]:checked + label{
+					background-color: gray;
+				}
+
+				.einstellungen input[type="radio"] + label{
+					padding: 10px 20px;
+				}
+			</style>
+			<script>
+				jQuery(function(){
+					jQuery('input:radio[name="schriftart"]').change(
+						function(){
+							if (jQuery("#radioSchriftartDruck").is(':checked')) {
+								jQuery("body").addClass("österdruck")
+								jQuery("body").removeClass("österschreib")
+								document.cookie = "schriftart=druckschrift; path=/"
+							}
+							if (jQuery("#radioSchriftartSchreib").is(':checked')) {
+								jQuery("body").addClass("österschreib")
+								jQuery("body").removeClass("österdruck")
+								document.cookie = "schriftart=schreibschrift; path=/"
+							}
+							if (jQuery("#radioSchriftartComputer").is(':checked')) {
+								jQuery("body").removeClass("österschreib")
+								jQuery("body").removeClass("österdruck")
+								document.cookie = "schriftart=computerschrift; path=/"
+							}
+							setTimeout(function () {
+								jQuery('.blog-posts-wrapper:not(.noMatchHeight) article .post-item').matchHeight();
+							}, 600)
+						}
+					);
+
+					<?php /*
+					jQuery('#schriftgrößePlus').click(function () {
+						$("article[id^='post-']").css("font-size", function() {
+							return parseInt($(this).css('font-size')) + 5 + 'px';
+						});
+					})
+
+					jQuery('#schriftgrößeMinus').click(function () {
+
+					})
+  					*/ ?>
+				});
+			</script>
+		</div>
+	<?php
+}
+
 
 if ( ! function_exists( 'creativ_preschool_banner_header' ) ) :
 	/**
@@ -172,10 +268,33 @@ if ( ! function_exists( 'creativ_preschool_banner_header' ) ) :
 				</div><!-- .wrapper -->
 			</header>
 		</div><!-- #page-site-header -->
+		<?php einstellungen(); ?>
 		<?php echo '<div class= "wrapper page-section">';
 	}
 endif;
 add_action( 'creativ_preschool_banner_header', 'creativ_preschool_banner_header', 10 );
+
+function my_plugin_body_class($classes) {
+	$class = "österdruck";
+	if ( isset( $_COOKIE["schriftart"] ) ) {
+		switch ( $_COOKIE["schriftart"] ) {
+			case "druckschrift":
+				$class = "österdruck";
+				break;
+			case "schreibschrift":
+				$class = "österschreib";
+				break;
+			case "computerschrift":
+				$class = "";
+				break;
+		}
+	}
+
+	$classes[] = $class;
+	return $classes;
+}
+
+add_filter('body_class', 'my_plugin_body_class');
 
 if ( ! function_exists( 'creativ_preschool_footer_section' ) ) :
 
@@ -815,9 +934,9 @@ endif;
 
 
 function should_show_donate(){
-	if (! (is_front_page() or is_page("ueber-uns") or is_page("datenschutzerklaerung") or is_page("haftungsausschluss") or is_page("fuer-eltern"))) return false;
+	if (! (is_front_page() or is_page("ueber-uns") or is_page("datenschutzerklaerung") or is_page("haftungsausschluss") or is_page("fuer-eltern"))) {return false;}
 
-	if (! isset($_COOKIE["cookie_notice_accepted"])) return false;
+	if (! isset($_COOKIE["cookie_notice_accepted"])) {return false;}
 
 	if (is_front_page()){
 		return (rand(0, 2) == 0);
@@ -827,7 +946,7 @@ function should_show_donate(){
 }
 
 function addDonateButton() {
-	if (! should_show_donate()) return;
+	if (! should_show_donate()) {return;}
 
 	$texte = [
 		"Schön, dass du da bist!<br>Möchtest du uns was Gutes tun?",
