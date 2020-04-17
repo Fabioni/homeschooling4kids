@@ -17,7 +17,7 @@ function creativ_preschool_site_branding() { ?>
     <div class="wrapper">
         <div class="site-branding">
             <div class="site-logo">
-                <?php if(has_custom_logo()):?>
+                <?php if(has_custom_logo() && ! is_front_page()):?>
                     <?php the_custom_logo();?>
                 <?php endif;?>
             </div><!-- .site-logo -->

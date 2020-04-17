@@ -272,18 +272,28 @@ if ( ! function_exists( 'creativ_preschool_banner_header' ) ) :
 		if ( is_singular() ) :
 			$header_image = has_post_thumbnail() ? get_the_post_thumbnail_url( get_the_id(), 'full' ) : $header_image;
 		endif;
+
+		if (is_front_page()){
+			$custom_logo_id = get_theme_mod( 'custom_logo' );
+			$sitelogo_url = wp_get_attachment_image_url( $custom_logo_id, 'full', false);
+		}
 		?>
 
 		<div id="page-site-header">
-			<img class="<?= is_single() ? get_field( "titelbild_volle_breite_oder_volle_hoehe_oder_contain" ) : "" ?>"
+			<img class="<?= is_single() ? get_field( "titelbild_volle_breite_oder_volle_hoehe_oder_contain" ) : (is_front_page() ? "contain" : "") ?>"
 			     id="page-site-header-image"
-			     src="<?php echo esc_url( $header_image ); ?>">
+			     src="<?= is_front_page() ? $sitelogo_url : esc_url( $header_image ); ?>">
 			<div class="overlay"></div>
+
+			<?php if (! is_front_page()) { ?>
 			<header class='page-header'>
 				<div class="wrapper">
 					<?php creativ_preschool_banner_title(); ?>
 				</div><!-- .wrapper -->
 			</header>
+
+			<?php } ?>
+
 			<?php if (! is_single()){
 				?>
 				<img src="/wp-content/themes/creativ-preschool-child/assets/images/cloud-bg.png" class="cloud-bg" style="filter: contrast(0.74);">

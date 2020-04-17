@@ -233,8 +233,8 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
             box-shadow: 0 10px 10px 2px rgba(0, 0, 0, 0.3);
             min-height: 320px;
             vertical-align: center;
-            padding-top: 70px;
-            padding-bottom: 50px;
+            padding-top: 30px;
+            padding-bottom: 10px;
         }
 
         .note ul{
