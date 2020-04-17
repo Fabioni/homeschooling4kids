@@ -792,7 +792,16 @@ article[id^='post-']{
     left: auto;
   }
 
-  .main-navigation ul li:nth-last-child(2) ul .menu-item-has-children > a:after {
+  .main-navigation ul li:last-child ul .menu-item-has-children > a:after {
     content: "\f0d9";
   }
+
+  .main-navigation ul#primary-menu>li {
+     text-align: left;
+   }
+
+  .main-navigation ul li:last-child{
+    min-width: 225px;
+  }
+
 }
