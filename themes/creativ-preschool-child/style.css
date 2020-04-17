@@ -135,16 +135,34 @@ body:not(.logged-in) #menu-item-608 {
   text-align: center; /* test */
 }
 
-.alignwide.wp-embed-aspect-16-9 .wp-block-embed__wrapper {
+.alignfull.wp-embed-aspect-16-9 .wp-block-embed__wrapper, .alignwide.wp-embed-aspect-16-9 .wp-block-embed__wrapper {
   width: 100%;
   padding-bottom: 56.25%;
   position: relative;
   height: 0;
 }
 
+.alignfull.wp-embed-aspect-4-3 .wp-block-embed__wrapper, .alignwide.wp-embed-aspect-4-3 .wp-block-embed__wrapper {
+  width: 100%;
+  padding-bottom: 75%;
+  position: relative;
+  height: 0;
+}
+
+.alignfull {
+  margin-left: calc( -100vw / 2 + 100% / 2 );
+  margin-right: calc( -100vw / 2 + 100% / 2 );
+  max-width: 100vw;
+}
+
 .alignwide .wp-block-embed__wrapper * {
   position: absolute;
   width: 100%;
+  height: 100%;
+}
+
+.no-sidebar .wp-block-embed.is-type-video.alignfull iframe {
+  position: absolute;
   height: 100%;
 }
 
@@ -214,7 +232,7 @@ iframe {
   float: right;
   margin: 5px;
   background-size: 120px;
-  position: relative;
+  position: relative;page
   z-index: 1;
 }
 
@@ -296,7 +314,7 @@ iframe {
   z-index: 1;
 }
 
-.post-type-archive-spassbeitrag .wrapper {
+.post-type-archive-spassbeitrag .wrapper.page-section {
   padding-left: 120px;
 }
 
@@ -753,4 +771,16 @@ article[id^='post-']{
 @keyframes reinschieben {
   from {transform: translate(-20px, 0); opacity: 0}
   to {transform: translate(0px, 0); opacity: 1}
+}
+
+
+.main-navigation ul ul a{
+  min-width: 100%;
+}
+
+
+@media screen and (min-width: 1024px) {
+  .main-navigation ul ul li {
+    min-width: 100%;
+  }
 }
