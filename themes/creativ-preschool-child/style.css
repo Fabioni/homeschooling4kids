@@ -635,10 +635,10 @@ html {
       transform: rotateZ(0deg);
     }
     25% {
-      transform: rotateZ(10deg);
+      transform: rotateZ(8deg);
     }
     75% {
-      transform: rotateZ(-10deg);
+      transform: rotateZ(-8deg);
     }
   }
 
@@ -826,4 +826,11 @@ article[id^='post-']{
   .main-navigation ul#primary-menu > li {
     padding-left: 30px;
   }
+}
+
+.fabian-highlight {
+  background: url(https://andyhooke.co.uk/wp-content/uploads/2018/02/yellow-brushstroke.png);
+  background-repeat: no-repeat;
+  background-size: 100% 95%;
+  padding: 8px 2px;
 }

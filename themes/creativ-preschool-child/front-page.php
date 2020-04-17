@@ -224,10 +224,11 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
         .note {
             color: #333;
             position: relative;
-            width: 320px;
+            width: 10em;
             margin: 0 auto;
             padding: 20px;
             font-family: 'Indie Flower', cursive;
+			letter-spacing: 1px;
             font-size: 35px;
             box-shadow: 0 10px 10px 2px rgba(0, 0, 0, 0.3);
             min-height: 320px;
@@ -340,6 +341,28 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
         #heute_button:hover {
             background: #ff7096;
         }
+
+		#notizzettel-wrapper a{
+			color: inherit;
+		}
+
+		#notizzettel-wrapper h3{
+			font-weight: bold;
+			color: inherit;
+			font-family: inherit;
+			font-size: 40px;
+			/*filter: drop-shadow(0px 0px 5px #F3B005);*/
+		}
+
+		#notizzettel-wrapper a:hover{
+			filter: drop-shadow(2px 4px 6px black);
+		}
+
+		#notizzettel-wrapper{
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-around;
+		}
     </style>
     <div id="heuteButtonMobilDesktopContainer" class="<?= $heute ? "heuteBeitragJa" : "heuteBeitragNein" ?>">
         <div class="fabianHandy">
@@ -368,77 +391,80 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
 			<?php } elseif ( $section['id'] == 'our-services' ) { ?>
 				<?php $enable_our_services_section = creativ_preschool_get_option( 'enable_our_services_section' );
 				if ( true == $enable_our_services_section ): ?>
-                    <section id="<?php echo esc_attr( $section['id'] ); ?>" >
-                        <div class="wrapper">
-                            <div class="wrapper">
+                    <section id="XXX<?php echo esc_attr( $section['id'] ); ?>" >
+						<div class="section-header">
+							<h2 class="section-title">Das findest du auf Homeschooling4Kids</h2>
+						</div><!-- .section-header -->
 
-                                <div class="section-header">
-                                    <h2 class="section-title">Unsere Highlights</h2>
-                                </div><!-- .section-header -->
-
-                                <div class="section-content clear col-3">
-
-                                    <article class="fabianPC">
-                                        <div>
-                                            <div class="quote-container">
-                                                <i class="pin"></i>
-                                                <blockquote class="note yellow">
-                                                    Mitmach&shy;bereich
-                                                </blockquote>
-                                            </div><!-- .entry-content -->
-                                        </div><!-- .service-item-wrapper -->
-                                    </article>
+						<div class="section-content" id="notizzettel-wrapper">
+							<article><!-- class="fabianPC">-->
+								<div>
+									<div class="quote-container">
+										<i class="pin"></i>
+										<blockquote class="note yellow">
+											<h3><a href="/mitmachbereich">Mach mit!</a></h3>
+											<p>Von Kindern für Kinder. Hier bestimmst du den Inhalt! Selbst geschriebene Geschichten, Rätsel, Bilder und vieles mehr!</p>
+										</blockquote>
+									</div><!-- .entry-content -->
+								</div><!-- .service-item-wrapper -->
+							</article>
 
 
-                                    <article class="fabianPC">
-                                        <div>
-                                            <div class="quote-container">
-                                                <i class="pin"></i>
-                                                <blockquote class="note yellow">
-                                                    Lern&shy;ziel&shy;orientierung
-                                                </blockquote>
-                                            </div><!-- .entry-content -->
-                                        </div><!-- .service-item-wrapper -->
-                                    </article>
+							<article><!-- class="fabianPC">-->
+								<div>
+									<div class="quote-container">
+										<i class="pin"></i>
+										<blockquote class="note yellow">
+											<h3><a href="/gutzuwissenbeitrag">Infos und Nachrichten</a></h3>
+											<p>Jetzt verpasst du nichts mehr! Aktuelle Nachrichten, Tipps und was du wissen musst, verständlich und leicht erklärt.</p>
+										</blockquote>
+									</div><!-- .entry-content -->
+								</div><!-- .service-item-wrapper -->
+							</article>
 
 
-                                    <article class="fabianPC">
-                                        <div>
-                                            <div class="quote-container">
-                                                <i class="pin"></i>
-                                                <blockquote class="note yellow">
-                                                    abwechslungs&shy;reiches Angebot
-                                                </blockquote>
-                                            </div><!-- .entry-content -->
-                                        </div><!-- .service-item-wrapper -->
-                                    </article>
+							<article><!-- class="fabianPC">-->
+								<div>
+									<div class="quote-container">
+										<i class="pin"></i>
+										<blockquote class="note yellow">
+											<h3><a href="/fachbeitrag">Zuhause lernen</a></h3>
+											<p>Täglich spannende Aufgaben, Spiele und Videos warten darauf von dir entdeckt zu werden!</p>
+										</blockquote>
+									</div><!-- .entry-content -->
+								</div><!-- .service-item-wrapper -->
+							</article>
 
-                                    <article class="fabianHandy" style="width: 100%">
-                                        <div>
-                                            <div class="quote-container">
-                                                <i class="pin"></i>
-                                                <blockquote class="note yellow" style="width: fit-content">
-                                                    <ul>
-                                                        <li>
-                                                            Mitmach&shy;bereich
-                                                        </li>
-                                                        <li>
-                                                            Lern&shy;ziel&shy;orientierung
-                                                        </li>
-                                                        <li>
-                                                            abwechslungs&shy;reiches Angebot
-                                                        </li>
-                                                    </ul>
-                                                </blockquote>
-                                            </div><!-- .entry-content -->
-                                        </div><!-- .service-item-wrapper -->
-                                    </article>
+							<!--
+							<article class="fabianHandy" style="width: 100%">
+								<div>
+									<div class="quote-container">
+										<i class="pin"></i>
+										<blockquote class="note yellow" style="width: fit-content">
+											<ul>
+												<li>
+													<b>Mitmach&shy;bereich</b>
+													<p>Die Kinder können uns Rätselfragen schicken, Bilder die wir ausstellen und plapla</p>
+												</li>
+												<li>
+													<b>Lern&shy;ziel&shy;orientierung</b>
+													<p>Wir überlegen uns zu allen Beiträgen die Lernziele und plapla</p>
+												</li>
+												<li>
+													<b>abwechslungs&shy;reiches Angebot</b>
+													<p>Fachbeiträge sind eichtig aber der Spaß darf auch nicht fehlen etc etc pp</p>
+												</li>
+											</ul>
+										</blockquote>
+									</div>
+								</div>
+							</article>
+							-->
 
-                                </div><!-- .section-content -->
+						</div><!-- .section-content -->
 
-                            </div>
 							<?php /* get_template_part( 'sections/section', esc_attr( $section['id'] ) ); */ ?>
-                        </div>
+
                     </section>
 				<?php endif; ?>
 
