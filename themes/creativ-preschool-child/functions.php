@@ -274,7 +274,7 @@ if ( ! function_exists( 'creativ_preschool_banner_header' ) ) :
 		?>
 
 		<div id="page-site-header">
-			<img class="<?= get_field( "titelbild_volle_breite_oder_volle_hoehe_oder_contain" ) ?>"
+			<img class="<?= is_single() ? get_field( "titelbild_volle_breite_oder_volle_hoehe_oder_contain" ) : "" ?>"
 			     id="page-site-header-image"
 			     src="<?php echo esc_url( $header_image ); ?>">
 			<div class="overlay"></div>
