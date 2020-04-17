@@ -787,7 +787,7 @@ article[id^='post-']{
 
 
 @media screen and (min-width: 1024px) {
-  .main-navigation ul li:nth-last-child(2) ul li:hover > ul {
+  .main-navigation ul li:last-child ul li:hover > ul {
     right: 100%;
     left: auto;
   }
