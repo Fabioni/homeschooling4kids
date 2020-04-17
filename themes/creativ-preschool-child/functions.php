@@ -176,6 +176,7 @@ function einstellungen(){
 					}
 				}
 			?>
+			<div style="margin: auto; font-size: 120%"><i class="fa fa-cogs"></i></div>
 			<input style="display: none" type="radio" id="radioSchriftartSchreib" <?= $schreib ? "checked": "" ?> name="schriftart"><label for="radioSchriftartSchreib" style="cursor: pointer; font-family: oesterschreibschrift" class="btn">Schreibschrift</label>
 			<input style="display: none" type="radio" id="radioSchriftartDruck" <?= $druck ? "checked": "" ?> name="schriftart"><label for="radioSchriftartDruck" style="cursor: pointer; font-family: oesterdruckschrift" class="btn">Druckschrift</label>
 			<input style="display: none" type="radio" id="radioSchriftartComputer" <?= $computer ? "checked": "" ?> name="schriftart"><label for="radioSchriftartComputer" style="cursor: pointer" class="btn">Computerschrift</label>
