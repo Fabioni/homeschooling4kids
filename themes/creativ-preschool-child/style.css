@@ -784,3 +784,15 @@ article[id^='post-']{
     min-width: 100%;
   }
 }
+
+
+@media screen and (min-width: 1024px) {
+  .main-navigation ul li:nth-last-child(2) ul li:hover > ul {
+    right: 100%;
+    left: auto;
+  }
+
+  .main-navigation ul li:nth-last-child(2) ul .menu-item-has-children > a:after {
+    content: "\f0d9";
+  }
+}
