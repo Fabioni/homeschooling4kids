@@ -283,7 +283,13 @@ if ( ! function_exists( 'creativ_preschool_banner_header' ) ) :
 					<?php creativ_preschool_banner_title(); ?>
 				</div><!-- .wrapper -->
 			</header>
-		</div><!-- #page-site-header -->
+			<?php if (! is_single()){
+				?>
+				<img src="/wp-content/themes/creativ-preschool-child/assets/images/cloud-bg.png" class="cloud-bg" style="filter: contrast(0.74);">
+				<?php
+			}
+			?>
+			</div><!-- #page-site-header -->
 		<?php einstellungen(); ?>
 		<?php echo '<div class= "wrapper page-section">';
 	}
