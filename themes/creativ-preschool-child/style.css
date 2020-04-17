@@ -810,3 +810,20 @@ article[id^='post-']{
   }*/
 
 }
+
+
+@media screen and (max-width: 1023px) {
+  .main-navigation ul#primary-menu > li:before {
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    top: 9px;
+    left: 5px;
+  }
+
+  .main-navigation ul#primary-menu > li {
+    padding-left: 30px;
+  }
+}
