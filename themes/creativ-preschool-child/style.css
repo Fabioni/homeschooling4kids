@@ -333,7 +333,7 @@ iframe {
     display: none !important;
   }
 
-  .post-type-archive-spassbeitrag .wrapper {
+  .post-type-archive-spassbeitrag .wrapper.page-section {
     padding-left: 0;
   }
 }
