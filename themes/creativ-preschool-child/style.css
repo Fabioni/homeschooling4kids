@@ -458,7 +458,7 @@ blockquote cite {
 
 #heuteButtonMobilDesktopContainer {
   margin-bottom: 50px;
-  margin-top: 50px;
+  margin-top: 10px;
 }
 
 #heuteButtonMobilDesktopContainer * {
@@ -833,4 +833,8 @@ article[id^='post-']{
   background-repeat: no-repeat;
   background-size: 100% 95%;
   padding: 8px 2px;
+}
+
+.home h2.section-title{
+  font-size: 42px;
 }

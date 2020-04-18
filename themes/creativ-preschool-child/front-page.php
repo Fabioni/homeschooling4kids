@@ -65,7 +65,7 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
             /*$heuteTitel = "Kein Fachbeitrag für heute vorhanden";
             $heuteURL = "";*/
 	        $heuteTitel = "Alle Fachbeiträge ansehen!";
-	        $heuteString = "Freu dich auf die nächsten Beiträge";
+	        $heuteString = "Freu dich auf Montag";
 	        $heuteURL = get_post_type_archive_link("fachbeitrag");
         }
         ?>
@@ -221,17 +221,25 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
             position: relative;
         }
 
+		#notizzettel-wrapper *{
+			max-width: 100%;
+		}
+
+		.home .section-header{
+			margin-bottom: 20px;
+		}
+
         .note {
             color: #333;
             position: relative;
-            width: 10em;
+            width: 18em;
             margin: 0 auto;
             padding: 20px;
             font-family: 'Indie Flower', cursive;
 			letter-spacing: 1px;
-            font-size: 35px;
+            font-size: 125%;
             box-shadow: 0 10px 10px 2px rgba(0, 0, 0, 0.3);
-            min-height: 320px;
+            min-height: 18em;
             vertical-align: center;
             padding-top: 30px;
             padding-bottom: 10px;
@@ -350,7 +358,6 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
 			font-weight: bold;
 			color: inherit;
 			font-family: inherit;
-			font-size: 40px;
 			/*filter: drop-shadow(0px 0px 5px #F3B005);*/
 		}
 
@@ -393,7 +400,7 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
 				if ( true == $enable_our_services_section ): ?>
                     <section id="XXX<?php echo esc_attr( $section['id'] ); ?>" >
 						<div class="section-header">
-							<h2 class="section-title">Das findest du auf Homeschooling4Kids</h2>
+							<h2 class="section-title">Das findest du auf unserer Seite</h2>
 						</div><!-- .section-header -->
 
 						<div class="section-content" id="notizzettel-wrapper">
