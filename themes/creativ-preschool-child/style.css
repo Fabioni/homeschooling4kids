@@ -714,8 +714,11 @@ html {
 }
 
 .österdruck article[id^='post-']{
-  font-size: 130%;
   letter-spacing: 1px;
+}
+
+body.single .österdruck article[id^='post-'] {
+  font-size: 130%;
 }
 
 .österschreib article[id^='post-'] *{
@@ -723,8 +726,12 @@ html {
 }
 
 .österschreib article[id^='post-']{
-  font-size: 130%;
+  font-size: 120%;
   letter-spacing: 1px;
+}
+
+body.single .österschreib article[id^='post-'] {
+  font-size: 140%;
 }
 
 article[id^='post-']{
