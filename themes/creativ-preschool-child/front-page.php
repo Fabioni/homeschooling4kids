@@ -64,7 +64,7 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
         } else {
             /*$heuteTitel = "Kein Fachbeitrag für heute vorhanden";
             $heuteURL = "";*/
-	        $heuteTitel = "<i class='fa fa-arrow-right'></i> Zu allen Fachbeiträge";
+	        $heuteTitel = "<i class='fa fa-arrow-right'></i> Zu allen Fachbeiträgen";
 	        $heuteString = "Freu dich auf Montag";
 	        $heuteURL = get_post_type_archive_link("fachbeitrag");
         }
