@@ -352,7 +352,7 @@ if ( ! function_exists( 'creativ_preschool_footer_section' ) ) :
                                                                                                         href="http://creativthemes.com/">Creativ Preschool Free</a> customized by <a
 		                target="_blank" rel="designer" href="http://fabianscherer.de/">Fabian Scherer</a></span>
 		                -->
-				<span class="copy-right">Entwickelt von <a
+				<span class="copy-right">© <?= date("Y") ?> homeschooling4kids. Entwickelt von <a
 						target="_blank" rel="designer" href="http://fabianscherer.de/">Fabian Scherer</a></span>
 				<?php
 				wp_nav_menu( array(
