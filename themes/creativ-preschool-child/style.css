@@ -740,11 +740,25 @@ article[id^='post-']{
 
 
 .österschreib #heuteButtonMobilDesktopContainer *{
-  font-family: oesterschreibschrift, Sniglet, cursive !important;
+  font-family: oesterschreibschrift, Sniglet, cursive;
 }
 
 .österdruck #heuteButtonMobilDesktopContainer *{
-  font-family: oesterdruckschrift, Sniglet, cursive !important;
+  font-family: oesterdruckschrift, Sniglet, cursive;
+}
+
+.fab {
+  font-family: 'Font Awesome 5 Brands' !important;
+}
+.far {
+  font-family: 'Font Awesome 5 Free' !important;
+  font-weight: 400 !important;
+}
+
+.fa,
+.fas {
+  font-family: 'Font Awesome 5 Free' !important;
+  font-weight: 900 !important;
 }
 
 
