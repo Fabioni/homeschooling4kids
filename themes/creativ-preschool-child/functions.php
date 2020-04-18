@@ -966,16 +966,27 @@ if ( function_exists( 'acf_add_local_field_group' ) ):
 endif;
 
 
+function wiederkehrenderNutzerCookie(){
+	setcookie( "firstTimeUsage", time(), time() + 10 * 365 * 24 * 3600 );  // verfällt in 10 Jahren
+}
+add_action( 'init', 'wiederkehrenderNutzerCookie', 0 );
+
+
 function should_show_donate(){
 	if (! (is_front_page() or is_page("ueber-uns") or is_page("datenschutzerklaerung") or is_page("haftungsausschluss") or is_page("fuer-eltern"))) {return false;}
 
 	if (! isset($_COOKIE["cookie_notice_accepted"])) {return false;}
 
+	if (! isset($_COOKIE["firstTimeUsage"])) {return false;}
+
 	if (is_front_page()){
-		return (rand(0, 2) == 0);
+		if ($_COOKIE["firstTimeUsage"] + 60*60*12 < time()){ //12h später
+			return (rand(0, 2) == 0);
+		}
 	} else {
 		return true;
 	}
+	return false;
 }
 
 function addDonateButton() {
