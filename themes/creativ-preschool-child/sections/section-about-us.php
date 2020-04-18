@@ -37,7 +37,15 @@
                         </header>
 
                         <div class="entry-content">
-	                        <p style="font-size: 1.5em">Unser Team besteht aus:<br/>Fabian, Valerie, Anna, Deborah und Viktoria</p>
+	                        <p>
+								<em>homeschooling4kids.at</em> ist die Platform für Volksschulkinder, erstellt von Lehramtsstudentinnen der Pädagogischen Hochschule Wien.
+							</p>
+							<p style="margin-top: 0.5em">
+								Wir möchten langfristig unseren Beitrag dazu leisten, den Heimunterricht spannender und lustiger zu gestalten. Das Team hofft, dass es dir gefällt und freut sich, dass du da bist&nbsp;:-)
+							</p>
+							<p style="margin-top: 1em">
+								Hier kannst du mehr über uns erfahren:
+							</p>
                             <?php /*
                                 $excerpt = creativ_preschool_the_excerpt( 50 );
                                 echo wp_kses_post( wpautop( $excerpt ) ); */

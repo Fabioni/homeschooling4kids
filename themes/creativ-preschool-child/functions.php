@@ -217,7 +217,7 @@ function einstellungen(){
 					text-align: center;
 					margin: 0px 5px;
 					border: 2px solid transparent;
-			 		box-shadow: rgba(0, 0, 0, 0.4) 0px 4px 8px
+			 		box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px
 				}
 			</style>
 			<script>
@@ -347,9 +347,13 @@ if ( ! function_exists( 'creativ_preschool_footer_section' ) ) :
 			}
 			?>
 			<div class="wrapper">
+				<!--
                 <span class="copy-right"><?php echo esc_html( $copyright_footer ); ?> Child Theme of <a target="_blank"
                                                                                                         href="http://creativthemes.com/">Creativ Preschool Free</a> customized by <a
 		                target="_blank" rel="designer" href="http://fabianscherer.de/">Fabian Scherer</a></span>
+		                -->
+				<span class="copy-right">Entwickelt von <a
+						target="_blank" rel="designer" href="http://fabianscherer.de/">Fabian Scherer</a></span>
 				<?php
 				wp_nav_menu( array(
 					'theme_location' => 'fußzeile',

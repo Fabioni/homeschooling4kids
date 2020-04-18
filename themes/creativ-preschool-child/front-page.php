@@ -60,11 +60,11 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
         $heute = get_heute_seite();
         $heuteString = "Heute";
         if ($heute){
-	        $heuteTitel = $heute[1] != false ? $heute[1] : "Schau dir die heutigen Beiträge an"; $heuteURL = $heute[0];
+	        $heuteTitel = $heute[1] != false ? "<i class='fa fa-arrow-right'></i> " . $heute[1] : "<i class='fa fa-arrow-right'></i> Schau dir die heutigen Beiträge an"; $heuteURL = $heute[0];
         } else {
             /*$heuteTitel = "Kein Fachbeitrag für heute vorhanden";
             $heuteURL = "";*/
-	        $heuteTitel = "Alle Fachbeiträge ansehen!";
+	        $heuteTitel = "<i class='fa fa-arrow-right'></i> Alle Fachbeiträge ansehen!";
 	        $heuteString = "Freu dich auf Montag";
 	        $heuteURL = get_post_type_archive_link("fachbeitrag");
         }
@@ -337,6 +337,7 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
         #heute_button {
             display: table;
             min-width: 50%;
+			box-shadow: 4px 4px 6px #0008;
             text-align: center;
             margin: auto;
             background: #ff7096b0;
@@ -373,7 +374,7 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
     </style>
     <div id="heuteButtonMobilDesktopContainer" class="<?= $heute ? "heuteBeitragJa" : "heuteBeitragNein" ?>">
         <div class="fabianHandy">
-            <a id="heute_button" href="<?= $heuteURL ?>" class="btn btn-primary"><?= $heuteString ?>: <?= $heuteTitel ?></a>
+            <a id="heute_button" href="<?= $heuteURL ?>" class="btn btn-primary"><?= $heuteString ?><br><?= $heuteTitel ?></a>
         </div>
         <div class="fabianPC">
             <div class="flip-cover-heute_button_flip"></div>
