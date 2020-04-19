@@ -905,3 +905,8 @@ article[id^='post-']{
   border-left: 2px solid;
   font-family: 'Open Sans', sans-serif;
 }
+
+/* um rückgängig zu machen, dass der shortcode su-expand die Schriftfarbe selbst setzen will */
+.su-expand-content {
+color: inherit !important;
+}
