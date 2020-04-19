@@ -21,6 +21,14 @@
     }
 </style>-->
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<?php
+	if ($url = get_field("audiofilevorlesen")){
+		?>
+		<div id="audiofilewrapper"><button onclick="jQuery('#audiofile').css('display', 'initial')" id="openVorlesenAudio"><img src="/wp-content/themes/creativ-preschool-child/Speaker_Icon.svg">
+				<span>Vorlesen</span></button><div id="audiofile"><?= do_shortcode('[audio src="'.$url.'"]') ?></div></div>
+		<?php
+	}
+	?>
 	<div class="entry-content">
 		<?php
 			the_content();

@@ -11,6 +11,14 @@
 		<?php creativ_preschool_posted_on();
 		creativ_preschool_entry_meta(); ?>
 	</div><!-- .entry-meta -->
+	<?php
+	if ($url = get_field("audiofilevorlesen")){
+		?>
+		<div id="audiofilewrapper"><button onclick="jQuery('#audiofile').css('display', 'initial')" id="openVorlesenAudio"><img src="/wp-content/themes/creativ-preschool-child/Speaker_Icon.svg">
+				<span>Vorlesen</span></button><div id="audiofile"><?= do_shortcode('[audio src="'.$url.'"]') ?></div></div>
+		<?php
+	}
+	?>
 	<div class="entry-content <?= get_the_time( 'Ymd' ) === current_time( 'Ymd' ) ? "heutigerBeitrag" : "" ?>">
 		<?php the_content(); ?>
 		<?php

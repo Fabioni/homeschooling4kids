@@ -859,3 +859,49 @@ article[id^='post-']{
 .home h2.section-title{
   font-size: 42px;
 }
+
+#audiofile .mejs-controls, #audiofile .mejs-container{
+  border-radius: 25px;
+}
+
+#audiofile{
+  display: none;
+}
+
+#openVorlesenAudio{
+  background: none;
+  color: inherit;
+  display: flex;
+  border: 2px solid;
+  border-radius: 2px;
+  font-size: 16px;
+  padding: 3px;
+  background: white;
+  margin-bottom: 4px;
+}
+
+#openVorlesenAudio:hover{
+  background: none;
+  color: inherit;
+  display: flex;
+  border: 2px solid;
+  border-radius: 2px;
+  font-size: 16px;
+  padding: 3px;
+  background: white;
+}
+
+#openVorlesenAudio img{
+  object-fit: contain;
+  height: 1.5em;
+  width: auto;
+  display: block;
+  padding-right: 4px;
+}
+
+#openVorlesenAudio span{
+  display: block;
+  padding-left: 4px;
+  border-left: 2px solid;
+  font-family: 'Open Sans', sans-serif;
+}
