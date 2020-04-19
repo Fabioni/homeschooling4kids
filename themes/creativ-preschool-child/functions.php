@@ -1158,4 +1158,21 @@ function addDonateButton() {
 add_action( 'creativ_preschool_action_before_footer', 'addDonateButton' );
 
 
+function weiterlesen_shortcode_func( $atts, $content ) {
+	$a = shortcode_atts( array(
+		'titleAusklappen' => 'Weiterlesen',
+		'titleEinklappen' => 'Weniger anzeigen',
+	), $atts );
+	$id = uniqid();
+	$titleAusklappen = $a["titleAusklappen"];
+	$titleEinklappen = $a["titleEinklappen"];
+
+	return <<<EOD
+<span class='einoderausgeklappt' id='weiterlesen_shortcode_$id'><span class='dreiPunkte'> [...]</span><span class='content'>$content</span></span><div class="weiterlesen_shortcode_button" id='weiterlesen_shortcode_button$id' onclick='jQuery("#weiterlesen_shortcode_button$id").toggleClass("ausgeklappt"); jQuery("#weiterlesen_shortcode_$id").toggleClass("ausgeklappt")'><span class="ausklappen"><i class='fa fa-angle-down'></i> $titleAusklappen</span><span class="einklappen"><i class='fa fa-angle-up'></i> $titleEinklappen</span></div>
+EOD;
+}
+add_shortcode( 'weiterlesen', 'weiterlesen_shortcode_func' );
+
+
+
 require get_template_directory() . '/functionsParent.php';

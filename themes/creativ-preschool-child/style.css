@@ -906,7 +906,17 @@ article[id^='post-']{
   font-family: 'Open Sans', sans-serif;
 }
 
-/* um rückgängig zu machen, dass der shortcode su-expand die Schriftfarbe selbst setzen will */
-.su-expand-content {
-color: inherit !important;
+.weiterlesen_shortcode_button{
+  color: #0088FF;
+  cursor: pointer;
+}
+.einoderausgeklappt:not(.ausgeklappt) .content, .weiterlesen_shortcode_button:not(.ausgeklappt) .einklappen{
+  display: none;
+}
+.einoderausgeklappt.ausgeklappt .dreiPunkte, .weiterlesen_shortcode_button.ausgeklappt .ausklappen{
+  display: none;
+}
+
+.weiterlesen_shortcode_button:hover{
+  color: #0FBAF4;
 }
