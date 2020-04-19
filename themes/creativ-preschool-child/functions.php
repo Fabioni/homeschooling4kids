@@ -1167,8 +1167,25 @@ function weiterlesen_shortcode_func( $atts, $content ) {
 	$titleAusklappen = $a["titleAusklappen"];
 	$titleEinklappen = $a["titleEinklappen"];
 
-	return <<<EOD
-<span class='einoderausgeklappt' id='weiterlesen_shortcode_$id'><span class='dreiPunkte'> [...]</span><span class='content'>$content</span></span><div class="weiterlesen_shortcode_button" id='weiterlesen_shortcode_button$id' onclick='jQuery("#weiterlesen_shortcode_button$id").toggleClass("ausgeklappt"); jQuery("#weiterlesen_shortcode_$id").toggleClass("ausgeklappt")'><span class="ausklappen"><i class='fa fa-angle-down'></i> $titleAusklappen</span><span class="einklappen"><i class='fa fa-angle-up'></i> $titleEinklappen</span></div>
+	$tmp = preg_split("<\/.*>", $content, 2);
+	$contentBisEnde_pSpan = "";
+	$contentAbEnde_p = $tmp[0];
+	if (count($tmp) > 1){
+		list($contentBisEnde_p, $contentAbEnde_p) = $tmp;
+		$contentBisEnde_p = substr($contentBisEnde_p, 0, -1);
+		$contentBisEnde_pSpan = "<span class='EinAusShortcode_content id_$id'>$contentBisEnde_p</span>";
+	}
+
+	return
+		<<<EOD
+		<span class='EinAusShortcode_dreiPunkte id_$id'> [...]</span>
+		$contentBisEnde_pSpan
+		<div class='EinAusShortcode_content id_$id'>$contentAbEnde_p</div>
+
+		<div class="weiterlesen_shortcode_button" id='weiterlesen_shortcode_button$id' onclick='jQuery("#weiterlesen_shortcode_button$id").toggleClass("ausgeklappt"); jQuery(".EinAusShortcode_dreiPunkte.id_$id").toggleClass("ausgeklappt"); jQuery(".EinAusShortcode_content.id_$id").toggleClass("ausgeklappt")'>
+			<span class="ausklappen"><i class='fa fa-angle-down'></i> $titleAusklappen</span>
+			<span class="einklappen"><i class='fa fa-angle-up'></i> $titleEinklappen</span>
+		</div>
 EOD;
 }
 add_shortcode( 'weiterlesen', 'weiterlesen_shortcode_func' );

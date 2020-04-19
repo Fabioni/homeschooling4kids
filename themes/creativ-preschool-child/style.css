@@ -910,10 +910,10 @@ article[id^='post-']{
   color: #0088FF;
   cursor: pointer;
 }
-.einoderausgeklappt:not(.ausgeklappt) .content, .weiterlesen_shortcode_button:not(.ausgeklappt) .einklappen{
+.EinAusShortcode_content:not(.ausgeklappt), .weiterlesen_shortcode_button:not(.ausgeklappt) .einklappen{
   display: none;
 }
-.einoderausgeklappt.ausgeklappt .dreiPunkte, .weiterlesen_shortcode_button.ausgeklappt .ausklappen{
+.EinAusShortcode_dreiPunkte.ausgeklappt, .weiterlesen_shortcode_button.ausgeklappt .ausklappen{
   display: none;
 }
 
@@ -921,7 +921,6 @@ article[id^='post-']{
   color: #0FBAF4;
 }
 
-#about-us .featured-image.fabianAbwandlung{
-  border: none;
-  background: none;
+.home .strong-view.wpmtst-modern .wpmtst-testimonial-content:before, .home .strong-view.wpmtst-modern .wpmtst-testimonial-content:after{
+  background: #da8b0f;
 }

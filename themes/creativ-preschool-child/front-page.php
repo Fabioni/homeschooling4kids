@@ -524,6 +524,10 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
 			}
 		}
 	}
+	?>
+	<h2>Was andere über uns sagen</h2>
+	<?= do_shortcode("[testimonial_view id='1']"); ?>
+	<?php
 	if ( true == creativ_preschool_get_option( 'enable_frontpage_content' ) ) { ?>
         <div class="wrapper page-section">
 			<?php include( get_page_template() ); ?>

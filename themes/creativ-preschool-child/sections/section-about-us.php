@@ -16,7 +16,8 @@
 
     <?php if( $about_us_content_type == 'about_us_page' ) : ?>
         <div class="section-content">
-            <?php $args = array (
+            <?php
+			$args = array (
                 'post_type'     => 'page',
                 'post_per_page' => count( $featured_about_us_posts ),
                 'post__in'      => $featured_about_us_posts,
@@ -27,10 +28,8 @@
                 if ($loop->have_posts()) : $loop->the_post(); ?>
 
                 <article>
-                    <!--<div class="featured-image" style="background-image: url('<?php the_post_thumbnail_url( 'full' ); ?>');">-->
-					<div class="featured-image fabianAbwandlung">
-                        <!--<a href="<?php the_permalink();?>" class="post-thumbnail-link"></a>-->
-						<?= do_shortcode("[testimonial_view id='1']");?>
+                    <div class="featured-image" style="background-image: url('<?php the_post_thumbnail_url( 'full' ); ?>');">
+                        <a href="<?php the_permalink();?>" class="post-thumbnail-link"></a>
                     </div><!-- .featured-image -->
 
                     <div class="entry-container">
