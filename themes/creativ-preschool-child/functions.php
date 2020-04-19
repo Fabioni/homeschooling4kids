@@ -189,6 +189,7 @@ function einstellungen(){
 			<style>
 				.einstellungen{
 					display: flex;
+					width: -moz-fit-content;
 					width: fit-content;
 					min-width: 20%;
 					margin: 10px 0px 0px 10px;

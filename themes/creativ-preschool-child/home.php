@@ -16,7 +16,7 @@ get_header(); ?>
     <!-- Where am I: home.php -->
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main blog-posts-wrapper" role="main">
-			<div style="width: fit-content; margin: auto;">
+			<div style="width: -moz-fit-content; width: fit-content; margin: auto;">
 				<?php
 				if (isset($_GET['korrektur']) && $_GET['korrektur'] == "true") {
 					global $wp_query;

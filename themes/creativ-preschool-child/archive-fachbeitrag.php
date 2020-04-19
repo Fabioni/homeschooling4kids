@@ -54,7 +54,7 @@ get_header(); ?>
 						}
 
 					</style>
-					<div style="width: fit-content; margin: auto;" class="leistungsstufen-toggle">
+					<div style="width: -moz-fit-content; width: fit-content; margin: auto;" class="leistungsstufen-toggle">
 						<label style="cursor: pointer" id="leistungsstufe1Label" class="btn"><input
 								style="display: none" id="leistungsstufe1Radio" type="radio" name="leistungsstufe"
 								value="1&2">1. & 2. Klasse</label>

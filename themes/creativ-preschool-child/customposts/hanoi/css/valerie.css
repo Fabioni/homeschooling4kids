@@ -29,6 +29,7 @@ body[data-fensterOpen="levelende"] [data-role="window"]:not([data-fenster="level
 }
 
 [data-role="header"]{
+  width: -moz-fit-content;
   width: fit-content;
   margin: auto;
   display: table;
