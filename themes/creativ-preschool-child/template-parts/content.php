@@ -38,7 +38,13 @@
             <div class="entry-content">
 				<?php the_excerpt(); ?>
             </div><!-- .entry-content -->
-
+			<?php
+			if (get_field("audiofilevorlesen")){
+				?>
+				<img src="/wp-content/themes/creativ-preschool-child/Speaker_Icon.svg" style="height: 1.5em" title="Diesen Beitrag kannst du dir vorlesen lassen">
+				<?php
+			}
+			?>
 			<?php // if ( 'post' === get_post_type() ) : ?>
 			<?php if ( true ) : ?>
                 <div class="entry-meta">
