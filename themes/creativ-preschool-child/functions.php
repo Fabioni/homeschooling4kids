@@ -988,7 +988,7 @@ if ( function_exists( 'acf_add_local_field_group' ) ):
 				'library' => 'all',
 				'min_size' => '',
 				'max_size' => '',
-				'mime_types' => 'mp3',
+				'mime_types' => 'mp3, m4a',
 			),
 		),
 		'location' => array(
