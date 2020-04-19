@@ -920,3 +920,8 @@ article[id^='post-']{
 .weiterlesen_shortcode_button:hover{
   color: #0FBAF4;
 }
+
+#about-us .featured-image.fabianAbwandlung{
+  border: none;
+  background: none;
+}

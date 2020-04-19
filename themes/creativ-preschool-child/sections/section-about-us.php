@@ -27,8 +27,10 @@
                 if ($loop->have_posts()) : $loop->the_post(); ?>
 
                 <article>
-                    <div class="featured-image" style="background-image: url('<?php the_post_thumbnail_url( 'full' ); ?>');">
-                        <a href="<?php the_permalink();?>" class="post-thumbnail-link"></a>
+                    <!--<div class="featured-image" style="background-image: url('<?php the_post_thumbnail_url( 'full' ); ?>');">-->
+					<div class="featured-image fabianAbwandlung">
+                        <!--<a href="<?php the_permalink();?>" class="post-thumbnail-link"></a>-->
+						<?= do_shortcode("[testimonial_view id='1']");?>
                     </div><!-- .featured-image -->
 
                     <div class="entry-container">
@@ -38,7 +40,7 @@
 
                         <div class="entry-content">
 	                        <p>
-								<em>homeschooling4kids.at</em> ist die Platform für Volksschulkinder, erstellt von Lehramtsstudentinnen der Pädagogischen Hochschule Wien.
+								<em>homeschooling4kids.at</em> ist die Plattform für Volksschulkinder, erstellt von Lehramtsstudentinnen der Pädagogischen Hochschule Wien.
 							</p>
 							<p style="margin-top: 0.5em">
 								Wir möchten langfristig unseren Beitrag dazu leisten, den Heimunterricht spannender und lustiger zu gestalten. Das Team hofft, dass es dir gefällt und freut sich, dass du da bist&nbsp;:-)
