@@ -1,5 +1,6 @@
 wp.domReady( () => {
 
+  /*
   var cores = ["core/paragraph",
   "core/image",
   "core/heading",
@@ -28,6 +29,7 @@ wp.domReady( () => {
       }
     ]);
   }
+   */
 
   jQuery(document).on("click", ".h4k_dataKeysInput", function () {
     if (! jQuery(".h4k_dataKeysInput input").is("[list]")) {
