@@ -237,7 +237,7 @@ iframe {
 }
 
 .post-item .entry-meta span.cat-links {
-  margin-right: 5px;
+  margin-right: 13px;
 }
 
 .spasskategorie-spielideen-fuer-zuhause {
@@ -423,9 +423,13 @@ blockquote cite {
 .wpcf7-form-control-wrap * {
   max-width: 100%;
 }
-
+5px
 .cat-links.leistungsstufe:before {
   content: "\f19d";
+}
+
+.cat-links.cat_post_likes:before{
+  content: "\f004";
 }
 
 .cat-links.fach:before {
@@ -703,7 +707,7 @@ html {
   src: url('/wp-content/themes/creativ-preschool-child/assets/fonts/oesterschreibschrift.ttf');
 }
 
-.österdruck article[id^='post-'] *{
+.österdruck article[id^='post-']{
   font-family: "oesterdruckschrift", 'Open Sans', sans-serif;
 }
 
@@ -724,7 +728,7 @@ body.single .österdruck article[id^='post-'] {
   font-size: 130%;
 }
 
-.österschreib article[id^='post-'] *{
+.österschreib article[id^='post-']{
   font-family: "oesterschreibschrift", 'Open Sans', sans-serif;
 }
 
@@ -952,4 +956,15 @@ article[id^='post-']{
 .su-qtip-size-h4k_tooltip{
   font-size: 18px !important;
   line-height: initial !important;
+}
+
+#likerButtonWrapper{
+  position: absolute;
+  bottom: 0px;
+  right: 25px;
+  font-size: 25px;
+}
+
+#likerButtonWrapper * {
+  font-family: 'Open Sans', sans-serif;
 }

@@ -45,6 +45,7 @@
 				'after'  => '</div>',
 			) );
 		?>
+		<div id="likerButtonWrapper"><?= do_shortcode("[wp_ulike]") ?></div>
 	</div><!-- .entry-content -->
 	<?php creativ_preschool_posts_tags(); ?>
 	<?php if ( get_edit_post_link() ) : ?>
