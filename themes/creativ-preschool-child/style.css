@@ -939,6 +939,12 @@ article[id^='post-']{
   width: 1.5em;
 }
 
+@media screen and (max-width: 767px) {
+  .has-vorleseHook:before {
+    left: -1em;
+  }
+}
+
 .entry-content{
   position: relative;
 }

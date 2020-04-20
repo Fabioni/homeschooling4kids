@@ -10,10 +10,12 @@
 <script>
 	jQuery(function () {
 		jQuery("[data-audiostelle]").click(function () {
-			var zeit = jQuery(this).data("audiostelle").split(":")
-			jQuery("#audiofilewrapper audio").get(0).currentTime = parseInt(zeit[0]) * 60 + parseInt(zeit[1]);
-			jQuery("#audiofilewrapper audio").get(0).play();
-			jQuery("#audiofilewrapper audio").get(0).muted=false
+			if (jQuery('#audiofile').hasClass('ausgeklappt')){
+				var zeit = jQuery(this).data("audiostelle").split(":")
+				jQuery("#audiofilewrapper audio").get(0).currentTime = parseInt(zeit[0]) * 60 + parseInt(zeit[1]);
+				jQuery("#audiofilewrapper audio").get(0).play();
+				jQuery("#audiofilewrapper audio").get(0).muted=false
+			}
 		})
 		jQuery("#audiofilewrapper button").click(function () {
 			jQuery("[data-audiostelle]").toggleClass("has-vorleseHook");
