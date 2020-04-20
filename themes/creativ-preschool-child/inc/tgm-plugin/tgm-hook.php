@@ -63,6 +63,31 @@ function creativ_preschool_register_required_plugins() {
 			'slug'     => 'contact-form-7',
 			'required' => false,
 		),
+		array(
+			'name'     => "Advanced Custom Fields",
+			'slug'     => 'advanced-custom-fields',
+			'required' => true,
+		),
+		array(
+			'name'     => "Block Data Attribute Customized",
+			'slug'     => 'block-data-attribute',
+			'required' => true,
+		),
+		array(
+			'name'     => "Cookie Notice",
+			'slug'     => 'cookie-notice',
+			'required' => false,
+		),
+		array(
+			'name'     => "Strong Testimonials",
+			'slug'     => 'strong-testimonials',
+			'required' => false,
+		),
+		array(
+			'name'     => "WP Ulike",
+			'slug'     => 'wp-ulike',
+			'required' => false,
+		),
 	);
 
 	/*

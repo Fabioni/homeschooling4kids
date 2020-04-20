@@ -48,9 +48,11 @@
 			<?php // if ( 'post' === get_post_type() ) : ?>
 			<?php if ( true ) : ?>
                 <div class="entry-meta">
-					<?php creativ_preschool_posted_on(); ?>
+					<?php creativ_preschool_posted_on();
+					if (function_exists('wp_ulike_get_post_likes')){
+					?>
 					<span class="cat-links cat_post_likes"><?= wp_ulike_get_post_likes(get_the_ID()) ?></span>
-					<?php
+					<?php }
 					if ( is_post_type_archive( "fachbeitrag" ) ) {
 						creativ_preschool_entry_meta( array( "spasskategorie", "leistungsstufe", "schlagwort" ) );
 					} elseif ( is_post_type_archive( "spassbeitrag" ) ) {
