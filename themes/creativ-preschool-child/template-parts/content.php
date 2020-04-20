@@ -49,7 +49,7 @@
 			<?php if ( true ) : ?>
                 <div class="entry-meta">
 					<?php creativ_preschool_posted_on();
-					if (function_exists('wp_ulike_get_post_likes')){
+					if (false && function_exists('wp_ulike_get_post_likes')){ //TODO nur vorübergehende Deaktvierung, da wahrscheinlich Bug in WP-Ulike
 					?>
 					<span class="cat-links cat_post_likes"><?= wp_ulike_get_post_likes(get_the_ID()) ?></span>
 					<?php }
