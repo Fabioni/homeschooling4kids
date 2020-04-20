@@ -442,8 +442,11 @@ blockquote cite {
   color: cornflowerblue;
 }
 
-.su-tooltip:hover {
+.su-tooltip:hover .underlinewhenhover {
   text-decoration: underline;
+}
+
+.su-tooltip:hover{
   cursor: help;
 }
 
@@ -938,4 +941,9 @@ article[id^='post-']{
 
 .entry-content{
   position: relative;
+}
+
+.su-qtip-size-h4k_tooltip{
+  font-size: 18px !important;
+  line-height: initial !important;
 }

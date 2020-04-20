@@ -1204,6 +1204,22 @@ EOD;
 add_shortcode( 'weiterlesen', 'weiterlesen_shortcode_func' );
 
 
+
+function worterklärung_shortcode_func( $atts, $content ) {
+	$a = shortcode_atts( array(
+		'tipp' => 'Das ist der Tipp',
+	), $atts );
+
+	$tipp = $a["tipp"];
+
+	return do_shortcode("[su_tooltip position=\"north\" size=\"h4k_tooltip\" content=\"$tipp\"]<span class='underlinewhenhover'>{$content}</span>[/su_tooltip]");
+}
+add_shortcode( 'worterklärung', 'worterklärung_shortcode_func' );
+
+
+
+
+
 /**
  * Gutenberg scripts and styles
  * @link https://www.billerickson.net/block-styles-in-gutenberg/
