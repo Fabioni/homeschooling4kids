@@ -941,7 +941,7 @@ article[id^='post-']{
 
 @media screen and (max-width: 767px) {
   .has-vorleseHook:before {
-    left: -1em;
+    left: -0.8em;
   }
 }
 
