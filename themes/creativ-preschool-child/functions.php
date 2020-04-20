@@ -878,6 +878,18 @@ add_action( 'wp_head', 'add_meta_tags' );
 add_action( 'admin_head', 'add_meta_tags' );
 
 
+function add_h4k_dataKeys_DataList(){
+	?>
+	<datalist id="h4k-dataKeys">
+		<option value="audioStelle"></option>
+		<option value="none"></option>
+	</datalist>
+	<?php
+}
+
+add_action("admin_head", "add_h4k_dataKeys_DataList");
+
+
 add_filter( 'get_post_status', function ( $post_status, $post ) {
 	if ( isset( $_GET['korrektur'] ) && $_GET['korrektur'] == "true" && $post_status == 'future' ) {
 		return "publish";
@@ -1042,7 +1054,7 @@ add_action( 'init', 'wiederkehrenderNutzerCookie', 0 );
 
 
 function should_show_donate(){
-	if (! (is_front_page() or is_page("ueber-uns") or is_page("datenschutzerklaerung") or is_page("haftungsausschluss") or is_page("fuer-eltern"))) {return false;}
+	if (! (is_front_page() or is_page("wir-stellen-uns-vor") or is_page("datenschutzerklaerung") or is_page("haftungsausschluss") or is_page("elterninformation"))) {return false;}
 
 	if (! isset($_COOKIE["cookie_notice_accepted"])) {return false;}
 
@@ -1190,6 +1202,23 @@ function weiterlesen_shortcode_func( $atts, $content ) {
 EOD;
 }
 add_shortcode( 'weiterlesen', 'weiterlesen_shortcode_func' );
+
+
+/**
+ * Gutenberg scripts and styles
+ * @link https://www.billerickson.net/block-styles-in-gutenberg/
+ */
+function be_gutenberg_scripts() {
+
+	wp_enqueue_script(
+		'be-editor',
+		get_stylesheet_directory_uri() . '/assets/js/editor.js',
+		array( 'wp-blocks', 'wp-dom' ),
+		filemtime( get_stylesheet_directory() . '/assets/js/editor.js' ),
+		true
+	);
+}
+add_action( 'enqueue_block_editor_assets', 'be_gutenberg_scripts' );
 
 
 

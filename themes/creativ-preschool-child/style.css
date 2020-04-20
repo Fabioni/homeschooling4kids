@@ -465,17 +465,17 @@ blockquote cite {
   font-size: 110%;
 }
 
-.fabian-großerPfeil:before {
+.fabian-großerPfeil:before, .is-style-h4k-großerPfeil:before {
   content: "";
   display: block;
-  width: 80px;
-  height: 120px;
+  width: 60px;
+  height: 90px;
   position: relative;
   left: 45%;
-  left: calc(50% - 40px);
+  left: calc(50% - 30px);
   z-index: 1;
   background: url(/wp-content/uploads/2020/03/arrow-35173_1280-e1585600397946-714x1024.png) no-repeat;
-  background-size: 80px;
+  background-size: 60px;
 }
 
 
@@ -864,7 +864,7 @@ article[id^='post-']{
   border-radius: 25px;
 }
 
-#audiofile{
+#audiofile:not(.ausgeklappt){
   display: none;
 }
 
@@ -923,4 +923,19 @@ article[id^='post-']{
 
 .home .strong-view.wpmtst-modern .wpmtst-testimonial-content:before, .home .strong-view.wpmtst-modern .wpmtst-testimonial-content:after{
   background: #da8b0f;
+}
+
+
+.has-vorleseHook:before{
+  content: "";
+  background-image: url(/wp-content/themes/creativ-preschool-child/Speaker_Icon.svg);
+  height: 1.5em;
+  position: absolute;
+  left: -3em;
+  background-size: contain;
+  width: 1.5em;
+}
+
+.entry-content{
+  position: relative;
 }

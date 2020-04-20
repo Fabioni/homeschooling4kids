@@ -6,6 +6,22 @@
  */
 ?>
 <!-- Where am I: content-single.php -->
+
+<script>
+	jQuery(function () {
+		jQuery("[data-audiostelle]").click(function () {
+			var zeit = jQuery(this).data("audiostelle").split(":")
+			jQuery("#audiofilewrapper audio").get(0).currentTime = parseInt(zeit[0]) * 60 + parseInt(zeit[1]);
+			jQuery("#audiofilewrapper audio").get(0).play();
+			jQuery("#audiofilewrapper audio").get(0).muted=false
+		})
+		jQuery("#audiofilewrapper button").click(function () {
+			jQuery("[data-audiostelle]").toggleClass("has-vorleseHook");
+		});
+
+	})
+</script>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="entry-meta">
 		<?php creativ_preschool_posted_on();
@@ -14,7 +30,7 @@
 	<?php
 	if ($url = get_field("audiofilevorlesen")){
 		?>
-		<div id="audiofilewrapper"><button onclick="jQuery('#audiofile').css('display', 'initial')" id="openVorlesenAudio"><img src="/wp-content/themes/creativ-preschool-child/Speaker_Icon.svg">
+		<div id="audiofilewrapper"><button onclick="jQuery('#audiofile').toggleClass('ausgeklappt'); jQuery('#audiofilewrapper audio').get(0).pause()" id="openVorlesenAudio"><img src="/wp-content/themes/creativ-preschool-child/Speaker_Icon.svg">
 				<span>Vorlesen</span></button><div id="audiofile"><?= do_shortcode('[audio src="'.$url.'"]') ?></div></div>
 		<?php
 	}
