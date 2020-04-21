@@ -1261,14 +1261,16 @@ add_shortcode( 'abfrage', 'abfrage_shortcode_func' );
 
 function abfrage_prüfen_shortcode_func( $atts, $content ) {
 	$a = shortcode_atts( array(
-
+		"style" => ""
 	), $atts );
+	$style = $a["style"];
+	if ($content == "") $content = "Prüfen";
 
 	return <<<EOD
-<button class="aligncenter" onclick="
+<button style="$style" class="aligncenter" onclick="
 jQuery('.fabian-check-me').each(function(index){if (jQuery(this).data('result') == jQuery(this).val()) {jQuery(this).css('border','2px solid #0f08')} else {jQuery(this).css('border','2px solid #f008')}});
 jQuery('.fabian-check-me').change(function(){jQuery(this).css('border', '1px solid #ebebeb')});
-">Zeige mir ob ich richtig liege</button>
+">$content</button>
 EOD;
 
 
