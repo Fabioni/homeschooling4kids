@@ -982,3 +982,19 @@ article[id^='post-']{
   padding: 1px 15px;
   background: white;
 }
+
+.checked_richtig{
+  outline: 2px solid green;
+}
+
+.checked_falsch{
+  outline: 2px solid red;
+}
+
+.fabian_check_me_submit.checked_richtig{
+  box-shadow: 4px 4px 4px green;
+}
+
+.fabian_check_me_submit.checked_falsch{
+  box-shadow: 4px 4px 4px red;
+}

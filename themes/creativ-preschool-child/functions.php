@@ -1225,27 +1225,89 @@ function lautsprecher_shortcode_func( $atts, $content ) {
 add_shortcode( 'lautsprecher', 'lautsprecher_shortcode_func' );
 
 
-function abfrage_shortcode_func( $atts, $content ) {
-	$a = shortcode_atts( array(
-		'vorschlaege' => "",
-		'laenge' => "5",
-		'richtig' => ""
-	), $atts );
 
-	$vorschläge = explode(', ', $a["vorschlaege"]);
+
+function abfrage_shortcode_func_radio($richtig = "", $group){
+	return "<em>Feature Missing</em>";
+}
+
+function abfrage_shortcode_func_select($richtig = "", $vorschläge = array(), $content=""){
+
 	$options = "";
 	foreach ($vorschläge as $v){
 		$options .= "<option value='$v'>$v</option>";
 	}
 
-	$richtig = $a["richtig"];
-
 	return <<<EOD
 <select data-result='$richtig' value='$content' class="fabian-check-me style_unterstrich">
 	<option value=""></option>
-  $options
+ 	$options
 </select>
 EOD;
+}
+
+function abfrage_shortcode_func_checkbox($richtig = false){
+	return <<<EOD
+<input class="fabian-check-me" type="checkbox" data-result='$richtig'>
+EOD;
+
+}
+
+function abfrage_shortcode_func_numbertext($type="text", $richtig, $content = "", $max="", $min="", $länge =""){
+	return <<<EOD
+<input type="$type" data-result="$richtig" class="fabian-check-me" size="$länge" value="$content" max="$max" min="$min">
+EOD;
+
+}
+
+
+function abfrage_shortcode_func( $atts, $content ) {
+	$type = "checkbox";
+
+	if (isset($atts["vorschlaege"])){
+		$type = "select";
+	} elseif (isset($atts["richtig"])){
+		if (is_numeric($atts["richtig"])){
+			$type = "number";
+		} else {
+			$type = "text";
+		}
+	} elseif (isset($atts["gruppe"])){
+		$type = "radio";
+	}
+
+	$a = shortcode_atts( array(
+		'vorschlaege' => "",
+		'laenge' => "",
+		'richtig' => "",
+		'gruppe' => "",
+		'max' => "",
+		'min' => ""
+	), $atts );
+
+	$richtig = $a["richtig"];
+
+	switch ($type){
+		case "checkbox":
+			return abfrage_shortcode_func_checkbox(is_array($atts) && in_array("richtig", $atts));
+			break;
+		case "radio":
+			return abfrage_shortcode_func_radio(in_array("richtig", $atts), $a["gruppe"]);
+			break;
+		case "select":
+			$vorschläge = explode(', ', $a["vorschlaege"]);
+			return abfrage_shortcode_func_select($richtig, $vorschläge, $content);
+			break;
+		case "text":
+			return abfrage_shortcode_func_numbertext("text", $a["richtig"], $content, "", "", $a["laenge"]);
+			break;
+		case "number":
+			return abfrage_shortcode_func_numbertext("number", $a["richtig"], "", $a["max"], $a["min"]);
+			break;
+		default:
+			return "FEHLER";
+	}
+
 
 
 	/*$id = uniqid("abfrage_input");
@@ -1260,17 +1322,41 @@ EOD;
 add_shortcode( 'abfrage', 'abfrage_shortcode_func' );
 
 function abfrage_prüfen_shortcode_func( $atts, $content ) {
+	$parent = false;
+	if (is_array($atts) && in_array("parent", $atts)){
+		$parent = true;
+	}
 	$a = shortcode_atts( array(
-		"style" => ""
+		"style" => "",
+		"parent" => $parent
 	), $atts );
 	$style = $a["style"];
+	$parent = $a["parent"];
 	if ($content == "") $content = "Prüfen";
 
+	$id = uniqid("check_button");
+
+	$selector = "jQuery(this)";
+	if ($parent != false){
+		if ($parent === true) {
+			$selector = "jQuery('#$id')";
+		} else {
+			$selector = "(jQuery(this).closest('$parent').size() > 0 ? jQuery(this).closest('$parent') : jQuery(this))";
+		}
+	}
+
+
 	return <<<EOD
-<button style="$style" class="aligncenter" onclick="
-jQuery('.fabian-check-me').each(function(index){if (jQuery(this).data('result') == jQuery(this).val()) {jQuery(this).css('border','2px solid #0f08')} else {jQuery(this).css('border','2px solid #f008')}});
-jQuery('.fabian-check-me').change(function(){jQuery(this).css('border', '1px solid #ebebeb')});
-">$content</button>
+<button id="$id" style="$style" class="aligncenter fabian_check_me_submit">$content</button>
+<script>
+jQuery(function() {
+  jQuery("#$id").click(function() {
+    jQuery('.fabian-check-me').each(function(index){{$selector}.removeClass('checked_richtig').removeClass("checked_falsch")});
+	jQuery('.fabian-check-me').each(function(index){if (jQuery(this).data('result') == jQuery(this).val() || jQuery(this).data('result') == jQuery(this).is(':checked')) {if (! {$selector}.hasClass('checked_falsch')) {$selector}.addClass('checked_richtig');} else {{$selector}.addClass('checked_falsch').removeClass('checked_richtig')}});
+	jQuery('.fabian-check-me').change(function(){{$selector}.removeClass('checked_falsch').removeClass('checked_richtig')});
+  })
+})
+</script>
 EOD;
 
 
