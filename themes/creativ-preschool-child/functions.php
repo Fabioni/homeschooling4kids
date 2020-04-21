@@ -1225,6 +1225,57 @@ function lautsprecher_shortcode_func( $atts, $content ) {
 add_shortcode( 'lautsprecher', 'lautsprecher_shortcode_func' );
 
 
+function abfrage_shortcode_func( $atts, $content ) {
+	$a = shortcode_atts( array(
+		'vorschlaege' => "",
+		'laenge' => "5",
+		'richtig' => ""
+	), $atts );
+
+	$vorschläge = explode(', ', $a["vorschlaege"]);
+	$options = "";
+	foreach ($vorschläge as $v){
+		$options .= "<option value='$v'>$v</option>";
+	}
+
+	$richtig = $a["richtig"];
+
+	return <<<EOD
+<select data-result='$richtig' value='$content' class="fabian-check-me style_unterstrich">
+	<option value=""></option>
+  $options
+</select>
+EOD;
+
+
+	/*$id = uniqid("abfrage_input");
+	return print_r($atts, true) . <<<EOD
+<input list='$id' data-result='$richtig' width="$a[laenge]" type='text' value='$content' class="fabian-check-me style_unterstrich">
+<datalist id="$id">
+	$options
+</datalist>
+EOD;
+*/
+}
+add_shortcode( 'abfrage', 'abfrage_shortcode_func' );
+
+function abfrage_prüfen_shortcode_func( $atts, $content ) {
+	$a = shortcode_atts( array(
+
+	), $atts );
+
+	return <<<EOD
+<button class="aligncenter" onclick="
+jQuery('.fabian-check-me').each(function(index){if (jQuery(this).data('result') == jQuery(this).val()) {jQuery(this).css('border','2px solid #0f08')} else {jQuery(this).css('border','2px solid #f008')}});
+jQuery('.fabian-check-me').change(function(){jQuery(this).css('border', '1px solid #ebebeb')});
+">Zeige mir ob ich richtig liege</button>
+EOD;
+
+
+}
+add_shortcode( 'abfrage_prüfen', 'abfrage_prüfen_shortcode_func' );
+
+
 
 
 

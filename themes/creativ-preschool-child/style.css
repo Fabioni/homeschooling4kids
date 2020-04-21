@@ -968,3 +968,17 @@ article[id^='post-']{
 #likerButtonWrapper * {
   font-family: 'Open Sans', sans-serif;
 }
+
+
+/* abfrage Shortcode */
+#main input.fabian-check-me{
+  padding: 1px;
+}
+
+#main input.fabian-check-me.style_unterstrich{
+  padding: 1px;
+}
+#main select.fabian-check-me.style_unterstrich{
+  padding: 1px 15px;
+  background: white;
+}
