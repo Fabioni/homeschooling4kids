@@ -1218,6 +1218,13 @@ add_shortcode( 'worterklärung', 'worterklärung_shortcode_func' );
 
 
 
+function lautsprecher_shortcode_func( $atts, $content ) {
+	return "<img src=\"/wp-content/themes/creativ-preschool-child/Speaker_Icon.svg\" style='height: 1.2em'>";
+}
+add_shortcode( 'lautsprecher', 'lautsprecher_shortcode_func' );
+
+
+
 
 
 /**
