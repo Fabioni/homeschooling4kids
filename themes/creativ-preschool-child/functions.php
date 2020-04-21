@@ -1048,7 +1048,8 @@ endif;
 
 
 function wiederkehrenderNutzerCookie(){
-	if (! isset($_COOKIE["firstTimeUsage"])) {setcookie( "firstTimeUsage", time(), time() + 10 * 365 * 24 * 3600 );}  // verfällt in 10 Jahren
+	if (! isset($_COOKIE["firstTimeUsage"])) {setcookie( "firstTimeUsage", time(), time() + 10 * 365 * 24 * 3600, "/" );}  // verfällt in 10 Jahren
+	if (! isset($_COOKIE["guid"])) {setcookie( "guid", uniqid("h4k"), time() + 10 * 365 * 24 * 3600, "/" );}  // verfällt in 10 Jahren
 }
 add_action( 'init', 'wiederkehrenderNutzerCookie', 0 );
 
