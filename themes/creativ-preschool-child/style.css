@@ -983,11 +983,11 @@ article[id^='post-']{
   background: white;
 }
 
-.checked_richtig{
+.checked_richtig, input[type="checkbox"].fabian-check-me.checked_richtig + label::before{
   outline: 2px solid green;
 }
 
-.checked_falsch{
+.checked_falsch, input[type="checkbox"].fabian-check-me.checked_falsch + label::before{
   outline: 2px solid red;
 }
 
@@ -997,4 +997,29 @@ article[id^='post-']{
 
 .fabian_check_me_submit.checked_falsch{
   box-shadow: 4px 4px 4px red;
+}
+
+
+input[type="checkbox"].fabian-check-me {
+  display:none;
+}
+input[type="checkbox"].fabian-check-me + label::before {
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  border: 2px solid #0f0f10;
+  background-color: #fff;
+  display: inline-block;
+  content: "";
+  margin-right: 1px;
+  margin-left: 1px;
+}
+input[type="checkbox"].fabian-check-me:checked + label::before {
+  box-shadow: inset 0px 0px 0px 3px #fff;
+  background-color: #000;
+}
+
+
+input[type="checkbox"].fabian-check-me.checked_richtig + label::before {
+
 }

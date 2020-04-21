@@ -768,6 +768,8 @@ add_action( 'wp_footer', 'print_footer_so_22382151_footer' );
 function enqueue_scripts_so_22382151() {
 	wp_enqueue_script( 'jquery-ui-dialog', false, array( 'jquery-ui', 'jquery' ) );
 	wp_enqueue_style( 'jquery-ui-cdn', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/dot-luv/jquery-ui.min.css' );
+	wp_enqueue_script("toastr-script", "https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js");
+	wp_enqueue_style("toastr-style", "https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css");
 }
 
 
@@ -1247,8 +1249,9 @@ EOD;
 }
 
 function abfrage_shortcode_func_checkbox($richtig = false){
+	$id = uniqid("checkbox");
 	return <<<EOD
-<input class="fabian-check-me" type="checkbox" data-result='$richtig'>
+<input id="$id" class="fabian-check-me" type="checkbox" data-result='$richtig'><label for="$id"></label>
 EOD;
 
 }
@@ -1351,9 +1354,23 @@ function abfrage_prüfen_shortcode_func( $atts, $content ) {
 <script>
 jQuery(function() {
   jQuery("#$id").click(function() {
+    var fehler = 0;
     jQuery('.fabian-check-me').each(function(index){{$selector}.removeClass('checked_richtig').removeClass("checked_falsch")});
-	jQuery('.fabian-check-me').each(function(index){if (jQuery(this).data('result') == jQuery(this).val() || jQuery(this).data('result') == jQuery(this).is(':checked')) {if (! {$selector}.hasClass('checked_falsch')) {$selector}.addClass('checked_richtig');} else {{$selector}.addClass('checked_falsch').removeClass('checked_richtig')}});
+	jQuery('.fabian-check-me').each(function(index){if (jQuery(this).data('result') == jQuery(this).val() || jQuery(this).data('result') == jQuery(this).is(':checked')) {if (! {$selector}.hasClass('checked_falsch')) {$selector}.addClass('checked_richtig');} else {{$selector}.addClass('checked_falsch').removeClass('checked_richtig'); fehler+=1}});
 	jQuery('.fabian-check-me').change(function(){{$selector}.removeClass('checked_falsch').removeClass('checked_richtig')});
+
+	toastr.options = {
+		"newestOnTop": true,
+		"progressBar": true,
+		"preventDuplicates": true,
+		"extendedTimeOut": "1000"
+	}
+
+	if (fehler > 0)	{
+	  toastr["warning"]("Versuche es noch einmal", fehler + " Fehler");
+	} else {
+	  toastr["success"]("Alles ist richtig", "Wunderbar");
+	}
   })
 })
 </script>
