@@ -9,22 +9,29 @@
 
 ?>
 <!-- Where am I: content-page.php -->
-<!--
+
 <script>
-    jQuery(function () {
-        for (var i = 1; i <= 5; i++){jQuery("#post-47 > div ul li:nth-child(" +i +")").css('opacity', '0').delay(700).fadeTo(1000 + 400 * i, 1);}
-    })
+	jQuery(function () {
+		jQuery("[data-audiostelle]").click(function () {
+			if (jQuery('#audiofile').hasClass('ausgeklappt')){
+				var zeit = jQuery(this).data("audiostelle").split(":")
+				jQuery("#audiofilewrapper audio").get(0).currentTime = parseInt(zeit[0]) * 60 + parseInt(zeit[1]);
+				jQuery("#audiofilewrapper audio").get(0).play();
+				jQuery("#audiofilewrapper audio").get(0).muted=false
+			}
+		})
+		jQuery("#audiofilewrapper button").click(function () {
+			jQuery("[data-audiostelle]").toggleClass("has-vorleseHook");
+		});
+
+	})
 </script>
-<style>
-    #post-47 > div ul li{
-        opacity: 0;
-    }
-</style>-->
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php
 	if ($url = get_field("audiofilevorlesen")){
 		?>
-		<div id="audiofilewrapper"><button onclick="jQuery('#audiofile').css('display', 'initial')" id="openVorlesenAudio"><img src="/wp-content/themes/creativ-preschool-child/Speaker_Icon.svg">
+		<div id="audiofilewrapper"><button onclick="jQuery('#audiofile').toggleClass('ausgeklappt'); jQuery('#audiofilewrapper audio').get(0).pause()" id="openVorlesenAudio"><img src="/wp-content/themes/creativ-preschool-child/Speaker_Icon.svg">
 				<span>Vorlesen</span></button><div id="audiofile"><?= do_shortcode('[audio src="'.$url.'"]') ?></div></div>
 		<?php
 	}
