@@ -1401,5 +1401,14 @@ function be_gutenberg_scripts() {
 add_action( 'enqueue_block_editor_assets', 'be_gutenberg_scripts' );
 
 
+add_filter('wp_ulike_counter_value', 'wp_ulike_change_count', 10, 2);
+function wp_ulike_change_count($counter_value) {
+	if (is_user_logged_in()){
+		return $counter_value;
+	} else {
+		return $counter_value + get_the_ID() % 15;
+	}
+}
+
 
 require get_template_directory() . '/functionsParent.php';
