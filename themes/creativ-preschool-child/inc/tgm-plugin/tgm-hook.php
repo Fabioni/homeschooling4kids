@@ -88,6 +88,11 @@ function creativ_preschool_register_required_plugins() {
 			'slug'     => 'wp-ulike',
 			'required' => false,
 		),
+		array(
+			'name'     => "Ivory Search",
+			'slug'     => 'ivory-search',
+			'required' => false,
+		),
 	);
 
 	/*

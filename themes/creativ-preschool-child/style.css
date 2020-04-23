@@ -1147,3 +1147,8 @@ header.entry-header {
 .entry-meta > span{
   margin-right: 1em;
 }
+
+/* Strong Testimonial Bug, Pfeile verschwinden beim Scrollen was zu Seiten Lacks führt */
+.wpmslider-controls.wpmslider-has-controls-direction.disabled{
+  display: block !important;
+}
