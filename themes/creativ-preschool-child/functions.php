@@ -1410,5 +1410,15 @@ function wp_ulike_change_count($counter_value) {
 	}
 }
 
+function oembed_iframe_overrides($html, $url, $attr) {
+
+	if ( strpos( $html, "<iframe" ) !== false ) {
+		return str_replace('sandbox="allow-scripts', 'sandbox="allow-scripts allow-same-origin', $html); }
+	else {
+		return $html;
+	}
+}
+add_filter( 'embed_oembed_html', 'oembed_iframe_overrides', 10, 3);
+
 
 require get_template_directory() . '/functionsParent.php';
