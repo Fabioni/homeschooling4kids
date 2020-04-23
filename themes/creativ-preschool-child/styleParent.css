@@ -3400,8 +3400,8 @@ ul.social-icons {
     clear: both;
     display: table;
     width: 100%;
-    padding-top: 15px;
-    border-top: 1px solid rgba(255, 255, 255, 0.40);
+    /*padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.40);*/
 }
 .post-item .entry-meta a,
 .post-item .entry-meta .cat-links:before {
@@ -4214,7 +4214,7 @@ body.search.left-sidebar .blog-posts-wrapper .col-3 article {
         transform: translateY(-50%);
     }
     .main-navigation form.search-form {
-        border: 20px solid #111;
+        /*border: 20px solid #111;*/
     }
     .main-navigation form.search-form input {
         background-color: #fff;

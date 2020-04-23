@@ -130,7 +130,15 @@ add_filter( 'get_the_archive_title', function ( $title ) {
 	}
 
 	if ( is_post_type_archive() && is_date() ) {
-		$title = sprintf( '%s am %s', $titlePosttype, $titleDate );;
+		if (is_day()){
+			$title = sprintf( '%s am %s', $titlePosttype, $titleDate );
+		} elseif (is_month()){
+			$title = sprintf( '%s im %s', $titlePosttype, $titleDate );
+		} elseif (is_year()){
+			$title = sprintf( '%s in %s', $titlePosttype, $titleDate );
+		} else {
+			$title = sprintf( '%s: %s', $titlePosttype, $titleDate );
+		}
 	}
 
 	if ( is_post_type_archive() && is_tax() ) {
@@ -1410,15 +1418,66 @@ function wp_ulike_change_count($counter_value) {
 	}
 }
 
+
+
+
+
+
 function oembed_iframe_overrides($html, $url, $attr) {
 
 	if ( strpos( $html, "<iframe" ) !== false ) {
-		return str_replace('sandbox="allow-scripts', 'sandbox="allow-scripts allow-same-origin', $html); }
+		return str_replace('sandbox="allow-scripts', 'allowfullscreen sandbox="allow-scripts allow-same-origin ', $html); }
 	else {
 		return $html;
 	}
 }
 add_filter( 'embed_oembed_html', 'oembed_iframe_overrides', 10, 3);
+
+add_filter( 'wp_nav_menu_items', 'your_custom_menu_item', 10, 2 );
+function your_custom_menu_item ( $items, $args ) {
+	if ($args->theme_location == 'primary') {
+		$form = do_shortcode('[ivory-search id="3283" title="Default Search Form"]');
+		$li = <<<EOD
+<li class="fa fa-search astm-search-menu desktopsearch menu-item is-menu popup">
+    <a>Suche</a>
+    <ul class="sub-menu" style="width: 225px;">
+        <li class="astm-search-menu is-menu default menu-item">
+            $form
+        </li>
+    </ul>
+</li>
+EOD;
+
+		$li2 = <<<EOD
+<li class=" astm-search-menu is-menu default">
+$form
+</li>
+EOD;
+
+		$items .= $li . $li2;
+	}
+	return $items;
+}
+
+function archive_posts_aufklappen(){
+	?>
+<script>
+	jQuery(function () {
+		jQuery(".makevorschau article").click(function (event) {
+			if (jQuery(this).hasClass("open")){
+				return;
+			}
+			jQuery(".makevorschau article").removeClass("open");
+			jQuery(this).addClass("open");
+			event.preventDefault();
+		})
+	})
+</script>
+<?php
+}
+
+add_action("wp_footer", "archive_posts_aufklappen");
+
 
 
 require get_template_directory() . '/functionsParent.php';

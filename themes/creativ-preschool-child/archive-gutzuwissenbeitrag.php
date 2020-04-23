@@ -10,14 +10,13 @@
 get_header(); ?>
 	<div id="primary" class="content-area">
 		<!-- Where am I: archive-gutzuwissenbeitrag.php -->
-		<main id="main" class="site-main blog-posts-wrapper noMatchHeight" role="main">
+		<main id="main" class="site-main blog-posts-wrapper noMatchHeight <?= ( ! is_date() ) ? "makevorschau" : "" ?>"
+			  role="main">
 			<?php
-			if ( have_posts() ){
-				$smallorbig = $wp_query->post_count > 30 ? "smallarticles" : "";
-				$smallorbig = $wp_query->post_count < 10 ? "bigarticles" : "";
+			if ( have_posts() ) {
 				?>
 				<div class="horizontal-scroll-wrapper">
-					<div class="horizontal-scroll <?= $smallorbig ?>">
+					<div class="horizontal-scroll">
 						<?php
 						$first = true;
 						/* Start the Loop */

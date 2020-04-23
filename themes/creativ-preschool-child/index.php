@@ -1,11 +1,6 @@
 <?php
 /**
- * The main template file
- *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
+ * The template for displaying archive pages
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -13,30 +8,53 @@
  */
 
 get_header(); ?>
-    <!-- Where am I: index.php -->
 	<div id="primary" class="content-area">
+		<!-- Where am I: index.php -->
 		<main id="main" class="site-main blog-posts-wrapper" role="main">
-			<div class="section-content clear col-2">
+			<div class="">
+				<?php
+				//global $wp_query;
+				//$args = array_merge( $wp_query->query_vars, array( 'post_type' => array("post", "fachbeitrag", "spassbeitrag", "gutzuwissenbeitrag") ) );
+				//query_posts( $args ); ?>
 				<?php
 				if ( have_posts() ) :
+					$makevorschau = $wp_query->post_count > 6 ? "makevorschau" : "";
+					?>
+					<div class="horizontal-scroll-wrapper <?= $makevorschau ?>">
+						<div class="horizontal-scroll">
+							<?php
+							$first = true;
+							/* Start the Loop */
+							while ( have_posts() ) {
+								the_post();
 
-					/* Start the Loop */
-					while ( have_posts() ) : the_post();
-
-						/*
-						 * Include the Post-Format-specific template for the content.
-						 * If you want to override this in a child theme, then include a file
-						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-						 */
-						get_template_part( 'template-parts/content', get_post_format() );
-
-					endwhile;
+								/*
+								 * Include the Post-Format-specific template for the content.
+								 * If you want to override this in a child theme, then include a file
+								 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+								 */
+								?>
+								<div class="horizontal-scroll-item"><?php
+									$first = false;
+									get_template_part( 'template-parts/content', get_post_format() );
+									?></div>
+							<?php } ?>
+							<!-- folgendes braucht man, damit alles items gleich breit sind -->
+							<div class="horizontal-scroll-item"></div>
+							<div class="horizontal-scroll-item"></div>
+							<div class="horizontal-scroll-item"></div>
+							<div class="horizontal-scroll-item"></div>
+							<div class="horizontal-scroll-item"></div>
+							<div class="horizontal-scroll-item"></div>
+						</div>
+					</div>
+				<?php
 				else :
 
 					get_template_part( 'template-parts/content', 'none' );
 
 				endif; ?>
-			</div><!-- .blog-archive-wrapper -->
+			</div>
 			<?php the_posts_navigation(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->

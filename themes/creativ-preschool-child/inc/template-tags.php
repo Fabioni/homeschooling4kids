@@ -50,13 +50,13 @@ function creativ_preschool_entry_meta($cats = array("spasskategorie", "fach", "l
 		$categories_list = get_the_category_list( esc_html__( ', ', 'creativ-preschool' ) );
 
 		if ( $categories_list && creativ_preschool_categorized_blog() ) {
-			printf( '<span class="cat-links">%1$s</span> ', $categories_list ); // WPCS: XSS OK.
+			printf( '<span class="cat-links">%1$s</span><wbr>', $categories_list ); // WPCS: XSS OK.
 		}
 	}
 
 	// FABIAN
 	foreach ($cats as $cat){
-		echo get_the_term_list( get_the_ID(), $cat, '<span class="cat-links '. $cat . '">', esc_html__( ', ', 'creativ-preschool' ), '</span>  ' );
+		echo get_the_term_list( get_the_ID(), $cat, '<span class="cat-links '. $cat . '">', esc_html__( ', ', 'creativ-preschool' ), '</span><wbr>' );
 	}
 
 

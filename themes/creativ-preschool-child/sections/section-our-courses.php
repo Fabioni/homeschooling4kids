@@ -76,8 +76,9 @@
             </div><!-- .wrapper -->
         </div><!-- .section-content -->
     <?php else: ?>
-        <div class="section-content clear horizontal-scroll-wrapper smallarticles">
-            <div class="horizontal-scroll XXXcourses-slider blog-posts-wrapper" data-slick='{"slidesToShow": 3, "slidesToScroll": 1, "infinite": false, "speed": 500, "dots": true, "arrows":true, "autoplay": false, "fade": false }'>
+	<div class="makescroll">
+        <div class="section-content clear horizontal-scroll-wrapper">
+            <div class="horizontal-scroll XXXcourses-slider blog-posts-wrapper noMatchHeight" data-slick='{"slidesToShow": 3, "slidesToScroll": 1, "infinite": false, "speed": 500, "dots": true, "arrows":true, "autoplay": false, "fade": false }'>
                 <?php $args = array (
                     'post_type'     => $cs_content_type == "cs_post" ? 'post' : 'gutzuwissenbeitrag',
                     'post_per_page' => count( $our_courses_posts ),
@@ -99,4 +100,5 @@
                 <?php endif;?>
             </div><!-- .wrapper -->
         </div><!-- .section-content -->
+	</div>
     <?php endif;

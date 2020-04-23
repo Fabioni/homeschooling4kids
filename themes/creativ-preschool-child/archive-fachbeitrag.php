@@ -8,7 +8,7 @@
  */
 
 get_header(); ?>
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area <?= ( ! is_date() ) ? "makevorschau" : "" ?>">
 		<!-- Where am I: archive-fachbeitrag.php -->
 		<main id="main" class="site-main" role="main">
 			<div class="">
@@ -54,7 +54,8 @@ get_header(); ?>
 						}
 
 					</style>
-					<div style="width: -moz-fit-content; width: fit-content; margin: auto;" class="leistungsstufen-toggle">
+					<div style="width: -moz-fit-content; width: fit-content; margin: auto;"
+						 class="leistungsstufen-toggle">
 						<label style="cursor: pointer" id="leistungsstufe1Label" class="btn"><input
 								style="display: none" id="leistungsstufe1Radio" type="radio" name="leistungsstufe"
 								value="1&2">1. & 2. Klasse</label>
@@ -92,33 +93,42 @@ get_header(); ?>
 						'orderby'    => 'id'
 					) );
 
-					function searchwitharraywithpatterns($ar, $subj){
+					function searchwitharraywithpatterns( $ar, $subj ) {
 						$i = 0;
-						foreach ($ar as $tag){
-							if (preg_match("/" . $tag . "/", $subj)) return $i;
+						foreach ( $ar as $tag ) {
+							if ( preg_match( "/" . $tag . "/", $subj ) ) {
+								return $i;
+							}
 							$i ++;
 						}
+
 						return null;
 					}
 
-					usort($terms, function ($a, $b){
-						$sortierung = array("montag", "dienstag", "mittwoch", "donnerstag", "freitag");
+					usort( $terms, function ( $a, $b ) {
+						$sortierung = array( "montag", "dienstag", "mittwoch", "donnerstag", "freitag" );
 
-						$i1 = searchwitharraywithpatterns($sortierung, $a->slug);
-						$i2 = searchwitharraywithpatterns($sortierung, $b->slug);
+						$i1 = searchwitharraywithpatterns( $sortierung, $a->slug );
+						$i2 = searchwitharraywithpatterns( $sortierung, $b->slug );
 
-						if ($i1 === null) return true;
-						if ($i2 === null) return false;
-						return ($i1 > $i2);
-					});
+						if ( $i1 === null ) {
+							return true;
+						}
+						if ( $i2 === null ) {
+							return false;
+						}
+
+						return ( $i1 > $i2 );
+					} );
 
 					?>
 					<style>
-						.fächerlinks li{
+						.fächerlinks li {
 							display: inline-block;
 							margin: 0px 10px;
 						}
-						.fächerlinks li:before{
+
+						.fächerlinks li:before {
 							content: "\f0da";
 							font-family: 'Font Awesome 5 Free';
 							font-weight: 900;
@@ -127,10 +137,12 @@ get_header(); ?>
 					</style>
 					<ul class="fächerlinks">
 						<?php
-						foreach ( $terms as $fa ) {
-							?>
-							<li><a href="#fach-<?= $fa->slug ?>"><?= $fa->name ?></a></li><?php
+						if (! is_date()){
+							foreach ( $terms as $fa ) {
+								?>
+								<li><a href="#fach-<?= $fa->slug ?>"><?= $fa->name ?></a></li><?php
 
+							}
 						}
 						?>
 					</ul>
@@ -143,24 +155,39 @@ get_header(); ?>
 
 						if ( have_posts() ) {
 							?>
-							<div class="blog-posts-wrapper">
-							<h1 class="archivUnterteiltitel" id="fach-<?= $fa->slug ?>"><a
-									href="<?= get_term_link( $fa->slug, "fach" ) ?>"><?= $fa->name ?></a></h1>
-							<div class="section-content clear col-3 archivunterteil"><?php
+							<div class="blog-posts-wrapper noMatchHeight">
+								<h1 class="archivUnterteiltitel" id="fach-<?= $fa->slug ?>"><a
+										href="<?= get_term_link( $fa->slug, "fach" ) ?>"><?= $fa->name ?></a>&nbsp;<i
+										class="fa fa-angle-down"
+										onclick="jQuery(this).toggleClass('fa-angle-down').toggleClass('fa-angle-up');jQuery(this).closest('.blog-posts-wrapper').find('.archivunterteil').toggleClass('closed')"></i>
+								</h1>
+								<div class="horizontal-scroll-wrapper">
+									<div class="horizontal-scroll archivunterteil closed">
+										<?php
 
-								while ( have_posts() ) : the_post();
-									$irgendwasangeziegt = true;
-									/*
-									 * Include the Post-Format-specific template for the content.
-									 * If you want to override this in a child theme, then include a file
-									 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-									 */
-									get_template_part( 'template-parts/content', get_post_format() );
-
-								endwhile;
-
-								?></div></div><?php
-						}
+										while ( have_posts() ) : the_post(); ?>
+											<div class="horizontal-scroll-item">
+											<?php $irgendwasangeziegt = true;
+											/*
+											 * Include the Post-Format-specific template for the content.
+											 * If you want to override this in a child theme, then include a file
+											 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+											 */
+											get_template_part( 'template-parts/content', get_post_format() );
+											?></div><?php
+										endwhile;
+										?>
+										<!-- folgendes braucht man, damit alles items gleich breit sind -->
+										<div class="horizontal-scroll-item"></div>
+										<div class="horizontal-scroll-item"></div>
+										<div class="horizontal-scroll-item"></div>
+										<div class="horizontal-scroll-item"></div>
+										<div class="horizontal-scroll-item"></div>
+										<div class="horizontal-scroll-item"></div>
+									</div>
+								</div>
+							</div>
+						<?php }
 						wp_reset_query();
 						global $wp_query;
 						if ( isset( $_GET['korrektur'] ) && $_GET['korrektur'] == "true" ) {
