@@ -1436,7 +1436,7 @@ add_filter( 'embed_oembed_html', 'oembed_iframe_overrides', 10, 3);
 add_filter( 'wp_nav_menu_items', 'your_custom_menu_item', 10, 2 );
 function your_custom_menu_item ( $items, $args ) {
 	if ($args->theme_location == 'primary') {
-		$form = do_shortcode('[ivory-search id="3283" title="Default Search Form"]');
+		$form = do_shortcode('[ivory-search id="3652" title="Default Search Form"]'); //3283 für one.wordpress.test
 		$li = <<<EOD
 <li class="fa fa-search astm-search-menu desktopsearch menu-item is-menu popup">
     <a>Suche</a>
