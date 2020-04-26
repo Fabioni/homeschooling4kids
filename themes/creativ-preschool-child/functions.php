@@ -184,7 +184,7 @@ function einstellungen(){
 					}
 				}
 			?>
-			<div style="margin: auto; font-size: 120%"><i class="fa fa-cogs"></i></div>
+			<i style="font-size: 120%" class="fa fa-cogs"></i>
 			<input style="display: none" type="radio" id="radioSchriftartSchreib" <?= $schreib ? "checked": "" ?> name="schriftart"><label for="radioSchriftartSchreib" style="cursor: pointer; font-family: oesterschreibschrift" class="btn">Schreibschrift</label>
 			<input style="display: none" type="radio" id="radioSchriftartDruck" <?= $druck ? "checked": "" ?> name="schriftart"><label for="radioSchriftartDruck" style="cursor: pointer; font-family: oesterdruckschrift" class="btn">Druckschrift</label>
 			<input style="display: none" type="radio" id="radioSchriftartComputer" <?= $computer ? "checked": "" ?> name="schriftart"><label for="radioSchriftartComputer" style="cursor: pointer" class="btn">Computerschrift</label>
@@ -196,7 +196,7 @@ function einstellungen(){
 
 			<style>
 				.einstellungen{
-					display: flex;
+					display: block;
 					width: -moz-fit-content;
 					width: fit-content;
 					min-width: 20%;
@@ -224,7 +224,7 @@ function einstellungen(){
 					flex-grow: 1;
 					flex-basis: 100%;
 					text-align: center;
-					margin: 0px 5px;
+					margin: 5px;
 					border: 2px solid transparent;
 			 		box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px
 				}
