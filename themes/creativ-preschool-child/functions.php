@@ -1238,7 +1238,10 @@ add_shortcode( 'lautsprecher', 'lautsprecher_shortcode_func' );
 
 
 function abfrage_shortcode_func_radio($richtig = "", $group){
-	return "<em>Feature Missing</em>";
+	$id = uniqid("radio");
+	return <<<EOD
+<input id="$id" class="fabian-check-me" type="radio" name="name_$group" data-result='$richtig'><label for="$id"></label>
+EOD;
 }
 
 function abfrage_shortcode_func_select($richtig = "", $vorschläge = array(), $content=""){
