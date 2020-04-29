@@ -56,8 +56,8 @@ get_header(); ?>
 							<div class="blog-posts-wrapper noMatchHeight">
 							<h1 class="archivUnterteiltitel archivUnterteiltitel-<?= $sk->slug ?>">
 								<a href="<?= get_term_link( $sk->slug, "spasskategorie" ) ?>"><?= $sk->name ?></a>
-								&nbsp;<i class="fa fa-angle-down"
-										 onclick="jQuery(this).toggleClass('fa-angle-down').toggleClass('fa-angle-up');jQuery(this).closest('.blog-posts-wrapper').find('.archivunterteil').toggleClass('closed')"></i>
+								&nbsp;<?php if ($wp_query->post_count > 3){?><i class="fa fa-angle-down"
+										 onclick="jQuery(this).toggleClass('fa-angle-down').toggleClass('fa-angle-up');jQuery(this).closest('.blog-posts-wrapper').find('.archivunterteil').toggleClass('closed')"></i><?php } ?>
 							</h1>
 
 							<div class="horizontal-scroll-wrapper">
