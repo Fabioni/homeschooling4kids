@@ -1487,7 +1487,7 @@ function archive_posts_aufklappen(){
 			}
 			jQuery(".makevorschau article").removeClass("open");
 			jQuery(this).addClass("open");
-			if (window.matchMedia("(max-width: 783px)")) {
+			if (window.matchMedia("(max-width: 783px)").matches) {
 				event.preventDefault();
 			}
 		})
