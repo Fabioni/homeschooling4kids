@@ -233,24 +233,34 @@ function einstellungen(){
 				jQuery(function(){
 					jQuery('input:radio[name="schriftart"]').change(
 						function(){
-							try {
-								ga('send', 'event', 'schriftart_geändert');
-							} catch (ignore) {
-								console.log("kein gtag möglich");
-							}
 							if (jQuery("#radioSchriftartDruck").is(':checked')) {
 								jQuery("body").addClass("österdruck")
 								jQuery("body").removeClass("österschreib")
+								try {
+									ga('send', 'event', 'schriftart_geändert', "druckschrift");
+								} catch (ignore) {
+									console.log("kein gtag möglich");
+								}
 								document.cookie = "schriftart=druckschrift; path=/"
 							}
 							if (jQuery("#radioSchriftartSchreib").is(':checked')) {
 								jQuery("body").addClass("österschreib")
 								jQuery("body").removeClass("österdruck")
+								try {
+									ga('send', 'event', 'schriftart_geändert', "schreibschrift");
+								} catch (ignore) {
+									console.log("kein gtag möglich");
+								}
 								document.cookie = "schriftart=schreibschrift; path=/"
 							}
 							if (jQuery("#radioSchriftartComputer").is(':checked')) {
 								jQuery("body").removeClass("österschreib")
 								jQuery("body").removeClass("österdruck")
+								try {
+									ga('send', 'event', 'schriftart_geändert', "computerschrift");
+								} catch (ignore) {
+									console.log("kein gtag möglich");
+								}
 								document.cookie = "schriftart=computerschrift; path=/"
 							}
 							setTimeout(function () {
@@ -1477,7 +1487,7 @@ function archive_posts_aufklappen(){
 			}
 			jQuery(".makevorschau article").removeClass("open");
 			jQuery(this).addClass("open");
-			if (screen.width <= 783) {
+			if (window.matchMedia("(max-width: 783px)")) {
 				event.preventDefault();
 			}
 		})
@@ -1492,11 +1502,13 @@ function gaactions(){
 	?>
 	<script>
 		jQuery(function () {
-			jQuery(".wp-block-otfm-box-spoiler-start.otfm-sp__wrapper.otfm-sp__box.otfm-sp__XXXXXX.js-otfm-sp__closed").click(function () {
-				try {
-					ga('send', 'event', 'lernziele_aufgeklappt');
-				} catch (ignore) {
-					console.log("kein gtag möglich");
+			jQuery(".wp-block-otfm-box-spoiler-start.otfm-sp__wrapper.otfm-sp__box.otfm-sp__XXXXXX").click(function (event) {
+				if (jQuery(event.target).hasClass("js-otfm-sp__closed")) {
+					try {
+						ga('send', 'event', 'lernziele_aufgeklappt');
+					} catch (ignore) {
+						console.log("kein gtag möglich");
+					}
 				}
 			})
 		})
@@ -1508,6 +1520,38 @@ function gaactions(){
 					console.log("kein gtag möglich");
 				}
 			})
+		})
+
+		jQuery(function () {
+			jQuery(".fabian_check_me_submit").click(function () {
+				try {
+					ga('send', 'event', 'abfrage_checkmesubmit_geclicked');
+				} catch (ignore) {
+					console.log("kein gtag möglich");
+				}
+			})
+		})
+
+		jQuery(function () {
+			var audioerstesmal = true;
+			jQuery("#audiofile").on("click", "audio", function () {
+				if (audioerstesmal) {
+					try {
+						ga('send', 'event', 'vorlesen_play_erstesmal');
+					} catch (ignore) {
+						console.log("kein gtag möglich");
+					}
+				}
+				audioerstesmal = false;
+			})
+		})
+
+		jQuery(function () {
+			try {
+				ga('send', 'event', 'seite_geladen', <?= $_COOKIE["schriftart"] ?>);
+			} catch (ignore) {
+				console.log("kein gtag möglich");
+			}
 		})
 	</script>
 <?php
