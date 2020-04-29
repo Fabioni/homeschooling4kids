@@ -79,6 +79,16 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
             })
         })
 
+		$(function () {
+			$("#heuteButtonMobilDesktopContainer").on("click", "a", function () {
+				try {
+					ga('send', 'event', 'heute_button_clicked');
+				} catch (ignore) {
+					console.log("kein gtag möglich");
+				}
+			})
+		})
+
     </script>
     <style>
         @media screen and (min-width: 1300px) {

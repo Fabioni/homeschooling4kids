@@ -233,6 +233,11 @@ function einstellungen(){
 				jQuery(function(){
 					jQuery('input:radio[name="schriftart"]').change(
 						function(){
+							try {
+								ga('send', 'event', 'schriftart_geändert');
+							} catch (ignore) {
+								console.log("kein gtag möglich");
+							}
 							if (jQuery("#radioSchriftartDruck").is(':checked')) {
 								jQuery("body").addClass("österdruck")
 								jQuery("body").removeClass("österschreib")
@@ -1482,6 +1487,34 @@ function archive_posts_aufklappen(){
 }
 
 add_action("wp_footer", "archive_posts_aufklappen");
+
+function gaactions(){
+	?>
+	<script>
+		jQuery(function () {
+			jQuery(".wp-block-otfm-box-spoiler-start.otfm-sp__wrapper.otfm-sp__box.otfm-sp__XXXXXX.js-otfm-sp__closed").click(function () {
+				try {
+					ga('send', 'event', 'lernziele_aufgeklappt');
+				} catch (ignore) {
+					console.log("kein gtag möglich");
+				}
+			})
+		})
+		jQuery(function () {
+			jQuery(".astm-search-menu").click(function () {
+				try {
+					ga('send', 'event', 'suche_aufgemacht');
+				} catch (ignore) {
+					console.log("kein gtag möglich");
+				}
+			})
+		})
+	</script>
+<?php
+}
+
+
+add_action("wp_footer", "gaactions");
 
 
 
