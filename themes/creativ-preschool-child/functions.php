@@ -1502,14 +1502,16 @@ function gaactions(){
 	?>
 	<script>
 		jQuery(function () {
+			var firsttimelernziele = true;
 			jQuery(".wp-block-otfm-box-spoiler-start.otfm-sp__wrapper.otfm-sp__box.otfm-sp__XXXXXX").click(function (event) {
-				if (jQuery(event.target).hasClass("js-otfm-sp__closed")) {
+				if (firsttimelernziele) {
 					try {
 						ga('send', 'event', 'lernziele_aufgeklappt');
 					} catch (ignore) {
 						console.log("kein gtag möglich");
 					}
 				}
+				firsttimelernziele = false;
 			})
 		})
 		jQuery(function () {
@@ -1534,7 +1536,7 @@ function gaactions(){
 
 		jQuery(function () {
 			var audioerstesmal = true;
-			jQuery("#audiofile").on("click", "audio", function () {
+			jQuery("#audiofile audio").on("play", function () {
 				if (audioerstesmal) {
 					try {
 						ga('send', 'event', 'vorlesen_play_erstesmal');
