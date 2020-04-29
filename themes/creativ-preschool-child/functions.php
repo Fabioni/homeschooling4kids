@@ -1472,7 +1472,9 @@ function archive_posts_aufklappen(){
 			}
 			jQuery(".makevorschau article").removeClass("open");
 			jQuery(this).addClass("open");
-			event.preventDefault();
+			if (screen.width <= 783) {
+				event.preventDefault();
+			}
 		})
 	})
 </script>

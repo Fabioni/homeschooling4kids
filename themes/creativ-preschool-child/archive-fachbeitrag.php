@@ -137,11 +137,10 @@ get_header(); ?>
 					</style>
 					<ul class="fächerlinks">
 						<?php
-						if (! is_date()){
+						if (! is_day()){
 							foreach ( $terms as $fa ) {
 								?>
 								<li><a href="#fach-<?= $fa->slug ?>"><?= $fa->name ?></a></li><?php
-
 							}
 						}
 						?>
@@ -157,9 +156,9 @@ get_header(); ?>
 							?>
 							<div class="blog-posts-wrapper noMatchHeight">
 								<h1 class="archivUnterteiltitel" id="fach-<?= $fa->slug ?>"><a
-										href="<?= get_term_link( $fa->slug, "fach" ) ?>"><?= $fa->name ?></a>&nbsp;<i
+										href="<?= get_term_link( $fa->slug, "fach" ) ?>"><?= $fa->name ?></a>&nbsp;<?php if ($wp_query->post_count > 3){?><i
 										class="fa fa-angle-down"
-										onclick="jQuery(this).toggleClass('fa-angle-down').toggleClass('fa-angle-up');jQuery(this).closest('.blog-posts-wrapper').find('.archivunterteil').toggleClass('closed')"></i>
+										onclick="jQuery(this).toggleClass('fa-angle-down').toggleClass('fa-angle-up');jQuery(this).closest('.blog-posts-wrapper').find('.archivunterteil').toggleClass('closed')"></i><?php } ?>
 								</h1>
 								<div class="horizontal-scroll-wrapper">
 									<div class="horizontal-scroll archivunterteil closed">
