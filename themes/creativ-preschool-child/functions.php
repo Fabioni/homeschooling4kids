@@ -1550,7 +1550,7 @@ function gaactions(){
 
 		jQuery(function () {
 			try {
-				ga('send', 'event', 'seite_geladen', <?= $_COOKIE["schriftart"] ?>);
+				ga('send', 'event', 'seite_geladen', '<?= isset($_COOKIE["schriftart"]) ? $_COOKIE["schriftart"] : "notSetStandart" ?>');
 			} catch (ignore) {
 				console.log("kein gtag möglich");
 			}
