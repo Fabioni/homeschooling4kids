@@ -742,10 +742,13 @@ header.entry-header {
 .blog-posts-wrapper .entry-container {
   padding: 0px 30px 30px 30px; }
 
-.archive article img {
-  max-height: 400px;
-  object-fit: cover; }
-
+@media screen and (min-width: 784px) {
+  .archive article:not(.open) img {
+    max-height: 350px;
+    object-fit: cover; }
+  .archive article.open image {
+    max-height: 600px;
+    object-fit: cover; } }
 @media screen and (max-width: 783px) {
   .makevorschau article:not(.open) .post-item:hover .fabian-Pfeil:after {
     display: none; }
