@@ -742,7 +742,7 @@ header.entry-header {
 .blog-posts-wrapper .entry-container {
   padding: 0px 30px 30px 30px; }
 
-.makevorschau article.open img {
+.archive article img {
   max-height: 400px;
   object-fit: cover; }
 
@@ -752,6 +752,9 @@ header.entry-header {
   .makevorschau article.open .post-item {
     /* transform: rotateX(360deg); */
     /*transition: transform 1.5s ease-out;*/ }
+  .makevorschau article.open img {
+    max-height: 400px;
+    object-fit: cover; }
   .makevorschau .post-item * {
     transition: all 1s linear; }
   .makevorschau article:not(.open) .entry-container {
