@@ -1444,7 +1444,7 @@ function wp_ulike_change_count($counter_value) {
 function oembed_iframe_overrides($html, $url, $attr) {
 
 	if ( strpos( $html, "<iframe" ) !== false ) {
-		return str_replace('sandbox="allow-scripts', 'allowfullscreen sandbox="allow-scripts allow-popups allow-same-origin ', $html); }
+		return str_replace('sandbox="allow-scripts', 'allowfullscreen sandbox="allow-scripts allow-same-origin ', $html); }
 	else {
 		return $html;
 	}
@@ -1557,6 +1557,18 @@ function gaactions(){
 			} catch (ignore) {
 				console.log("kein gtag möglich");
 			}
+		})
+
+		//fix für learningapps
+		jQuery(function () {
+			setTimeout(function () {
+				var fq = jQuery(".is-provider-learningapps-org iframe");
+				fq.on("load", function () {
+					var fq = jQuery(".is-provider-learningapps-org iframe");
+					var f = fq.get(0);
+					f.parentNode.replaceChild(f.cloneNode(), f)
+				})
+			}, 100)
 		})
 	</script>
 <?php
