@@ -746,7 +746,7 @@ header.entry-header {
   .archive article:not(.open) img {
     max-height: 350px;
     object-fit: cover; }
-  .archive article.open image {
+  .archive article.open img {
     max-height: 600px;
     object-fit: cover; } }
 @media screen and (max-width: 783px) {
