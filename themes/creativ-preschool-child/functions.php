@@ -1487,11 +1487,11 @@ function archive_posts_aufklappen(){
 			}
 			jQuery(".makevorschau article").removeClass("open");
 			jQuery(this).addClass("open");
-			setTimeout(function (t) {
-				jQuery(t).get(0).scrollIntoView();
-			}, 1000, this)
 			if (window.matchMedia("(max-width: 783px)").matches) {
 				event.preventDefault();
+				setTimeout(function (t) {
+					jQuery(t).get(0).scrollIntoView();
+				}, 1000, this)
 			}
 		})
 	})
