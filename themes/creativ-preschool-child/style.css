@@ -748,7 +748,8 @@ header.entry-header {
     object-fit: cover; }
   .archive article.open img {
     max-height: 600px;
-    object-fit: cover; } }
+    object-fit: cover;
+    transition: max-height 0.3s linear; } }
 @media screen and (max-width: 783px) {
   .makevorschau article:not(.open) .post-item:hover .fabian-Pfeil:after {
     display: none; }
