@@ -1444,7 +1444,7 @@ function wp_ulike_change_count($counter_value) {
 function oembed_iframe_overrides($html, $url, $attr) {
 
 	if ( strpos( $html, "<iframe" ) !== false ) {
-		return str_replace('sandbox="allow-scripts', 'allowfullscreen sandbox="allow-scripts allow-same-origin ', $html); }
+		return str_replace('sandbox="allow-scripts', 'allowfullscreen sandbox="allow-scripts allow-popups allow-same-origin ', $html); }
 	else {
 		return $html;
 	}
@@ -1490,7 +1490,7 @@ function archive_posts_aufklappen(){
 			if (window.matchMedia("(max-width: 783px)").matches) {
 				event.preventDefault();
 				setTimeout(function (t) {
-					jQuery(t).get(0).scrollIntoView();
+					jQuery(t).get(0).scrollIntoView({behavior: "smooth", block: "nearest", inline: "nearest"});
 				}, 1000, this)
 			}
 		})

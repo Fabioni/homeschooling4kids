@@ -95,9 +95,8 @@ body:not(.logged-in) #menu-item-608 {
   margin: auto;
   margin-top: 1.5em; }
 
-.aligncenter * {
-  text-align: center;
-  /* test */ }
+.aligncenter {
+  text-align: center; }
 
 .alignfull.wp-embed-aspect-16-9 .wp-block-embed__wrapper, .alignwide.wp-embed-aspect-16-9 .wp-block-embed__wrapper {
   width: 100%;
@@ -707,10 +706,12 @@ article[id^='post-'] {
   background: white; }
 
 .checked_richtig, input[type="checkbox"].fabian-check-me.checked_richtig + label::before, input[type="radio"].fabian-check-me.checked_richtig + label::before {
-  outline: 2px solid green; }
+  /* outline: 2px solid green;manchmal bei overflow auto vom Elternelement sieht man outline nicht komischerweise*/
+  box-shadow: inset 0px 0px 0px 2px green; }
 
 .checked_falsch, input[type="checkbox"].fabian-check-me.checked_falsch + label::before, input[type="radio"].fabian-check-me.checked_falsch + label::before {
-  outline: 2px solid red; }
+  /*outline: 2px solid red; manchmal bei overflow auto vom Elternelement sieht man outline nicht komischerweise*/
+  box-shadow: inset 0px 0px 0px 2px red; }
 
 .fabian_check_me_submit.checked_richtig {
   box-shadow: 4px 4px 4px green; }
@@ -821,5 +822,22 @@ header.entry-header {
 /* Strong Testimonial Bug, Pfeile verschwinden beim Scrollen was zu Seiten Lacks führt */
 .wpmslider-controls.wpmslider-has-controls-direction.disabled {
   display: block !important; }
+
+/* table werden nicht scrollbar angezeigt von Worspress */
+.wp-block-table {
+  white-space: nowrap !important;
+  display: block !important;
+  overflow-x: auto !important; }
+  .wp-block-table.alignleft, .wp-block-table.alignright {
+    max-width: 100%; }
+  .wp-block-table.aligncenter table {
+    margin: auto !important; }
+  .wp-block-table table {
+    display: table !important;
+    width: auto !important; }
+  .wp-block-table:not(.nichtcentertablecontent) td {
+    text-align: center; }
+  .wp-block-table.nichtcentertablecontent td {
+    text-align: left; }
 
 /*# sourceMappingURL=style.css.map */
