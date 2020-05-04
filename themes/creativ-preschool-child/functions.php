@@ -304,7 +304,7 @@ if ( ! function_exists( 'creativ_preschool_banner_header' ) ) :
 		?>
 
 		<div id="page-site-header">
-			<img class="<?= is_single() ? get_field( "titelbild_volle_breite_oder_volle_hoehe_oder_contain" ) : (is_front_page() ? "contain" : "") ?>"
+			<img class="<?= (is_single() || is_page() && ! is_front_page()) ? get_field( "titelbild_volle_breite_oder_volle_hoehe_oder_contain" ) : (is_front_page() ? "contain" : "") ?>"
 			     id="page-site-header-image"
 			     src="<?= is_front_page() ? $sitelogo_url : esc_url( $header_image ); ?>">
 			<div class="overlay"></div>
@@ -647,7 +647,7 @@ function create_Fachbeitragtype() {
 			'show_in_rest'  => true,
 			'rewrite'       => array( 'with_front' => false, 'slug' => 'fachbeitrag' ),
 			'menu_position' => 4,
-			'taxonomies'    => array( "fach", "leistungsstufe" ),
+			'taxonomies'    => array( "fach", "leistungsstufe", "themen"),
 			'supports'      => array( 'title', 'editor', 'thumbnail', 'comments', 'excerpt', 'author', 'revisions' ),
 		)
 	);
@@ -701,7 +701,7 @@ function create_Spassbeitragtype() {
 			'show_in_rest'  => true,
 			'menu_position' => 4,
 			'rewrite'       => array( 'with_front' => false, 'slug' => 'spassbeitrag' ),
-			'taxonomies'    => array( 'schlagwort', 'spasskategorie' ),
+			'taxonomies'    => array( 'schlagwort', 'spasskategorie', 'themen'),
 			'supports'      => array( 'title', 'editor', 'thumbnail', 'comments', 'excerpt', 'author', 'revisions' ),
 		)
 	);
@@ -1575,7 +1575,99 @@ function gaactions(){
 }
 
 
-add_action("wp_footer", "gaactions");
+add_action("wp_footer", "gaactions"); //TODO Javscript auslagern
+
+
+
+//-- Projekte
+
+add_action( 'init', 'create_Thema_taxonomy', 0 );
+function create_Thema_taxonomy() {
+	$labels = array(
+		'name'          => "Themen", //_x( 'Topics', 'taxonomy general name' ),
+		'singular_name' => "Thema", //_x( 'Topic', 'taxonomy singular name' ),
+		/*'search_items' =>  __( 'Search Topics' ),
+		'all_items' => __( 'All Topics' ),
+		'parent_item' => __( 'Parent Topic' ),
+		'parent_item_colon' => __( 'Parent Topic:' ),
+		'edit_item' => __( 'Edit Topic' ),
+		'update_item' => __( 'Update Topic' ),
+		'add_new_item' => __( 'Add New Topic' ),
+		'new_item_name' => __( 'New Topic Name' ),
+		'menu_name' => __( 'Topics' ),*/
+	);
+	register_taxonomy( 'thema', array( 'fachbeitrag', 'spassbeitrag' ), array(
+		'hierarchical'      => true,
+		'description'		=> "",
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'show_in_rest'      => true,
+		//'rewrite' => array( 'slug' => 'topic' ),
+	) );
+}
+
+if( function_exists('acf_add_local_field_group') ):
+
+	acf_add_local_field_group(array(
+		'key' => 'group_5eb019ad4d4b5',
+		'title' => 'ThemaEinstellungen',
+		'fields' => array(
+			array(
+				'key' => 'field_5eb019ba210e4',
+				'label' => 'themabild',
+				'name' => 'themabild',
+				'type' => 'image',
+				'instructions' => '',
+				'required' => 1,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'return_format' => 'url',
+				'preview_size' => 'medium',
+				'library' => 'all',
+				'min_width' => '',
+				'min_height' => '',
+				'min_size' => '',
+				'max_width' => '',
+				'max_height' => '',
+				'max_size' => '',
+				'mime_types' => '',
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'taxonomy',
+					'operator' => '==',
+					'value' => 'thema',
+				),
+			),
+		),
+		'menu_order' => 0,
+		'position' => 'normal',
+		'style' => 'default',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => '',
+		'active' => true,
+		'description' => '',
+	));
+
+endif;
+
+function prefix_movie_rewrite_rule() {
+	add_rewrite_rule( '^archive/thema$', 'index.php?pagename=themenwelt', 'top' );
+	add_rewrite_rule( '^archive/thema/$', 'index.php?pagename=themenwelt', 'top' );
+}
+
+add_action( 'init', 'prefix_movie_rewrite_rule' );
+
+//ENDE-- Projekte
 
 
 
