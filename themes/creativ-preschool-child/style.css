@@ -278,7 +278,7 @@ iframe {
     left: -120px;
   }
 
-  .post-type-archive-spassbeitrag .wrapper {
+  .post-type-archive-spassbeitrag .wrapper.page-section {
     padding-left: 100px;
   }
 }
@@ -460,6 +460,18 @@ html {
   .horizontal-scroll-item article, .horizontal-scroll-item .post-item {
     height: 100%;
   }
+
+  .togglepfeilchen_handy {
+    display: none;
+  }
+
+  .sticky_archivUnterteiltitel {
+    display: none;
+  }
+
+  .togglepfeilchen_pc {
+    display: initial;
+  }
 }
 .horizontal-scroll-item {
   margin-bottom: 30px;
@@ -493,6 +505,14 @@ html {
 }
 
 @media screen and (max-width: 782px) {
+  .togglepfeilchen_pc {
+    display: none;
+  }
+
+  .togglepfeilchen_handy {
+    display: initial;
+  }
+
   .makescroll .horizontal-scroll-wrapper {
     scroll-snap-type: x mandatory;
     overflow-x: auto;
@@ -1171,6 +1191,26 @@ header.entry-header {
       transform: rotateZ(-15deg);
     }
   }
+}
+.aufklapppfeilamende {
+  text-align: center;
+  font-size: 45px;
+  margin-top: -30px;
+}
+
+.sticky_archivUnterteiltitel {
+  position: sticky;
+  top: 0;
+  font-weight: bold;
+  color: black;
+  background: white;
+  font-size: 20px;
+  padding: 5px;
+  z-index: 5;
+}
+
+.sticky_archivUnterteiltitel.closed {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */

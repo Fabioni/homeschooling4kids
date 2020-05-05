@@ -8,6 +8,22 @@
  */
 
 get_header(); ?>
+<script>
+	jQuery(function () {
+		jQuery(".togglepfeilchen").click(function () {
+			jQuery(this).closest('.blog-posts-wrapper').find('.togglepfeilchen').toggleClass('fa-angle-down').toggleClass('fa-angle-up');
+			jQuery(this).closest('.blog-posts-wrapper').find('.archivunterteil').toggleClass('closed')
+			jQuery(this).closest('.blog-posts-wrapper').find('.sticky_archivUnterteiltitel').toggleClass('closed')
+			if (jQuery(this).hasClass("togglepfeilchen_handy") && jQuery(this).closest('.blog-posts-wrapper').find('.archivunterteil').hasClass('closed')){
+				jQuery(this).get(0).scrollIntoView({
+					behavior: 'auto',
+					block: 'center',
+					inline: 'center'
+				});
+			}
+		})
+	})
+</script>
 	<div id="primary" class="content-area">
 		<!-- Where am I: archive-spassbeitrag.php -->
 		<main id="main" class="site-main <?= ( ! is_date() ) ? "makevorschau" : "" ?>" role="main">
@@ -56,10 +72,9 @@ get_header(); ?>
 							<div class="blog-posts-wrapper noMatchHeight">
 							<h1 class="archivUnterteiltitel archivUnterteiltitel-<?= $sk->slug ?>">
 								<a href="<?= get_term_link( $sk->slug, "spasskategorie" ) ?>"><?= $sk->name ?></a>
-								&nbsp;<?php if ($wp_query->post_count > 3){?><i class="fa fa-angle-down"
-										 onclick="jQuery(this).toggleClass('fa-angle-down').toggleClass('fa-angle-up');jQuery(this).closest('.blog-posts-wrapper').find('.archivunterteil').toggleClass('closed')"></i><?php } ?>
+								&nbsp;<?php if ($wp_query->post_count > 3){?><i class="fa fa-angle-down togglepfeilchen togglepfeilchen_pc"></i><?php } ?>
 							</h1>
-
+							<span class="sticky_archivUnterteiltitel closed"><?= substr($sk->name, 0, 2) ?></span>
 							<div class="horizontal-scroll-wrapper">
 								<div class="horizontal-scroll archivunterteil closed">
 									<?php
@@ -83,6 +98,9 @@ get_header(); ?>
 									<div class="horizontal-scroll-item"></div>
 									<div class="horizontal-scroll-item"></div>
 									<div class="horizontal-scroll-item"></div>
+								</div>
+								<div class="aufklapppfeilamende">
+									<i class="fa fa-angle-down togglepfeilchen togglepfeilchen_handy"></i>
 								</div>
 							</div>
 							</div><?php
