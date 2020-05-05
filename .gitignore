@@ -5,7 +5,8 @@
 
 !themes/
 themes/*
-!thmes/creativ-preschool-custom
+!themes/creativ-preschool-child
 
 !plugins
 plugins/*
+/themes/creativ-preschool-child/.sass-cache/
