@@ -218,8 +218,7 @@ get_header(); ?>
 										$loop = new WP_Query( $args );
 										if ( $loop->have_posts() ) :
 											$i=-1;
-											while ($loop->have_posts()) : $loop->the_post(); $i++;
-												for ($i = 0; $i<5;$i++){ ?>
+											while ($loop->have_posts()) : $loop->the_post(); $i++;?>
 												<div class="horizontal-scroll-item">
 													<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 															<div class="post-item <?= get_the_time( 'Ymd' ) === current_time( 'Ymd' ) ? "heutigerBeitrag" : "" ?>">
@@ -245,7 +244,7 @@ get_header(); ?>
 															</div><!-- .post-item -->
 														</article>
 												</div>
-											<?php }
+											<?php
 											endwhile;?>
 											<div class="horizontal-scroll-item"></div><div class="horizontal-scroll-item"></div><div class="horizontal-scroll-item"></div>
 											<?php wp_reset_postdata(); ?>
