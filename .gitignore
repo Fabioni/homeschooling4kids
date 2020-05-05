@@ -9,3 +9,4 @@ themes/*
 
 !plugins
 plugins/*
+/themes/creativ-preschool-child/.sass-cache/
