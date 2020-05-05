@@ -1282,7 +1282,7 @@ EOD;
 
 }
 
-function abfrage_shortcode_func_numbertext($type="text", $richtig, $content = "", $max="999", $min="-999", $länge ="")
+function abfrage_shortcode_func_numbertext($type="text", $richtig, $content = "", $max="", $min="", $länge ="")
 {
 	if ($type == "text") {
 	return <<<EOD
@@ -1316,8 +1316,8 @@ function abfrage_shortcode_func( $atts, $content ) {
 		'laenge' => "",
 		'richtig' => "",
 		'gruppe' => "",
-		'max' => "",
-		'min' => ""
+		'max' => "999",
+		'min' => "-999"
 	), $atts );
 
 	$richtig = $a["richtig"];
