@@ -1282,11 +1282,17 @@ EOD;
 
 }
 
-function abfrage_shortcode_func_numbertext($type="text", $richtig, $content = "", $max="", $min="", $länge =""){
+function abfrage_shortcode_func_numbertext($type="text", $richtig, $content = "", $max="999", $min="-999", $länge ="")
+{
+	if ($type == "text") {
 	return <<<EOD
+<input type="$type" data-result="$richtig" class="fabian-check-me" size="$länge" value="$content">
+EOD;
+	} else {
+		return <<<EOD
 <input type="$type" data-result="$richtig" class="fabian-check-me" size="$länge" value="$content" max="$max" min="$min">
 EOD;
-
+	}
 }
 
 
@@ -1666,6 +1672,19 @@ function prefix_movie_rewrite_rule() {
 }
 
 add_action( 'init', 'prefix_movie_rewrite_rule' );
+
+
+function my_enqueue_stuff() {
+	if (true || is_page_template( 'page-themenwelt' ) ) {
+		wp_enqueue_style( 'timelinestyle', get_stylesheet_directory_uri() . '/extern/style.css' );
+		wp_enqueue_script("isinviewport", get_stylesheet_directory_uri() . '/extern/isInViewport.min.js');
+		//wp_enqueue_script( 'timelinescript', get_stylesheet_directory_uri() . '/extern/index.js' );
+		//wp_enqueue_script("scrollreveal", "https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js");
+	} else {
+		/** Call regular enqueue */
+	}
+}
+add_action( 'wp_enqueue_scripts', 'my_enqueue_stuff' );
 
 //ENDE-- Projekte
 

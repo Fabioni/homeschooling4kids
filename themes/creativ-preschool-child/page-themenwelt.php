@@ -8,10 +8,175 @@
  */
 
 get_header(); ?>
-	<div id="primary" class="content-area <?= (!is_date()) ? "makevorschau" : "" ?>">
+<style>
+	#content .wrapper.page-section{
+		max-width: 1200px;
+	}
+
+	.timeline-content{
+		transition: transform 1s ease;
+	}
+
+	@media screen and (min-width: 784px) {
+		.timeline .timeline-item:nth-child(odd):hover .timeline-content{
+			transform: scale(1.1) rotate(2deg);
+		}
+
+		.timeline .timeline-item:nth-child(even):hover .timeline-content{
+			transform: scale(1.1) rotate(-2deg);
+		}
+
+		.timeline .timeline-item:nth-child(odd) .timeline-vorschau{
+			float: right;
+			width: calc(48vw - 5%);
+			right: calc( (-100vw / 2 + 100% / 2) + 2vw);
+			position: absolute;
+			z-index: 5;
+		}
+
+		.timeline .timeline-item:nth-child(even) .timeline-vorschau{
+			float: left;
+			width: calc(48vw - 5%);
+			left: calc( (-100vw / 2 + 100% / 2) + 2vw);
+			position: absolute;
+			z-index: 5;
+		}
+
+		.timeline-vorschau{
+			opacity: 0;
+			width: 45%;
+			transition: opacity 1s ease;
+		}
+
+		.timeline-item:hover .timeline-vorschau{
+			opacity: 1;
+		}
+	}
+
+
+	.post-item figure > a {
+		display: block;
+		position: relative;
+		padding-bottom: 66%;
+	}
+
+	.post-item figure > a img {
+		position: absolute;
+		max-height: 100%;
+		width: 100%;
+		object-fit: cover;
+	}
+
+	@media screen and (max-width: 783px) {
+
+		.timeline-item.open .timeline-vorschau{
+			visibility: visible;
+			opacity: 1;
+		}
+
+		.timeline-item.open .horizontal-scroll-wrapper {
+			background: #0009;
+			box-shadow: -4px -4px 12px 3px #0009;
+		}
+
+		.timeline-item .timeline-vorschau{
+			visibility: hidden;
+			opacity: 0;
+			width: 100%;
+			transition: all 1s ease;
+			float: none;
+			position: absolute;
+			z-index: 5;
+		}
+
+		.timeline .timeline-item.timeline_fadein .timeline-content-wrapper{
+			animation-name: timeline_fade-in_right;
+		}
+	}
+
+	header.timeline-vorschau-header {
+		position: absolute;
+		z-index: 1;
+		width: 100%;
+		padding: 0px 20px;
+		background: linear-gradient(rgba(0, 0, 0, .6), rgba(0,0,0,.5), rgba(0, 0, 0, 0));
+		border-radius: 25px;
+	}
+
+	.timeline-vorschau-title a {
+		color: white;
+		font-size: 38px;
+	}
+
+	.post-item figure {
+		position: relative;
+	}
+
+	.timeline-vorschau-excerpt {
+		color: white;
+		padding: 20px 20px;
+	}
+
+	.timeline-content-wrapper{
+		opacity: 0;
+	}
+
+	.timeline .timeline-item:nth-child(odd).timeline_fadein .timeline-content-wrapper{
+		animation-name: timeline_fade-in_right;
+	}
+
+	.timeline .timeline-item:nth-child(even).timeline_fadein .timeline-content-wrapper{
+		animation-name: timeline_fade-in_left;
+	}
+
+	.timeline .timeline-item.timeline_fadein .timeline-content-wrapper{
+		animation-duration: 2s;
+		animation-fill-mode: both;
+	}
+
+	@keyframes timeline_fade-in_right {
+		from {
+			opacity: 0;
+			transform: translate(50px);
+		}
+		to {
+			opacity: 1;
+			transform: translate(0);
+		}
+	}
+
+	@keyframes timeline_fade-in_left {
+		from {
+			opacity: 0;
+			transform: translate(-50px);
+		}
+		to {
+			opacity: 1;
+			transform: translate(0);
+		}
+	}
+</style>
+<script>
+	jQuery(function () {
+		jQuery("body").on("click", function (event) {
+			if (! jQuery(event.target).is(".bnt-more")){
+				jQuery('.timeline-item').removeClass('open');
+				jQuery(event.target).closest(".timeline-item").addClass('open');
+			}
+		})
+
+		jQuery('.timeline-item:not(.timeline_fadein):in-viewport(0)').addClass("timeline_fadein");
+
+		jQuery(window).scroll(function () {
+			jQuery('.timeline-item:not(.timeline_fadein):in-viewport(0)').addClass("timeline_fadein");
+		})
+	})
+</script>
+	<div id="primary" class="content-area">
 		<!-- Where am I: alle-themen.php -->
 		<main id="main" class="site-main" role="main">
-			<div class="">
+			<section class="timeline">
+				<div class="container">
 				<?php
 				global $wpdb;
 
@@ -26,27 +191,92 @@ get_header(); ?>
 							LEFT JOIN wp_term_relationships
 							ON (wp_posts.ID = wp_term_relationships.object_id)
 							WHERE
-                            wp_posts.post_type = 'fachbeitrag'
-							AND (wp_posts.post_status = 'publish'
-							OR wp_posts.post_status = 'acf-disabled'
-							OR wp_posts.post_status = 'private')
+								wp_posts.post_status = 'publish'
+								OR wp_posts.post_status = 'future'
+								OR wp_posts.post_status = 'acf-disabled'
+								OR wp_posts.post_status = 'private'
                             GROUP BY termid
 						) as postdates ON postdates.termid = t.term_id
 						WHERE tt.taxonomy IN ('thema')
                         ORDER BY startdate, enddate
 					");
 				foreach ($terms as $fa) { ?>
-					<div style="border: 1px dotted black; margin: 20px">
-						<header style="border: 1px solid black">
-							<h2><a href="<?= get_term_link($fa) ?>"><?= $fa->name ?></a></h2>
-							<img style="float: right; max-height: 5em" src="<?= get_field("themabild", $fa) ?> ">
-							<p><?= date("d.m.y", strtotime($fa->startdate)) . " bis " . date("d.m.y", strtotime($fa->enddate)) ?></p>
-							<p class="clear"><?= $fa->description ?></p>
-						</header>
-						<p><?= implode(" ... ", array_map(function ($postid){$p = get_post($postid); return "<a href='".get_post_permalink($p)."'>$p->post_title</a>";}, explode(",", $fa->postids))) ?></p>
+					<div class="timeline-item">
+						<div class="timeline-img"></div>
+						<div class="timeline-vorschau">
+							<div class="makescroll makescrollalways">
+								<div class="section-content clear horizontal-scroll-wrapper">
+									<div class="horizontal-scroll blog-posts-wrapper noMatchHeight">
+										<?php
+										$ids = explode(",", $fa->postids);
+										$args = array(
+											'post_type' => array( 'fachbeitrag', 'spassbeitrag', 'wissensbeitrag' ),
+											'orderby' => 'ASC',
+											'post__in' => $ids
+										);
+
+										$loop = new WP_Query( $args );
+										if ( $loop->have_posts() ) :
+											$i=-1;
+											while ($loop->have_posts()) : $loop->the_post(); $i++;
+												for ($i = 0; $i<5;$i++){ ?>
+												<div class="horizontal-scroll-item">
+													<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+															<div class="post-item <?= get_the_time( 'Ymd' ) === current_time( 'Ymd' ) ? "heutigerBeitrag" : "" ?>">
+																<?php
+																$korrek = "";
+																if ( isset( $_GET['korrektur'] ) && $_GET['korrektur'] == "true" ) {
+																	$korrek = "?korrektur=true";
+																}
+																?>
+																<?php if ( has_post_thumbnail() ) { ?>
+																	<figure>
+																		<header class="timeline-vorschau-header">
+																			<?php
+																			the_title( '<h2 class="timeline-vorschau-title"><a href="' . esc_url( get_permalink() ) . $korrek . '" rel="bookmark">', '</a></h2>' );
+																			?>
+																		</header><!-- .entry-header -->
+																		<a href="<?php the_permalink(); ?><?= $korrek ?>"><?php the_post_thumbnail(); ?></a>
+																	</figure>
+																<?php } ?>
+																<div class="timeline-vorschau-excerpt">
+																	<?= the_excerpt() ?>
+																</div>
+															</div><!-- .post-item -->
+														</article>
+												</div>
+											<?php }
+											endwhile;?>
+											<div class="horizontal-scroll-item"></div><div class="horizontal-scroll-item"></div><div class="horizontal-scroll-item"></div>
+											<?php wp_reset_postdata(); ?>
+										<?php endif;?>
+									</div><!-- .wrapper -->
+								</div><!-- .section-content -->
+							</div>
+						</div>
+						<div class="timeline-content-wrapper">
+							<div class="timeline-content timeline-card">
+								<!--<h2><a href="<?/*= get_term_link($fa) */?>"><?/*= $fa->name */?></a></h2>
+								<div class="date"><?/*= date("d.m.y", strtotime($fa->startdate)) . " bis " . date("d.m.y", strtotime($fa->enddate)) */?></div>
+								<p><?/*= $fa->description */?></p>
+								<p class="themenwelt_beitragstitel"><?/*= implode(" ... ", array_map(function ($postid){$p = get_post($postid); return "<a href='".get_post_permalink($p)."'>$p->post_title</a>";}, explode(",", $fa->postids))) */?></p>
+								<a class="bnt-more" href="<?/*= get_term_link($fa) */?>">Mehr</a>-->
+								<div class="timeline-img-header" style="background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .4)), url('<?= get_field("themabild", $fa) ?>') center center no-repeat;">
+									<h2><?= $fa->name ?></h2>
+								</div>
+								<div class="date"><?= "ab " . date("d. F Y", strtotime($fa->startdate))?></div>
+								<p><?= $fa->description ?></p>
+								<p style="font-size: 80%"><?= implode(" ... ", array_map(function ($postid){$p = get_post($postid); return $p->post_title;}, explode(",", $fa->postids))) ?></p>
+								<?php if (strtotime($fa->startdate) < time()){?>
+								<a class="bnt-more" href="<?= get_term_link($fa) ?>">Anschauen</a>
+								<?php } else { ?>
+								<a>Inhalte folgen</a>
+								<?php } ?>
+							</div>
+						</div>
 					</div>
 				<?php } ?>
-			</div>
+				</div></section>
 			<?php the_posts_navigation(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
