@@ -68,11 +68,12 @@ get_header(); ?>
 						$args = array_merge( $wp_query->query_vars, array( 'spasskategorie' => $sk->slug ) );
 						query_posts( $args );
 						if ( have_posts() ) {
+							$mehrals3 = $wp_query->post_count > 3;
 							?>
 							<div class="blog-posts-wrapper noMatchHeight">
 							<h1 class="archivUnterteiltitel archivUnterteiltitel-<?= $sk->slug ?>">
 								<a href="<?= get_term_link( $sk->slug, "spasskategorie" ) ?>"><?= $sk->name ?></a>
-								&nbsp;<?php if ($wp_query->post_count > 3){?><i class="fa fa-angle-down togglepfeilchen togglepfeilchen_pc"></i><?php } ?>
+								&nbsp;<?php if ($mehrals3){?><i class="fa fa-angle-down togglepfeilchen togglepfeilchen_pc"></i><?php } ?>
 							</h1>
 							<span class="sticky_archivUnterteiltitel closed"><?= substr($sk->name, 0, 2) ?></span>
 							<div class="horizontal-scroll-wrapper">
@@ -100,7 +101,7 @@ get_header(); ?>
 									<div class="horizontal-scroll-item"></div>
 								</div>
 								<div class="aufklapppfeilamende">
-									<i class="fa fa-angle-down togglepfeilchen togglepfeilchen_handy"></i>
+									<?php if ($mehrals3){ ?><i class="fa fa-angle-down togglepfeilchen togglepfeilchen_handy"></i> <?php } ?>
 								</div>
 							</div>
 							</div><?php
