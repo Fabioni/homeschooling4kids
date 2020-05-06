@@ -305,7 +305,7 @@ get_header(); ?>
 								<div class="timeline-img-header" style="background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .4)), url('<?= get_field("themabild", $fa) ?>') center center no-repeat;">
 									<h2><?= $fa->name ?></h2>
 								</div>
-								<div class="date"><?= ($fa->startdate === NULL) ? "geplant" : ("ab " . date("d. F Y", strtotime($fa->startdate)))?></div>
+								<div class="date"><?= ($fa->startdate === NULL) ? "geplant" : ("ab " . date("d.m.Y", strtotime($fa->startdate))) //TODO Monat als österreischiches Wort?></div>
 								<p><?= $fa->description ?></p>
 								<p style="font-size: 80%"><?= implode(" ... ", array_map(function ($postid){$p = get_post($postid); return $p->post_title;}, explode(",", $fa->postids))) ?></p>
 								<?php if ((strtotime($fa->startdate) < time()) && ($fa->startdate !== NULL)){?>
