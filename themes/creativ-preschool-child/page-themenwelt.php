@@ -21,8 +21,12 @@ get_header(); ?>
 		transform: none !important;
 	}
 
-	.timeline .timeline-item.deaktiviert .timeline-content, .post-item.deaktiviert{
-		filter: blur(1px);
+	.timeline .timeline-item.deaktiviert .timeline-content > *:not(.date){
+		filter: blur(1px) contrast(0.8);
+	}
+
+	.post-item.deaktiviert{
+		filter: contrast(0.3);
 	}
 
 	@media screen and (min-width: 784px) {
@@ -165,7 +169,7 @@ get_header(); ?>
 	}
 
 	.post-item.deaktiviert, .post-item.deaktiviert *{
-		cursor: progress !important;
+		cursor: default !important;
 	}
 
 	.heutigesThema{
