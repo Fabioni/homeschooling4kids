@@ -17,6 +17,14 @@ get_header(); ?>
 		transition: transform 1s ease;
 	}
 
+	.timeline .timeline-item.deaktiviert:hover .timeline-content{
+		transform: none !important;
+	}
+
+	.timeline .timeline-item.deaktiviert .timeline-content, .post-item.deaktiviert{
+		filter: blur(1px);
+	}
+
 	@media screen and (min-width: 784px) {
 		.timeline .timeline-item:nth-child(odd):hover .timeline-content{
 			transform: scale(1.1) rotate(2deg);
@@ -155,6 +163,14 @@ get_header(); ?>
 			transform: translate(0);
 		}
 	}
+
+	.post-item.deaktiviert, .post-item.deaktiviert *{
+		cursor: progress !important;
+	}
+
+	.heutigesThema{
+		border: 2px solid darkred;
+	}
 </style>
 <script>
 	jQuery(function () {
@@ -169,6 +185,17 @@ get_header(); ?>
 
 		jQuery(window).scroll(function () {
 			jQuery('.timeline-item:not(.timeline_fadein):in-viewport(0)').addClass("timeline_fadein");
+		})
+
+		jQuery(".post-item.deaktiviert").click(function (event) {
+			<?php
+			$korrek2 = "false";
+			if ( isset( $_GET['korrektur'] ) && $_GET['korrektur'] == "true" ) {
+				$korrek2 = "true";
+			} ?>
+			if (! <?= $korrek2 ?>){
+				event.preventDefault();
+			}
 		})
 	})
 </script>
@@ -185,7 +212,7 @@ get_header(); ?>
 						FROM wp_terms AS t
 						INNER JOIN wp_term_taxonomy AS tt
 						ON t.term_id = tt.term_id
-                        JOIN (
+                        LEFT JOIN (
 							SELECT GROUP_CONCAT(wp_posts.ID SEPARATOR ',') as postids, MIN(wp_posts.post_date) as startdate,  MAX(wp_posts.post_date) as enddate, wp_term_relationships.term_taxonomy_id as termid
 							FROM wp_posts
 							LEFT JOIN wp_term_relationships
@@ -198,11 +225,20 @@ get_header(); ?>
                             GROUP BY termid
 						) as postdates ON postdates.termid = t.term_id
 						WHERE tt.taxonomy IN ('thema')
-                        ORDER BY startdate, enddate
+                        ORDER BY isnull(startdate), startdate ASC, enddate ASC
 					");
-				foreach ($terms as $fa) { ?>
-					<div class="timeline-item">
+				$heutigerTerm = null;
+				foreach ($terms as $fa) {
+					if ($fa->startdate !== NULL && strtotime($fa->startdate) < time()) {
+						$heutigerTerm = $fa;
+					}
+				}
+				foreach ($terms as $fa) {
+					$jetzigesThema = ($fa == $heutigerTerm);
+					?>
+					<div class="timeline-item <?= $fa->startdate === NULL ? "deaktiviert": "" ?>">
 						<div class="timeline-img"></div>
+						<?php if ($fa->startdate !== NULL){ ?>
 						<div class="timeline-vorschau">
 							<div class="makescroll makescrollalways">
 								<div class="section-content clear horizontal-scroll-wrapper">
@@ -210,8 +246,13 @@ get_header(); ?>
 										<?php
 										$ids = explode(",", $fa->postids);
 										$args = array(
-											'post_type' => array( 'fachbeitrag', 'spassbeitrag', 'wissensbeitrag' ),
-											'orderby' => 'ASC',
+											'post_type' => "any",
+											'orderby' => 'date',
+											'order'   => 'ASC',
+											'post_status' => array(
+												"future",
+												"publish"
+											),
 											'post__in' => $ids
 										);
 
@@ -221,14 +262,14 @@ get_header(); ?>
 											while ($loop->have_posts()) : $loop->the_post(); $i++;?>
 												<div class="horizontal-scroll-item">
 													<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-															<div class="post-item <?= get_the_time( 'Ymd' ) === current_time( 'Ymd' ) ? "heutigerBeitrag" : "" ?>">
+															<div class="post-item <?= (strtotime(get_the_time("d.m.Y H:i:s")) > time()) ? "deaktiviert" : "" ?> <?= get_the_time( 'Ymd' ) === current_time( 'Ymd' ) ? "heutigerBeitrag" : "" ?>">
 																<?php
 																$korrek = "";
 																if ( isset( $_GET['korrektur'] ) && $_GET['korrektur'] == "true" ) {
 																	$korrek = "?korrektur=true";
 																}
 																?>
-																<?php if ( has_post_thumbnail() ) { ?>
+																<?php if ( true ) { ?>
 																	<figure>
 																		<header class="timeline-vorschau-header">
 																			<?php
@@ -237,7 +278,7 @@ get_header(); ?>
 																		</header><!-- .entry-header -->
 																		<a href="<?php the_permalink(); ?><?= $korrek ?>"><?php the_post_thumbnail(); ?></a>
 																	</figure>
-																<?php } ?>
+																<?php }  ?>
 																<div class="timeline-vorschau-excerpt">
 																	<?= the_excerpt() ?>
 																</div>
@@ -253,8 +294,9 @@ get_header(); ?>
 								</div><!-- .section-content -->
 							</div>
 						</div>
+						<?php } ?>
 						<div class="timeline-content-wrapper">
-							<div class="timeline-content timeline-card">
+							<div class="timeline-content timeline-card <?= $jetzigesThema ? "heutigesThema":"" ?>">
 								<!--<h2><a href="<?/*= get_term_link($fa) */?>"><?/*= $fa->name */?></a></h2>
 								<div class="date"><?/*= date("d.m.y", strtotime($fa->startdate)) . " bis " . date("d.m.y", strtotime($fa->enddate)) */?></div>
 								<p><?/*= $fa->description */?></p>
@@ -263,13 +305,13 @@ get_header(); ?>
 								<div class="timeline-img-header" style="background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .4)), url('<?= get_field("themabild", $fa) ?>') center center no-repeat;">
 									<h2><?= $fa->name ?></h2>
 								</div>
-								<div class="date"><?= "ab " . date("d. F Y", strtotime($fa->startdate))?></div>
+								<div class="date"><?= ($fa->startdate === NULL) ? "geplant" : ("ab " . date("d. F Y", strtotime($fa->startdate)))?></div>
 								<p><?= $fa->description ?></p>
 								<p style="font-size: 80%"><?= implode(" ... ", array_map(function ($postid){$p = get_post($postid); return $p->post_title;}, explode(",", $fa->postids))) ?></p>
-								<?php if (strtotime($fa->startdate) < time()){?>
+								<?php if ((strtotime($fa->startdate) < time()) && ($fa->startdate !== NULL)){?>
 								<a class="bnt-more" href="<?= get_term_link($fa) ?>">Anschauen</a>
 								<?php } else { ?>
-								<a>Inhalte folgen</a>
+								<a style="background: gray">Zukünftig</a>
 								<?php } ?>
 							</div>
 						</div>
