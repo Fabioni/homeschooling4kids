@@ -1688,6 +1688,12 @@ add_action( 'wp_enqueue_scripts', 'my_enqueue_stuff' );
 
 //ENDE-- Projekte
 
-
+/*URL-Feld ausblenden */
+add_filter('comment_form_default_fields', 'remove_url');
+function remove_url($fields) {
+	if(isset($fields['url']))
+		unset($fields['url']);
+	return $fields;
+}
 
 require get_template_directory() . '/functionsParent.php';
