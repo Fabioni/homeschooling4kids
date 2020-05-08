@@ -306,7 +306,7 @@ get_header(); ?>
 								<p><?/*= $fa->description */?></p>
 								<p class="themenwelt_beitragstitel"><?/*= implode(" ... ", array_map(function ($postid){$p = get_post($postid); return "<a href='".get_post_permalink($p)."'>$p->post_title</a>";}, explode(",", $fa->postids))) */?></p>
 								<a class="bnt-more" href="<?/*= get_term_link($fa) */?>">Mehr</a>-->
-								<div class="timeline-img-header" style="background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .4)), url('<?= get_field("themabild", $fa) ?>') center center no-repeat;">
+								<div class="timeline-img-header" style="background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .4)), url('<?= get_field("themabild", $fa) ?>') center center / cover no-repeat;">
 									<h2><?= $fa->name ?></h2>
 								</div>
 								<div class="date"><?= ($fa->startdate === NULL) ? "geplant" : ("ab " . date("d.m.Y", strtotime($fa->startdate))) //TODO Monat als österreischiches Wort?></div>
