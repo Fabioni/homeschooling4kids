@@ -1695,5 +1695,14 @@ function remove_url($fields) {
 		unset($fields['url']);
 	return $fields;
 }
+function wp44138_change_comment_form_cookies_consent( $fields ) {
+	$consent  = empty( $commenter['comment_author_email'] ) ? '' : ' checked="checked"';
+	$fields['cookies'] = '<p class="comment-form-cookies-consent">' .
+						 '<input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"' . $consent . ' />' .
+						 '<label for="wp-comment-cookies-consent">' . "Meinen Namen und E-Mail in diesem Browser speichern, bis ich wieder kommentiere." . '</label>' .
+						 '</p>';
+	return $fields;
+}
+add_filter( 'comment_form_default_fields', 'wp44138_change_comment_form_cookies_consent' );
 
 require get_template_directory() . '/functionsParent.php';
