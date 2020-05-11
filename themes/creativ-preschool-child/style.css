@@ -898,23 +898,21 @@ header.entry-header {
     animation-iteration-count: 5;
     animation-timing-function: linear; }
 
-  /*
-  body.home #site-navigation .menu-toggle{
+  body.home #site-navigation .menu-toggle {
     animation-name: rumzappeln15deg;
     animation-delay: 1s;
     animation-fill-mode: none;
     animation-duration: 0.2s;
     animation-iteration-count: 10;
-    animation-timing-function: linear;
-  }
+    animation-timing-function: linear; }
 
-  body.home #site-navigation .menu-toggle span{
+  body.home #site-navigation .menu-toggle span {
     animation-name: rotsein;
     animation-delay: 1s;
     animation-fill-mode: none;
     animation-duration: 2s;
-    animation-timing-function: linear;
-  }*/
+    animation-timing-function: linear; }
+
   @keyframes rotsein {
     from {
       background-color: red; }
