@@ -907,7 +907,7 @@ function add_h4k_dataKeys_DataList(){
 	?>
 	<datalist id="h4k-dataKeys">
 		<option value="audioStelle"></option>
-		<option value="none"></option>
+		<option value='übersetzungsTeil'></option>
 	</datalist>
 	<?php
 }
@@ -1734,5 +1734,61 @@ function wp44138_change_comment_form_cookies_consent( $fields ) {
 	return $fields;
 }
 add_filter( 'comment_form_default_fields', 'wp44138_change_comment_form_cookies_consent' );
+
+
+add_action("wp_footer", function (){
+	if (! is_page()) return;
+	$übersetzungen = get_field("ubersetzung");
+	$übersetzungen = preg_replace("/\r\n/", "\n", $übersetzungen);
+
+	$re = '/Sprache:\s*(.*)\s*((?:Teil:\s.*\s{.*}\s*)*)/m';
+	$sprachen = [];
+
+	preg_match_all($re, $übersetzungen, $matches, PREG_SET_ORDER, 0);
+	foreach ($matches as $match){
+		$sprachen[$match[1]] = [];
+		preg_match_all("/Teil:\s(.*)\R{(.*)}/m", $match[2], $matches2, PREG_SET_ORDER, 0);
+		foreach ($matches2 as $pla){
+			$sprachen[$match[1]][$pla[1]] = $pla[2];
+		}
+	}
+	?>
+<script>
+	var übersetzungen = <?= json_encode($sprachen, JSON_UNESCAPED_UNICODE) ?>
+
+	function übersetzeZu(sprache) {
+		jQuery('[data-übersetzungsteil]').each(function () {
+			if (übersetzungen[sprache][jQuery(this).data('übersetzungsteil')] !== undefined){
+				jQuery(this).html(übersetzungen[sprache][jQuery(this).data('übersetzungsteil')]);
+			} else {
+				jQuery(this).html(übersetzungen["Deutsch"][jQuery(this).data('übersetzungsteil')]);
+			}
+		}, sprache)
+	}
+
+	jQuery(function () {
+		jQuery(".einstellungen").append("<label>Sprache:\n" +
+			"\t\t<select id=\"sprachAuswahl\">\n" +
+			"\t\t\t<option selected>Deutsch</option>" +
+			"\t\t</select>\n" +
+			"\t</label>");
+
+		Object.keys(übersetzungen).forEach(function (key) {
+			jQuery("#sprachAuswahl").append("\t\t\t<option>" + key  + "</option>")
+		});
+
+		übersetzungen["Deutsch"] = {}
+		jQuery('[data-übersetzungsteil]').each(function () {
+			übersetzungen["Deutsch"][jQuery(this).data('übersetzungsteil')] = jQuery(this).html();
+		})
+
+		jQuery("#sprachAuswahl").change(function () {
+			console.log(jQuery(this).val());
+			übersetzeZu(jQuery(this).val());
+		})
+	})
+</script>
+<?php
+});
 
 require get_template_directory() . '/functionsParent.php';

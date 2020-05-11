@@ -554,7 +554,7 @@ textarea {
 }
 
 select {
-    border: 1px solid #ccc;
+    /*border: 1px solid #ccc;*/
 }
 
 input[type="text"]:focus,
