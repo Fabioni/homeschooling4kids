@@ -1767,28 +1767,77 @@ add_action("wp_footer", function (){
 	}
 
 	jQuery(function () {
-		jQuery(".einstellungen").append("<label>Sprache:\n" +
-			"\t\t<select id=\"sprachAuswahl\">\n" +
-			"\t\t\t<option selected>Deutsch</option>" +
-			"\t\t</select>\n" +
-			"\t</label>");
+		if (übersetzungen() != []) {
+			jQuery(".einstellungen").append("<label>Sprache:\n" +
+				"\t\t<select id=\"sprachAuswahl\">\n" +
+				"\t\t\t<option selected>Deutsch</option>" +
+				"\t\t</select>\n" +
+				"\t</label>");
 
-		Object.keys(übersetzungen).forEach(function (key) {
-			jQuery("#sprachAuswahl").append("\t\t\t<option>" + key  + "</option>")
-		});
+			Object.keys(übersetzungen).forEach(function (key) {
+				jQuery("#sprachAuswahl").append("\t\t\t<option>" + key + "</option>")
+			});
 
-		übersetzungen["Deutsch"] = {}
-		jQuery('[data-übersetzungsteil]').each(function () {
-			übersetzungen["Deutsch"][jQuery(this).data('übersetzungsteil')] = jQuery(this).html();
-		})
+			übersetzungen["Deutsch"] = {}
+			jQuery('[data-übersetzungsteil]').each(function () {
+				übersetzungen["Deutsch"][jQuery(this).data('übersetzungsteil')] = jQuery(this).html();
+			})
 
-		jQuery("#sprachAuswahl").change(function () {
-			console.log(jQuery(this).val());
-			übersetzeZu(jQuery(this).val());
-		})
+			jQuery("#sprachAuswahl").change(function () {
+				console.log(jQuery(this).val());
+				übersetzeZu(jQuery(this).val());
+			})
+		}
 	})
 </script>
 <?php
 });
+
+if( function_exists('acf_add_local_field_group') ):
+
+	acf_add_local_field_group(array(
+		'key' => 'group_5eb965ee3b1af',
+		'title' => 'Übersetzungen',
+		'fields' => array(
+			array(
+				'key' => 'field_5eb9696d37e1c',
+				'label' => 'Übersetzungen',
+				'name' => 'ubersetzung',
+				'type' => 'textarea',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'maxlength' => '',
+				'rows' => '',
+				'new_lines' => '',
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'page',
+				),
+			),
+		),
+		'menu_order' => 0,
+		'position' => 'normal',
+		'style' => 'default',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => '',
+		'active' => true,
+		'description' => '',
+	));
+
+endif;
 
 require get_template_directory() . '/functionsParent.php';
