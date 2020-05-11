@@ -1267,7 +1267,7 @@ header.entry-header {
 }
 
 @media screen and (min-width: 1024px) {
-  body.home .neuaufmerksam{
+  body.home.machAufmerksam .neuaufmerksam{
     animation-name: rumpoppen;
     animation-delay: 2s;
     animation-fill-mode: forwards;
@@ -1291,7 +1291,7 @@ header.entry-header {
 }
 
 @media screen and (max-width: 1023px) {
-  body.home .neuaufmerksam{
+  body.home.machAufmerksam .neuaufmerksam{
     animation-name: rumzappeln1deg;
     animation-delay: 1s;
     animation-fill-mode: none;
@@ -1300,7 +1300,7 @@ header.entry-header {
     animation-timing-function: linear;
   }
 
-  body.home #site-navigation .menu-toggle{
+  body.home.machAufmerksam #site-navigation .menu-toggle{
     animation-name: rumzappeln15deg;
     animation-delay: 1s;
     animation-fill-mode: none;
@@ -1309,7 +1309,7 @@ header.entry-header {
     animation-timing-function: linear;
   }
 
-  body.home #site-navigation .menu-toggle span{
+  body.home.machAufmerksam #site-navigation .menu-toggle span{
     animation-name: rotsein;
     animation-delay: 1s;
     animation-fill-mode: none;

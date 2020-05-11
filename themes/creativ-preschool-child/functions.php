@@ -1071,23 +1071,53 @@ if ( function_exists( 'acf_add_local_field_group' ) ):
 
 endif;
 
-
 function wiederkehrenderNutzerCookie(){
-	if (! isset($_COOKIE["firstTimeUsage"])) {setcookie( "firstTimeUsage", time(), time() + 10 * 365 * 24 * 3600, "/" );}  // verfällt in 10 Jahren
+	if (isset($_COOKIE["firstTimeUsage"])){
+		// Fehler dass ich das mal ohne strval gespeichert hatte:
+		$korrigierteZahlWTF = intval(preg_replace('/[^0-9]/', '', $_COOKIE["firstTimeUsage"]));
+		setcookie("erstbenutzung", strval($korrigierteZahlWTF), time() + 10 * 365 * 24 * 3600, "/" );
+		setcookie("firstTimeUsage", "", time()-3600, "/");
+	}
+	if (! isset($_COOKIE["erstbenutzung"])) {setcookie( "erstbenutzung", strval(time()), time() + 10 * 365 * 24 * 3600, "/" );}  // verfällt in 10 Jahren
 	if (! isset($_COOKIE["guid"])) {setcookie( "guid", uniqid("h4k"), time() + 10 * 365 * 24 * 3600, "/" );}  // verfällt in 10 Jahren
 }
 add_action( 'init', 'wiederkehrenderNutzerCookie', 0 );
 
+
+$h4k_machAufmerksam = false;
+function aufmerksam_check_body_class(){
+	global $h4k_machAufmerksam;
+	if (isset($_COOKIE["erstbenutzung"]) && is_front_page()) {
+		if ($_COOKIE["erstbenutzung"] < strtotime("11.05.2020 13:00:00")){
+			if (! isset($_COOKIE["aufmerksamThemenwelt"])){
+				setcookie( "aufmerksamThemenwelt", strval(1), time() + 10 * 365 * 24 * 3600, "/" );
+				$h4k_machAufmerksam = true;
+			} elseif ($_COOKIE["aufmerksamThemenwelt"] < 5){
+				setcookie( "aufmerksamThemenwelt", strval(intval($_COOKIE["aufmerksamThemenwelt"])+1), time() + 10 * 365 * 24 * 3600, "/" );
+				$h4k_machAufmerksam = true;
+			}
+		}
+	}
+}
+add_filter('wp', 'aufmerksam_check_body_class');
+
+function aufmerksam_body_class($classes) {
+	global $h4k_machAufmerksam;
+	if ($h4k_machAufmerksam){$classes[] = "machAufmerksam";}
+
+	return $classes;
+}
+add_filter('body_class', 'aufmerksam_body_class');
 
 function should_show_donate(){
 	if (! (is_front_page() or is_page("wir-stellen-uns-vor") or is_page("datenschutzerklaerung") or is_page("haftungsausschluss") or is_page("elterninformation"))) {return false;}
 
 	if (! isset($_COOKIE["cookie_notice_accepted"])) {return false;}
 
-	if (! isset($_COOKIE["firstTimeUsage"])) {return false;}
+	if (! isset($_COOKIE["erstbenutzung"])) {return false;}
 
 	if (is_front_page()){
-		if ($_COOKIE["firstTimeUsage"] + 60*60*12 < time()){ //12h später
+		if ($_COOKIE["erstbenutzung"] + 60*60*12 < time()){ //12h später
 			return (rand(0, 2) == 0);
 		}
 	} else {
