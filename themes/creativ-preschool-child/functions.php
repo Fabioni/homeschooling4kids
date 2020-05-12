@@ -1840,4 +1840,167 @@ if( function_exists('acf_add_local_field_group') ):
 
 endif;
 
+if( function_exists('acf_add_local_field_group') ):
+
+	acf_add_local_field_group(array(
+		'key' => 'group_5eba8402e3b24',
+		'title' => 'Beitrags Hintergrundbild',
+		'fields' => array(
+			array(
+				'key' => 'field_5ebaa165ffef5',
+				'label' => 'Vorgabe Hintergründe',
+				'name' => 'vorgabe_hintergrunde',
+				'type' => 'radio',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'choices' => array(
+					'schriftrolle1' => 'Schriftrolle',
+					'bild' => 'Bild',
+				),
+				'allow_null' => 1,
+				'other_choice' => 0,
+				'default_value' => '',
+				'layout' => 'vertical',
+				'return_format' => 'value',
+				'save_other_choice' => 0,
+			),
+			array(
+				'key' => 'field_5eba841233589',
+				'label' => 'Hintergrundbild',
+				'name' => 'hintergrundbild',
+				'type' => 'image',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => array(
+					array(
+						array(
+							'field' => 'field_5ebaa165ffef5',
+							'operator' => '==',
+							'value' => 'bild',
+						),
+					),
+				),
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'return_format' => 'url',
+				'preview_size' => 'full',
+				'library' => 'all',
+				'min_width' => '',
+				'min_height' => '',
+				'min_size' => '',
+				'max_width' => '',
+				'max_height' => '',
+				'max_size' => '',
+				'mime_types' => '',
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'fachbeitrag',
+				),
+			),
+			array(
+				array(
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'gutzuwissenbeitrag',
+				),
+			),
+			array(
+				array(
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'spassbeitrag',
+				),
+			),
+		),
+		'menu_order' => 0,
+		'position' => 'side',
+		'style' => 'default',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => '',
+		'active' => true,
+		'description' => '',
+	));
+
+	acf_add_local_field_group(array(
+		'key' => 'group_5ebaaacb466cb',
+		'title' => 'Beitragsbreite',
+		'fields' => array(
+			array(
+				'key' => 'field_5ebaaaf7b7213',
+				'label' => 'Max Breite',
+				'name' => 'max_breite',
+				'type' => 'range',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => 1200,
+				'min' => 400,
+				'max' => 1200,
+				'step' => 100,
+				'prepend' => '',
+				'append' => 'px',
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'fachbeitrag',
+				),
+			),
+			array(
+				array(
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'gutzuwissenbeitrag',
+				),
+			),
+			array(
+				array(
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'spassbeitrag',
+				),
+			),
+			array(
+				array(
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'page',
+				),
+			),
+		),
+		'menu_order' => 0,
+		'position' => 'side',
+		'style' => 'default',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => '',
+		'active' => true,
+		'description' => '',
+	));
+
+endif;
+
 require get_template_directory() . '/functionsParent.php';

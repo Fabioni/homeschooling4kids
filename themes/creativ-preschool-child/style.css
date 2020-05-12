@@ -21,7 +21,6 @@ Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 */
 @import url("styleParent.css");
-@import url("styleParent.css");
 .otfm-sp__XXXXXX.js-otfm-sp__opened {
   background-color: beige; }
 .otfm-sp__XXXXXX.js-otfm-sp__closed {

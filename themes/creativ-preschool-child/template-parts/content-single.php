@@ -37,15 +37,29 @@
 		<?php
 	}
 	?>
-	<div class="entry-content <?= get_the_time( 'Ymd' ) === current_time( 'Ymd' ) ? "heutigerBeitrag" : "" ?>">
-		<?php the_content(); ?>
-		<?php
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'creativ-preschool' ),
-				'after'  => '</div>',
-			) );
-		?>
-		<div id="likerButtonWrapper"><?= do_shortcode("[wp_ulike]") ?></div>
+	<div class="entry-content-wrapperforimages">
+		<?php if (get_field("vorgabe_hintergrunde") == "schriftrolle1"){ ?>
+		<div class="entry-content-backgroundimage-oben">
+			<img src="/wp-content/themes/creativ-preschool-child/hintergründe/schriftrolle1-oben.png">
+		</div>
+		<?php } ?>
+		<div class="entry-content-backgroundimage-mitte">
+			<div class="entry-content <?= get_the_time( 'Ymd' ) === current_time( 'Ymd' ) ? "heutigerBeitrag" : "" ?>">
+				<?php the_content(); ?>
+				<?php
+				wp_link_pages( array(
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'creativ-preschool' ),
+					'after'  => '</div>',
+				) );
+				?>
+				<div id="likerButtonWrapper"><?= do_shortcode("[wp_ulike]") ?></div>
+			</div>
+		</div>
+		<?php if (get_field("vorgabe_hintergrunde") == "schriftrolle1"){ ?>
+		<div class="entry-content-backgroundimage-unten">
+			<img src="/wp-content/themes/creativ-preschool-child/hintergründe/schriftrolle1-unten.png">
+		</div>
+		<?php } ?>
 	</div><!-- .entry-content -->
 	<?php creativ_preschool_posts_tags(); ?>
 	<?php if ( get_edit_post_link() ) : ?>
