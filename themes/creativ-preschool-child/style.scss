@@ -1061,6 +1061,14 @@ article[id^='post-'] {
   box-shadow: inset 0px 0px 0px 2px red;
 }
 
+input.checked_falsch, select.checked_falsch{
+  outline: 2px solid red
+}
+
+input.checked_richtig, select.checked_richtig{
+  outline: 2px solid green
+}
+
 .fabian_check_me_submit {
   &.checked_richtig {
     box-shadow: 4px 4px 4px green;
