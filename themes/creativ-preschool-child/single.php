@@ -24,9 +24,9 @@ if ($hintergrund = get_field("vorgabe_hintergrunde")) {
 		?>
 		<style>
 			.entry-content{
-				background: url("<?= get_field("hintergrundbild") ?>") top center;
-				background-size: cover;
-				background-repeat: no-repeat;
+				background: #ddd url("<?= get_field("hintergrundbild") ?>") top center;
+				background-size: contain;
+				background-repeat: space;
 				box-shadow: none;
 				border: none;
 			}
