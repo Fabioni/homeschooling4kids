@@ -82,7 +82,7 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
 		$(function () {
 			$("#heuteButtonMobilDesktopContainer").on("click", "a", function () {
 				try {
-					ga('send', 'event', 'heute_button_clicked');
+					ga('send', 'event', 'heute_button_clicked', {transport: 'bacon'});
 				} catch (ignore) {
 					console.log("kein gtag möglich");
 				}
@@ -381,6 +381,51 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
 			flex-wrap: wrap;
 			justify-content: space-around;
 		}
+
+		#linkthemenwelt{
+			background: aliceblue;
+			text-align: center;
+			margin-bottom: 1em;
+			animation-name: verticalaufgehen;
+			animation-delay: 3s;
+			animation-fill-mode: both;
+			animation-duration: 1.5s;
+		}
+
+		@keyframes verticalaufgehen {
+			from{
+				transform: scaleY(0);
+			}
+			to {
+				transform: scaleY(1);
+			}
+		}
+
+		#linkthemenwelt p{
+			display: inline-block;
+			vertical-align: middle;
+			padding: 0;
+			margin: 0;
+			line-height: 3em;
+			font-size: 20px;
+		}
+
+		#linkthemenwelt i:after{
+			content: "\f0a6";
+			transform: rotate(110deg);
+			position: absolute;
+			top: -1.3em;
+			left: -1em;
+			z-index: 2;
+			font-family: "Font Awesome 5 Free";
+			color: #512424;
+			font-size: 1.2em;
+		}
+
+		#linkthemenwelt i{
+			position: relative;
+		}
+
     </style>
     <div id="heuteButtonMobilDesktopContainer" class="<?= $heute ? "heuteBeitragJa" : "heuteBeitragNein" ?>">
         <div class="fabianHandy">
@@ -390,6 +435,11 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
             <div class="flip-cover-heute_button_flip"></div>
         </div>
     </div>
+	<?php if (strpos($_SERVER['HTTP_HOST'], "h4k.dev") !== false){ ?>
+	<div id="linkthemenwelt">
+		<p><a href="/themenwelt"><i></i>Schau dir die neue Themenwelt an!</a></p>
+	</div>
+	<?php } ?>
     <!--<div style="background: #ddd"><div class="wrapper"><?php // echo do_shortcode('[metaslider id="382"]');
 	?></div></div>-->
 	<?php $enabled_sections = creativ_preschool_get_sections();
