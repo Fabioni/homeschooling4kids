@@ -1134,7 +1134,7 @@ function addDonateButton() {
 		"Hallo, vielen Dank für deinen Besuch!<br>Möchtest du uns unterstützen?",
 		"Gefällt dir unsere Website?<br>Wir wären um eine Spende dankbar.",
 		"Ein Kaffee für das Team?",
-		"Harte Arbeit muss belohnt werden :)"
+		"Harte Arbeit darf gerne belohnt werden :)"
 	]
 
 	?>
