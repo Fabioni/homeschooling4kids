@@ -169,7 +169,7 @@ get_header(); ?>
 						query_posts( $args );
 
 						if ( have_posts() ) {
-							$mehrals3 = $wp_query->post_count > 3;
+							$mehrals3 = $wp_query->post_count > 3 && ! is_day();
 							?>
 							<div class="blog-posts-wrapper noMatchHeight">
 								<h1 class="archivUnterteiltitel" id="fach-<?= $fa->slug ?>"><a
@@ -177,7 +177,7 @@ get_header(); ?>
 								</h1>
 								<span class="sticky_archivUnterteiltitel closed"><?= substr($fa->name, 0, 2) ?></span>
 								<div class="horizontal-scroll-wrapper">
-									<div class="horizontal-scroll archivunterteil closed">
+									<div class="horizontal-scroll archivunterteil <?= $mehrals3 ? 'closed' : ''?>">
 										<?php
 
 										while ( have_posts() ) : the_post(); ?>

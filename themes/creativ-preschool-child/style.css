@@ -818,7 +818,7 @@ header.entry-header {
     width: 95%; }
 
   .entry-content {
-    padding: 20px 15px; } }
+    padding: 20px 15px 70px; } }
 @media (min-width: 600px) {
   .wp-block-columns > .wp-block-column:nth-child(2n) .has-vorleseHook:before {
     right: -1em;
