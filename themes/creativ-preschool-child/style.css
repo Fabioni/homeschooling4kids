@@ -1,1 +1,1258 @@
-﻿@import"styleParent.css";#colophon>img{width:100%}.otfm-sp__XXXXXX.js-otfm-sp__opened{background-color:beige}.otfm-sp__XXXXXX.js-otfm-sp__closed{background-color:transparent}.otfm-sp__XXXXXX .otfm-sp__title{background-color:transparent !important}.otfm-sp__XXXXXX.wp-block-otfm-box-spoiler-start{border:none}#team .section-header,#our-courses .section-header,#team .section-content,#our-courses .section-content{background-color:transparent}#team .section-title,#our-courses .section-title{color:#033b62}#about-us .featured-image{background-color:#888}#today{border:#b43123 2px solid}#wp-calendar a{color:#0056b3}.entry-content{background:#efe9be;padding:20px;border-radius:25px;box-shadow:2px 2px 4px 2px gray}#colophon{background-color:transparent}.fußzeilenmenu{margin-top:20px}.fußzeilenmenu li{display:inline-block;margin:0px 10px}.site-info{position:relative;z-index:1}@media screen and (max-width: 782px){.fußzeilenmenu li{display:block}.site-info{position:relative;z-index:1000}}#page-site-header{background-color:#ddd0;background-repeat:no-repeat}#page-site-header .page-header{box-shadow:0px 0px 8px 2px #0008;background:#0008}.entry-container .entry-content{background:none;box-shadow:none}#page-site-header .page-title{font-size:50px}#page-site-header .page-subtitle,#page-site-header .archive-description{color:#fff}@media screen and (max-width: 767px){#page-site-header .page-title{font-size:7vw}}#masthead .wrapper{min-width:60%;max-width:90%}body:not(.logged-in) #menu-item-608{display:none}#primary #main article .aligncenter.wp-block-embed .wp-block-embed__wrapper{margin:auto;margin-top:1.5em}.aligncenter{text-align:center}.alignfull.wp-embed-aspect-16-9 .wp-block-embed__wrapper,.alignwide.wp-embed-aspect-16-9 .wp-block-embed__wrapper{width:100%;padding-bottom:56.25%;position:relative;height:0}.alignfull.wp-embed-aspect-4-3 .wp-block-embed__wrapper,.alignwide.wp-embed-aspect-4-3 .wp-block-embed__wrapper{width:100%;padding-bottom:75%;position:relative;height:0}.alignfull{margin-left:calc(-100vw / 2 + 100% / 2);margin-right:calc(-100vw / 2 + 100% / 2);max-width:100vw}.wp-has-aspect-ratio.alignwide iFrame{position:absolute;height:100%}.alignwide{width:100%}.alignwide iframe{width:100%}.is-provider-learningapps-org.alignwide iFrame{min-height:600px}.no-sidebar .wp-block-embed.is-type-video.alignfull iframe{position:absolute;height:100%}.otfm-sp__wrapper{clear:both}iframe{box-shadow:3px -3px 10px 3px #0008;display:block;margin:auto}.wp-block-embed__wrapper{margin-top:1.5em}.entry-content ul li,.entry-content ol li{margin-bottom:.5em}#main>.spasskategorie-wir-halten-uns-fit>.entry-content::before{background:url("/wp-content/themes/creativ-preschool-child/sport-5.svg") no-repeat;content:"";display:block;width:120px;height:120px;float:right;margin:5px;background-size:120px}#main>.spasskategorie-knobelaufgaben>.entry-content *,#main>.spasskategorie-wir-halten-uns-fit>.entry-content *,#main>.spasskategorie-spielideen-fuer-zuhause>.entry-content *,#main>.spasskategorie-lass-uns-singen-und-tanzen>.entry-content *,#main>.spasskategorie-witz-der-woche>.entry-content *,#main>.spasskategorie-rezept-fuer-gross-und-klein>.entry-content *,#main>.spasskategorie-veranstaltungsideen>.entry-content *{clear:none}#main>.spasskategorie-spielideen-fuer-zuhause>.entry-content::before{background:url("/wp-content/themes/creativ-preschool-child/dices.svg") no-repeat}#main>.spasskategorie-knobelaufgaben>.entry-content::before{background:url("/wp-content/themes/creativ-preschool-child/brain-1773892_640.png") no-repeat}#main>.spasskategorie-lass-uns-singen-und-tanzen>.entry-content::before{background:url("/wp-content/themes/creativ-preschool-child/chicken-icon-32092.png") no-repeat}#main>.spasskategorie-witz-der-woche>.entry-content::before{background:url("/wp-content/themes/creativ-preschool-child/turkey-with-black-hat.svg") no-repeat}#main>.spasskategorie-rezept-fuer-gross-und-klein>.entry-content::before{background:url("/wp-content/themes/creativ-preschool-child/rolling-pin-157071_640.png") no-repeat}#main>.spasskategorie-witz-der-woche>.entry-content::before,#main>.spasskategorie-knobelaufgaben>.entry-content::before,#main>.spasskategorie-lass-uns-singen-und-tanzen>.entry-content::before,#main>.spasskategorie-spielideen-fuer-zuhause>.entry-content::before,#main>.spasskategorie-rezept-fuer-gross-und-klein>.entry-content::before,#main>.spasskategorie-veranstaltungsideen>.entry-content::before{content:"";display:block;width:120px;height:120px;float:right;margin:5px;background-size:120px;position:relative;z-index:1}.post-item .entry-meta span.cat-links{margin-right:13px}.archivUnterteiltitel-spielideen-fuer-zuhause:before{background:url("/wp-content/themes/creativ-preschool-child/dices.svg") no-repeat}.archivUnterteiltitel-knobelaufgaben:before{background:url("/wp-content/themes/creativ-preschool-child/brain-1773892_640.png") no-repeat}.archivUnterteiltitel-rezept-fuer-gross-und-klein:before{background:url("/wp-content/themes/creativ-preschool-child/rolling-pin-157071_640.png") no-repeat}.archivUnterteiltitel-lass-uns-singen-und-tanzen:before{background:url("/wp-content/themes/creativ-preschool-child/chicken-icon-32092.png") no-repeat}.archivUnterteiltitel-wir-halten-uns-fit:before{background:url("/wp-content/themes/creativ-preschool-child/sport-5.svg") no-repeat}.archivUnterteiltitel-witz-der-woche:before{background:url("/wp-content/themes/creativ-preschool-child/turkey-with-black-hat.svg") no-repeat}.archivUnterteiltitel{position:relative}.archivUnterteiltitel:before{content:"";display:block;width:120px;height:120px;margin:5px;background-size:120px;position:absolute;left:-160px;top:20px;z-index:1}.post-type-archive-spassbeitrag .wrapper.page-section{padding-left:120px}@media screen and (max-width: 1450px){.archivUnterteiltitel:before{left:-120px}.post-type-archive-spassbeitrag .wrapper.page-section{padding-left:100px}}@media screen and (max-width: 1300px){.archivUnterteiltitel:before{display:none !important}.post-type-archive-spassbeitrag .wrapper.page-section{padding-left:0}}.heutigerBeitrag{box-shadow:0px 0px 0px 5px darkred}.archive #main.selected_leistungsstufe-3-klasse-4-klasse .leistungsstufe-1-klasse-2-klasse:not(.leistungsstufe-3-klasse-4-klasse),.archive #main.selected_leistungsstufe-1-klasse-2-klasse .leistungsstufe-3-klasse-4-klasse:not(.leistungsstufe-1-klasse-2-klasse){opacity:.3}.spasskategorie-witz-der-woche blockquote:after,.schönerquote:after{content:"";position:absolute;border:2px solid #e74848;border-radius:0 50px 0 0;width:60px;height:60px;bottom:-60px;left:50px;border-bottom:none;border-left:none;z-index:3}.spasskategorie-witz-der-woche blockquote:before,.schönerquote:before{content:"";position:absolute;width:80px;border:6px solid #eee;bottom:-2px;left:50px;z-index:2}.spasskategorie-witz-der-woche blockquote,.schönerquote{font-family:"Abril Fatface",cursive;font-size:1.1rem;border:solid 2px red !important;border-radius:20px !important}.status-future .entry-meta .date{background-color:#0009;border:2px red dashed;border-radius:5px;padding:2px 10px;pointer-events:none;cursor:default}.status-future .entry-meta .date a{color:#fff}.status-future .entry-meta .date a:before{color:#fff}@media screen and (min-width: 784px){.post-item{transition:transform .5s}.post-item:hover{transform:scale(1.05)}}.post-item:hover .fabian-Pfeil:after{content:"";transform:rotate(140deg);position:absolute;top:-1em;left:-1em;z-index:2;font-family:"Font Awesome 5 Free";color:gray;font-size:1.2em}.fabian-Pfeil{position:relative}.fabian-Pfeil:hover:after{content:"";transform:rotate(140deg);position:absolute;top:-1em;left:-1em;z-index:2;font-family:"Font Awesome 5 Free";color:gray;font-size:1.2em}blockquote cite{font-style:italic}.wp-block-embed.alignright,.wp-block-embed.alignleft{max-width:60%}.alignleft,.alignright{max-width:60%}.wpcf7-form-control-wrap *{max-width:100%}.cat-links.leistungsstufe:before{content:""}.cat-links.cat_post_likes:before{content:""}.cat-links.fach:before{content:""}.su-tooltip:after{content:" ";top:-0.6em;right:3px;position:relative;font-family:"Font Awesome 5 Free";font-size:90%;color:#6495ed}.su-tooltip:hover{cursor:help}.su-tooltip:hover .underlinewhenhover{text-decoration:underline}#heuteButtonMobilDesktopContainer{margin-bottom:50px;margin-top:10px}#heuteButtonMobilDesktopContainer *{font-size:110%}.fabian-großerPfeil:before,.is-style-h4k-großerPfeil:before{content:"";display:block;width:60px;height:90px;position:relative;left:45%;left:calc(50% - 30px);z-index:1;background:url(/wp-content/uploads/2020/03/arrow-35173_1280-e1585600397946-714x1024.png) no-repeat;background-size:60px}body.archive{scroll-behavior:smooth}@media screen and (min-width: 783px){.horizontal-scroll-item{width:25em;width:min(25em, 50%);max-width:500px;flex-grow:1;margin-bottom:30px}.horizontal-scroll{display:flex;flex-wrap:wrap}.horizontal-scroll-item article,.horizontal-scroll-item .post-item{height:100%}.togglepfeilchen_handy{display:none}.sticky_archivUnterteiltitel{display:none}.togglepfeilchen_pc{display:initial}}.horizontal-scroll-item{margin-bottom:30px}.horizontal-scroll-item:empty{margin:0;height:0;border:0;background:transparent}.makescrollalways .horizontal-scroll-wrapper{scroll-snap-type:x mandatory;overflow-x:auto;background:#0001;border-radius:15px;padding-top:5px}.makescrollalways .horizontal-scroll{display:inline-flex;align-items:flex-start;flex-wrap:nowrap}.makescrollalways .horizontal-scroll-item{width:25em;scroll-snap-align:center;max-width:90vw}.makescrollalways .horizontal-scroll-item:empty{display:none}@media screen and (max-width: 782px){.togglepfeilchen_pc{display:none}.togglepfeilchen_handy{display:initial}.makescroll .horizontal-scroll-wrapper{scroll-snap-type:x mandatory;overflow-x:auto;background:#0001;border-radius:15px;padding-top:5px}.makescroll .horizontal-scroll{display:inline-flex;align-items:flex-start}.makescroll .horizontal-scroll-item{width:25em;scroll-snap-align:center;max-width:90vw}.makescroll .horizontal-scroll-item:empty{display:none}}body:not(.single):not(.home):not(.page) .wrapper{max-width:1600px}body.home .page-section{margin:auto;max-width:1200px}#page-site-header{padding:0 !important}#page-site-header-image:not(.volle_Breite):not(.volle_Hoehe):not(.volle_BreiteTop):not(.volle_BreiteBottom):not(.contain){width:100%;max-height:500px;object-fit:cover}#page-site-header-image.volle_Breite{width:100%;max-height:500px;object-fit:cover;object-position:center}#page-site-header-image.volle_BreiteTop{width:100%;max-height:500px;object-fit:cover;object-position:top}#page-site-header-image.volle_BreiteBottom{width:100%;max-height:500px;object-fit:cover;object-position:bottom}#page-site-header-image.volle_Hoehe{max-height:500px;object-fit:cover;min-height:250px;width:auto}#page-site-header-image.contain{object-fit:contain;max-height:500px;min-height:250px;max-width:100%}.blog-posts-wrapper .horizontal-scroll-item:nth-child(1n) .post-item{background-color:#e86126}.blog-posts-wrapper .horizontal-scroll-item:nth-child(2n) .post-item{background-color:#43cd66}.blog-posts-wrapper .horizontal-scroll-item:nth-child(3n) .post-item{background-color:#f9b001}.page-section{padding-top:50px !important}.home section{margin-bottom:50px}@media screen and (min-width: 1025px){#primary-menu>.menu-item:hover>a{animation-name:wackeln;animation-timing-function:linear;animation-duration:.5s;animation-iteration-count:infinite}@keyframes wackeln{0%{transform:rotateZ(0deg)}25%{transform:rotateZ(8deg)}75%{transform:rotateZ(-8deg)}}#page-site-header .page-title{filter:blur(5px);transform:translate(-80px, -50px);animation-name:verschwimmen;animation-duration:3s;animation-iteration-count:1;animation-timing-function:ease;animation-delay:1s;animation-fill-mode:forwards}@keyframes verschwimmen{0%{filter:blur(5px);transform:translate(-80px, -50px)}100%{filter:blur(0px);transform:translate(0px, 0px)}}}@media screen and (max-width: 1024px){#page-site-header .page-title{filter:blur(5px);transform:translate(-20px, -12px);animation-name:verschwimmen;animation-duration:2s;animation-iteration-count:1;animation-timing-function:ease;animation-delay:1s;animation-fill-mode:forwards}@keyframes verschwimmen{0%{filter:blur(5px);transform:translate(-20px, -12px)}100%{filter:blur(0px);transform:translate(0px, 0px)}}}@font-face{font-family:"oesterdruckschrift";src:url("/wp-content/themes/creativ-preschool-child/assets/fonts/oesterdruckschrift.ttf")}@font-face{font-family:"oesterschreibschrift";src:url("/wp-content/themes/creativ-preschool-child/assets/fonts/oesterschreibschrift.ttf")}.österdruck article[id^=post-]{font-family:"oesterdruckschrift","Open Sans",sans-serif}.österdruck article[id^=post-] h1,.österdruck article[id^=post-] h2,.österdruck article[id^=post-] h3,.österdruck article[id^=post-] h4,.österdruck article[id^=post-] h5,.österdruck article[id^=post-] h6{font-family:"oesterdruckschrift","Sniglet",cursive}.österschreib article[id^=post-] h1,.österschreib article[id^=post-] h2,.österschreib article[id^=post-] h3,.österschreib article[id^=post-] h4,.österschreib article[id^=post-] h5,.österschreib article[id^=post-] h6{font-family:"oesterschreibschrift","Sniglet",cursive}.österdruck article[id^=post-]{letter-spacing:1px}body.single .österdruck article[id^=post-]{font-size:130%}.österschreib article[id^=post-]{font-family:"oesterschreibschrift","Open Sans",sans-serif;font-size:120%;letter-spacing:1px}body.single .österschreib article[id^=post-]{font-size:140%}article[id^=post-]{transition:all .3s ease-in-out}.österschreib #heuteButtonMobilDesktopContainer *{font-family:oesterschreibschrift,Sniglet,cursive}.österdruck #heuteButtonMobilDesktopContainer *{font-family:oesterdruckschrift,Sniglet,cursive}.fab{font-family:"Font Awesome 5 Brands" !important}.far{font-family:"Font Awesome 5 Free" !important;font-weight:400 !important}.fa,.fas{font-family:"Font Awesome 5 Free" !important;font-weight:900 !important}.site-logo img{transform:scale(1.2)}#donatecup{animation-name:reinrollen;animation-iteration-count:1;animation-fill-mode:both;animation-timing-function:ease-out;animation-duration:2s;animation-delay:4s}#donateinfo{animation-name:reinschieben;animation-iteration-count:1;animation-fill-mode:both;animation-timing-function:ease-out;animation-duration:2s;animation-delay:4s}@keyframes reinrollen{from{left:-70px;transform:rotate(-360deg)}to{left:18px;transform:rotate(0deg)}}@keyframes reinschieben{from{transform:translate(-20px, 0);opacity:0}to{transform:translate(0px, 0);opacity:1}}.main-navigation ul ul a{min-width:100%}@media screen and (min-width: 1024px){.main-navigation ul ul li{min-width:100%}}@media screen and (min-width: 1024px){.main-navigation{padding-right:1px}.main-navigation ul li:last-child ul li:hover>ul{right:100%;left:auto}.main-navigation ul li:last-child ul .menu-item-has-children>a:after{content:""}}@media screen and (max-width: 1023px){.main-navigation ul#primary-menu>li{padding-left:30px}.main-navigation ul#primary-menu>li:before{display:block;position:absolute;width:30px;height:30px;line-height:30px;top:9px;left:5px}}.fabian-highlight{background:url(https://andyhooke.co.uk/wp-content/uploads/2018/02/yellow-brushstroke.png);background-repeat:no-repeat;background-size:100% 95%;padding:8px 2px}.home h2.section-title{font-size:42px}#audiofile .mejs-controls,#audiofile .mejs-container{border-radius:25px}#audiofile:not(.ausgeklappt){display:none}#openVorlesenAudio{background:none;color:inherit;display:flex;border:2px solid;border-radius:2px;font-size:16px;padding:3px;background:#fff;margin-bottom:4px}#openVorlesenAudio:hover{background:none;color:inherit;display:flex;border:2px solid;border-radius:2px;font-size:16px;padding:3px;background:#fff}#openVorlesenAudio img{object-fit:contain;height:1.5em;width:auto;display:block;padding-right:4px}#openVorlesenAudio span{display:block;padding-left:4px;border-left:2px solid;font-family:"Open Sans",sans-serif}.weiterlesen_shortcode_button{color:#08f;cursor:pointer}.EinAusShortcode_content:not(.ausgeklappt),.weiterlesen_shortcode_button:not(.ausgeklappt) .einklappen,.EinAusShortcode_dreiPunkte.ausgeklappt{display:none}.weiterlesen_shortcode_button.ausgeklappt .ausklappen{display:none}.weiterlesen_shortcode_button:hover{color:#0fbaf4}.home .strong-view.wpmtst-modern .wpmtst-testimonial-content:before,.home .strong-view.wpmtst-modern .wpmtst-testimonial-content:after{background:#da8b0f}.has-vorleseHook:before{content:"";background-image:url(/wp-content/themes/creativ-preschool-child/Speaker_Icon.svg);height:1.5em;position:absolute;left:-3em;background-size:contain;width:1.5em}@media screen and (max-width: 767px){.has-vorleseHook:before{left:-0.8em}}@media screen and (max-width: 1500px)and (min-width: 767px){.has-vorleseHook:before{left:-1.5em}}.entry-content{position:relative}.su-qtip-size-h4k_tooltip{font-size:18px !important;line-height:initial !important}#likerButtonWrapper{position:absolute;bottom:0px;right:25px;font-size:25px}#likerButtonWrapper *{font-family:"Open Sans",sans-serif}#main input.fabian-check-me{padding:1px}#main input.fabian-check-me.style_unterstrich{padding:1px}#main select.fabian-check-me.style_unterstrich{padding:1px 15px;background:#fff}.checked_richtig,input[type=checkbox].fabian-check-me.checked_richtig+label::before,input[type=radio].fabian-check-me.checked_richtig+label::before{box-shadow:inset 0px 0px 0px 2px green}.checked_falsch,input[type=checkbox].fabian-check-me.checked_falsch+label::before,input[type=radio].fabian-check-me.checked_falsch+label::before{box-shadow:inset 0px 0px 0px 2px red}input.checked_falsch,select.checked_falsch{outline:2px solid red}input.checked_richtig,select.checked_richtig{outline:2px solid green}.fabian_check_me_submit.checked_richtig{box-shadow:4px 4px 4px green}.fabian_check_me_submit.checked_falsch{box-shadow:4px 4px 4px red}input[type=checkbox].fabian-check-me,input[type=radio].fabian-check-me{display:none}input[type=checkbox].fabian-check-me+label::before,input[type=radio].fabian-check-me+label::before{width:20px;height:20px;border-radius:3px;border:2px solid #0f0f10;background-color:#fff;display:inline-block;content:"";margin-right:1px;margin-left:1px}input[type=checkbox].fabian-check-me:checked+label::before,input[type=radio].fabian-check-me:checked+label::before{box-shadow:inset 0px 0px 0px 3px #fff;background-color:#000}input[type=radio].fabian-check-me+label::before{border-radius:20px}header.entry-header{padding:20px 30px 0px 30px}.blog-posts-wrapper .entry-container{padding:0px 30px 30px 30px}@media screen and (min-width: 784px){.archive article:not(.open) img{max-height:350px;object-fit:cover}.archive article.open img{max-height:600px;object-fit:cover;transition:max-height .3s linear}}@media screen and (max-width: 783px){.makevorschau article:not(.open) .post-item:hover .fabian-Pfeil:after{display:none}.makevorschau article.open img{max-height:400px;object-fit:cover}.makevorschau .post-item *{transition:all 1s linear}.makevorschau article:not(.open) .entry-container{opacity:0;visibility:hidden;padding:1px;max-height:0}.makevorschau .entry-container{padding-top:1px !important;max-height:500px}.makevorschau .horizontal-scroll-item{margin-bottom:30px}.makevorschau article:not(.open) img{max-height:200px;object-fit:cover}}@media screen and (max-width: 783px){.wrapper{width:95%}.entry-content{padding:20px 15px 70px}}@media(min-width: 600px){.wp-block-columns>.wp-block-column:nth-child(2n) .has-vorleseHook:before{right:-1em;left:auto;transform:rotate(180deg)}}.desktopsearch{cursor:pointer}@media screen and (min-width: 1024px){.astm-search-menu:not(.desktopsearch){display:none !important}}@media screen and (max-width: 1023px){.astm-search-menu.popup{display:none !important}}.archivunterteil.closed .horizontal-scroll-item:nth-child(n+4):not(:empty){display:none}.post-item{display:flex;flex-direction:column}.post-item .entry-container{height:100%;display:flex;flex-direction:column}.post-item .entry-meta-wrapper{flex-grow:1;display:flex;flex-direction:column;justify-content:flex-end}.entry-meta-upperline{padding-top:15px;border-top:1px solid rgba(255,255,255,.4)}.entry-meta>span{margin-right:1em}.wpmslider-controls.wpmslider-has-controls-direction.disabled{display:block !important}.wp-block-table{white-space:nowrap !important;display:block !important;overflow-x:auto !important}.wp-block-table.alignleft,.wp-block-table.alignright{max-width:100%}.wp-block-table.aligncenter table{margin:auto !important}.wp-block-table table{display:table !important;width:auto !important}.wp-block-table:not(.nichtcentertablecontent) td{text-align:center}.wp-block-table.nichtcentertablecontent td{text-align:left}@media screen and (min-width: 1024px){body.home.machAufmerksam .neuaufmerksam{animation-name:rumpoppen;animation-delay:2s;animation-fill-mode:forwards;animation-duration:4s}@keyframes rumpoppen{0%{transform:scale(1)}25%{transform:scale(1.5)}75%{transform:scale(0.8)}100%{transform:scale(1)}}}@media screen and (max-width: 1023px){body.home.machAufmerksam .neuaufmerksam{animation-name:rumzappeln1deg;animation-delay:1s;animation-fill-mode:none;animation-duration:.2s;animation-iteration-count:5;animation-timing-function:linear}body.home.machAufmerksam #site-navigation .menu-toggle{animation-name:rumzappeln15deg;animation-delay:1s;animation-fill-mode:none;animation-duration:.2s;animation-iteration-count:10;animation-timing-function:linear}body.home.machAufmerksam #site-navigation .menu-toggle span{animation-name:rotsein;animation-delay:1s;animation-fill-mode:none;animation-duration:2s;animation-timing-function:linear}@keyframes rotsein{from{background-color:red}to{background-color:#000}}@keyframes rumzappeln1deg{0%{transform:rotateZ(0deg)}25%{transform:rotateZ(1deg)}75%{transform:rotateZ(-1deg)}}@keyframes rumzappeln15deg{0%{transform:rotateZ(0deg)}25%{transform:rotateZ(15deg)}75%{transform:rotateZ(-15deg)}}}.aufklapppfeilamende{text-align:center;font-size:45px;margin-top:-30px}.sticky_archivUnterteiltitel{position:sticky;top:0;font-weight:bold;color:#000;background:#fff;font-size:20px;padding:5px;z-index:5}.sticky_archivUnterteiltitel.closed{display:none}/*# sourceMappingURL=style.css.map */
+@charset "UTF-8";
+/*
+Theme Name: Creative Preschool Customized
+Theme URI: http://example.com/
+Author: Creativ Themes and Fabian Scherer
+Author URI: http://creativthemes.com/
+Description: Fabian and Creativ Preschool is a Multipurpose WordPress Educational Theme suitable for School, College, Kindergartens, Elementary, Primary Schools, Secondary Schools, Universities, Academics and Educational. This theme is also suitable for any educational activities and, with the colorful design, it is ideal for toys stores, activities related to children too. This theme can be adapted to any kind of industry – not only educational but also babysitting and summer camps for example – and much more thank to the super flexible and fully responsive design.
+Version: 1.5
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: creativ-preschool
+Tags: translation-ready, custom-background, theme-options, custom-menu, threaded-comments, featured-images, footer-widgets, left-sidebar, editor-style, right-sidebar, full-width-template, two-columns, custom-colors, custom-header, custom-logo, blog, entertainment, portfolio
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Creativ Preschool is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
+*/
+@import url("styleParent.css");
+#colophon > img {
+  width: 100%;
+}
+
+.otfm-sp__XXXXXX.js-otfm-sp__opened {
+  background-color: beige;
+}
+.otfm-sp__XXXXXX.js-otfm-sp__closed {
+  background-color: transparent;
+}
+.otfm-sp__XXXXXX .otfm-sp__title {
+  background-color: transparent !important;
+}
+.otfm-sp__XXXXXX.wp-block-otfm-box-spoiler-start {
+  border: none;
+}
+
+#team .section-header, #our-courses .section-header, #team .section-content, #our-courses .section-content {
+  background-color: transparent;
+}
+
+#team .section-title, #our-courses .section-title {
+  color: #033b62;
+}
+
+#about-us .featured-image {
+  background-color: #888;
+}
+
+#today {
+  border: #b43123 2px solid;
+}
+
+#wp-calendar a {
+  color: #0056b3;
+}
+
+.entry-content {
+  /*fabian*/
+  background: #efe9be;
+  padding: 20px;
+  border-radius: 25px;
+  box-shadow: 2px 2px 4px 2px grey;
+}
+
+#colophon {
+  background-color: transparent;
+}
+
+.fußzeilenmenu {
+  margin-top: 20px;
+}
+.fußzeilenmenu li {
+  display: inline-block;
+  margin: 0px 10px;
+}
+
+.site-info {
+  position: relative;
+  z-index: 1;
+}
+
+@media screen and (max-width: 782px) {
+  .fußzeilenmenu li {
+    display: block;
+  }
+
+  .site-info {
+    position: relative;
+    z-index: 1000;
+  }
+}
+#page-site-header {
+  /*background-size: contain;*/
+  background-color: #ddd0;
+  background-repeat: no-repeat;
+}
+#page-site-header .page-header {
+  box-shadow: 0px 0px 8px 2px #0008;
+  background: #0008;
+}
+#page-site-header .overlay {
+  /* opacity: 0.4; */
+}
+
+.entry-container .entry-content {
+  background: none;
+  box-shadow: none;
+}
+
+#page-site-header .page-title {
+  font-size: 50px;
+}
+#page-site-header .page-subtitle, #page-site-header .archive-description {
+  color: white;
+}
+
+@media screen and (max-width: 767px) {
+  #page-site-header .page-title {
+    font-size: 7vw;
+  }
+}
+#masthead .wrapper {
+  min-width: 60%;
+  max-width: 90%;
+}
+
+body:not(.logged-in) #menu-item-608 {
+  display: none;
+}
+
+#primary #main article .aligncenter.wp-block-embed .wp-block-embed__wrapper {
+  /*width: fit-content;
+  box-shadow: 3px -3px 10px 3px #0008;
+  */
+  margin: auto;
+  margin-top: 1.5em;
+}
+
+.aligncenter {
+  text-align: center;
+}
+
+.alignfull.wp-embed-aspect-16-9 .wp-block-embed__wrapper, .alignwide.wp-embed-aspect-16-9 .wp-block-embed__wrapper {
+  width: 100%;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+
+.alignfull.wp-embed-aspect-4-3 .wp-block-embed__wrapper, .alignwide.wp-embed-aspect-4-3 .wp-block-embed__wrapper {
+  width: 100%;
+  padding-bottom: 75%;
+  position: relative;
+  height: 0;
+}
+
+.alignfull {
+  margin-left: calc(-100vw / 2 + 100% / 2);
+  margin-right: calc(-100vw / 2 + 100% / 2);
+  max-width: 100vw;
+}
+
+.wp-has-aspect-ratio.alignwide iFrame {
+  position: absolute;
+  height: 100%;
+}
+
+.alignwide {
+  width: 100%;
+}
+.alignwide iframe {
+  width: 100%;
+}
+
+.is-provider-learningapps-org.alignwide iFrame {
+  min-height: 600px;
+}
+
+.no-sidebar .wp-block-embed.is-type-video.alignfull iframe {
+  position: absolute;
+  height: 100%;
+}
+
+.otfm-sp__wrapper {
+  clear: both;
+}
+
+iframe {
+  box-shadow: 3px -3px 10px 3px #0008;
+  display: block;
+  margin: auto;
+}
+
+.wp-block-embed__wrapper {
+  margin-top: 1.5em;
+}
+
+.entry-content ul li, .entry-content ol li {
+  margin-bottom: 0.5em;
+}
+
+#main > .spasskategorie-wir-halten-uns-fit > .entry-content::before {
+  background: url("/wp-content/themes/creativ-preschool-child/sport-5.svg") no-repeat;
+  content: "";
+  display: block;
+  width: 120px;
+  height: 120px;
+  float: right;
+  margin: 5px;
+  background-size: 120px;
+}
+#main > .spasskategorie-knobelaufgaben > .entry-content *, #main > .spasskategorie-wir-halten-uns-fit > .entry-content *, #main > .spasskategorie-spielideen-fuer-zuhause > .entry-content *, #main > .spasskategorie-lass-uns-singen-und-tanzen > .entry-content *, #main > .spasskategorie-witz-der-woche > .entry-content *, #main > .spasskategorie-rezept-fuer-gross-und-klein > .entry-content *, #main > .spasskategorie-veranstaltungsideen > .entry-content * {
+  clear: none;
+}
+#main > .spasskategorie-spielideen-fuer-zuhause > .entry-content::before {
+  background: url("/wp-content/themes/creativ-preschool-child/dices.svg") no-repeat;
+}
+#main > .spasskategorie-knobelaufgaben > .entry-content::before {
+  background: url("/wp-content/themes/creativ-preschool-child/brain-1773892_640.png") no-repeat;
+}
+#main > .spasskategorie-lass-uns-singen-und-tanzen > .entry-content::before {
+  background: url("/wp-content/themes/creativ-preschool-child/chicken-icon-32092.png") no-repeat;
+}
+#main > .spasskategorie-witz-der-woche > .entry-content::before {
+  background: url("/wp-content/themes/creativ-preschool-child/turkey-with-black-hat.svg") no-repeat;
+}
+#main > .spasskategorie-rezept-fuer-gross-und-klein > .entry-content::before {
+  background: url("/wp-content/themes/creativ-preschool-child/rolling-pin-157071_640.png") no-repeat;
+}
+#main > .spasskategorie-veranstaltungsideen > .entry-content::before {
+  /*background: url("/wp-content/themes/creativ-preschool-child/turkey-with-black-hat.svg") no-repeat;*/
+}
+#main > .spasskategorie-witz-der-woche > .entry-content::before, #main > .spasskategorie-knobelaufgaben > .entry-content::before, #main > .spasskategorie-lass-uns-singen-und-tanzen > .entry-content::before, #main > .spasskategorie-spielideen-fuer-zuhause > .entry-content::before, #main > .spasskategorie-rezept-fuer-gross-und-klein > .entry-content::before, #main > .spasskategorie-veranstaltungsideen > .entry-content::before {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 120px;
+  float: right;
+  margin: 5px;
+  background-size: 120px;
+  position: relative;
+  z-index: 1;
+}
+
+.post-item .entry-meta span.cat-links {
+  margin-right: 13px;
+}
+
+.archivUnterteiltitel-spielideen-fuer-zuhause:before {
+  background: url("/wp-content/themes/creativ-preschool-child/dices.svg") no-repeat;
+}
+
+.archivUnterteiltitel-knobelaufgaben:before {
+  background: url("/wp-content/themes/creativ-preschool-child/brain-1773892_640.png") no-repeat;
+}
+
+.archivUnterteiltitel-rezept-fuer-gross-und-klein:before {
+  background: url("/wp-content/themes/creativ-preschool-child/rolling-pin-157071_640.png") no-repeat;
+}
+
+.archivUnterteiltitel-lass-uns-singen-und-tanzen:before {
+  background: url("/wp-content/themes/creativ-preschool-child/chicken-icon-32092.png") no-repeat;
+}
+
+.archivUnterteiltitel-wir-halten-uns-fit:before {
+  background: url("/wp-content/themes/creativ-preschool-child/sport-5.svg") no-repeat;
+}
+
+.archivUnterteiltitel-witz-der-woche:before {
+  background: url("/wp-content/themes/creativ-preschool-child/turkey-with-black-hat.svg") no-repeat;
+}
+
+.archivUnterteiltitel {
+  position: relative;
+}
+.archivUnterteiltitel:before {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 120px;
+  margin: 5px;
+  background-size: 120px;
+  position: absolute;
+  left: -160px;
+  top: 20px;
+  z-index: 1;
+}
+
+.post-type-archive-spassbeitrag .wrapper.page-section {
+  padding-left: 120px;
+}
+
+@media screen and (max-width: 1450px) {
+  .archivUnterteiltitel:before {
+    left: -120px;
+  }
+
+  .post-type-archive-spassbeitrag .wrapper.page-section {
+    padding-left: 100px;
+  }
+}
+@media screen and (max-width: 1300px) {
+  .archivUnterteiltitel:before {
+    display: none !important;
+  }
+
+  .post-type-archive-spassbeitrag .wrapper.page-section {
+    padding-left: 0;
+  }
+}
+.heutigerBeitrag {
+  /* border: solid 5px darkred; */
+  box-shadow: 0px 0px 0px 5px darkred;
+}
+
+.archive #main.selected_leistungsstufe-3-klasse-4-klasse .leistungsstufe-1-klasse-2-klasse:not(.leistungsstufe-3-klasse-4-klasse), .archive #main.selected_leistungsstufe-1-klasse-2-klasse .leistungsstufe-3-klasse-4-klasse:not(.leistungsstufe-1-klasse-2-klasse) {
+  opacity: 0.3;
+}
+
+.spasskategorie-witz-der-woche blockquote:after, .schönerquote:after {
+  content: "";
+  position: absolute;
+  border: 2px solid #e74848;
+  border-radius: 0 50px 0 0;
+  width: 60px;
+  height: 60px;
+  bottom: -60px;
+  left: 50px;
+  border-bottom: none;
+  border-left: none;
+  z-index: 3;
+}
+
+.spasskategorie-witz-der-woche blockquote:before, .schönerquote:before {
+  content: "";
+  position: absolute;
+  width: 80px;
+  border: 6px solid #eee;
+  bottom: -2px;
+  left: 50px;
+  z-index: 2;
+}
+
+.spasskategorie-witz-der-woche blockquote, .schönerquote {
+  font-family: "Abril Fatface", cursive;
+  font-size: 1.1rem;
+  border: solid 2px red !important;
+  border-radius: 20px !important;
+}
+
+.status-future .entry-meta .date {
+  background-color: #0009;
+  border: 2px red dashed;
+  border-radius: 5px;
+  padding: 2px 10px;
+  pointer-events: none;
+  cursor: default;
+}
+.status-future .entry-meta .date a {
+  color: white;
+}
+.status-future .entry-meta .date a:before {
+  color: white;
+}
+
+@media screen and (min-width: 784px) {
+  .post-item {
+    transition: transform 0.5s;
+  }
+  .post-item:hover {
+    transform: scale(1.05);
+  }
+}
+.post-item:hover .fabian-Pfeil:after {
+  content: "";
+  transform: rotate(140deg);
+  position: absolute;
+  top: -1em;
+  left: -1em;
+  z-index: 2;
+  font-family: "Font Awesome 5 Free";
+  color: gray;
+  font-size: 1.2em;
+}
+
+.fabian-Pfeil {
+  position: relative;
+}
+.fabian-Pfeil:hover:after {
+  content: "";
+  transform: rotate(140deg);
+  position: absolute;
+  top: -1em;
+  left: -1em;
+  z-index: 2;
+  font-family: "Font Awesome 5 Free";
+  color: gray;
+  font-size: 1.2em;
+}
+
+blockquote cite {
+  font-style: italic;
+}
+
+.wp-block-embed.alignright, .wp-block-embed.alignleft {
+  max-width: 60%;
+}
+
+.alignleft, .alignright {
+  max-width: 60%;
+}
+
+.wpcf7-form-control-wrap * {
+  max-width: 100%;
+}
+
+.cat-links.leistungsstufe:before {
+  content: "";
+}
+.cat-links.cat_post_likes:before {
+  content: "";
+}
+.cat-links.fach:before {
+  content: "";
+}
+
+.su-tooltip:after {
+  content: " ";
+  top: -0.6em;
+  right: 3px;
+  position: relative;
+  font-family: "Font Awesome 5 Free";
+  font-size: 90%;
+  color: cornflowerblue;
+}
+.su-tooltip:hover {
+  cursor: help;
+}
+.su-tooltip:hover .underlinewhenhover {
+  text-decoration: underline;
+}
+
+#heuteButtonMobilDesktopContainer {
+  margin-bottom: 50px;
+  margin-top: 10px;
+}
+#heuteButtonMobilDesktopContainer.heuteBeitragNein {
+  /*display: none;*/
+}
+#heuteButtonMobilDesktopContainer * {
+  font-size: 110%;
+}
+
+.fabian-großerPfeil:before, .is-style-h4k-großerPfeil:before {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 90px;
+  position: relative;
+  left: 45%;
+  left: calc(50% - 30px);
+  z-index: 1;
+  background: url(/wp-content/uploads/2020/03/arrow-35173_1280-e1585600397946-714x1024.png) no-repeat;
+  background-size: 60px;
+}
+
+body.archive {
+  scroll-behavior: smooth;
+}
+
+@media screen and (min-width: 783px) {
+  .horizontal-scroll-item {
+    width: 25em;
+    width: min(25em, 50%);
+    max-width: 500px;
+    flex-grow: 1;
+    margin-bottom: 30px;
+  }
+
+  .horizontal-scroll {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .horizontal-scroll-item article, .horizontal-scroll-item .post-item {
+    height: 100%;
+  }
+
+  .togglepfeilchen_handy {
+    display: none;
+  }
+
+  .sticky_archivUnterteiltitel {
+    display: none;
+  }
+
+  .togglepfeilchen_pc {
+    display: initial;
+  }
+}
+.horizontal-scroll-item {
+  margin-bottom: 30px;
+}
+.horizontal-scroll-item:empty {
+  margin: 0;
+  height: 0;
+  border: 0;
+  background: transparent;
+}
+
+.makescrollalways .horizontal-scroll-wrapper {
+  scroll-snap-type: x mandatory;
+  overflow-x: auto;
+  background: #0001;
+  border-radius: 15px;
+  padding-top: 5px;
+}
+.makescrollalways .horizontal-scroll {
+  display: inline-flex;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+}
+.makescrollalways .horizontal-scroll-item {
+  width: 25em;
+  scroll-snap-align: center;
+  max-width: 90vw;
+}
+.makescrollalways .horizontal-scroll-item:empty {
+  display: none;
+}
+
+@media screen and (max-width: 782px) {
+  .togglepfeilchen_pc {
+    display: none;
+  }
+
+  .togglepfeilchen_handy {
+    display: initial;
+  }
+
+  .makescroll .horizontal-scroll-wrapper {
+    scroll-snap-type: x mandatory;
+    overflow-x: auto;
+    background: #0001;
+    border-radius: 15px;
+    padding-top: 5px;
+  }
+  .makescroll .horizontal-scroll {
+    display: inline-flex;
+    align-items: flex-start;
+  }
+  .makescroll .horizontal-scroll-item {
+    width: 25em;
+    scroll-snap-align: center;
+    max-width: 90vw;
+  }
+  .makescroll .horizontal-scroll-item:empty {
+    display: none;
+  }
+}
+body:not(.single):not(.home):not(.page) .wrapper {
+  max-width: 1600px;
+}
+
+body.home .page-section {
+  margin: auto;
+  max-width: 1200px;
+}
+
+#page-site-header {
+  padding: 0 !important;
+}
+
+#page-site-header-image:not(.volle_Breite):not(.volle_Hoehe):not(.volle_BreiteTop):not(.volle_BreiteBottom):not(.contain) {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+}
+#page-site-header-image.volle_Breite {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  object-position: center;
+}
+#page-site-header-image.volle_BreiteTop {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  object-position: top;
+}
+#page-site-header-image.volle_BreiteBottom {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  object-position: bottom;
+}
+#page-site-header-image.volle_Hoehe {
+  max-height: 500px;
+  object-fit: cover;
+  min-height: 250px;
+  width: auto;
+}
+#page-site-header-image.contain {
+  object-fit: contain;
+  max-height: 500px;
+  min-height: 250px;
+  max-width: 100%;
+}
+
+.blog-posts-wrapper .horizontal-scroll-item:nth-child(1n) .post-item {
+  background-color: #e86126;
+}
+.blog-posts-wrapper .horizontal-scroll-item:nth-child(2n) .post-item {
+  background-color: #43cd66;
+}
+.blog-posts-wrapper .horizontal-scroll-item:nth-child(3n) .post-item {
+  background-color: #f9b001;
+}
+
+.page-section {
+  padding-top: 50px !important;
+}
+
+.home section {
+  margin-bottom: 50px;
+}
+
+@media screen and (min-width: 1025px) {
+  #primary-menu > .menu-item:hover > a {
+    animation-name: wackeln;
+    animation-timing-function: linear;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes wackeln {
+    0% {
+      transform: rotateZ(0deg);
+    }
+    25% {
+      transform: rotateZ(8deg);
+    }
+    75% {
+      transform: rotateZ(-8deg);
+    }
+  }
+  #page-site-header .page-title {
+    filter: blur(5px);
+    transform: translate(-80px, -50px);
+    animation-name: verschwimmen;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes verschwimmen {
+    0% {
+      filter: blur(5px);
+      transform: translate(-80px, -50px);
+    }
+    100% {
+      filter: blur(0px);
+      transform: translate(0px, 0px);
+    }
+  }
+}
+@media screen and (max-width: 1024px) {
+  #page-site-header .page-title {
+    filter: blur(5px);
+    transform: translate(-20px, -12px);
+    animation-name: verschwimmen;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes verschwimmen {
+    0% {
+      filter: blur(5px);
+      transform: translate(-20px, -12px);
+    }
+    100% {
+      filter: blur(0px);
+      transform: translate(0px, 0px);
+    }
+  }
+}
+@font-face {
+  font-family: "oesterdruckschrift";
+  src: url("/wp-content/themes/creativ-preschool-child/assets/fonts/oesterdruckschrift.ttf");
+}
+@font-face {
+  font-family: "oesterschreibschrift";
+  src: url("/wp-content/themes/creativ-preschool-child/assets/fonts/oesterschreibschrift.ttf");
+}
+.österdruck article[id^=post-] {
+  font-family: "oesterdruckschrift", "Open Sans", sans-serif;
+}
+.österdruck article[id^=post-] h1, .österdruck article[id^=post-] h2, .österdruck article[id^=post-] h3, .österdruck article[id^=post-] h4, .österdruck article[id^=post-] h5, .österdruck article[id^=post-] h6 {
+  font-family: "oesterdruckschrift", "Sniglet", cursive;
+}
+
+.österschreib article[id^=post-] h1, .österschreib article[id^=post-] h2, .österschreib article[id^=post-] h3, .österschreib article[id^=post-] h4, .österschreib article[id^=post-] h5, .österschreib article[id^=post-] h6 {
+  font-family: "oesterschreibschrift", "Sniglet", cursive;
+}
+
+.österdruck article[id^=post-] {
+  letter-spacing: 1px;
+}
+
+body.single .österdruck article[id^=post-] {
+  font-size: 130%;
+}
+
+.österschreib article[id^=post-] {
+  font-family: "oesterschreibschrift", "Open Sans", sans-serif;
+  font-size: 120%;
+  letter-spacing: 1px;
+}
+
+body.single .österschreib article[id^=post-] {
+  font-size: 140%;
+}
+
+article[id^=post-] {
+  transition: all 0.3s ease-in-out;
+}
+
+.österschreib #heuteButtonMobilDesktopContainer * {
+  font-family: oesterschreibschrift, Sniglet, cursive;
+}
+
+.österdruck #heuteButtonMobilDesktopContainer * {
+  font-family: oesterdruckschrift, Sniglet, cursive;
+}
+
+.fab {
+  font-family: "Font Awesome 5 Brands" !important;
+}
+
+.far {
+  font-family: "Font Awesome 5 Free" !important;
+  font-weight: 400 !important;
+}
+
+.fa, .fas {
+  font-family: "Font Awesome 5 Free" !important;
+  font-weight: 900 !important;
+}
+
+.site-logo img {
+  transform: scale(1.2);
+}
+
+#donatecup {
+  animation-name: reinrollen;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+  animation-timing-function: ease-out;
+  animation-duration: 2s;
+  animation-delay: 4s;
+}
+
+#donateinfo {
+  animation-name: reinschieben;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+  animation-timing-function: ease-out;
+  animation-duration: 2s;
+  animation-delay: 4s;
+}
+
+@keyframes reinrollen {
+  from {
+    left: -70px;
+    transform: rotate(-360deg);
+  }
+  to {
+    left: 18px;
+    transform: rotate(0deg);
+  }
+}
+@keyframes reinschieben {
+  from {
+    transform: translate(-20px, 0);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0px, 0);
+    opacity: 1;
+  }
+}
+.main-navigation ul ul a {
+  min-width: 100%;
+}
+
+@media screen and (min-width: 1024px) {
+  .main-navigation ul ul li {
+    min-width: 100%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .main-navigation {
+    padding-right: 1px;
+  }
+  .main-navigation ul li:last-child ul li:hover > ul {
+    right: 100%;
+    left: auto;
+  }
+  .main-navigation ul li:last-child ul .menu-item-has-children > a:after {
+    content: "";
+  }
+
+  /*
+  .main-navigation ul#primary-menu>li {
+     text-align: left;
+   }
+
+  .main-navigation ul li:last-child{
+    min-width: 225px;
+  }*/
+}
+@media screen and (max-width: 1023px) {
+  .main-navigation ul#primary-menu > li {
+    padding-left: 30px;
+  }
+  .main-navigation ul#primary-menu > li:before {
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    top: 9px;
+    left: 5px;
+  }
+}
+.fabian-highlight {
+  background: url(https://andyhooke.co.uk/wp-content/uploads/2018/02/yellow-brushstroke.png);
+  background-repeat: no-repeat;
+  background-size: 100% 95%;
+  padding: 8px 2px;
+}
+
+.home h2.section-title {
+  font-size: 42px;
+}
+
+#audiofile .mejs-controls, #audiofile .mejs-container {
+  border-radius: 25px;
+}
+#audiofile:not(.ausgeklappt) {
+  display: none;
+}
+
+#openVorlesenAudio {
+  background: none;
+  color: inherit;
+  display: flex;
+  border: 2px solid;
+  border-radius: 2px;
+  font-size: 16px;
+  padding: 3px;
+  background: white;
+  margin-bottom: 4px;
+}
+#openVorlesenAudio:hover {
+  background: none;
+  color: inherit;
+  display: flex;
+  border: 2px solid;
+  border-radius: 2px;
+  font-size: 16px;
+  padding: 3px;
+  background: white;
+}
+#openVorlesenAudio img {
+  object-fit: contain;
+  height: 1.5em;
+  width: auto;
+  display: block;
+  padding-right: 4px;
+}
+#openVorlesenAudio span {
+  display: block;
+  padding-left: 4px;
+  border-left: 2px solid;
+  font-family: "Open Sans", sans-serif;
+}
+
+.weiterlesen_shortcode_button {
+  color: #0088FF;
+  cursor: pointer;
+}
+
+.EinAusShortcode_content:not(.ausgeklappt), .weiterlesen_shortcode_button:not(.ausgeklappt) .einklappen, .EinAusShortcode_dreiPunkte.ausgeklappt {
+  display: none;
+}
+
+.weiterlesen_shortcode_button.ausgeklappt .ausklappen {
+  display: none;
+}
+.weiterlesen_shortcode_button:hover {
+  color: #0FBAF4;
+}
+
+.home .strong-view.wpmtst-modern .wpmtst-testimonial-content:before, .home .strong-view.wpmtst-modern .wpmtst-testimonial-content:after {
+  background: #da8b0f;
+}
+
+.has-vorleseHook:before {
+  content: "";
+  background-image: url(/wp-content/themes/creativ-preschool-child/Speaker_Icon.svg);
+  height: 1.5em;
+  position: absolute;
+  left: -3em;
+  background-size: contain;
+  width: 1.5em;
+}
+
+@media screen and (max-width: 767px) {
+  .has-vorleseHook:before {
+    left: -0.8em;
+  }
+}
+@media screen and (max-width: 1500px) and (min-width: 767px) {
+  .has-vorleseHook:before {
+    left: -1.5em;
+  }
+}
+.entry-content {
+  position: relative;
+}
+
+.su-qtip-size-h4k_tooltip {
+  font-size: 18px !important;
+  line-height: initial !important;
+}
+
+#likerButtonWrapper {
+  position: absolute;
+  bottom: 0px;
+  right: 25px;
+  font-size: 25px;
+}
+#likerButtonWrapper * {
+  font-family: "Open Sans", sans-serif;
+}
+
+/* abfrage Shortcode */
+#main input.fabian-check-me {
+  padding: 1px;
+}
+#main input.fabian-check-me.style_unterstrich {
+  padding: 1px;
+}
+#main select.fabian-check-me.style_unterstrich {
+  padding: 1px 15px;
+  background: white;
+}
+
+.checked_richtig, input[type=checkbox].fabian-check-me.checked_richtig + label::before, input[type=radio].fabian-check-me.checked_richtig + label::before {
+  /* outline: 2px solid green;manchmal bei overflow auto vom Elternelement sieht man outline nicht komischerweise*/
+  box-shadow: inset 0px 0px 0px 2px green;
+}
+
+.checked_falsch, input[type=checkbox].fabian-check-me.checked_falsch + label::before, input[type=radio].fabian-check-me.checked_falsch + label::before {
+  /*outline: 2px solid red; manchmal bei overflow auto vom Elternelement sieht man outline nicht komischerweise*/
+  box-shadow: inset 0px 0px 0px 2px red;
+}
+
+input.checked_falsch, select.checked_falsch {
+  outline: 2px solid red;
+}
+
+input.checked_richtig, select.checked_richtig {
+  outline: 2px solid green;
+}
+
+.fabian_check_me_submit.checked_richtig {
+  box-shadow: 4px 4px 4px green;
+}
+.fabian_check_me_submit.checked_falsch {
+  box-shadow: 4px 4px 4px red;
+}
+
+input[type=checkbox].fabian-check-me, input[type=radio].fabian-check-me {
+  display: none;
+}
+input[type=checkbox].fabian-check-me + label::before, input[type=radio].fabian-check-me + label::before {
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  border: 2px solid #0f0f10;
+  background-color: #fff;
+  display: inline-block;
+  content: "";
+  margin-right: 1px;
+  margin-left: 1px;
+}
+input[type=checkbox].fabian-check-me:checked + label::before, input[type=radio].fabian-check-me:checked + label::before {
+  box-shadow: inset 0px 0px 0px 3px #fff;
+  background-color: #000;
+}
+input[type=radio].fabian-check-me + label::before {
+  border-radius: 20px;
+}
+
+header.entry-header {
+  padding: 20px 30px 0px 30px;
+}
+
+.blog-posts-wrapper .entry-container {
+  padding: 0px 30px 30px 30px;
+}
+
+@media screen and (min-width: 784px) {
+  .archive article:not(.open) img {
+    max-height: 350px;
+    object-fit: cover;
+  }
+  .archive article.open img {
+    max-height: 600px;
+    object-fit: cover;
+    transition: max-height 0.3s linear;
+  }
+}
+@media screen and (max-width: 783px) {
+  .makevorschau article:not(.open) .post-item:hover .fabian-Pfeil:after {
+    display: none;
+  }
+  .makevorschau article.open .post-item {
+    /* transform: rotateX(360deg); */
+    /*transition: transform 1.5s ease-out;*/
+  }
+  .makevorschau article.open img {
+    max-height: 400px;
+    object-fit: cover;
+  }
+  .makevorschau .post-item * {
+    transition: all 1s linear;
+  }
+  .makevorschau article:not(.open) .entry-container {
+    opacity: 0;
+    visibility: hidden;
+    padding: 1px;
+    max-height: 0;
+  }
+  .makevorschau .entry-container {
+    padding-top: 1px !important;
+    max-height: 500px;
+  }
+  .makevorschau .horizontal-scroll-item {
+    margin-bottom: 30px;
+  }
+  .makevorschau article:not(.open) img {
+    max-height: 200px;
+    object-fit: cover;
+  }
+}
+@media screen and (max-width: 783px) {
+  .wrapper {
+    width: 95%;
+  }
+
+  .entry-content {
+    padding: 20px 15px 70px;
+  }
+}
+@media (min-width: 600px) {
+  .wp-block-columns > .wp-block-column:nth-child(2n) .has-vorleseHook:before {
+    right: -1em;
+    left: auto;
+    transform: rotate(180deg);
+  }
+}
+.desktopsearch {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 1024px) {
+  .astm-search-menu:not(.desktopsearch) {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .astm-search-menu.popup {
+    display: none !important;
+  }
+}
+.archivunterteil.closed .horizontal-scroll-item:nth-child(n+4):not(:empty) {
+  display: none;
+}
+
+/* content */
+.post-item {
+  display: flex;
+  flex-direction: column;
+}
+.post-item .entry-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.post-item .entry-meta-wrapper {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.entry-meta-upperline {
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.entry-meta > span {
+  margin-right: 1em;
+}
+
+/* Strong Testimonial Bug, Pfeile verschwinden beim Scrollen was zu Seiten Lacks führt */
+.wpmslider-controls.wpmslider-has-controls-direction.disabled {
+  display: block !important;
+}
+
+/* table werden nicht scrollbar angezeigt von Worspress */
+.wp-block-table {
+  white-space: nowrap !important;
+  display: block !important;
+  overflow-x: auto !important;
+}
+.wp-block-table.alignleft, .wp-block-table.alignright {
+  max-width: 100%;
+}
+.wp-block-table.aligncenter table {
+  margin: auto !important;
+}
+.wp-block-table table {
+  display: table !important;
+  width: auto !important;
+}
+.wp-block-table:not(.nichtcentertablecontent) td {
+  text-align: center;
+}
+.wp-block-table.nichtcentertablecontent td {
+  text-align: left;
+}
+
+@media screen and (min-width: 1024px) {
+  body.home.machAufmerksam .neuaufmerksam {
+    animation-name: rumpoppen;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+    animation-duration: 4s;
+  }
+
+  @keyframes rumpoppen {
+    0% {
+      transform: scale(1);
+    }
+    25% {
+      transform: scale(1.5);
+    }
+    75% {
+      transform: scale(0.8);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+}
+@media screen and (max-width: 1023px) {
+  body.home.machAufmerksam .neuaufmerksam {
+    animation-name: rumzappeln1deg;
+    animation-delay: 1s;
+    animation-fill-mode: none;
+    animation-duration: 0.2s;
+    animation-iteration-count: 5;
+    animation-timing-function: linear;
+  }
+
+  body.home.machAufmerksam #site-navigation .menu-toggle {
+    animation-name: rumzappeln15deg;
+    animation-delay: 1s;
+    animation-fill-mode: none;
+    animation-duration: 0.2s;
+    animation-iteration-count: 10;
+    animation-timing-function: linear;
+  }
+
+  body.home.machAufmerksam #site-navigation .menu-toggle span {
+    animation-name: rotsein;
+    animation-delay: 1s;
+    animation-fill-mode: none;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+  }
+
+  @keyframes rotsein {
+    from {
+      background-color: red;
+    }
+    to {
+      background-color: black;
+    }
+  }
+  @keyframes rumzappeln1deg {
+    0% {
+      transform: rotateZ(0deg);
+    }
+    25% {
+      transform: rotateZ(1deg);
+    }
+    75% {
+      transform: rotateZ(-1deg);
+    }
+  }
+  @keyframes rumzappeln15deg {
+    0% {
+      transform: rotateZ(0deg);
+    }
+    25% {
+      transform: rotateZ(15deg);
+    }
+    75% {
+      transform: rotateZ(-15deg);
+    }
+  }
+}
+.aufklapppfeilamende {
+  text-align: center;
+  font-size: 45px;
+  margin-top: -30px;
+}
+
+.sticky_archivUnterteiltitel {
+  position: sticky;
+  top: 0;
+  font-weight: bold;
+  color: black;
+  background: white;
+  font-size: 20px;
+  padding: 5px;
+  z-index: 5;
+}
+
+.sticky_archivUnterteiltitel.closed {
+  display: none;
+}
+
+/*# sourceMappingURL=style.css.map */
