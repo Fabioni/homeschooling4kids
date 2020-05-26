@@ -164,21 +164,31 @@ function einstellungen(){
 			$druck = true;
 			$schreib = false;
 			$computer = false;
+			$opendyslexic = false;
 				if (isset($_COOKIE["schriftart"])){
 					switch ($_COOKIE["schriftart"]){
 						case "druckschrift":
 							$druck = true;
 							$schreib = false;
 							$computer = false;
+							$opendyslexic = false;
 							break;
 						case "schreibschrift":
 							$druck = false;
 							$schreib = true;
 							$computer = false;
+							$opendyslexic = false;
+							break;
+                        case "opendyslexic":
+							$druck = false;
+							$schreib = false;
+							$computer = false;
+							$opendyslexic = true;
 							break;
 						case "computerschrift":
 							$druck = false;
 							$schreib = false;
+							$opendyslexic = false;
 							$computer = true;
 							break;
 					}
@@ -188,6 +198,7 @@ function einstellungen(){
 			<input style="display: none" type="radio" id="radioSchriftartSchreib" <?= $schreib ? "checked": "" ?> name="schriftart"><label for="radioSchriftartSchreib" style="cursor: pointer; font-family: oesterschreibschrift" class="btn">Schreibschrift</label>
 			<input style="display: none" type="radio" id="radioSchriftartDruck" <?= $druck ? "checked": "" ?> name="schriftart"><label for="radioSchriftartDruck" style="cursor: pointer; font-family: oesterdruckschrift" class="btn">Druckschrift</label>
 			<input style="display: none" type="radio" id="radioSchriftartComputer" <?= $computer ? "checked": "" ?> name="schriftart"><label for="radioSchriftartComputer" style="cursor: pointer" class="btn">Computerschrift</label>
+			<input style="display: none" type="radio" id="radioSchriftartOpendyslexic" <?= $opendyslexic ? "checked": "" ?> name="schriftart"><label for="radioSchriftartOpendyslexic" style="cursor: pointer; font-family: opendyslexic" class="btn">Open Dyslexic</label>
 
 			<?php /*
 			<button type="button" class="fa-plus" id="schriftgrößePlus"/>
@@ -236,6 +247,7 @@ function einstellungen(){
 							if (jQuery("#radioSchriftartDruck").is(':checked')) {
 								jQuery("body").addClass("österdruck")
 								jQuery("body").removeClass("österschreib")
+								jQuery("body").removeClass("opendyslexic")
 								try {
 									ga('send', 'event', 'schriftart_geändert', "druckschrift");
 								} catch (ignore) {
@@ -246,6 +258,7 @@ function einstellungen(){
 							if (jQuery("#radioSchriftartSchreib").is(':checked')) {
 								jQuery("body").addClass("österschreib")
 								jQuery("body").removeClass("österdruck")
+								jQuery("body").removeClass("opendyslexic")
 								try {
 									ga('send', 'event', 'schriftart_geändert', "schreibschrift");
 								} catch (ignore) {
@@ -253,9 +266,21 @@ function einstellungen(){
 								}
 								document.cookie = "schriftart=schreibschrift; path=/"
 							}
+                            if (jQuery("#radioSchriftartOpendyslexic").is(':checked')) {
+                                jQuery("body").addClass("opendyslexic")
+                                jQuery("body").removeClass("österdruck")
+                                jQuery("body").removeClass("österschreib")
+                                try {
+                                    ga('send', 'event', 'schriftart_geändert', "opendyslexic");
+                                } catch (ignore) {
+                                    console.log("kein gtag möglich");
+                                }
+                                document.cookie = "schriftart=opendyslexic; path=/"
+                            }
 							if (jQuery("#radioSchriftartComputer").is(':checked')) {
 								jQuery("body").removeClass("österschreib")
 								jQuery("body").removeClass("österdruck")
+								jQuery("body").removeClass("opendyslexic")
 								try {
 									ga('send', 'event', 'schriftart_geändert', "computerschrift");
 								} catch (ignore) {
@@ -341,7 +366,10 @@ function my_plugin_body_class($classes) {
 			case "schreibschrift":
 				$class = "österschreib";
 				break;
-			case "computerschrift":
+            case "opendyslexic":
+                $class = "opendyslexic";
+                break;
+            case "computerschrift":
 				$class = "";
 				break;
 		}

@@ -761,6 +761,34 @@ body:not(.single):not(.home):not(.page) .wrapper {
 }
 
 @font-face {
+  font-family: 'opendyslexic';
+  src: url('/wp-content/themes/creativ-preschool-child/assets/fonts/OpenDyslexic-Regular.otf');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'opendyslexic';
+  src: url('/wp-content/themes/creativ-preschool-child/assets/fonts/OpenDyslexic-Italic.otf');
+  font-style: italic;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'opendyslexic';
+  src: url('/wp-content/themes/creativ-preschool-child/assets/fonts/OpenDyslexic-Bold.otf');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'opendyslexic';
+  src: url('/wp-content/themes/creativ-preschool-child/assets/fonts/OpenDyslexic-BoldItalic.otf');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
   font-family: 'oesterdruckschrift';
   src: url('/wp-content/themes/creativ-preschool-child/assets/fonts/oesterdruckschrift.ttf');
 }
@@ -772,33 +800,39 @@ body:not(.single):not(.home):not(.page) .wrapper {
 
 .österdruck article[id^='post-'] {
   font-family: "oesterdruckschrift", 'Open Sans', sans-serif;
+  letter-spacing: 1px;
 
   h1, h2, h3, h4, h5, h6 {
     font-family: "oesterdruckschrift", 'Sniglet', cursive;
   }
 }
 
-.österschreib article[id^='post-'] {
+.opendyslexic article[id^='post-'] {
+  font-family: opendyslexic, 'Open Sans', sans-serif;
+
   h1, h2, h3, h4, h5, h6 {
-    font-family: "oesterschreibschrift", 'Sniglet', cursive;
+    font-family: opendyslexic, 'Sniglet', cursive;
   }
-}
-
-.österdruck article[id^='post-'] {
-  letter-spacing: 1px;
-}
-
-body.single .österdruck article[id^='post-'] {
-  font-size: 130%;
 }
 
 .österschreib article[id^='post-'] {
   font-family: "oesterschreibschrift", 'Open Sans', sans-serif;
   font-size: 120%;
   letter-spacing: 1px;
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "oesterschreibschrift", 'Sniglet', cursive;
+  }
 }
 
-body.single .österschreib article[id^='post-'] {
+body.single.österdruck article[id^='post-'] {
+  font-size: 110%;
+}
+
+body.single.österschreib article[id^='post-'] {
+  font-size: 130%;
+}
+
+body.single.opendyslexic article[id^='post-'] {
   font-size: 140%;
 }
 
@@ -812,6 +846,10 @@ article[id^='post-'] {
 
 .österdruck #heuteButtonMobilDesktopContainer * {
   font-family: oesterdruckschrift, Sniglet, cursive;
+}
+
+.opendyslexic #heuteButtonMobilDesktopContainer * {
+  font-family: opendyslexic, Sniglet, cursive;
 }
 
 .fab {
