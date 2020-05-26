@@ -404,8 +404,12 @@ if ( ! function_exists( 'creativ_preschool_footer_section' ) ) :
                                                                                                         href="http://creativthemes.com/">Creativ Preschool Free</a> customized by <a
 		                target="_blank" rel="designer" href="http://fabianscherer.de/">Fabian Scherer</a></span>
 		                -->
-				<span class="copy-right">© <?= date("Y") ?> homeschooling4kids. Entwickelt von <a
+				<span class="copy-right">Entwickelt von <a
 						target="_blank" rel="designer" href="http://fabianscherer.de/">Fabian Scherer</a></span>
+				<span>Soweit im Einzelfall nicht anders geregelt oder Rechte Dritter betroffen sind, unterliegen unsere Inhalte der folgenden Lizenz <a rel="license"
+														   href="http://creativecommons.org/licenses/by-nc/4.0/"><img
+							alt="Creative Commons Lizenzvertrag" style="border-width:0"
+							src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png"/></a></span>
 				<?php
 				wp_nav_menu( array(
 					'theme_location' => 'fußzeile',
@@ -2030,5 +2034,7 @@ if( function_exists('acf_add_local_field_group') ):
 	));
 
 endif;
+
+wp_enqueue_script( 'h4k-custom-js', get_template_directory_uri() . '/assets/js/h4kcustom.js', array('jquery'), '20200524', true );
 
 require get_template_directory() . '/functionsParent.php';
