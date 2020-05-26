@@ -848,16 +848,31 @@ body.home .page-section{
   }
 }
 
-body.single.österdruck article[id^='post-'] {
-  font-size: 110%;
-}
-
-body.single.österschreib article[id^='post-'] {
-  font-size: 130%;
-}
-
-body.single.opendyslexic article[id^='post-'] {
-  font-size: 140%;
+body {
+  &.österdruck {
+    &:not(.archive) article[id^='post-'] {
+      font-size: 110%;
+    }
+    &.archive article[id^='post-'] {
+      font-size: 100%;
+    }
+  }
+  &.österschreib {
+    &:not(.archive) article[id^='post-'] {
+      font-size: 130%;
+    }
+    &.archive article[id^='post-'] {
+      font-size: 110%;
+    }
+  }
+  &.opendyslexic {
+    &:not(.archive) article[id^='post-'] {
+      font-size: 140%;
+    }
+    &.archive article[id^='post-'] {
+      font-size: 120%;
+    }
+  }
 }
 
 article[id^='post-'] {

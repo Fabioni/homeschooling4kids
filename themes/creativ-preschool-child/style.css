@@ -20,7 +20,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 */
-@import url("styleParent.css");
+@import url("/wp-content/themes/creativ-preschool-child/styleParent.css");
 #colophon > img {
   width: 100%;
 }
@@ -70,11 +70,29 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
   background-color: transparent;
 }
 
+.fußzeilenmenu {
+  margin-top: 20px;
+}
 .fußzeilenmenu li {
   display: inline-block;
   margin: 0px 10px;
 }
 
+.site-info {
+  position: relative;
+  z-index: 1;
+}
+
+@media screen and (max-width: 782px) {
+  .fußzeilenmenu li {
+    display: block;
+  }
+
+  .site-info {
+    position: relative;
+    z-index: 1000;
+  }
+}
 #page-site-header {
   /*background-size: contain;*/
   background-color: #ddd0;
@@ -548,6 +566,11 @@ body:not(.single):not(.home):not(.page) .wrapper {
   max-width: 1600px;
 }
 
+body.home .page-section {
+  margin: auto;
+  max-width: 1200px;
+}
+
 #page-site-header {
   padding: 0 !important;
 }
@@ -726,16 +749,23 @@ body:not(.single):not(.home):not(.page) .wrapper {
   font-family: "oesterschreibschrift", "Sniglet", cursive;
 }
 
-body.single.österdruck article[id^=post-] {
+body.österdruck:not(.archive) article[id^=post-] {
   font-size: 110%;
 }
-
-body.single.österschreib article[id^=post-] {
+body.österdruck.archive article[id^=post-] {
+  font-size: 100%;
+}
+body.österschreib:not(.archive) article[id^=post-] {
   font-size: 130%;
 }
-
-body.single.opendyslexic article[id^=post-] {
+body.österschreib.archive article[id^=post-] {
+  font-size: 110%;
+}
+body.opendyslexic:not(.archive) article[id^=post-] {
   font-size: 140%;
+}
+body.opendyslexic.archive article[id^=post-] {
+  font-size: 120%;
 }
 
 article[id^=post-] {
