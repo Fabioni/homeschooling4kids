@@ -2069,6 +2069,39 @@ if( function_exists('acf_add_local_field_group') ):
 
 endif;
 
-wp_enqueue_script( 'h4k-custom-js', get_template_directory_uri() . '/assets/js/h4kcustom.js', array('jquery'), '20200524', true );
+add_action( 'wp_enqueue_scripts', function (){
+    wp_enqueue_script( 'h4k-custom-js', get_template_directory_uri() . '/assets/js/h4kcustom.js', array('jquery'), '20200524', true );
+} );
+
+if (strpos($_SERVER['HTTP_HOST'], "dev") !== false)
+{
+	// Replace src paths
+	add_filter('wp_get_attachment_url', function ($url)
+	{
+		if(file_exists($url))
+		{
+			return $url;
+		}
+		preg_match("/(.*)\/wp-content\//", $url, $m);
+		$home = $m[1];
+		return str_replace($home, 'https://homeschooling4kids.at', $url);
+	});
+
+	// Replace srcset paths
+	add_filter('wp_calculate_image_srcset', function($sources)
+	{
+		foreach($sources as &$source)
+		{
+			if(!file_exists($source['url']))
+			{
+				preg_match("/(.*)\/wp-content\//", $source['url'], $m);
+				$home = $m[1];
+				$source['url'] = str_replace($home, 'https://homeschooling4kids.at', $source['url']);
+			}
+		}
+		return $sources;
+	});
+}
+
 
 require get_template_directory() . '/functionsParent.php';
