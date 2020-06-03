@@ -194,18 +194,30 @@ function einstellungen(){
 					}
 				}
 			?>
-			<i style="font-size: 120%" class="fa fa-cogs"></i>
-			<input style="display: none" type="radio" id="radioSchriftartSchreib" <?= $schreib ? "checked": "" ?> name="schriftart"><label for="radioSchriftartSchreib" style="cursor: pointer; font-family: oesterschreibschrift" class="btn">Schreibschrift</label>
-			<input style="display: none" type="radio" id="radioSchriftartDruck" <?= $druck ? "checked": "" ?> name="schriftart"><label for="radioSchriftartDruck" style="cursor: pointer; font-family: oesterdruckschrift" class="btn">Druckschrift</label>
-			<input style="display: none" type="radio" id="radioSchriftartComputer" <?= $computer ? "checked": "" ?> name="schriftart"><label for="radioSchriftartComputer" style="cursor: pointer" class="btn">Computerschrift</label>
-			<input style="display: none" type="radio" id="radioSchriftartOpendyslexic" <?= $opendyslexic ? "checked": "" ?> name="schriftart"><label for="radioSchriftartOpendyslexic" style="cursor: pointer; font-family: opendyslexic" class="btn">Open Dyslexic</label>
-
-			<?php /*
-			<button type="button" class="fa-plus" id="schriftgrößePlus"/>
-			<button type="button" class="fa-minus" id="schriftgrößeMinus"/>
- 			*/ ?>
-
+			<div style="display: flex; flex-direction: column; justify-content: center;"><i style="font-size: 150%; cursor: pointer" class="fa fa-cogs"></i></div>
+			<div id="einstellungenSliderWrapper" style="display: inline-block">
+				<div id="einstellungenSlider" style="display: inline-block">
+					<input style="display: none" type="radio" id="radioSchriftartSchreib" <?= $schreib ? "checked": "" ?> name="schriftart"><label for="radioSchriftartSchreib" style="cursor: pointer; font-family: oesterschreibschrift" class="btn">Schreibschrift</label>
+					<input style="display: none" type="radio" id="radioSchriftartDruck" <?= $druck ? "checked": "" ?> name="schriftart"><label for="radioSchriftartDruck" style="cursor: pointer; font-family: oesterdruckschrift" class="btn">Druckschrift</label>
+					<input style="display: none" type="radio" id="radioSchriftartComputer" <?= $computer ? "checked": "" ?> name="schriftart"><label for="radioSchriftartComputer" style="cursor: pointer" class="btn">Computerschrift</label>
+					<input style="display: none" type="radio" id="radioSchriftartOpendyslexic" <?= $opendyslexic ? "checked": "" ?> name="schriftart"><label for="radioSchriftartOpendyslexic" style="cursor: pointer; font-family: opendyslexic" class="btn">Open Dyslexic</label>
+					<button type="button" class="fa-plus-square schriftgröße" id="schriftgrößePlus"/>
+					<button type="button" class="fa-minus-square schriftgröße" id="schriftgrößeMinus"/>
+				</div>
+			</div>
 			<style>
+				.einstellungen .schriftgröße{
+					border: none;
+					margin: 0 1px;
+					width: 32px;
+				}
+
+				.einstellungen .schriftgröße:hover, .einstellungen .schriftgröße:focus{
+					background: none;
+					color: #FF8080;
+					border: none;
+				}
+
 				.einstellungen{
 					display: block;
 					width: -moz-fit-content;
@@ -214,13 +226,30 @@ function einstellungen(){
 					margin: 10px 0px 0px 10px;
 				}
 
+				#einstellungenSliderWrapper{
+					overflow: hidden;
+				}
+
+				#einstellungenSlider{
+					transform: translate(-100%, 0);
+					transition: all 1s;
+				}
+
+				.einstellungen:hover #einstellungenSlider{
+					transform: translate(0,0);
+				}
+
+				.einstellungen:not(:hover) #einstellungenSlider{
+					transition-delay: 0.3s
+				}
+
 				.einstellungen button:before{
 					font-family: 'Font Awesome 5 Free';
 					font-weight: 900;
 				}
 
 				.einstellungen button{
-					padding: 0.5em;
+					padding: 0.2em;
 				}
 
 				.einstellungen input[type="radio"]:checked + label{
@@ -294,17 +323,22 @@ function einstellungen(){
 						}
 					);
 
-					<?php /*
+					var schriftgrößelimit = 0;
 					jQuery('#schriftgrößePlus').click(function () {
-						$("article[id^='post-']").css("font-size", function() {
-							return parseInt($(this).css('font-size')) + 5 + 'px';
+						if (schriftgrößelimit > 4)return;
+						jQuery("article[id^='post-'] *").css("font-size", function() {
+							return parseInt(jQuery(this).css('font-size')) + 2 + 'px';
 						});
+						schriftgrößelimit++;
 					})
 
 					jQuery('#schriftgrößeMinus').click(function () {
-
+						if (schriftgrößelimit < -4)return;
+						jQuery("article[id^='post-'] *").css("font-size", function() {
+							return parseInt(jQuery(this).css('font-size')) - 2 + 'px';
+						});
+						schriftgrößelimit--;
 					})
-  					*/ ?>
 				});
 			</script>
 		</div>
