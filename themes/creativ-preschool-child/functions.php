@@ -282,7 +282,8 @@ function einstellungen(){
 								} catch (ignore) {
 									console.log("kein gtag möglich");
 								}
-								document.cookie = "schriftart=druckschrift; path=/"
+								document.cookie = "schriftart=druckschrift; path=/";
+								toastr["success"]("Schriftart in Beiträgen auf die österreichische Druckschrift gesetzt", "Schriftart geändert");
 							}
 							if (jQuery("#radioSchriftartSchreib").is(':checked')) {
 								jQuery("body").addClass("österschreib")
@@ -293,7 +294,8 @@ function einstellungen(){
 								} catch (ignore) {
 									console.log("kein gtag möglich");
 								}
-								document.cookie = "schriftart=schreibschrift; path=/"
+								document.cookie = "schriftart=schreibschrift; path=/";
+								toastr["success"]("Schriftart in Beiträgen auf die österreichische Schreibschrift gesetzt", "Schriftart geändert");
 							}
                             if (jQuery("#radioSchriftartOpendyslexic").is(':checked')) {
                                 jQuery("body").addClass("opendyslexic")
@@ -304,7 +306,8 @@ function einstellungen(){
                                 } catch (ignore) {
                                     console.log("kein gtag möglich");
                                 }
-                                document.cookie = "schriftart=opendyslexic; path=/"
+                                document.cookie = "schriftart=opendyslexic; path=/";
+								toastr["success"]("Schriftart in Beiträgen auf OpenDyslexic gesetzt. Diese ist speziell für LegasthenikerInnen", "Schriftart geändert");
                             }
 							if (jQuery("#radioSchriftartComputer").is(':checked')) {
 								jQuery("body").removeClass("österschreib")
@@ -315,7 +318,8 @@ function einstellungen(){
 								} catch (ignore) {
 									console.log("kein gtag möglich");
 								}
-								document.cookie = "schriftart=computerschrift; path=/"
+								document.cookie = "schriftart=computerschrift; path=/";
+								toastr["success"]("Schriftart in Beiträgen auf Computerschrift gesetzt", "Schriftart geändert");
 							}
 							setTimeout(function () {
 								jQuery('.blog-posts-wrapper:not(.noMatchHeight) article .post-item').matchHeight();
@@ -329,6 +333,7 @@ function einstellungen(){
 						jQuery("article[id^='post-'] *").css("font-size", function() {
 							return parseInt(jQuery(this).css('font-size')) + 2 + 'px';
 						});
+						toastr["success"]("Schriftgröße in Beiträgen vergrößert", "Schriftgröße geändert");
 						schriftgrößelimit++;
 					})
 
@@ -337,6 +342,7 @@ function einstellungen(){
 						jQuery("article[id^='post-'] *").css("font-size", function() {
 							return parseInt(jQuery(this).css('font-size')) - 2 + 'px';
 						});
+						toastr["success"]("Schriftgröße in Beiträgen verringert", "Schriftgröße geändert");
 						schriftgrößelimit--;
 					})
 				});
