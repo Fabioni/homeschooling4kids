@@ -159,7 +159,7 @@ add_filter( 'get_the_archive_title', function ( $title ) {
 
 function einstellungen(){
 	?>
-	<div class="einstellungen">
+	<div class="einstellungen" style="margin-bottom: -20px">
 			<?php
 			$druck = true;
 			$schreib = false;
@@ -508,7 +508,7 @@ function get_heute_seite() {
 
 	if ( $loop->have_posts() ) {
 		if ( $loop->post_count > 1 ) {
-			return array( get_site_url() . "?post_type=fachbeitrag&m=" . current_time( "Ymd" ), false );
+			return array( get_site_url() . "?m=" . current_time( "Ymd" ), false );
 			// TODO ACHTUNG BEI ÄNDERUNG DER LINK STRUKTUR!!!
 			/*return wp_get_archives(array("before" => "before", "after" => "after", 'echo' => false, "format" => "", "post_type" => "fachbeitrag"));
 			//return wp_get_archives(array("echo" => false, "post_type" => "fachbeitrag"));
