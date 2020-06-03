@@ -622,7 +622,7 @@ body.home .page-section {
 }
 
 .page-section {
-  padding-top: 50px !important;
+  padding-top: 40px !important;
 }
 
 .home section {
@@ -1295,6 +1295,31 @@ header.entry-header {
 
 .sticky_archivUnterteiltitel.closed {
   display: none;
+}
+
+#frontpagemostlikedposts .blog-posts-wrapper .horizontal-scroll-item:nth-child(1n) .post-item {
+  background-color: #DF0101;
+}
+#frontpagemostlikedposts .blog-posts-wrapper .horizontal-scroll-item:nth-child(2n) .post-item {
+  background-color: #FE2E2E;
+}
+#frontpagemostlikedposts .blog-posts-wrapper .horizontal-scroll-item:nth-child(3n) .post-item {
+  background-color: #FA5858;
+}
+#frontpagemostlikedposts .blog-posts-wrapper .horizontal-scroll-item:nth-child(n+4) .post-item {
+  background-color: #F78181;
+}
+#frontpagemostlikedposts .horizontal-scroll-item {
+  width: 250px;
+}
+#frontpagemostlikedposts .entry-container {
+  padding: 0 20px 20px 20px;
+}
+#frontpagemostlikedposts .entry-content {
+  padding: 0;
+}
+#frontpagemostlikedposts .entry-content p {
+  text-align: justify;
 }
 
 /*# sourceMappingURL=style.css.map */

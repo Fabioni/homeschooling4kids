@@ -38,21 +38,19 @@
 			</div><!-- .entry-content -->
 
 			<div class="entry-meta-wrapper">
-				<?php
-				if ( get_field( "audiofilevorlesen" ) ) {
-					?><div class="entry-meta">
+				<div class="entry-meta">
+					<?php if ( get_field( "audiofilevorlesen" ) ) { ?>
 					<span>
 					<img src="/wp-content/themes/creativ-preschool-child/Speaker_Icon.svg" style="height: 1.5em"
-						 title="Diesen Beitrag kannst du dir vorlesen lassen"></span>
+						 title="Diesen Beitrag kannst du dir vorlesen lassen">
+					</span>
+					<?php } ?>
 					<?php
 					if ( function_exists( 'wp_ulike_get_post_likes' ) && wp_ulike_get_post_likes( get_the_ID() ) > 0 ) { //TODO nur vorübergehende Deaktvierung, da wahrscheinlich Bug in WP-Ulike
 						?>
 						<span class="cat-links cat_post_likes"><?= wp_ulike_get_post_likes( get_the_ID() ) ?></span>
 					<?php } ?>
 					</div>
-					<?php
-				}
-				?>
 				<div class="entry-meta-upperline entry-meta">
 					<?php creativ_preschool_posted_on(); ?>
 					<wbr>

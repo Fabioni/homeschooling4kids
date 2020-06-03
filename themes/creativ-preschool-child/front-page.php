@@ -58,14 +58,15 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
 
         <?php
         $heute = get_heute_seite();
-        $heuteString = "Heute";
+        $heuteString = "Neues von heute";
         if ($heute){
-	        $heuteTitel = $heute[1] != false ? "<i class='fa fa-arrow-right'></i> " . $heute[1] : "<i class='fa fa-arrow-right'></i> Schau dir die heutigen Beiträge an"; $heuteURL = $heute[0];
+	        $heuteTitel = $heute[1] != false ? "<i class='fa fa-arrow-right'></i> " . $heute[1] : "<i class='fa fa-arrow-right'></i> Schau dir die heutigen Beiträge an";
+	        $heuteURL = $heute[0];
         } else {
             /*$heuteTitel = "Kein Fachbeitrag für heute vorhanden";
             $heuteURL = "";*/
 	        $heuteTitel = "<i class='fa fa-arrow-right'></i> Zu allen Fachbeiträgen";
-	        $heuteString = "Freu dich auf Montag";
+	        $heuteString = "Genieße das Wochenende";
 	        $heuteURL = get_post_type_archive_link("fachbeitrag");
         }
         ?>
@@ -429,7 +430,8 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
     </style>
     <div id="heuteButtonMobilDesktopContainer" class="<?= $heute ? "heuteBeitragJa" : "heuteBeitragNein" ?>">
         <div class="fabianHandy">
-            <a id="heute_button" href="<?= $heuteURL ?>" class="btn btn-primary"><?= $heuteString ?><br><?= $heuteTitel ?></a>
+            <!--<a id="heute_button" href="<?= $heuteURL ?>" class="btn btn-primary"><?= $heuteString ?><br><?= $heuteTitel ?></a>-->
+            <a id="heute_button" href="<?= $heuteURL ?>" class="btn btn-primary"><?= $heuteTitel ?></a>
         </div>
         <div class="fabianPC">
             <div class="flip-cover-heute_button_flip"></div>
@@ -585,6 +587,24 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
 		}
 	}
 	?>
+	<?php $likeposts = wp_ulike_get_most_liked_posts( 6, array( 'fachbeitrag', 'spassbeitrag', 'gutzuwissenbeitrag' ), 'post', 'all', 'like' ); ?>
+	<h2>Diese Beiträge gefallen euch am meisten <i style="color: darkred" class="fa fa-heart"></i></h2>
+	<div class="makescroll" id="frontpagemostlikedposts">
+		<div class="section-content clear horizontal-scroll-wrapper">
+			<div class="horizontal-scroll blog-posts-wrapper noMatchHeight">
+				<?php
+
+					foreach ($likeposts as $post){
+						setup_postdata($post);
+						?> <div class="horizontal-scroll-item"> <?php
+							get_template_part( 'template-parts/content', get_post_format() );
+							?> </div> <?php
+
+					} ?>
+					<div class="horizontal-scroll-item"></div><div class="horizontal-scroll-item"></div><div class="horizontal-scroll-item"></div>
+			</div><!-- .wrapper -->
+		</div><!-- .section-content -->
+	</div>
 	<h2>Was andere über uns sagen</h2>
 	<?= do_shortcode("[testimonial_view id='1']"); ?>
 	<?php
