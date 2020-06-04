@@ -37,7 +37,7 @@ function einstellungen()
 			}
 		}
 		?>
-		<div style="margin: 10px 0 0 10px"><i style="font-size: 30px; cursor: pointer; background-color: #ddd" class="fa fa-cogs"></i></div>
+		<div style="margin: 0 0 0 10px; padding-top: 10px; background-color: #ddd"><i style="font-size: 30px; cursor: pointer;" class="fa fa-cogs"></i></div>
 		<ul id="einstellungenSlider">
 			<li><input style="display: none" type="radio"
 					   id="radioSchriftartSchreib" <?= $schreib ? "checked" : "" ?> name="schriftart"><label
