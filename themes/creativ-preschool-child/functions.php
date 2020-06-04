@@ -122,8 +122,13 @@ endif;
 
 add_filter( 'get_the_archive_title', function ( $title ) {
 	if ( is_post_type_archive() ) {
-		$titlePosttype = post_type_archive_title( '', false );
-		$title         = $titlePosttype;
+		$post_type = get_query_var( 'post_type' );
+		if ( is_array( $post_type ) ) {
+			$post_type = reset( $post_type );
+		}
+		$post_type_obj = get_post_type_object( $post_type );
+		$title = $post_type_obj->labels->frontend_name;
+		$titlePosttype = $title;
 	}
 	if ( is_year() ) {
 		/* translators: Yearly archive title. %s: Year. */

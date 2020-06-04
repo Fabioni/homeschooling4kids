@@ -168,7 +168,8 @@ function create_Fachbeitragtype() {
 		array(
 			'labels'        => array(
 				'name'          => __( 'Fachbeiträge' ),
-				'singular_name' => __( 'Fachbeitrag' )
+				'singular_name' => __( 'Fachbeitrag' ),
+				'frontend_name' => 'Rechnen, Lesen & Forschen'
 			),
 			//'description'   => "Beiträge, die jeden Tag raus kommen zu Mathe, Deutsch und Co",
 			'description'   => "",
@@ -195,7 +196,8 @@ function create_Gutzuwissenbeitragtype() {
 		array(
 			'labels'        => array(
 				'name'          => __( 'Wissensbeiträge' ),
-				'singular_name' => __( 'Wissensbeitrag' )
+				'singular_name' => __( 'Wissensbeitrag' ),
+				'frontend_name' => 'Gut zu wissen!'
 			),
 			//'description'   => "Ein unregelmäßig rauskommender Beitrag über z.b aktuelle Sachen",
 			'description'   => "",
@@ -222,7 +224,8 @@ function create_Spassbeitragtype() {
 		array(
 			'labels'        => array(
 				'name'          => __( 'Spaßbeiträge' ),
-				'singular_name' => __( 'Spaßbeitrag' )
+				'singular_name' => __( 'Spaßbeitrag' ),
+				'frontend_name' => 'Basteln, Singen & Co'
 			),
 			//'description'   => "Basteln, Singen & Co.",
 			'description'   => "",

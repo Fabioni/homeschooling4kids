@@ -13,7 +13,7 @@ get_header(); ?>
         <main id="main" class="site-main blog-posts-wrapper" role="main">
             <div class="">
 				<?php
-				//global $wp_query;
+				global $wp_query;
 				//$args = array_merge( $wp_query->query_vars, array( 'post_type' => array("post", "fachbeitrag", "spassbeitrag", "gutzuwissenbeitrag") ) );
 				//query_posts( $args ); ?>
 				<?php
