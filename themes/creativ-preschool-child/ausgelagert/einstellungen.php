@@ -37,7 +37,7 @@ function einstellungen()
 			}
 		}
 		?>
-		<div style="margin: 5px"><i style="font-size: 150%; cursor: pointer" class="fa fa-cogs"></i></div>
+		<div style="margin: 10px 0 0 10px"><i style="font-size: 30px; cursor: pointer; background-color: #ddd" class="fa fa-cogs"></i></div>
 		<ul id="einstellungenSlider">
 			<li><input style="display: none" type="radio"
 					   id="radioSchriftartSchreib" <?= $schreib ? "checked" : "" ?> name="schriftart"><label
@@ -56,12 +56,16 @@ function einstellungen()
 												style="cursor: pointer; font-family: opendyslexic" class="btn">Open
 					Dyslexic</label></li>
 			<li>
-				<i class="fa fa-text-height"></i>
+				<i id="schriftgrößeAnzeigeBuchstabe" style="font-size: 20px; color: green" class="fa fa-text-height"></i>
 				<button type="button" class="fa-plus-square schriftgröße" id="schriftgrößePlus"/>
 				<button type="button" class="fa-minus-square schriftgröße" id="schriftgrößeMinus"/>
 			</li>
 		</ul>
 		<style>
+			.einstellungen{
+				display: inline-block;
+			}
+
 			#einstellungenSlider {
 				background-color: #dddc;
 				padding: 5px 5px 5px 1px;
@@ -103,6 +107,10 @@ function einstellungen()
 				border: none;
 			}
 
+			.einstellungen label{
+				width: 100%;
+			}
+
 			.einstellungen button:before {
 				font-family: 'Font Awesome 5 Free';
 				font-weight: 900;
@@ -126,7 +134,7 @@ function einstellungen()
 				text-align: center;
 				margin: 5px;
 				border: 2px solid transparent;
-				box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px
+				box-shadow: rgba(0, 0, 0, 0.2) 2px 4px 8px 2px;
 			}
 		</style>
 		<script>
@@ -189,37 +197,47 @@ function einstellungen()
 				var schriftgrößelimit = 0;
 
 				jQuery('#schriftgrößePlus').click(function () {
-					if (schriftgrößelimit >= 4) return;
-					jQuery("article[id^='post-'] *").css("font-size", function () {
+					if (schriftgrößelimit >= 3) return;
+					jQuery("article[id^='post-'] *").add("#schriftgrößeAnzeigeBuchstabe").css("font-size", function () {
 						return parseInt(jQuery(this).css('font-size')) + 2 + 'px';
 					});
-					if (toastOn)
-					toastr["success"]("Schriftgröße in Beiträgen <span style='font-weight: bold;'>vergrößert</span>", "Schriftgröße geändert");
 					schriftgrößelimit++;
+					if (schriftgrößelimit == 0){
+						jQuery("#schriftgrößeAnzeigeBuchstabe").css("color", "green");
+					} else {
+						jQuery("#schriftgrößeAnzeigeBuchstabe").css("color", "");
+					}
+					if (toastOn)
+					toastr["success"]("Schriftgröße in Beiträgen <span style='font-weight: bold;'>vergrößert</span> auf " + schriftgrößelimit, "Schriftgröße geändert");
 					document.cookie = "schriftsize=" + schriftgrößelimit + "; path=/";
 				})
 
 				jQuery('#schriftgrößeMinus').click(function () {
-					if (schriftgrößelimit <= -4) return;
-					jQuery("article[id^='post-'] *").css("font-size", function () {
+					if (schriftgrößelimit <= -3) return;
+					jQuery("article[id^='post-'] *").add("#schriftgrößeAnzeigeBuchstabe").css("font-size", function () {
 						return parseInt(jQuery(this).css('font-size')) - 2 + 'px';
 					});
-					if (toastOn)
-					toastr["success"]("Schriftgröße in Beiträgen <span style='font-weight: bold;'>verringert</span>", "Schriftgröße geändert");
 					schriftgrößelimit--;
+					if (schriftgrößelimit == 0){
+						jQuery("#schriftgrößeAnzeigeBuchstabe").css("color", "green");
+					} else {
+						jQuery("#schriftgrößeAnzeigeBuchstabe").css("color", "");
+					}
+					if (toastOn)
+					toastr["success"]("Schriftgröße in Beiträgen <span style='font-weight: bold;'>verkleinert</span> auf " + schriftgrößelimit, "Schriftgröße geändert");
 					document.cookie = "schriftsize=" + schriftgrößelimit + "; path=/";
 				})
 
 				toastOn = false;
 				var tmp = getCookieValue("schriftsize");
-				if (parseInt(tmp) <= 4 && parseInt(tmp) >= 1){
+				if (parseInt(tmp) <= 3 && parseInt(tmp) >= 1){
 					while (tmp > 0){
 						jQuery('#schriftgrößePlus').click()
 						tmp--;
 					}
 				}
 
-				if (parseInt(tmp) >= -4 && parseInt(tmp) <= -1){
+				if (parseInt(tmp) >= -3 && parseInt(tmp) <= -1){
 					while (tmp < 0){
 						jQuery('#schriftgrößeMinus').click()
 						tmp++;
