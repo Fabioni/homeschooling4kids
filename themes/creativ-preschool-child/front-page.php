@@ -587,7 +587,7 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
 		}
 	}
 	?>
-	<?php $likeposts = wp_ulike_get_most_liked_posts( 6, array( 'fachbeitrag', 'spassbeitrag', 'gutzuwissenbeitrag' ), 'post', 'all', 'like' ); ?>
+	<?php $likeposts = wp_ulike_get_most_liked_posts( 4, array( 'fachbeitrag', 'spassbeitrag', 'gutzuwissenbeitrag' ), 'post', 'all', 'like' ); ?>
 	<h2>Diese Beiträge gefallen euch am meisten <i style="color: darkred" class="fa fa-heart"></i></h2>
 	<div class="makescroll" id="frontpagemostlikedposts">
 		<div class="section-content clear horizontal-scroll-wrapper">
