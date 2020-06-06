@@ -28,6 +28,20 @@ function admin_style() {
 
 add_action( 'admin_enqueue_scripts', 'admin_style' );
 
+/**
+ * Adds a "My Page" link to the Toolbar.
+ *
+ * @param WP_Admin_Bar $wp_admin_bar Toolbar instance.
+ */
+function toolbar_link_to_mypage( $wp_admin_bar ) {
+	$args = array(
+		'id'    => 'github_h4k_wiki',
+		'title' => 'H4K Wiki <i class="fa  fa-question-circle" style="color: lightgreen"></i>',
+		'href'  => 'https://github.com/Fabioni/homeschooling4kids/wiki',
+	);
+	$wp_admin_bar->add_node( $args );
+}
+add_action( 'admin_bar_menu', 'toolbar_link_to_mypage', 999 );
 
 // -------- https://ericholmes.ca/custom-post-type-date-archive-links-in-wordpress/
 
