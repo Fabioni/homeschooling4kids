@@ -486,7 +486,7 @@ body.archive {
     flex-wrap: wrap;
   }
 
-  .horizontal-scroll-item article, .horizontal-scroll-item .post-item {
+  .home .horizontal-scroll-item article, .home .horizontal-scroll-item .post-item {
     height: 100%;
   }
 
