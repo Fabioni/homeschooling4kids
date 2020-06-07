@@ -1322,4 +1322,24 @@ header.entry-header {
   text-align: justify;
 }
 
+.schlagwörter_cloud ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+.schlagwörter_cloud ul li {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+.schlagwörter_cloud ul li a {
+  background: darkgray;
+  border-radius: 10px;
+  margin: 5px 10px;
+  padding: 0 5px;
+  width: fit-content;
+}
+
 /*# sourceMappingURL=style.css.map */
