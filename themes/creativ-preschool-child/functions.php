@@ -683,5 +683,70 @@ if (strpos($_SERVER['HTTP_HOST'], "dev") !== false)
 	});
 }
 
+function averageColor($filelocation){
+	if (false !== ($color = get_transient("averageColor@" . $filelocation))){
+		return $color;
+	}
+	$image = imagecreatefromstring(file_get_contents($filelocation));
+	$width = imagesx($image);
+	$height = imagesy($image);
+
+	$pixel = imagecreatetruecolor(1, 1);
+	imagealphablending( $pixel, false );
+	imagesavealpha( $pixel, true );
+	imagecopyresampled($pixel, $image, 0, 0, 0, 0, 1, 1, $width, $height);
+	$rgb = imagecolorat($pixel, 0, 0);
+	$color = imagecolorsforindex($pixel, $rgb);
+
+	if ($color['alpha'] > 0){
+		$color = averageColorTrans($filelocation);
+	}
+	set_transient("averageColor@" . $filelocation, $color);
+	return $color;
+}
+
+function averageColorTrans($filelocation) {
+	$r_total = $g_total = $b_total = $total = 0;
+	$image = imagecreatefromstring(file_get_contents($filelocation));
+	//$q = imagesx($image) / imagesy($image);
+	//$i = imagescale($image, $q * 100, 100);
+	$i = $image;
+	for ($x=0;$x<imagesx($i);$x++) {
+		for ($y=0;$y<imagesy($i);$y++) {
+			$rgb = imagecolorat($i,$x,$y);
+			$color = imagecolorsforindex($i, $rgb);
+			$r = $color['red'];
+			$g = $color['green'];
+			$b = $color['blue'];
+			$alpha = $color['alpha'];
+
+			$anteil = (127-$alpha)/127;
+
+			if ($alpha > 100) continue;
+
+			$r_total += $r*$anteil;
+			$g_total += $g*$anteil;
+			$b_total += $b*$anteil;
+			$total += $anteil;
+		}
+	}
+
+	$r = round($r_total / $total);
+	$g = round($g_total / $total);
+	$b = round($b_total / $total);
+
+	return array("red" => $r, "green" => $g, "blue" => $b);
+}
+
+function lightDown($colors, $schwelle){
+	$r = 0.2126*$colors['red'];
+	$g = 0.7152*$colors['green'];
+	$b = 0.0722*$colors['blue'];
+
+	$sum = $r + $g + $b;
+	$diff = max($sum - $schwelle, 0);
+	$neu = array("red" => $colors['red']-($diff), "green" => $colors['green']-($diff), "blue" => $colors['blue']-($diff));
+	return $neu;
+}
 
 require get_template_directory() . '/functionsParent.php';
