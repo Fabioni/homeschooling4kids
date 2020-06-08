@@ -12,8 +12,11 @@
 	$post_thumbnail_id = get_post_thumbnail_id();
 	$filelocation = get_attached_file($post_thumbnail_id);
 	$colors = averageColor($filelocation);
-	$colors = lightDown($colors, 150);
-	$colorStyle = "style='background-color: rgb($colors[red], $colors[green], $colors[blue]);'";
+	$colorStyle = "";
+	if (! isGray($colors, 10)){
+		$colors = lightDown($colors, 150);
+		$colorStyle = "style='background-color: rgb($colors[red], $colors[green], $colors[blue]);'";
+	}
 	?>
 <?php } ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

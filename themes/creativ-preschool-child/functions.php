@@ -749,4 +749,9 @@ function lightDown($colors, $schwelle){
 	return $neu;
 }
 
+function isGray($colors, $schwelle){
+	$diff = max(abs($colors['red'] - $colors['green']), abs($colors['red'] - $colors['blue']), abs($colors['blue'] - $colors['green']));
+	return $diff < $schwelle;
+}
+
 require get_template_directory() . '/functionsParent.php';
