@@ -226,7 +226,7 @@ get_header(); ?>
 					get_template_part( 'template-parts/content', 'none' );
 				} ?>
 			</div>
-			<?php the_posts_navigation(); ?>
+			<?php /*the_posts_navigation(); TODO brauch ich das hier? */ ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

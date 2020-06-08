@@ -45,7 +45,7 @@ get_header(); ?>
 				</div>
 			<?php } ?>
 
-			<?php the_posts_navigation(); //TODO bei einem Slider braucht man das nicht mehr ?>
+			<?php /*the_posts_navigation(); TODO brauch ich das hier? */ ?>
 		</main>
 	</div><!-- #primary -->
 

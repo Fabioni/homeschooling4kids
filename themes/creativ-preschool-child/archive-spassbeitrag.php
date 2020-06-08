@@ -26,23 +26,6 @@ get_header(); ?>
 </script>
 	<div id="primary" class="content-area">
 		<!-- Where am I: archive-spassbeitrag.php -->
-		<?php if (is_user_logged_in()){ ?>
-		<h2>Schlagwörter</h2>
-		<div class="schlagwörter_cloud">
-			<ul>
-			<?php
-			 $tagcloud = wp_tag_cloud( array( 'taxonomy' => 'schlagwort' , 'separator' => ' | ', 'number' => 30, 'smallest' => 12, 'largest' => 23, 'format' => 'array'));
-			 foreach ($tagcloud as $t){
-			 	?>
-				<li>
-					<?= $t ?>
-				</li>
-				<?php
-			 }
-			 ?>
-			</ul>
-		</div>
-		<?php } ?>
 		<main id="main" class="site-main <?= ( ! is_date() ) ? "makevorschau" : "" ?>" role="main">
 			<div class="">
 
@@ -134,7 +117,24 @@ get_header(); ?>
 				}
 				?>
 			</div>
-			<?php the_posts_navigation(); ?>
+			<?php if (is_user_logged_in() or true){ ?>
+				<h2>Schlagwörter</h2>
+				<div class="schlagwörter_cloud">
+					<ul>
+						<?php
+						$tagcloud = wp_tag_cloud( array( 'taxonomy' => 'schlagwort', 'number' => 0, 'smallest' => 12, 'largest' => 22, 'format' => 'array'));
+						foreach ($tagcloud as $t){
+							?>
+							<li>
+								<?= $t ?>
+							</li>
+							<?php
+						}
+						?>
+					</ul>
+				</div>
+			<?php } ?>
+			<?php /*the_posts_navigation(); TODO brauch ich das hier? */ ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

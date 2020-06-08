@@ -24,7 +24,7 @@
 	})
 </script>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php if (get_field("audiofilevorlesen")) post_class("hasAudio"); else post_class(); ?>>
 	<div class="entry-meta">
 		<?php creativ_preschool_posted_on();
 		creativ_preschool_entry_meta(); ?>
