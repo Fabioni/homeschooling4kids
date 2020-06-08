@@ -66,7 +66,10 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
             /*$heuteTitel = "Kein Fachbeitrag für heute vorhanden";
             $heuteURL = "";*/
 	        $heuteTitel = "<i class='fa fa-arrow-right'></i> Zu allen Fachbeiträgen";
-	        $heuteString = "Genieße das Wochenende";
+			$heuteString = "Hier gehts direkt zur Übersicht";
+	        if (date("N") >= 6){ //Samstag oder Sonntag
+				$heuteString = "Genieße das Wochenende";
+			}
 	        $heuteURL = get_post_type_archive_link("fachbeitrag");
         }
         ?>
@@ -153,7 +156,7 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
         .heute_button_flip-button a {
             text-decoration: none;
             font-weight: bold;
-            color: #ff7096;
+            color: #ff4d81;
         }
 
         .heute_button_flip-cover {
@@ -191,7 +194,7 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
         }
 
         .heute_button_flip-outer {
-            background-color: #ff7096;
+            background-color: #ff4d81;
             transform: translateZ(0.25em);
         }
 
@@ -212,7 +215,7 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
         }
 
         .heute_button_flip-section:hover .heute_button_flip-inner {
-            background-color: #ff7096;
+            background-color: #ff4d81;
         }
 
         .heute_button_flip-section:hover .heute_button_flip-outer {
@@ -351,7 +354,7 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
 			box-shadow: 4px 4px 6px #0008;
             text-align: center;
             margin: auto;
-            background: #ff7096b0;
+            background: #ff4d81d0;
         }
 
         #heute_button:before {
@@ -359,7 +362,7 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
         }
 
         #heute_button:hover {
-            background: #ff7096;
+            background: #ff4d81;
         }
 
 		#notizzettel-wrapper a{
