@@ -66,7 +66,7 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
             /*$heuteTitel = "Kein Fachbeitrag für heute vorhanden";
             $heuteURL = "";*/
 	        $heuteTitel = "<i class='fa fa-arrow-right'></i> Zu allen Fachbeiträgen";
-			$heuteString = "Hier gehts direkt zur Übersicht";
+			$heuteString = "Hier geht es direkt zur Übersicht";
 	        if (date("N") >= 6){ //Samstag oder Sonntag
 				$heuteString = "Genieße das Wochenende";
 			}
