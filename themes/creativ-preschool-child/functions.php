@@ -747,6 +747,19 @@ function lightDown($colors, $schwelle){
 	$diff = max($sum - $schwelle, 0);
 	$neu = array("red" => $colors['red']-($diff), "green" => $colors['green']-($diff), "blue" => $colors['blue']-($diff));
 	return $neu;
+	/* werte können unter 0 gehen, deswegen wird es auch bei einer Schwelle von 0 nicht ganz schwarz*/
+}
+
+function lightUp($colors, $schwelle){
+	$r = 0.2126*$colors['red'];
+	$g = 0.7152*$colors['green'];
+	$b = 0.0722*$colors['blue'];
+
+	$sum = $r + $g + $b;
+	$diff = max( $schwelle - $sum, 0);
+	$neu = array("red" => $colors['red']+($diff), "green" => $colors['green']+($diff), "blue" => $colors['blue']+($diff));
+	return $neu;
+	/* werte können übber 255 gehen, deswegen wird es auch bei einer Schwelle von 255 nicht ganz weiß*/
 }
 
 function isGray($colors, $schwelle){
