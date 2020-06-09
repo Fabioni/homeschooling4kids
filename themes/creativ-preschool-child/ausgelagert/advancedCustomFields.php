@@ -312,7 +312,7 @@ if( function_exists('acf_add_local_field_group') ):
 				),
 				'default_value' => 1200,
 				'min' => 400,
-				'max' => 1200,
+				'max' => 1600,
 				'step' => 100,
 				'prepend' => '',
 				'append' => 'px',

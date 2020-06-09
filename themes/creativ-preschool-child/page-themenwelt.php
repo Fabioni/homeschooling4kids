@@ -9,7 +9,7 @@
 
 get_header(); ?>
 <style>
-	#content .wrapper.page-section{
+	#content .page-section{
 		max-width: 1200px;
 	}
 

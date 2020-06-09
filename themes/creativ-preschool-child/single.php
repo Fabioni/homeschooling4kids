@@ -8,6 +8,13 @@
  */
 
 get_header();
+?>
+<style>
+	.page-section{
+		max-width: none;
+	}
+</style>
+<?php
 if ($maxbreite = get_field("max_breite")) {
 	?>
 	<style>
@@ -53,6 +60,10 @@ if ($hintergrund = get_field("vorgabe_hintergrunde")) {
 
 				.entry-content{
 					color: #2a2c2d !important;
+				}
+
+				.page-section{
+					max-width: none;
 				}
 
 				.entry-content-backgroundimage-mitte{
