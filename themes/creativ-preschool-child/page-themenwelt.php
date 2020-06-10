@@ -39,6 +39,8 @@ get_header(); ?>
 
 	.democracy ul.dem-vote, .democracy ul.dem-answers {
 		margin: 0 40px;
+		max-height: 400px;
+		overflow-y: scroll;
 	}
 
 	.democracy .dem-vote li label {
