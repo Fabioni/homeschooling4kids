@@ -9,88 +9,6 @@
 
 get_header(); ?>
 
-<style>
-	div.democracy {
-		background: darkorange;
-		max-width: 600px;
-		border-radius: 25px;
-	}
-
-	strong.dem-poll-title {
-		background: white;
-		margin: 5px;
-		border: 2px solid green;
-		border-radius: 5px;
-	}
-
-	.dem-screen {
-		margin-top: 20px;
-		height: unset !important;
-	}
-
-	.democracy .dem-vote li {
-		background: white;
-		display: flex;
-		padding: 10px 20px;
-		margin: 10px 0;
-		border: 2px solid black;
-		position: relative;
-	}
-
-	.democracy ul.dem-vote, .democracy ul.dem-answers {
-		margin: 0 40px;
-		max-height: 400px !important;
-		overflow-y: scroll !important;
-	}
-
-	.democracy .dem-vote li label {
-		width: 100%;
-	}
-
-	ul.dem-answers .dem-winner .dem-label{
-		position: relative;
-	}
-
-	ul.dem-answers .dem-winner .dem-label:before {
-		/* background-color: black; */
-		content: "\f004";
-		color: red;
-		position: absolute;
-		font-family: "Font Awesome 5 Free";
-		font-weight: bold;
-		left: -1.5em;
-	}
-
-	li.dem-winner .dem-label {
-		color: darkgreen;
-	}
-
-	body:not(.logged-in) .dem-poll-info {
-		display: none;
-	}
-
-	@supports (appearance: none) or (-webkit-appearance: none) or (-moz-appearance: none) {
-		input.dem__checkbox:checked {
-			appearance: none;
-			-webkit-appearance: none;
-			-moz-appearance: none;
-			display: block !important;
-			width: 100%;
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			background-color: #0a0a;
-		}
-
-		.dem__checkbox_label, .dem__radio_label {
-			position: static !important;
-		}
-	}
-
-
-</style>
 	<style>
 		#content .page-section {
 			max-width: 1200px;
@@ -289,11 +207,6 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<!-- Where am I: alle-themen.php -->
 		<main id="main" class="site-main" role="main">
-			<?php
-			if (shortcode_exists("democracy")){
-				echo do_shortcode( "[democracy id=1]" );
-			}
-			?>
 			<section class="timeline">
 				<div class="container">
 					<?php
