@@ -9,4 +9,5 @@ themes/*
 
 !plugins
 plugins/*
+!plugins/democracy-poll
 /themes/creativ-preschool-child/.sass-cache/
