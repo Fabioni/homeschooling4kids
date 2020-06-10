@@ -12,6 +12,8 @@ get_header(); ?>
 <style>
 	div.democracy {
 		background: darkorange;
+		max-width: 600px;
+		border-radius: 25px;
 	}
 
 	strong.dem-poll-title {
