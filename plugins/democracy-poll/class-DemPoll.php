@@ -516,6 +516,7 @@ class DemPoll {
 
 			// if there is free answer, add it and vote
 			if( $new_free_answer && ($aid = $this->_add_democratic_answer($new_free_answer)) ){
+				wp_mail("team@homeschooling4kids.org", "Neue Antwort Option -> schnell checken", $new_free_answer);
 				$aids[] = $aid;
 			}
 		}
