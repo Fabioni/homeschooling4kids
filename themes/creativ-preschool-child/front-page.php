@@ -71,6 +71,10 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
 			content: "\f062";
 		}
 
+		.democracy .dem-poll-title{
+			cursor: pointer;
+		}
+
 		.democracy .dem-poll-title:after{
 			content: "\f063";
 			font-family: 'Font Awesome 5 Free';
