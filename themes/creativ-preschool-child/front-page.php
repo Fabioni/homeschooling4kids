@@ -62,6 +62,35 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
 			height: unset !important;
 		}
 
+
+		.democracy.open .dem-screen{
+			max-height: 550px;
+		}
+
+		.democracy.open .dem-poll-title:after{
+			content: "\f062";
+		}
+
+		.democracy .dem-poll-title:after{
+			content: "\f063";
+			font-family: 'Font Awesome 5 Free';
+			position: absolute;
+			bottom: 0;
+			right: 0.5em;
+		}
+
+
+		.democracy .dem-poll-title{
+			position: relative;
+		}
+
+		.democracy .dem-screen{
+			max-height: 0px;
+			transition: all 2s;
+			overflow: hidden;
+		}
+
+
 		.democracy .dem-vote li {
 			background: white;
 			display: flex;
@@ -76,6 +105,18 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
 			max-height: 400px !important;
 			overflow-y: scroll !important;
 		}
+
+		.democracy ul.dem-vote::-webkit-scrollbar, .democracy ul.dem-answers::-webkit-scrollbar {
+			-webkit-appearance: none;
+			width: 8px;
+		}
+
+		.democracy ul.dem-vote::-webkit-scrollbar-thumb, .democracy ul.dem-answers::-webkit-scrollbar-thumb {
+			border-radius: 5px;
+			background-color: rgb(166, 52, 52);
+			-webkit-box-shadow: 0 0 1px rgb(166, 52, 52);
+		}
+
 
 		.democracy .dem-vote li label {
 			width: 100%;
@@ -125,7 +166,13 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
 
 
 	</style>
-
+<script>
+	jQuery(function () {
+		jQuery(".dem-poll-title").click(function () {
+			jQuery(this).parent(".democracy").toggleClass("open");
+		})
+	})
+</script>
 	<script>
         var $ = jQuery
 
