@@ -207,6 +207,7 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<!-- Where am I: alle-themen.php -->
 		<main id="main" class="site-main" role="main">
+			<div style="margin: 0 auto; margin-bottom: 40px; width: -moz-fit-content; width: fit-content"><a class="btn" href="#heutigesThemaAnker">Zum aktuellen Thema springen</a></div>
 			<section class="timeline">
 				<div class="container">
 					<?php
@@ -305,7 +306,7 @@ get_header(); ?>
 									</div>
 								</div>
 							<?php } ?>
-							<div class="timeline-content-wrapper">
+							<div class="timeline-content-wrapper" id="<?= $jetzigesThema ? "heutigesThemaAnker" : "" ?>">
 								<div
 									class="timeline-content timeline-card <?= $jetzigesThema ? "heutigesThema" : "" ?>">
 									<!--<h2><a href="<? /*= get_term_link($fa) */ ?>"><? /*= $fa->name */ ?></a></h2>
