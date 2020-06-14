@@ -3591,7 +3591,7 @@ body.search.left-sidebar .blog-posts-wrapper .col-3 article {
 }
 .backtotop {
     background-color: #ff7096;
-    z-index: 300;
+    z-index: 80; /*fabi geändert von 300*/
     width: 50px;
     height: 50px;
     line-height: 50px;

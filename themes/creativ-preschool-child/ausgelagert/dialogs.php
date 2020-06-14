@@ -51,7 +51,7 @@ function print_footer_so_22382151_externeLinks() {
 						.dialog({
 							show: {effect: "blind", duration: 500},
 							hide: 'fold',
-							modal: true, title: 'Unsere Seite verlassen', zIndex: 10000, autoOpen: true,
+							modal: true, title: 'Unsere Seite verlassen', autoOpen: true,
 							width: 'auto', resizable: false,
 							buttons: {
 								Ja: function () {
@@ -89,7 +89,7 @@ function print_footer_so_22382151_footer() {
 						.dialog({
 							show: {effect: 'fade', speed: 1000},
 							hide: 'fold',
-							modal: true, title: 'Elternbereich', zIndex: 10000, autoOpen: true,
+							modal: true, title: 'Elternbereich', autoOpen: true,
 							width: 'auto', resizable: false,
 							buttons: {
 								Ja: function () {

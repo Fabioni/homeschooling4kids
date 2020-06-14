@@ -33,13 +33,13 @@ function addDonateButton() {
 	<script type="text/javascript" defer="" src="https://donorbox.org/install-popup-button.js"></script>
 	<a class="dbox-donation-button noLeavingWarning" href="https://donorbox.org/homeschooling4kids-unterstutzung?default_interval=o">
 		<div id="donatecup"
-			 style="display: flex; align-items: center; justify-content: center; width: 64px; height: 64px; background: rgb(255, 129, 63); color: white; border-radius: 32px; position: fixed; left: 18px; bottom: 18px; box-shadow: rgba(0, 0, 0, 0.4) 0px 4px 8px; z-index: 999; cursor: pointer; font-weight: 600; transition: all 0.2s ease 0s;">
+			 style="display: flex; align-items: center; justify-content: center; width: 64px; height: 64px; background: rgb(255, 129, 63); color: white; border-radius: 32px; position: fixed; left: 18px; bottom: 18px; box-shadow: rgba(0, 0, 0, 0.4) 0px 4px 8px; z-index: 85; cursor: pointer; font-weight: 600; transition: all 0.2s ease 0s;">
 			<img id="donateMitDampf" src="/wp-content/themes/creativ-preschool-child/Coffee_cup_icon.svg" alt="Buy Me A Coffee"
 				 style="height: 40px; width: 40px; margin: 0; padding: 0;"><img id="donateOhneDampf" src="/wp-content/themes/creativ-preschool-child/Coffee_cup_icon_OhneDampf.svg" alt="Buy Me A Coffee"
 																				style="height: 40px; width: 40px; margin: 0; padding: 0;"></div>
 		<div id="donateinfo_wrapper">
 			<div id="donateinfo"
-				 style="position: fixed; display: block; opacity: 1; left: 90px; bottom: 16px; background: rgb(255, 255, 255); z-index: 999; transition: all 0.4s ease 0s; box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 8px; padding: 16px; border-radius: 4px; font-size: 14px; color: rgb(0, 0, 0); width: auto; max-width: 280px; line-height: 1.5; font-family: sans-serif;">
+				 style="position: fixed; display: block; opacity: 1; left: 90px; bottom: 16px; background: rgb(255, 255, 255); z-index: 85; transition: all 0.4s ease 0s; box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 8px; padding: 16px; border-radius: 4px; font-size: 14px; color: rgb(0, 0, 0); width: auto; max-width: 280px; line-height: 1.5; font-family: sans-serif;">
 				<?= $texte[rand(0, count($texte) - 1)] ?>
 			</div></div>
 	</a>

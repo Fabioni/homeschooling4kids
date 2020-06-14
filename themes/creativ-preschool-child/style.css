@@ -129,7 +129,7 @@ body.single .entry-content {
 
   .site-info {
     position: relative;
-    z-index: 1000;
+    z-index: 90;
   }
 }
 #page-site-header {
