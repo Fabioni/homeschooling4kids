@@ -689,6 +689,7 @@ function averageColor($filelocation){
 	}
 	try {
 		$image = imagecreatefromstring(file_get_contents($filelocation));
+		if ($image === false) return null;
 		$width = imagesx($image);
 		$height = imagesy($image);
 
@@ -705,6 +706,7 @@ function averageColor($filelocation){
 		set_transient("averageColor@" . $filelocation, $color);
 		return $color;
 	} catch (Exception $e){
+		return null;
 		//nothing
 	}
 
@@ -713,6 +715,7 @@ function averageColor($filelocation){
 function averageColorTrans($filelocation) {
 	$r_total = $g_total = $b_total = $total = 0;
 	$image = imagecreatefromstring(file_get_contents($filelocation));
+	if ($image === false) return null;
 	//$q = imagesx($image) / imagesy($image);
 	//$i = imagescale($image, $q * 100, 100);
 	$i = $image;

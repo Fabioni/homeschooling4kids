@@ -10,13 +10,13 @@
 get_header(); ?>
 	<div id="primary" class="content-area">
 		<!-- Where am I: date.php -->
-		<main id="main" class="site-main blog-posts-wrapper" role="main">
+		<main id="main" class="site-main blog-posts-wrapper noMatchHeight" role="main">
 			<div>
 				<?php
 				global $wp_query;
 				if ( have_posts() ) {
 					$makevorschau = $wp_query->post_count > 6 ? "makevorschau" : "";
-					foreach ( array( "fachbeitrag", "gutzuwissenbeitrag", "spassbeitrag", "post" ) as $posttype ) {
+					foreach ( array( "fachbeitrag", "gutzuwissenbeitrag", "spassbeitrag" ) as $posttype ) { //"post" wird nicht angezeigt
 						global $wp_query;
 						$args = array_merge( $wp_query->query_vars, array( 'post_type' => $posttype ) );
 						query_posts( $args );
@@ -25,7 +25,7 @@ get_header(); ?>
 							?>
 							<div class="horizontal-scroll-wrapper <?= $makevorschau ?>">
 								<h1 class="archivUnterteiltitel"><a
-										href="<?= get_post_type_archive_link( $posttype ) ?>"><?= get_post_type_object( $posttype )->labels->frontend_name ?></a>
+										href="<?= get_post_type_archive_link( $posttype ) ?>"><?= isset(get_post_type_object( $posttype )->labels->frontend_name) ? get_post_type_object( $posttype )->labels->frontend_name : get_post_type_object( $posttype )->labels->name ?></a>
 								</h1>
 								<div class="horizontal-scroll">
 									<?php

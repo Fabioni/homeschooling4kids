@@ -14,7 +14,7 @@ if (has_post_thumbnail()) {
 	$post_thumbnail_id = get_post_thumbnail_id();
 	$filelocation = get_attached_file($post_thumbnail_id);
 	$colors = averageColor($filelocation);
-	if (!isGray($colors, 10)) {
+	if ($colors !== null && !isGray($colors, 10)) {
 		$colors = lightDown($colors, 150);
 		$colorStyle = "style='background-color: rgb($colors[red], $colors[green], $colors[blue]);'";
 	}
