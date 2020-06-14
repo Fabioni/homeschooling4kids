@@ -34,7 +34,7 @@ if (has_post_thumbnail()) {
 		?>
 		<?php if (has_post_thumbnail()) { ?>
 			<figure style="background-color: white; border-top-left-radius: 25px; border-top-right-radius: 25px">
-				<a href="<?php the_permalink(); ?><?= $korrek ?>"><?php the_post_thumbnail(); ?></a>
+				<a href="<?php the_permalink(); ?><?= $korrek ?>"><?php the_post_thumbnail('post-thumbnail', array('loading' => 'lazy')); ?></a>
 			</figure>
 		<?php } ?>
 		<header class="entry-header">
