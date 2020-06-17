@@ -284,7 +284,7 @@ function creativ_preschool_scripts() {
 
 	wp_enqueue_style( 'slick-css', get_template_directory_uri() .'/assets/css/slick' . $min . '.css', '', 'v1.8.0');
 
-	wp_enqueue_style( 'creativ-preschool-blocks', get_template_directory_uri() . '/assets/css/blocks.css', array(), 2 );
+	wp_enqueue_style( 'creativ-preschool-blocks', get_template_directory_uri() . '/assets/css/blocks.css', array(), 3 );
 
 	wp_enqueue_style( 'creativ-preschool-style', get_stylesheet_uri() );
 

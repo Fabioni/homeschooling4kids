@@ -483,10 +483,16 @@ p.has-drop-cap:not(:focus)::first-letter {
 	}
 }
 @media screen and (max-width: 567px) {
+  .has-larger-font-size {
+    font-size: 2.2rem;
+  }
+  .has-huge-font-size {
+    font-size: 2.8rem;
+  }
+
 	.has-larger-font-size,
 	.has-huge-font-size {
-	    font-size: 1.6rem;
-      line-height: 28px;
+      line-height: 2.8rem;
 	}
 }
 
