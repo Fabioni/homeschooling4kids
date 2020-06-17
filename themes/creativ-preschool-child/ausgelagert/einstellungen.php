@@ -146,7 +146,9 @@ function einstellungen()
 							jQuery("body").removeClass("österschreib")
 							jQuery("body").removeClass("opendyslexic")
 							try {
-								ga('send', 'event', 'schriftart_geändert', "druckschrift");
+								gtag('event', 'schriftart_geändert', {
+									'event_label': 'druckschrift'
+								});
 							} catch (ignore) {
 								console.log("kein gtag möglich");
 							}
@@ -158,7 +160,9 @@ function einstellungen()
 							jQuery("body").removeClass("österdruck")
 							jQuery("body").removeClass("opendyslexic")
 							try {
-								ga('send', 'event', 'schriftart_geändert', "schreibschrift");
+								gtag('event', 'schriftart_geändert', {
+									'event_label': 'schreibschrift'
+								});
 							} catch (ignore) {
 								console.log("kein gtag möglich");
 							}
@@ -170,7 +174,9 @@ function einstellungen()
 							jQuery("body").removeClass("österdruck")
 							jQuery("body").removeClass("österschreib")
 							try {
-								ga('send', 'event', 'schriftart_geändert', "opendyslexic");
+								gtag('event', 'schriftart_geändert', {
+									'event_label': 'opendyslexic'
+								});
 							} catch (ignore) {
 								console.log("kein gtag möglich");
 							}
@@ -182,7 +188,9 @@ function einstellungen()
 							jQuery("body").removeClass("österdruck")
 							jQuery("body").removeClass("opendyslexic")
 							try {
-								ga('send', 'event', 'schriftart_geändert', "computerschrift");
+								gtag('event', 'schriftart_geändert', {
+									'event_label': 'computerschrift'
+								});
 							} catch (ignore) {
 								console.log("kein gtag möglich");
 							}

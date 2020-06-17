@@ -105,7 +105,7 @@ function addDonateButton() {
 					}
 				}, 1)
 				try {
-					ga('send', 'event', 'donation_clicked');
+					gtag('event', 'donation_clicked');
 				} catch (ignore) {
 					console.log("kein gtag möglich");
 				}

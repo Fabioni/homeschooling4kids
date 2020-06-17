@@ -253,7 +253,9 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
 		$(function () {
 			$("#heuteButtonMobilDesktopContainer").on("click", "a", function () {
 				try {
-					ga('send', 'event', 'heute_button_clicked', {transport: 'bacon'});
+					gtag('event', 'heute_button_clicked', {
+						'transport_type': 'beacon'
+					}); //Todo nicht sicher ob das noch so geht oder man mit Callback Funktion arbeiten muss
 				} catch (ignore) {
 					console.log("kein gtag möglich");
 				}

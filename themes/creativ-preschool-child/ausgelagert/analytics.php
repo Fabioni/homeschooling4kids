@@ -8,7 +8,7 @@ function gaactions(){
 			jQuery(".wp-block-otfm-box-spoiler-start.otfm-sp__wrapper.otfm-sp__box.otfm-sp__XXXXXX").click(function (event) {
 				if (firsttimelernziele) {
 					try {
-						ga('send', 'event', 'lernziele_aufgeklappt');
+						gtag('event', 'lernziele_aufgeklappt');
 					} catch (ignore) {
 						console.log("kein gtag möglich");
 					}
@@ -19,7 +19,7 @@ function gaactions(){
 		jQuery(function () {
 			jQuery(".astm-search-menu").click(function () {
 				try {
-					ga('send', 'event', 'suche_aufgemacht');
+					gtag('event', 'suche_aufgemacht');
 				} catch (ignore) {
 					console.log("kein gtag möglich");
 				}
@@ -29,7 +29,7 @@ function gaactions(){
 		jQuery(function () {
 			jQuery(".fabian_check_me_submit").click(function () {
 				try {
-					ga('send', 'event', 'abfrage_checkmesubmit_geclicked');
+					gtag('event', 'abfrage_checkmesubmit_geclicked');
 				} catch (ignore) {
 					console.log("kein gtag möglich");
 				}
@@ -41,7 +41,6 @@ function gaactions(){
 			jQuery("#audiofile audio").on("play", function () {
 				if (audioerstesmal) {
 					try {
-						ga('send', 'event', 'vorlesen_play_erstesmal');
 					} catch (ignore) {
 						console.log("kein gtag möglich");
 					}
@@ -52,7 +51,10 @@ function gaactions(){
 
 		jQuery(function () {
 			try {
-				ga('send', 'event', 'seite_geladen', '<?= isset($_COOKIE["schriftart"]) ? $_COOKIE["schriftart"] : "notSetStandart" ?>', {nonInteraction: true});
+				gtag('event', 'seite_geladen', {
+					'event_label': '<?= isset($_COOKIE["schriftart"]) ? $_COOKIE["schriftart"] : "notSetStandart" ?>',
+					'non_interaction': true
+				});
 			} catch (ignore) {
 				console.log("kein gtag möglich");
 			}
