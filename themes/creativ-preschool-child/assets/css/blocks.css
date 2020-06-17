@@ -101,10 +101,10 @@ p.has-drop-cap:not(:focus)::first-letter {
     border: none;
 }
 
-.wp-block-quote.is-large > p:before, 
+.wp-block-quote.is-large > p:before,
 .wp-block-quote.is-large > p:after {
     content: "''";
-    font-size: 30px;
+    font-size: 3.0rem;
     display: inline-block;
     vertical-align: middle;
     margin: 0 10px;
@@ -134,13 +134,13 @@ p.has-drop-cap:not(:focus)::first-letter {
 .no-sidebar .wp-block-pullquote.alignfull,
 .no-sidebar .wp-block-table.alignfull,
 .no-sidebar .wp-block-audio.alignfull,
-.no-sidebar .wp-block-categories.alignfull {    
+.no-sidebar .wp-block-categories.alignfull {
     width: 100vw;
     max-width : 100vw;
     margin-left  : calc( -100vw / 2 + 100% / 2 );
     margin-right : calc( -100vw / 2 + 100% / 2 );
 }
-.no-sidebar .wp-block-embed.is-type-video.alignfull iframe {    
+.no-sidebar .wp-block-embed.is-type-video.alignfull iframe {
     width: 100vw !important;
     max-width : 100vw;
     margin-left  : calc( -100vw / 2 + 100% / 2 ) !important;
@@ -182,8 +182,7 @@ p.has-drop-cap:not(:focus)::first-letter {
 	box-shadow: none;
 	color: #fff;
 	display: inline-block;
-	font-size: 14px;
-	font-size: 0.875rem;
+	font-size: 1.4rem;
 	font-weight: 800;
 	margin-top: 2em;
 	padding: 0.7em 2em;
@@ -333,8 +332,7 @@ p.has-drop-cap:not(:focus)::first-letter {
 }
 
 .wp-block-latest-comments__comment-meta {
-	font-size: 16px;
-	font-size: 1rem;
+	font-size: 1.6rem;
 	margin-bottom: 0.4em;
 }
 
@@ -346,8 +344,7 @@ p.has-drop-cap:not(:focus)::first-letter {
 
 .wp-block-latest-comments__comment-date {
 	color: #767676;
-	font-size: 10px;
-	font-size: 0.625rem;
+	font-size: 1.0rem;
 	font-weight: 800;
 	letter-spacing: 0.1818em;
 	margin-top: 0.4em;
@@ -355,8 +352,7 @@ p.has-drop-cap:not(:focus)::first-letter {
 }
 
 .editor-block-list__block .wp-block-latest-comments__comment-excerpt p {
-	font-size: 14px;
-	font-size: 0.875rem;
+	font-size: 1.4rem;
 }
 
 
@@ -460,10 +456,10 @@ p.has-drop-cap:not(:focus)::first-letter {
 6.0 Blocks - Text Settings
 --------------------------------------------------------------*/
 .has-larger-font-size {
-	font-size: 36px;
+	font-size: 3.6rem;
 }
 .has-huge-font-size {
-	font-size: 48px;
+	font-size: 4.8rem;
 }
 .has-larger-font-size,
 .has-huge-font-size {
@@ -472,25 +468,25 @@ p.has-drop-cap:not(:focus)::first-letter {
 
 @media screen and (max-width: 992px) {
 	.has-larger-font-size {
-	    font-size: 30px;
+	    font-size: 3.0rem;
 	}
 	.has-huge-font-size {
-	    font-size: 38px;
+	    font-size: 3.8rem;
 	}
 }
 @media screen and (max-width: 767px) {
 	.has-larger-font-size {
-	    font-size: 24px;
+	    font-size: 2.4rem;
 	}
 	.has-huge-font-size {
-	    font-size: 28px;
+	    font-size: 2.8rem;
 	}
 }
 @media screen and (max-width: 567px) {
 	.has-larger-font-size,
 	.has-huge-font-size {
-	    font-size: 16px;
-        line-height: 28px;
+	    font-size: 1.6rem;
+      line-height: 28px;
 	}
 }
 

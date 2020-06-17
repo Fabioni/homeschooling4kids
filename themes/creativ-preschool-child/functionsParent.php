@@ -41,7 +41,7 @@ function creativ_preschool_setup() {
 	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
 	add_theme_support( 'post-thumbnails' );
-	
+
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary', 'creativ-preschool' ),
@@ -49,9 +49,9 @@ function creativ_preschool_setup() {
 
 	// Enable support for custom logo.
 	add_theme_support( 'custom-logo' , array(
-		'height'		=>45,	
-		'width'			=>45,	
-		'flex-height'	=>true,	
+		'height'		=>45,
+		'width'			=>45,
+		'flex-height'	=>true,
 		'flex-width'	=>true,
 	));
 
@@ -276,7 +276,7 @@ function creativ_preschool_scripts() {
 	$primary_color = creativ_preschool_get_option( 'primary_color' );
 	if ( ! empty( $fonts_url ) ) {
 		wp_enqueue_style( 'creativ-preschool-google-fonts', $fonts_url, array(), null );
-	}	
+	}
 
 	wp_enqueue_style( 'fontawesome-all', get_template_directory_uri() . '/assets/css/all' . $min . '.css', '', '4.7.0' );
 
@@ -284,19 +284,19 @@ function creativ_preschool_scripts() {
 
 	wp_enqueue_style( 'slick-css', get_template_directory_uri() .'/assets/css/slick' . $min . '.css', '', 'v1.8.0');
 
-	wp_enqueue_style( 'creativ-preschool-blocks', get_template_directory_uri() . '/assets/css/blocks' . $min . '.css' );
-	
+	wp_enqueue_style( 'creativ-preschool-blocks', get_template_directory_uri() . '/assets/css/blocks.css', array(), 2 );
+
 	wp_enqueue_style( 'creativ-preschool-style', get_stylesheet_uri() );
-	
+
 	wp_enqueue_script( 'jquery-slick', get_template_directory_uri() . '/assets/js/slick' . $min . '.js', array('jquery'), '2017417', true );
 
 	wp_enqueue_script( 'jquery-match-height', get_template_directory_uri() . '/assets/js/jquery.matchHeight' . $min . '.js', array('jquery'), '2017417', true );
-	
+
 	wp_enqueue_script( 'creativ-preschool-navigation', get_template_directory_uri() . '/assets/js/navigation' . $min . '.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'creativ-preschool-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix' . $min . '.js', array(), '20151215', true );
 
-	wp_enqueue_script( 'creativ-preschool-custom-js', get_template_directory_uri() . '/assets/js/custom' . $min . '.js', array('jquery'), '20151215', true );  
+	wp_enqueue_script( 'creativ-preschool-custom-js', get_template_directory_uri() . '/assets/js/custom' . $min . '.js', array('jquery'), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

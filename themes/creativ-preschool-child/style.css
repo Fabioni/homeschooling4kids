@@ -20,7 +20,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 */
-@import url("/wp-content/themes/creativ-preschool-child/styleParent.css?v=2");
+@import url("/wp-content/themes/creativ-preschool-child/styleParent.css?v=3");
 #colophon > img {
   width: 100%;
 }
@@ -390,7 +390,7 @@ body.single .heutigerBeitrag {
 
 .spasskategorie-witz-der-woche blockquote, .schönerquote {
   font-family: "Abril Fatface", cursive;
-  font-size: 1.1rem;
+  font-size: 1.1em;
   border: solid 2px red !important;
   border-radius: 20px !important;
 }
@@ -960,7 +960,7 @@ article[id^=post-] {
   display: flex;
   border: 2px solid;
   border-radius: 2px;
-  font-size: 16px;
+  font-size: 1.6rem;
   padding: 3px;
   background: white;
   margin-bottom: 4px;
@@ -971,7 +971,7 @@ article[id^=post-] {
   display: flex;
   border: 2px solid;
   border-radius: 2px;
-  font-size: 16px;
+  font-size: 1.6rem;
   padding: 3px;
   background: white;
 }
@@ -1034,7 +1034,7 @@ article[id^=post-] {
 }
 
 .su-qtip-size-h4k_tooltip {
-  font-size: 18px !important;
+  font-size: 1.8rem !important;
   line-height: initial !important;
 }
 
@@ -1042,7 +1042,7 @@ article[id^=post-] {
   position: absolute;
   bottom: 0;
   right: 25px;
-  font-size: 25px;
+  font-size: 2.5rem;
 }
 #likerButtonWrapper * {
   font-family: "Open Sans", sans-serif;
@@ -1350,7 +1350,7 @@ header.entry-header {
   font-weight: bold;
   color: black;
   background: white;
-  font-size: 20px;
+  font-size: 2rem;
   padding: 5px;
   z-index: 5;
 }

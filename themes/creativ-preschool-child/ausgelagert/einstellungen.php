@@ -56,7 +56,7 @@ function einstellungen()
 												style="cursor: pointer; font-family: opendyslexic" class="btn">Open
 					Dyslexic</label></li>
 			<li>
-				<i id="schriftgrößeAnzeigeBuchstabe" style="font-size: 20px; color: green" class="fa fa-text-height"></i>
+				<i id="schriftgrößeAnzeigeBuchstabe" style="color: green" class="fa fa-text-height"></i>
 				<button type="button" class="fa-plus-square schriftgröße" id="schriftgrößePlus"/>
 				<button type="button" class="fa-minus-square schriftgröße" id="schriftgrößeMinus"/>
 			</li>
@@ -118,6 +118,7 @@ function einstellungen()
 
 			.einstellungen button {
 				padding: 0.2em;
+				font-size: 16px;
 			}
 
 			.einstellungen input[type="radio"]:checked + label {
@@ -125,7 +126,7 @@ function einstellungen()
 			}
 
 			.einstellungen input[type="radio"] + label {
-				font-size: 85%;
+				font-size: 16px;
 				padding: 5px 10px;
 				border-radius: 5px;
 				background-color: lightgrey;
@@ -204,54 +205,40 @@ function einstellungen()
 				);
 				var schriftgrößelimit = 0;
 
-				jQuery('#schriftgrößePlus').click(function () {
-					if (schriftgrößelimit >= 3) return;
-					jQuery("article[id^='post-'] *").add("#schriftgrößeAnzeigeBuchstabe").css("font-size", function () {
-						return parseInt(jQuery(this).css('font-size')) + 2 + 'px';
-					});
-					schriftgrößelimit++;
+				function schriftgrößelimitSetzen(){
+					jQuery("html").removeClass(["schriftgrößeM3", "schriftgrößeM2", "schriftgrößeM1", "schriftgröße0", "schriftgrößeP1", "schriftgrößeP2", "schriftgrößeP3"].join(' '))
+					jQuery("html").addClass(["schriftgrößeM3", "schriftgrößeM2", "schriftgrößeM1", "schriftgröße0", "schriftgrößeP1", "schriftgrößeP2", "schriftgrößeP3"][schriftgrößelimit+3])
 					if (schriftgrößelimit == 0){
 						jQuery("#schriftgrößeAnzeigeBuchstabe").css("color", "green");
 					} else {
 						jQuery("#schriftgrößeAnzeigeBuchstabe").css("color", "");
 					}
-					if (toastOn)
-					toastr["success"]("Schriftgröße in Beiträgen <span style='font-weight: bold;'>vergrößert</span> auf " + schriftgrößelimit, "Schriftgröße geändert");
 					document.cookie = "schriftsize=" + schriftgrößelimit + "; path=/";
+				}
+
+				jQuery('#schriftgrößePlus').click(function () {
+					if (schriftgrößelimit >= 3) return;
+					schriftgrößelimit++;
+					schriftgrößelimitSetzen()
+					toastr["success"]("Schriftgröße in Beiträgen <span style='font-weight: bold;'>vergrößert</span> auf " + schriftgrößelimit, "Schriftgröße geändert");
 				})
 
 				jQuery('#schriftgrößeMinus').click(function () {
 					if (schriftgrößelimit <= -3) return;
-					jQuery("article[id^='post-'] *").add("#schriftgrößeAnzeigeBuchstabe").css("font-size", function () {
-						return parseInt(jQuery(this).css('font-size')) - 2 + 'px';
-					});
 					schriftgrößelimit--;
-					if (schriftgrößelimit == 0){
-						jQuery("#schriftgrößeAnzeigeBuchstabe").css("color", "green");
-					} else {
-						jQuery("#schriftgrößeAnzeigeBuchstabe").css("color", "");
-					}
-					if (toastOn)
+					schriftgrößelimitSetzen()
 					toastr["success"]("Schriftgröße in Beiträgen <span style='font-weight: bold;'>verkleinert</span> auf " + schriftgrößelimit, "Schriftgröße geändert");
-					document.cookie = "schriftsize=" + schriftgrößelimit + "; path=/";
 				})
-
-				toastOn = false;
 				var tmp = getCookieValue("schriftsize");
 				if (parseInt(tmp) <= 3 && parseInt(tmp) >= 1){
-					while (tmp > 0){
-						jQuery('#schriftgrößePlus').click()
-						tmp--;
-					}
+					schriftgrößelimit = parseInt(tmp)
+					schriftgrößelimitSetzen()
 				}
 
 				if (parseInt(tmp) >= -3 && parseInt(tmp) <= -1){
-					while (tmp < 0){
-						jQuery('#schriftgrößeMinus').click()
-						tmp++;
-					}
+					schriftgrößelimit = parseInt(tmp)
+					schriftgrößelimitSetzen()
 				}
-				toastOn = true;
 			});
 
 			function getCookieValue(a) {
