@@ -154,6 +154,7 @@ function einstellungen()
 								console.log("kein gtag möglich");
 							}
 							document.cookie = "schriftart=druckschrift; path=/";
+							toastr.remove();
 							toastr["success"]("Schriftart in Beiträgen auf die österreichische <span style='font-weight: bold;'>Druckschrift</span> gesetzt.", "Schriftart geändert");
 						}
 						if (jQuery("#radioSchriftartSchreib").is(':checked')) {
@@ -168,6 +169,7 @@ function einstellungen()
 								console.log("kein gtag möglich");
 							}
 							document.cookie = "schriftart=schreibschrift; path=/";
+							toastr.remove();
 							toastr["success"]("Schriftart in Beiträgen auf die österreichische <span style='font-weight: bold;'>Schreibschrift</span> gesetzt.", "Schriftart geändert");
 						}
 						if (jQuery("#radioSchriftartOpendyslexic").is(':checked')) {
@@ -182,6 +184,7 @@ function einstellungen()
 								console.log("kein gtag möglich");
 							}
 							document.cookie = "schriftart=opendyslexic; path=/";
+							toastr.remove();
 							toastr["success"]("Schriftart in Beiträgen auf <span style='font-weight: bold;'>OpenDyslexic</span> gesetzt. Diese ist speziell für LegasthenikerInnen.", "Schriftart geändert");
 						}
 						if (jQuery("#radioSchriftartComputer").is(':checked')) {
@@ -196,6 +199,7 @@ function einstellungen()
 								console.log("kein gtag möglich");
 							}
 							document.cookie = "schriftart=computerschrift; path=/";
+							toastr.remove();
 							toastr["success"]("Schriftart in Beiträgen auf <span style='font-weight: bold;'>Computerschrift</span> gesetzt.", "Schriftart geändert");
 						}
 						setTimeout(function () {
@@ -220,6 +224,7 @@ function einstellungen()
 					if (schriftgrößelimit >= 3) return;
 					schriftgrößelimit++;
 					schriftgrößelimitSetzen()
+					toastr.remove();
 					toastr["success"]("Schriftgröße in Beiträgen <span style='font-weight: bold;'>vergrößert</span> auf " + schriftgrößelimit, "Schriftgröße geändert");
 				})
 
@@ -227,6 +232,7 @@ function einstellungen()
 					if (schriftgrößelimit <= -3) return;
 					schriftgrößelimit--;
 					schriftgrößelimitSetzen()
+					toastr.remove();
 					toastr["success"]("Schriftgröße in Beiträgen <span style='font-weight: bold;'>verkleinert</span> auf " + schriftgrößelimit, "Schriftgröße geändert");
 				})
 				var tmp = getCookieValue("schriftsize");
