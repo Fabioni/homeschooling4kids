@@ -24,6 +24,15 @@ if ($maxbreite = get_field("max_breite")) {
 		}
 	</style>
 	<?php
+} else {
+	?>
+	<style>
+		#primary{
+			max-width: 1200px;
+			margin: auto;
+		}
+	</style>
+	<?php
 }
 
 if ($hintergrund = get_field("vorgabe_hintergrunde")) {
