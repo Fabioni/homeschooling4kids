@@ -620,7 +620,7 @@ add_action("wp_footer", function (){
 
 	jQuery(function () {
 		if (Object.keys(übersetzungen).length > 0) {
-			jQuery(".einstellungen").append("<label>Sprache:\n" +
+			jQuery("#spracheEinstellungen").append("<label>Sprache:\n" +
 				"\t\t<select id=\"sprachAuswahl\">\n" +
 				"\t\t\t<option selected>Deutsch</option>" +
 				"\t\t</select>\n" +
