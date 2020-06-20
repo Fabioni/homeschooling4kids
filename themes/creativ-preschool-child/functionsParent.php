@@ -157,17 +157,24 @@ function creativ_preschool_setup() {
 	   	),
 	   	array(
 	       	'name' => esc_html__( 'larger', 'creativ-preschool' ),
-	       	'shortName' => esc_html__( 'L', 'creativ-preschool' ),
-	       	'size' => 36,
+	       	'shortName' => esc_html__( 'ML', 'creativ-preschool' ),
+	       	'size' => 22,
 	       	'slug' => 'larger'
+	   	),
+		array(
+	       	'name' => esc_html__( 'larg', 'creativ-preschool' ),
+	       	'shortName' => esc_html__( 'L', 'creativ-preschool' ),
+	       	'size' => 34,
+	       	'slug' => 'larg'
 	   	),
 	   	array(
 	       	'name' => esc_html__( 'huge', 'creativ-preschool' ),
 	       	'shortName' => esc_html__( 'XL', 'creativ-preschool' ),
-	       	'size' => 48,
+	       	'size' => 40,
 	       	'slug' => 'huge'
 	   	)
 	));
+	add_theme_support('disable-custom-font-sizes');
 	add_theme_support('editor-styles');
 	add_theme_support( 'wp-block-styles' );
 }
@@ -284,7 +291,7 @@ function creativ_preschool_scripts() {
 
 	wp_enqueue_style( 'slick-css', get_template_directory_uri() .'/assets/css/slick' . $min . '.css', '', 'v1.8.0');
 
-	wp_enqueue_style( 'creativ-preschool-blocks', get_template_directory_uri() . '/assets/css/blocks.css', array(), 3 );
+	wp_enqueue_style( 'creativ-preschool-blocks', get_template_directory_uri() . '/assets/css/blocks.css', array(), 4 );
 
 	wp_enqueue_style( 'creativ-preschool-style', get_stylesheet_uri() );
 
@@ -312,7 +319,7 @@ add_action( 'wp_enqueue_scripts', 'creativ_preschool_scripts' );
 function creativ_preschool_block_editor_styles() {
 	$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 	// Block styles.
-	wp_enqueue_style( 'creativ-preschool-block-editor-style', get_theme_file_uri( '/assets/css/editor-blocks' . $min . '.css' ) );
+	wp_enqueue_style( 'creativ-preschool-block-editor-style', get_theme_file_uri( '/assets/css/editor-blocks.css' ), array(), 2);
 	// Add custom fonts.
 	wp_enqueue_style( 'creativ-preschool-fonts', creativ_preschool_fonts_url(), array(), null );
 }
