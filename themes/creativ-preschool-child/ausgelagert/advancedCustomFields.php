@@ -440,4 +440,62 @@ if( function_exists('acf_add_local_field_group') ):
 		'description' => '',
 	));
 
+
+	acf_add_local_field_group(array(
+		'key' => 'group_5eeb398507502',
+		'title' => 'Lernziele',
+		'fields' => array(
+			array(
+				'key' => 'field_5eeb39cadb201',
+				'label' => 'Lernziele Text',
+				'name' => 'lernziele_text',
+				'type' => 'wysiwyg',
+				'instructions' => 'Schreibe hier die Lernziele rein, mache es nicht mehr im eigentlich Beitrag wie früher um es logisch abzugrenzen.',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'tabs' => 'all',
+				'toolbar' => 'full',
+				'media_upload' => 0,
+				'delay' => 0,
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'fachbeitrag',
+				),
+			),
+			array(
+				array(
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'spassbeitrag',
+				),
+			),
+			array(
+				array(
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'gutzuwissenbeitrag',
+				),
+			),
+		),
+		'menu_order' => 0,
+		'position' => 'normal',
+		'style' => 'seamless',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => '',
+		'active' => true,
+		'description' => 'Lernziele für die Beiträge',
+	));
+
 endif;

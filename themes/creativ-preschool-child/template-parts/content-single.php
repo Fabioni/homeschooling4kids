@@ -69,6 +69,15 @@ if (has_post_thumbnail()) {
 				?>
 				<div id="likerButtonWrapper"><?= do_shortcode("[wp_ulike]") ?></div>
 			</div>
+			<?php if ($lz = get_field("lernziele_text")){ ?>
+			<div class="lernzieleWrapper">
+				<h2 class="lernzieleÖffnen lernzieleÖffnenOben">Lernziele<i class="fa fa-long-arrow-alt-down"></i></h2>
+				<div class="lernziele">
+					<?= get_field("lernziele_text") ?>
+				</div>
+				<h2 class="lernzieleÖffnen lernzieleÖffnenUnten">Lernziele <i class="fa fa-long-arrow-alt-down"></i></h2>
+			</div>
+			<?php } ?>
 		</div>
 		<?php if (get_field("vorgabe_hintergrunde") == "schriftrolle1") { ?>
 			<div class="entry-content-backgroundimage-unten">

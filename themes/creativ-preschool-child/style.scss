@@ -20,7 +20,7 @@ Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 */
 
-@import url("/wp-content/themes/creativ-preschool-child/styleParent.css?v=3");
+@import url("/wp-content/themes/creativ-preschool-child/styleParent.css?v=4");
 
 #colophon > img {
   width: 100%;
@@ -146,6 +146,12 @@ body.single .entry-content{
   .page-header {
     box-shadow: 0 0 8px 2px #0008;
     background: #0008;
+    @supports (backdrop-filter: blur(4px)) {
+      box-shadow: 0 0 6px 1px #0004;
+      backdrop-filter: blur(4px);
+      backdrop-filter: blur(4px) brightness(90%) grayscale(10%);
+      background: none;
+    }
   }
 
   .overlay {
@@ -1607,3 +1613,82 @@ header.entry-header {
 }
 
 
+/* Lernziele */
+.lernzieleWrapper{
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  position: absolute;
+  width: 100%;
+  margin-top: -20px;
+  padding: 15px;
+  padding-top: 35px;
+  background: linear-gradient(0deg, #ddd, #efe9be);
+  border-top: none;
+  overflow: hidden;
+  color: black;
+  strong{
+    color: black;
+  }
+  z-index: 1;
+  .lernzieleÖffnen {
+    font-size: 2.0rem;
+    transition: all 1.5s;
+  }
+  transition: all 2s;
+  transform: translate(0, calc(-100% + 6rem + 25px));
+  &:hover{
+    transform: none;
+    .lernzieleÖffnenUnten{
+      opacity: 0;
+    }
+  }
+}
+article{
+  position: relative;
+}
+.entry-content{
+  z-index: 2;
+}
+.post-navigation{
+  z-index: 0;
+}
+.entry-content-wrapperforimages{
+  margin-bottom: 100px;
+}
+
+.schriftrolle1{
+  .lernzieleWrapper{
+    position: static;
+    transform: none;
+    margin: 0px;
+    background: transparent;
+  }
+  .lernziele{
+    display: none;
+    transition: none;
+  }
+  .lernzieleWrapper:hover{
+    .lernzieleÖffnenOben{
+      text-decoration: underline;
+    }
+    .lernziele{
+      display: initial;
+    }
+  }
+  .lernzieleÖffnenUnten{
+    display: none;
+  }
+  .lernzieleÖffnenOben{
+    display: initial;
+  }
+}
+
+.lernzieleÖffnenOben{
+  display: none;
+}
+
+.entry-content-wrapperforimages.bild .lernzieleWrapper{
+  background: linear-gradient(0deg, #ddd, #aaa);
+}
+
+/* Ende Lernziele */
