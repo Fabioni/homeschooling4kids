@@ -162,10 +162,10 @@ function creativ_preschool_setup() {
 	       	'slug' => 'larger'
 	   	),
 		array(
-	       	'name' => esc_html__( 'larg', 'creativ-preschool' ),
+	       	'name' => esc_html__( 'large', 'creativ-preschool' ),
 	       	'shortName' => esc_html__( 'L', 'creativ-preschool' ),
 	       	'size' => 34,
-	       	'slug' => 'larg'
+	       	'slug' => 'large'
 	   	),
 	   	array(
 	       	'name' => esc_html__( 'huge', 'creativ-preschool' ),
@@ -291,7 +291,7 @@ function creativ_preschool_scripts() {
 
 	wp_enqueue_style( 'slick-css', get_template_directory_uri() .'/assets/css/slick' . $min . '.css', '', 'v1.8.0');
 
-	wp_enqueue_style( 'creativ-preschool-blocks', get_template_directory_uri() . '/assets/css/blocks.css', array(), 4 );
+	wp_enqueue_style( 'creativ-preschool-blocks', get_template_directory_uri() . '/assets/css/blocks.css', array(), 5 );
 
 	wp_enqueue_style( 'creativ-preschool-style', get_stylesheet_uri() );
 
@@ -319,7 +319,7 @@ add_action( 'wp_enqueue_scripts', 'creativ_preschool_scripts' );
 function creativ_preschool_block_editor_styles() {
 	$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 	// Block styles.
-	wp_enqueue_style( 'creativ-preschool-block-editor-style', get_theme_file_uri( '/assets/css/editor-blocks.css' ), array(), 2);
+	wp_enqueue_style( 'creativ-preschool-block-editor-style', get_theme_file_uri( '/assets/css/editor-blocks.css' ), array(), 3);
 	// Add custom fonts.
 	wp_enqueue_style( 'creativ-preschool-fonts', creativ_preschool_fonts_url(), array(), null );
 }

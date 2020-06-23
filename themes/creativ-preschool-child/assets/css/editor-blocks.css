@@ -500,13 +500,13 @@ p.has-drop-cap:not(:focus)::first-letter {
   font-size: 22px;
   line-height: 1.2;
 }
-.has-larg-font-size {
+.has-large-font-size {
   font-size: 34px;
 }
 .has-huge-font-size {
   font-size: 40px;
 }
-.has-larg-font-size,
+.has-large-font-size,
 .has-huge-font-size {
   line-height: 1.5;
 }
