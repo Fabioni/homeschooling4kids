@@ -259,6 +259,35 @@ if( function_exists('acf_add_local_field_group') ):
 				'max_size' => '',
 				'mime_types' => '',
 			),
+			array(
+				'key' => 'field_5eba841436785',
+				'label' => 'Repeat',
+				'name' => 'vorgabe_hintergrund_repeat',
+				'type' => 'radio',
+				'instructions' => '<a href="https://www.w3schools.com/cssref/pr_background-repeat.asp">Erklärung</a>',
+				'required' => 0,
+				'conditional_logic' => array(
+					array(
+						array(
+							'field' => 'field_5ebaa165ffef5',
+							'operator' => '==',
+							'value' => 'bild',
+						),
+					),
+				),
+				'choices' => array(
+					'repeat' => 'repeat',
+					'space' => 'space (Std.)',
+					'round' => 'round',
+					'no-repeat' => 'no-repeat',
+				),
+				'allow_null' => 0,
+				'other_choice' => 0,
+				'default_value' => 'space',
+				'layout' => 'vertical',
+				'return_format' => 'value',
+				'save_other_choice' => 0,
+			),
 		),
 		'location' => array(
 			array(

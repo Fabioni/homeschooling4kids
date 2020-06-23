@@ -43,6 +43,7 @@ if ($hintergrund = get_field("vorgabe_hintergrunde")) {
 				background: #ddd url("<?= get_field("hintergrundbild") ?>") top center;
 				background-size: contain;
 				background-repeat: space;
+				<?= get_field("vorgabe_hintergrund_repeat") ? "background-repeat: " . get_field("vorgabe_hintergrund_repeat"). ";" : "" ?>
 				box-shadow: none;
 				border: none;
 			}

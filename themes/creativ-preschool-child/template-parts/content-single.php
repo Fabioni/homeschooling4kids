@@ -51,7 +51,7 @@ if (has_post_thumbnail()) {
 		<?php
 	}
 	?>
-	<div class="entry-content-wrapperforimages">
+	<div class="entry-content-wrapperforimages <?= get_field("vorgabe_hintergrunde") ?>">
 		<?php if (get_field("vorgabe_hintergrunde") == "schriftrolle1") { ?>
 			<div class="entry-content-backgroundimage-oben">
 				<img src="/wp-content/themes/creativ-preschool-child/hintergründe/schriftrolle1-oben.png">
