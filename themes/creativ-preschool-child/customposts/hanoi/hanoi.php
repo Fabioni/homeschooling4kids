@@ -25,6 +25,14 @@
 
   <meta name="theme-color" content="#fafafa">
 
+	<style>
+		.h4k_selected{
+			transform: scale(1.1) translate(0px, -3px);
+		}
+		.disk{
+			transition: transform 0.5s;
+		}
+	</style>
 
 </head>
 <body onload="init();" data-fensterOpen="start" onselectstart="return false" oncontextmenu="return false">
@@ -36,21 +44,21 @@
   </div>
 
   <div id="tower1" class="container" style="left: 30px; top: 80px; width: 200px; height: 200px;"
-       onmousemove="indexTo=1">
+       onmousemove="indexTo=1" onclick="h4k_selectContainer(1)">
     <div id="verttower1" class="towervert" style="left:99px;top:10px;width:3px;height:170px"></div>
     <div id="horiztower1" class="towerhoriz" style="left:0px;top:180px;width:200px;height:2px"></div>
     <div class="tower">Turm A</div>
   </div>
 
   <div id="tower2" class="container" style="left: 250px; top: 80px; width: 200px; height: 200px;"
-       onmousemove="indexTo=2">
+       onmousemove="indexTo=2" onclick="h4k_selectContainer(2)">
     <div id="verttower2" class="towervert" style="left:99px;top:10px;width:3px;height:170px"></div>
     <div id="horiztower2" class="towerhoriz" style="left:0px;top:180px;width:200px;height:2px"></div>
     <div class="tower">Turm B</div>
   </div>
 
   <div id="tower3" class="container" style="left: 470px; top: 80px; width: 200px; height: 200px;"
-       onmousemove="indexTo=3">
+       onmousemove="indexTo=3" onclick="h4k_selectContainer(3)">
     <div id="verttower3" class="towervert" style="left:99px;top:10px;width:3px;height:170px"></div>
     <div id="horiztower3" class="towerhoriz" style="left:0px;top:180px;width:200px;height:2px"></div>
     <div class="tower">Turm C</div>

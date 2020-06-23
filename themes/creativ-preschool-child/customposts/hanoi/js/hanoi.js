@@ -241,6 +241,74 @@ function dropDisk(disk){
   return;
 }
 
+h4k_selectedDisk = null
+h4k_selected = false
+h4k_ContainerFrom = null
+function h4k_selectContainer(ContainerNr){
+  if (gameOver || demo) return;
+  if (h4k_selected === false){
+    disk = disksOnTowers[ContainerNr-1][0];
+    if (disk === null) return;
+    jQuery(".disk").removeClass("h4k_selected");
+    jQuery(disk).addClass("h4k_selected");
+    h4k_ContainerFrom = ContainerNr;
+    h4k_selected = true;
+  } else {
+    h4k_dropDisk(ContainerNr);
+    h4k_selected = false;
+    jQuery(".disk").removeClass("h4k_selected");
+  }
+}
+
+function h4k_dropDisk(containerTo){
+  var f=document.hanoi;
+  var gameStatus=false;
+  var topDisk = disksOnTowers[containerTo-1][0];
+  if (h4k_ContainerFrom===containerTo){
+    getNewTop(h4k_ContainerFrom,null);
+    pushDisk(disk,h4k_ContainerFrom);	//put disk back to original tower
+    getNewTop(h4k_ContainerFrom,disk);
+  }
+  else if (topDisk==null) {
+    pushDisk(disk,containerTo);
+    getNewTop(h4k_ContainerFrom,null);
+    getNewTop(containerTo,disk);
+    movectr++;
+    currTower=containerTo;
+    prevTower=h4k_ContainerFrom;
+    f.btnUndo.disabled=false;
+  }
+  else if (parseInt(disk.style.width)<parseInt(topDisk.style.width)){
+    pushDisk(disk,containerTo);
+    getNewTop(h4k_ContainerFrom,null);
+    getNewTop(containerTo,disk);
+    movectr++;
+    currTower=containerTo;
+    prevTower=h4k_ContainerFrom;
+    if (containerTo===3) gameStatus=checkStatus();
+    f.btnUndo.disabled=false;
+  }
+  else {
+    getNewTop(h4k_ContainerFrom,null);
+    pushDisk(disk,h4k_ContainerFrom);	//put disk back to original tower
+    getNewTop(h4k_ContainerFrom,disk);
+  }
+
+  drag=false;
+  f.yourmove.value=movectr;
+  if (gameStatus) {
+    f.btnUndo.disabled=true;
+    minmove = parseInt(f.minmove.value);
+    if (movectr==minmove) msg="\nCongratulations! You got it in "+minmove+" moves."
+    else if (movectr>minmove) msg="\nYou can do better than that."
+    else msg="";
+    setTimeout(levelbeendet, 1000)
+    console.log("Game Over !!!"+msg);
+    gameOver=true;
+  }
+  return;
+}
+
 function cheat() {
   var f=document.hanoi;
   f.btnUndo.disabled=true;

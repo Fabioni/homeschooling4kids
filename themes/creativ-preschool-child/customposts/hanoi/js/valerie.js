@@ -45,7 +45,7 @@ function nextLevel() {
 
 function timer() {
 // Set the date we're counting down to
-  var countDownDate = new Date().getTime() + 60000 * 10;
+  var countDownDate = new Date().getTime() + 60000 * 7;
   //var countDownDate = new Date().getTime() + 60000 * 0.1;
 
 // Update the count down every 1 second
@@ -72,5 +72,6 @@ function timer() {
       document.getElementsByName("timeranzeige")[0].value = "EXPIRED";
       endeanzeigen()
     }
-  }, 1000);
+  }, 500);
 }
+
