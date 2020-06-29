@@ -1491,5 +1491,31 @@ article {
 }
 
 /* Ende Lernziele */
+/* Poll Winner Front Page */
+div#pollWinnerWrapper {
+  position: relative;
+  padding: 1em;
+  margin: 0 auto 1em;
+  background: #ff8c00;
+  max-width: 1000px;
+  border-radius: 25px;
+  border: 3px solid gray;
+}
+
+strong.pollWinner-title {
+  font-size: 115%;
+  text-align: center;
+  padding: 1em;
+  background: #fff;
+  border: 2px solid green;
+  border-radius: 5px;
+  margin: 0;
+  display: block;
+}
+strong.pollWinner-title a {
+  text-decoration: underline;
+}
+
+/* Ende Poll Winner Front Page */
 
 /*# sourceMappingURL=style.css.map */

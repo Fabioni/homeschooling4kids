@@ -616,11 +616,16 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
 	<?php } ?>
     <!--<div style="background: #ddd"><div class="wrapper"><?php // echo do_shortcode('[metaslider id="382"]');
 	?></div></div>-->
-	<?php
+	<?php/*
+ 	TODO Democrazy Poll so dass automatisch ...
 	if (shortcode_exists("democracy")){
 		echo do_shortcode( "[democracy id=1]" );
-	}
-	?>
+	}*/?>
+	<div id="pollWinnerWrapper">
+		<div id="pollWinner">
+			<strong class="pollWinner-title">Gewonnen hat das <a href="/themenwelt#heutigesThemaAnker">Thema Roboter</a>. Diese Woche beschäftigen wir uns damit!</strong>
+		</div>
+	</div>
 	<?php $enabled_sections = creativ_preschool_get_sections();
 	if ( is_array( $enabled_sections ) ) {
 		foreach ( $enabled_sections as $section ) {
