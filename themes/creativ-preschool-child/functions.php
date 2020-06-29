@@ -688,8 +688,13 @@ function averageColor($filelocation){
 		return $color;
 	}
 	try {
-		$image = imagecreatefromstring(file_get_contents($filelocation));
-		if ($image === false) return null;
+		$image = null;
+		if (SCRIPT_DEBUG ?? false){
+			$image = @imagecreatefromstring(@file_get_contents($filelocation));
+		} else {
+			$image = @imagecreatefromstring(@file_get_contents($filelocation));
+		}
+		if ($image === false or $image === null) return null;
 		$width = imagesx($image);
 		$height = imagesy($image);
 

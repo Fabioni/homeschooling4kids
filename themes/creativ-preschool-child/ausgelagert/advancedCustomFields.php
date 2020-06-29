@@ -498,4 +498,67 @@ if( function_exists('acf_add_local_field_group') ):
 		'description' => 'Lernziele für die Beiträge',
 	));
 
+	acf_add_local_field_group(array(
+		'key' => 'group_5efa131444a26',
+		'title' => 'Hervorheben',
+		'fields' => array(
+			array(
+				'key' => 'field_5efa13bd98a83',
+				'label' => 'Hervorheben',
+				'name' => 'hervorheben',
+				'type' => 'radio',
+				'instructions' => 'Markiere, falls dies ein besonders schöner Beitrag ist :-)',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'choices' => array(
+					'stern2' => 'Besonders Stern',
+					'stern1' => 'Stern',
+					'stern0' => 'nichts besonderes',
+				),
+				'allow_null' => 0,
+				'other_choice' => 0,
+				'default_value' => 'stern0',
+				'layout' => 'vertical',
+				'return_format' => 'value',
+				'save_other_choice' => 0,
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'fachbeitrag',
+				),
+			),
+			array(
+				array(
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'gutzuwissenbeitrag',
+				),
+			),
+			array(
+				array(
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'spassbeitrag',
+				),
+			),
+		),
+		'menu_order' => 0,
+		'position' => 'side',
+		'style' => 'default',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => '',
+		'active' => true,
+		'description' => '',
+	));
+
 endif;

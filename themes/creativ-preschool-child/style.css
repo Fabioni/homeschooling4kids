@@ -1517,5 +1517,33 @@ strong.pollWinner-title a {
 }
 
 /* Ende Poll Winner Front Page */
+/* Beitrag Stern */
+article .post-item {
+  position: relative;
+}
+article .sternAnzeige {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  font-size: 20px;
+  display: none;
+}
+article.notSingle .sternAnzeige {
+  bottom: 1em;
+  top: initial;
+}
+article.stern0 .sternAnzeige {
+  display: none;
+}
+article.stern1 .sternAnzeige {
+  color: gray;
+  display: initial;
+}
+article.stern2 .sternAnzeige {
+  color: goldenrod;
+  display: initial;
+}
+
+/* Ende Beitrag Stern */
 
 /*# sourceMappingURL=style.css.map */

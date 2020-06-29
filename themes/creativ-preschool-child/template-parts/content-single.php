@@ -32,8 +32,13 @@ if (has_post_thumbnail()) {
 	$colorStyle = "style='border: 3px solid rgb($colors[red], $colors[green], $colors[blue]);'";
 	?>
 <?php } ?>
-<article
-	id="post-<?php the_ID(); ?>" <?php if (get_field("audiofilevorlesen")) post_class("hasAudio"); else post_class(); ?>>
+<?php
+$zusatzklassen = "";
+if (get_field("audiofilevorlesen")) $zusatzklassen .= "hasAudio ";
+if (get_field("hervorheben")) $zusatzklassen .= get_field("hervorheben") . " ";
+?>
+<article id="post-<?php the_ID(); ?>" <?php post_class($zusatzklassen) ?>>
+	<i title="hervorgehobener Artikel" class="sternAnzeige fa fa-star"></i>
 	<div class="entry-meta">
 		<?php creativ_preschool_posted_on();
 		creativ_preschool_entry_meta(); ?>

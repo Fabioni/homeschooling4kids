@@ -26,8 +26,12 @@
 
 	})
 </script>
-
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<?php
+$zusatzklassen = "";
+if (get_field("audiofilevorlesen")) $zusatzklassen .= "hasAudio ";
+if (get_field("hervorheben")) $zusatzklassen .= get_field("hervorheben") . " ";
+?>
+<article id="post-<?php the_ID(); ?>" <?php post_class($zusatzklassen); ?>>
 	<?php
 	if ($url = get_field("audiofilevorlesen")){
 		?>

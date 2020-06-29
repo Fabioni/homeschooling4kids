@@ -20,9 +20,15 @@ if (has_post_thumbnail()) {
 	}
 	?>
 <?php } ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<?php
+$zusatzklassen = "notSingle ";
+if (get_field("audiofilevorlesen")) $zusatzklassen .= "hasAudio ";
+if (get_field("hervorheben")) $zusatzklassen .= get_field("hervorheben") . " ";
+?>
+<article id="post-<?php the_ID(); ?>" <?php post_class($zusatzklassen); ?>>
 	<div
 		class="post-item <?= get_the_time('Ymd') === current_time('Ymd') ? "heutigerBeitrag" : "" ?>" <?= $colorStyle ?>>
+		<i title="hervorgehobener Artikel" class="sternAnzeige fa fa-star"></i>
 		<?php if (is_sticky()) { ?>
 			<div class="favourite"><i class="fa fa-star"></i></div>
 		<?php } ?>
