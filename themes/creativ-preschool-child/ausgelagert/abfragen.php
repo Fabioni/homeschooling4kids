@@ -1,8 +1,8 @@
 <?php
-function abfrage_shortcode_func_radio($richtig = "", $group){
+function abfrage_shortcode_func_radio($richtig = "", $group, $content){
 	$id = uniqid("radio");
 	return <<<EOD
-<input id="$id" class="fabian-check-me" type="radio" name="name_$group" data-result='$richtig'><label for="$id"></label>
+<input id="$id" class="fabian-check-me" type="radio" name="name_$group" data-result='$richtig'><label for="$id"> $content</label>
 EOD;
 }
 
@@ -21,10 +21,10 @@ function abfrage_shortcode_func_select($richtig = "", $vorschläge = array(), $c
 EOD;
 }
 
-function abfrage_shortcode_func_checkbox($richtig = false){
+function abfrage_shortcode_func_checkbox($richtig = false, $content){
 	$id = uniqid("checkbox");
 	return <<<EOD
-<input id="$id" class="fabian-check-me" type="checkbox" data-result='$richtig'><label for="$id"></label>
+<input id="$id" class="fabian-check-me" type="checkbox" data-result='$richtig'><label for="$id"> $content</label>
 EOD;
 
 }
@@ -71,10 +71,10 @@ function abfrage_shortcode_func( $atts, $content ) {
 
 	switch ($type){
 		case "checkbox":
-			return abfrage_shortcode_func_checkbox(is_array($atts) && in_array("richtig", $atts));
+			return abfrage_shortcode_func_checkbox(is_array($atts) && in_array("richtig", $atts), $content);
 			break;
 		case "radio":
-			return abfrage_shortcode_func_radio(in_array("richtig", $atts), $a["gruppe"]);
+			return abfrage_shortcode_func_radio(in_array("richtig", $atts), $a["gruppe"], $content);
 			break;
 		case "select":
 			$vorschläge = explode(', ', $a["vorschlaege"]);
