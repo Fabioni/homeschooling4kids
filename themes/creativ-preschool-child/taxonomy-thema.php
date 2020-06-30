@@ -8,4 +8,4 @@
  */
 ?>
 <!-- Where am I: taxonomy-thema.php -->
-<?php require get_template_directory() . '/archive-fachbeitrag.php'; ?>
+<?php require get_template_directory() . '/date.php'; ?>
