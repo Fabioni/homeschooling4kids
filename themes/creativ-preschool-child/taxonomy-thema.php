@@ -8,4 +8,5 @@
  */
 ?>
 <!-- Where am I: taxonomy-thema.php -->
+<!-- TODO wie bei Fachbeteig archive die Buttons zur Auswahl von der Leistungsstufe anzeigen -->
 <?php require get_template_directory() . '/date.php'; ?>
