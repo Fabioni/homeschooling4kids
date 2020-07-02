@@ -12,7 +12,7 @@ function abfrage_shortcode_func_select($richtig = "", $vorschläge = array(), $c
 		if (is_user_logged_in()){
 			return "<span style='color:red; border: 2px solid white; background:black'>FEHLER in [abfrage]: richtig nicht in Vorschlaege enthalten</span>";
 		} else {
-			wp_mail("team@homeschooling4kids.org", "FEHLER in [abfrage]", "Zervus alle zammen,\n$_SERVER[PHP_SELF] hat einen Fehler in [abfrage]. Ein nicht-eingeloggter User hat die Seite gerade besucht und bekam wegen dem Fehler sicherheitshalber nur „...“ angezeigt.\n[abfrage] mit\nrichtig: $richtig\nvorschlaege: $vorschläge");
+			wp_mail("team@homeschooling4kids.org", "FEHLER in [abfrage]", "Zervus alle zammen,\n$_SERVER[PHP_SELF] hat einen Fehler in [abfrage]. Ein nicht-eingeloggter User hat die Seite gerade besucht und bekam wegen dem Fehler sicherheitshalber nur „...“ angezeigt.\n[abfrage] mit\nrichtig: $richtig\nvorschlaege: " . implode(", ", $vorschläge));
 			return "<span>...</span>";
 		}
 	}
