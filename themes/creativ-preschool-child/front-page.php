@@ -621,11 +621,11 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
 	if (shortcode_exists("democracy")){
 		echo do_shortcode( "[democracy id=1]" );
 	}*/ ?>
-	<div id="pollWinnerWrapper">
+	<?php /* <div id="pollWinnerWrapper">
 		<div id="pollWinner">
 			<strong class="pollWinner-title">Gewonnen hat das <a href="/themenwelt#heutigesThemaAnker">Thema Roboter</a>. Diese Woche beschäftigen wir uns damit!</strong>
 		</div>
-	</div>
+	</div> */ ?>
 	<?php $enabled_sections = creativ_preschool_get_sections();
 	if ( is_array( $enabled_sections ) ) {
 		foreach ( $enabled_sections as $section ) {
