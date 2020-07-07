@@ -471,14 +471,19 @@ function be_gutenberg_scripts() {
 add_action( 'enqueue_block_editor_assets', 'be_gutenberg_scripts' );
 
 
-add_filter('wp_ulike_counter_value', 'wp_ulike_change_count', 10, 2);
-function wp_ulike_change_count($counter_value) {
-	// TODO is_admin() ist nur ein Quickfix
-	if (is_user_logged_in() or is_admin()){
-		return $counter_value;
+add_filter('wp_ulike_format_number', 'wp_ulike_change_count', 10, 3);
+function wp_ulike_change_count($value, $num, $sign) {
+	if (is_user_logged_in()){
+		return $value;
 	} else {
-		//return $counter_value + get_the_ID() % 15;
-		return floor($counter_value * 2.5);
+		$num = floor($num * 2.5);
+
+		if ( $num >= 1000 &&  wp_ulike_is_true( wp_ulike_get_option( 'enable_kilobyte_format', false ) ) ){
+			$value = round($num/1000, 2) . 'K' . $sign;
+		} else {
+			$value = $num . $sign;
+		}
+		return $value;
 	}
 }
 
