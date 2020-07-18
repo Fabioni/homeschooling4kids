@@ -609,11 +609,24 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
             <div class="flip-cover-heute_button_flip"></div>
         </div>
     </div>
-	<?php if (strpos($_SERVER['HTTP_HOST'], "h4k.dev") !== false){ ?>
+	<?php if (strpos($_SERVER['HTTP_HOST'], "h4k.dev") !== false && false){ ?>
 	<div id="linkthemenwelt">
 		<p><a href="/themenwelt"><i></i>Schau dir die neue Themenwelt an!</a></p>
 	</div>
 	<?php } ?>
+	<div id="sommerNachricht">
+		<h3>Es gibt Neuigkeiten!</h3>
+		<p>Liebe Kinder!</br>
+		Wir wünschen euch schöne Sommerferien.</p>
+
+		<p>Auch wir gehen auf Sommerpause und starten wieder <u>nach den Ferien</u>!</p>
+
+		<p>Natürlich kannst du auch im Sommer tolle Inhalte bei uns finden. In der <a href="/themenwelt">Themenwelt</a> findest du viele spannende Themen! Stöbere einfach durch und schaue dir die Beiträge an, die dich interessieren. Gerne kannst du uns auch weiterhin schreiben.</p>
+		<p>Im <a href="/gutzuwissenbeitrag">Gut zu wissen Bereich</a> bist du immer auf dem neuesten Stand. Ob coole Veranstaltungen im Sommer oder wichtige Nachrichten, all das findest du auch in den Ferien.</p>
+
+		<p>Alles Liebe und viel Spaß in deinen Sommerferien,</br>
+		Fabian, Anna, Viktoria und Valerie</p>
+	</div>
     <!--<div style="background: #ddd"><div class="wrapper"><?php // echo do_shortcode('[metaslider id="382"]');
 	?></div></div>-->
 	<?php /*
