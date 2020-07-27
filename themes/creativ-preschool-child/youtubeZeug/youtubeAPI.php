@@ -7,6 +7,10 @@ function getMarkusVideos() {
 	 * https://developers.google.com/explorer-help/guides/code_samples#php
 	 */
 
+	if (false !== ($videos = get_transient("MarkusVideosAPI"))){
+		return $videos;
+	}
+
 	if ( ! file_exists( get_template_directory() . '/vendor/autoload.php' ) ) {
 		throw new Exception( sprintf( 'Please run "composer require google/apiclient:~2.0" in "%s"', __DIR__ ) );
 	}
@@ -67,6 +71,8 @@ function getMarkusVideos() {
 			"description" => $item["snippet"]["description"],
 		);
 	}
+
+	set_transient("MarkusVideosAPI", $videos, 600);
 
 	return $videos;
 }

@@ -634,7 +634,7 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
 				$videos = getMarkusVideos();
 				foreach ($videos as $video){
 			?>
-			<div style="display: flex; margin: 20px 0">
+			<div class="markusvideowrapper" style="margin: 20px 0">
 				<div style="max-width: 800px; min-width: 60%;">
 					<div style="padding-bottom: 56.25%; position: relative; width: 100%;">
 						<iframe src="https://www.youtube.com/embed/<?= $video["id"] ?>" frameborder="0"
@@ -669,6 +669,16 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
 			transform: rotate(90deg) scale(1.1);
 			transition: transform 1s;
 			cursor: pointer;
+		}
+
+		.markusvideowrapper{
+			display: flex;
+		}
+
+		@media screen and (max-width: 782px) {
+			.markusvideowrapper{
+				display: block;
+			}
 		}
 	</style>
     <!--<div style="background: #ddd"><div class="wrapper"><?php // echo do_shortcode('[metaslider id="382"]');
