@@ -49,10 +49,20 @@ function getMarkusVideos() {
 //print_r( $response["items"] );
 
 	$videos = [];
+	$ids = "";
+	foreach ( $response["items"] as $item ) {
+		$ids .= $item["id"]["videoId"] . ",";
+	}
+	$ids = substr($ids, 0, -1);
 
+	$queryParams = [
+		'id' => $ids
+	];
+
+	$response = $service->videos->listVideos('snippet', $queryParams);
 	foreach ( $response["items"] as $item ) {
 		$videos[] = array(
-			"id"         => $item["id"]["videoId"],
+			"id"         => $item["id"],
 			"title"       => $item["snippet"]["title"],
 			"description" => $item["snippet"]["description"],
 		);
