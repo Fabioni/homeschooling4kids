@@ -615,7 +615,7 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
 	</div>
 	<?php } ?>
 	<div id="sommerNachricht">
-		<h3>Es gibt Neuigkeiten!</h3>
+		<h2>Es gibt Neuigkeiten!</h2>
 		<p>Liebe Kinder!</br>
 		Wir wünschen euch schöne Sommerferien.</p>
 
@@ -626,7 +626,51 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
 
 		<p>Alles Liebe und viel Spaß in deinen Sommerferien,</br>
 		Fabian, Anna, Viktoria und Valerie</p>
+		<?php if (is_user_logged_in()){ ?>
+		<hr style="background-color: #7b7b7b">
+		<div>
+			<h3>Unser Sommerprogramm – Sport mit Markus</h3>
+			<?php require(get_template_directory() . "/youtubeZeug/youtubeAPI.php");
+				$videos = getMarkusVideos();
+				foreach ($videos as $video){
+			?>
+			<div style="display: flex; margin: 20px 0">
+				<div style="max-width: 800px; min-width: 60%;">
+					<div style="padding-bottom: 56.25%; position: relative; width: 100%;">
+						<iframe src="https://www.youtube.com/embed/<?= $video["id"] ?>" frameborder="0"
+								allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+								allowfullscreen="" style="width: 100%; height: 100%; position: absolute; box-shadow: none;"></iframe>
+					</div>
+				</div>
+				<div style="padding: 20px;background: #112;color: white; position: relative">
+					<h2 style="color: white; font-size: 30px;">
+						<?= $video["title"] ?>
+					</h2>
+					<p>
+						<?= $video["description"] ?>
+					</p>
+					<div style="position: absolute; right: 10px; bottom: 10px" >
+						<a href="/plaplub"><i style="font-size: 45px; color: orange;" class="fa fa-plus-circle turnover"></i></a>
+					</div>
+				</div>
+			</div>
+			<?php
+				}
+			?>
+
+		</div>
+		<?php } ?>
 	</div>
+	<style>
+		.turnover{
+			transition: transform 2s;
+		}
+		.turnover:hover{
+			transform: rotate(90deg) scale(1.1);
+			transition: transform 1s;
+			cursor: pointer;
+		}
+	</style>
     <!--<div style="background: #ddd"><div class="wrapper"><?php // echo do_shortcode('[metaslider id="382"]');
 	?></div></div>-->
 	<?php /*

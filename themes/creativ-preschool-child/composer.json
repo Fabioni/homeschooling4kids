@@ -1,0 +1,15 @@
+{
+  "name": "schererf/h4ktheme",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "fscherer",
+      "email": "me@fabianscherer.de"
+    }
+  ],
+  "require": {
+    "google/apiclient": "^2.0"
+  }
+}

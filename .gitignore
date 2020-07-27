@@ -11,3 +11,6 @@ themes/*
 plugins/*
 !plugins/democracy-poll
 /themes/creativ-preschool-child/.sass-cache/
+
+
+themes/creativ-preschool-child/vendor/**/.git
