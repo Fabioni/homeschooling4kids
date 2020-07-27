@@ -626,7 +626,7 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
 
 		<p>Alles Liebe und viel Spaß in deinen Sommerferien,</br>
 		Fabian, Anna, Viktoria und Valerie</p>
-		<?php if (is_user_logged_in()){ ?>
+		<?php if (true or is_user_logged_in()){ ?>
 		<hr style="background-color: #7b7b7b">
 		<div>
 			<h3>Unser Sommerprogramm – Sport mit Markus</h3>
@@ -649,9 +649,9 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
 					<p>
 						<?= $video["description"] ?>
 					</p>
-					<div style="position: absolute; right: 10px; bottom: 10px" >
+					<!--<div style="position: absolute; right: 10px; bottom: 10px" >
 						<a href="/plaplub"><i style="font-size: 45px; color: orange;" class="fa fa-plus-circle turnover"></i></a>
-					</div>
+					</div>-->
 				</div>
 			</div>
 			<?php

@@ -63,12 +63,13 @@ function getMarkusVideos() {
 		'id' => $ids
 	];
 
+	$schaueAuch = "Schaut auch auf die Webpage: https://homeschooling4kids.at - Dort findet ihr eine Menge cooler Ideen und Übungen für die Sommer und Schulzeit.";
 	$response = $service->videos->listVideos('snippet', $queryParams);
 	foreach ( $response["items"] as $item ) {
 		$videos[] = array(
 			"id"         => $item["id"],
 			"title"       => $item["snippet"]["title"],
-			"description" => $item["snippet"]["description"],
+			"description" => str_replace($schaueAuch, "", $item["snippet"]["description"]),
 		);
 	}
 
