@@ -627,9 +627,10 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
 		<p>Alles Liebe und viel Spaß in deinen Sommerferien,</br>
 		Fabian, Anna, Viktoria und Valerie</p>
 		<?php if (true or is_user_logged_in()){ ?>
-		<hr style="background-color: #7b7b7b">
-		<div>
-			<h3>Unser Sommerprogramm – Sport mit Markus</h3>
+		<hr style="background-color: #7b7b7b"></hr>
+		<h3>Unser Sommerprogramm – Sport mit Markus</h3>
+		<div id="markusscroll">
+
 			<?php require(get_template_directory() . "/youtubeZeug/youtubeAPI.php");
 				$videos = getMarkusVideos();
 				foreach ($videos as $video){
@@ -673,6 +674,7 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
 
 		.markusvideowrapper{
 			display: flex;
+			scroll-snap-align: center;
 		}
 
 		@media screen and (max-width: 782px) {
@@ -680,7 +682,23 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
 				display: block;
 			}
 		}
+
+		#markusscroll{
+			overflow-y: scroll;
+			padding-right: 15px;
+			scroll-snap-type: y proximity;
+		}
+
 	</style>
+	<script>
+		jQuery(function () {
+			jQuery("#markusscroll").css("max-height", jQuery("#markusscroll .markusvideowrapper:first-child").outerHeight() * 1.2);
+			jQuery("#markusscroll")[0].scrollTop = 0
+		})
+		$(window).resize(function(){
+			jQuery("#markusscroll").css("max-height", jQuery("#markusscroll .markusvideowrapper:first-child").outerHeight() * 1.2);
+		});
+	</script>
     <!--<div style="background: #ddd"><div class="wrapper"><?php // echo do_shortcode('[metaslider id="382"]');
 	?></div></div>-->
 	<?php /*
