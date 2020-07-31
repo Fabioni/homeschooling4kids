@@ -29,7 +29,7 @@ if (has_post_thumbnail()) {
 	$post_thumbnail_id = get_post_thumbnail_id();
 	$filelocation = get_attached_file($post_thumbnail_id);
 	$colors = averageColor($filelocation);
-	$colorStyle = "style='border: 3px solid rgb($colors[red], $colors[green], $colors[blue]);'";
+	if ($colors != null) $colorStyle = "style='border: 3px solid rgb($colors[red], $colors[green], $colors[blue]);'";
 	?>
 <?php } ?>
 <?php

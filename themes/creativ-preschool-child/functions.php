@@ -264,7 +264,7 @@ if ( ! function_exists( 'creativ_preschool_footer_section' ) ) :
 		                target="_blank" rel="designer" href="http://fabianscherer.de/">Fabian Scherer</a></span>
 		                -->
 				<span class="copy-right">Entwickelt von <a
-						target="_blank" rel="designer" href="http://fabianscherer.de/">Fabian Scherer</a></span>
+						target="_blank" rel="designer" href="http://fabianscherer.de/">Fabian Scherer</a> – Betrieben durch den Verein: <a href="https://homeschooling4kids.at/impressum">„Homeschooling4kids“</a></span>
 				<span>Soweit im Einzelfall nicht anders geregelt oder Rechte Dritter betroffen sind, unterliegen unsere Inhalte der folgenden Lizenz <a rel="license"
 														   href="http://creativecommons.org/licenses/by-nc/4.0/"><img
 							alt="Creative Commons Lizenzvertrag" style="border-width:0"
